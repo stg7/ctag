@@ -1,0 +1,9 @@
+chars.txt 
+    beinhaltet alle Zeichen die ignoriert werden sollen
+    
+words.txt 
+    beinhaltet alle Wörter die ignoriert werden sollen (z.B. häufige deutsche Wörter )
+    Quelle: http://wortschatz.uni-leipzig.de/Papers/top1000de.txt
+    
+Aufbau der Dateien:
+    jede Zeile enthält ein zu ignorierendes Word/Zeichen

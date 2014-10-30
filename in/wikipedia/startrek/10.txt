@@ -1,0 +1,118 @@
+{{Infobox Film
+| DT      = Star Trek: Nemesis
+| OT      = Star Trek Nemesis
+| PL      = [[Vereinigte Staaten|USA]]
+| PJ      = 2002
+| LEN     = 116
+| OS      = [[Englische Sprache|Englisch]]
+| FSK     = 12
+| REG     = [[Stuart Baird]]
+| DRB     = [[John Logan]]
+| PRO     = [[Rick Berman]]
+| MUSIK   = [[Jerry Goldsmith]]
+| KAMERA  = [[Jeffrey L. Kimball]]
+| SCHNITT = [[Dallas Puett]]
+| DS      = 
+* [[Patrick Stewart]]: [[Völker im Star-Trek-Universum#Dienstgrade|Captain]] [[Figuren im Star-Trek-Universum#Captain Jean-Luc Picard|Jean-Luc Picard]]
+* [[Jonathan Frakes]]: [[Völker im Star-Trek-Universum#Dienstgrade|Commander]] [[Figuren im Star-Trek-Universum#Commander William Thomas Riker|William Riker]]
+* [[Brent Spiner]]: [[Völker im Star-Trek-Universum#Dienstgrade|Lieutenant Commander]] [[Figuren im Star-Trek-Universum#Lieutenant Commander Data|Data]],&lt;br /&gt;[[Figuren im Star-Trek-Universum#B-4|B-4]]
+* [[LeVar Burton]]: [[Figuren im Star-Trek-Universum#Lieutenant Commander Geordi LaForge|Lieutenant Commander Geordi LaForge]]
+* [[Michael Dorn]]: [[Figuren im Star-Trek-Universum#Lieutenant Commander Worf|Lieutenant Commander Worf]]
+* [[Gates McFadden]]: [[Figuren im Star-Trek-Universum#Dr. Beverly Crusher (Commander)|Dr. Beverly Crusher]]
+* [[Marina Sirtis]]: [[Figuren im Star-Trek-Universum#Counselor Deanna Troi|Counselor Deanna Troi]]
+* [[Tom Hardy]]: Shinzon
+* [[Ron Perlman]]: Stellvertreter
+* [[Shannon Cochran]]: Senator Tal’aura
+* [[Dina Meyer]]: Commander Donatra
+* [[Jude Ciccolella]]: Commander Suran
+* [[Alan Dale]]: Prätor Hiren
+* [[John Berg]]: Senator
+* [[Michael Owen (Schauspieler)|Michael Owen]]: Fähnrich Branson
+* [[Kate Mulgrew]]: Admiral [[Figuren im Star-Trek-Universum#Captain Kathryn Janeway|Kathryn Janeway]]
+* [[Wil Wheaton]]: [[Figuren im Star-Trek-Universum#Fähnrich Wesley Crusher|Wesley Crusher]]
+}}
+
+'''Star Trek: Nemesis''' ist der zehnte [[Star Trek|Star-Trek]]-Kinofilm. Es handelt sich um den vierten Kinofilm, der auf der Fernsehserie ''[[Raumschiff Enterprise: Das nächste Jahrhundert]]'' basiert. Der Film hatte ein Budget von etwa 60 Millionen Dollar, spielte aber an den Kinokassen nur etwa 67,3 Millionen Dollar ein.&lt;ref&gt;
+{{cite web |url=http://www.boxofficemojo.com/movies/?id=startrek10.htm |title=STAR TREK: NEMESIS |accessdate=2009-06-28 |publisher=www.boxofficemojo.com |language=englisch }}&lt;/ref&gt;
+
+== Handlung ==
+Nach einem Anschlag im Senat von [[Völker im Star-Trek-Universum#Romulaner|Romulus]], dem Heimatplaneten der [[Völker im Star-Trek-Universum#Romulaner|Romulaner]], bei der mit Ausnahme der Verschwörerin alle Senatoren getötet wurden, ergreift [[Figuren im Star-Trek-Universum#Shinzon|Shinzon]], ein Bewohner des unwirtlichen Bruderplaneten [[Völker im Star-Trek-Universum#Remaner|Remus]], die Macht im Romulanischen Imperium.
+
+Die Crew der [[Enterprise (Raumschiff)|Enterprise-E]], die gerade auf dem Weg nach [[Völker im Star-Trek-Universum#Betazoiden|Betazed]] ist, um nach der Zeremonie auf der Enterprise die Hochzeit zwischen Troi und Riker auch dort zu feiern, wird daraufhin in einer diplomatischen Mission nach Romulus gerufen.
+
+Auf dem Weg dorthin ortet die Crew auf einem Planeten am Rand der neutralen Zone positronische Signale, die auf eine Lebensform, die [[Figuren im Star-Trek-Universum#Data|Data]] ähnlich sein müsste, hindeuten. Dort finden Picard, Data und Worf schließlich Androiden-Einzelteile, die sie zusammensetzen. Dieser Android nennt sich [[Figuren im Star-Trek-Universum#B-4|B-4]] und erweist sich als Prototyp von Data (im Englischen ergibt sich hier ein [[Wortspiel]], da ''B-4'' wie ''be-four = before (dt. vorher)'' ausgesprochen wird).
+
+Vom Sternenflottenkomando erhält die Enterprise den durch Admiral Janeway übermittelten Auftrag nach Romulus zu fliegen. Dort trifft die Crew auf Shinzon, der enthüllt, dass er kein Remaner oder Romulaner ist, sondern ein Klon von Jean-Luc Picard. Er war im Rahmen eines Projektes der Romulaner, in dem der Captain der Enterprise (Picard) ersetzt werden sollte, geschaffen worden; das Projekt wurde aber schließlich fallen gelassen und Shinzon als Zwangsarbeiter auf Remus geschickt. Shinzon gibt vor, sein „Vorbild“ Picard näher kennenlernen und Frieden mit der [[Völker im Star-Trek-Universum#Föderation|Föderation]] schließen zu wollen.
+
+Jedoch verfolgt er eigene Ziele und beamt Picard gegen dessen Willen auf sein Schiff; da er eigentlich Picards Körperzellen benötigt, die mit seinen logischerweise [[Desoxyribonukleinsäure|DNA]]-identisch sind, um zu überleben. Sein Schiff ''Scimitar'' –&amp;nbsp;ein stark umgebautes und verbessertes remanisches Raumschiff und der Enterprise taktisch überlegen&amp;nbsp;– ist mit einer Thalaron-Matrix ausgestattet; eine Waffe, die Thalaron-Strahlung erzeugt die absolut tödlich für jegliche biologische Lebensformen ist. Der Senat von Romulus wurde mit einer kleineren Version ausgelöscht, die Thalaron-Matrix der Scimitar ist in der Lage das Leben auf einem ganzen Planeten auszulöschen. Größenwahnsinnig geworden, und um sich aus den politischen Schatten seines „DNA-Spenders“ Picard zu befreien, will er das Weltall auf ewig verändern. So beabsichtigt er, die Erde mit dieser Waffe auszulöschen und die Föderation später für das romulanische Reich zu erobern.
+ 
+Shinzon hat B-4 so programmiert, dass er diesen kontrollieren kann. Er dient – ohne es selbst zu wissen – Shinzon als Handlanger und Spion auf der Enterprise. Da LaForge dies rechtzeitig bemerkt, gelingt es Data an B-4s Stelle zu treten und Picard zu retten.
+
+Die Enterprise flieht schließlich in Richtung Föderationsgebiet, wo bereits andere Schiffe zur Verstärkung warten. In einem Nebel, der die Langstreckenkommunikation blockiert, wird sie von Shinzons Schiff angegriffen, wodurch der Warp-Antrieb außer Funktion gesetzt wird.
+
+Es kommt zu einem Kampf, bei dem die Enterprise Unterstützung von zwei romulanischen Warbirds (Norexan-Klasse) erhält, deren Kommandeure offenbar zur Opposition gegen Shinzon gehören. Shinzons Schiff ist weit überlegen. Nachdem die Warbirds ausgeschaltet, die Schilde der Enterprise nahezu außer Funktion gesetzt und die letzten Photonentorpedos verschossen worden sind, rammt die Enterprise schließlich als letzte Möglichkeit Shinzons Schiff frontal, wobei beide Schiffe schwer beschädigt werden, jedoch bleibt die Primär-Waffe der Scimitar einsatzbereit und soll nun gegen die Enterprise eingesetzt werden.
+
+Captain Picard lässt sich schließlich auf Shinzons Schiff beamen, wobei die Transporter der Enterprise durch Überlastung zerstört werden. Data springt daher durch den schwerelosen Weltraum hinüber zu Shinzons Schiff.
+
+Es kommt auf der Scimitar zu einem Showdown zwischen Picard und Shinzon, wobei letzterer den Tod findet. Die Waffe ist aktiviert und würde in wenigen Sekunden die Enterprise zerstören. Data, der Picard inzwischen erreicht hat, schickt ihn mit einem Prototyp eines mobilen Ort-zu-Ort-Transporters zurück auf die Enterprise und opfert sich, indem er mit einem [[Star-Trek-Technologie#Phaser.2C pers.C3.B6nliche Bewaffnung|Phaser]] auf die Waffe feuert und somit eine Explosion auslöst, die Shinzons Schiff und ihn selbst völlig zerstört. Am Ende wird angedeutet, dass B-4 den Platz von Data einnehmen könnte, aber aufgrund seines geringeren Entwicklungsstandes ist ihm eine Ebenbürtigkeit mit Data verwehrt.
+
+== Hintergrund und Sonstiges ==
+* [[Whoopi Goldberg]] wird – traditionell – nicht im Abspann erwähnt.
+* Hollywood-Regisseur Bryan Singer hat einen Kurzauftritt. Er erscheint als Sternenflottenoffizier auf der Brücke der Enterprise.
+* Wie Regisseur Stuart Baird in einem „Making of“ erzählte, entschloss sich [[Brent Spiner]] Data sterben zu lassen, in Übereinkunft mit den Drehbuchschreibern. Spiner begründete diesen Entschluss damit, dass er die Rolle des Androiden zwar all die Jahre sehr gerne gespielt habe, aber es schwer sei, die Spuren seines (Spiners) Alters noch mit Schminke zu vertuschen. Data sollte, laut Roddenberrys Vorstellungen zu Beginn der TV-Serie, nie altern. Zuerst überlegten Spiner und die Drehbuchschreiber, ob es möglich sei, dass Data eventuell doch altere und man dies in den Film einbauen könne, doch entschied man sich dann für Datas Tod. Man räumte Spiner eine Hintertür für ein Comeback ein. Dies tat man, indem man die Datentransferszene zwischen Data und B-4 einbaute und so quasi ein „Backup“ von Data machte. Spiner lehnte jedoch ein Comeback von vornherein ab.
+* [[Kate Mulgrew]] tritt in der Rolle der Admiral Kathryn Janeway als befehlsgebender Admiral via Bildschirm auf.
+
+== Kritik ==
+
+{{Zitat|Ein ohne erkennbare oder gar nachvollziehbare Begeisterung inszeniertes Science-Fiction-Abenteuer, das sich in populärphilosophischen Diskussionen über Identität verfängt. Die Attraktivität der Bilder, die Überzeugungskraft des Drehbuchs und die Leistung mancher Darsteller werden dabei sträflich vernachlässigt.|[[Lexikon des Internationalen Films]]&lt;ref&gt;[http://www.filmevonabisz.de/filmsuche.cfm?wert=519881&amp;sucheNach=titel Kritik im Lexikon des internationalen Films]&lt;/ref&gt;}}
+
+{{Zitat|‚Star Trek: Nemesis‘ ist besser als ‚[[Star Trek: Der Aufstand|Der Aufstand]]‘, aber schwächer als ‚[[Star Trek: Der erste Kontakt|Der erste Kontakt]]‘.|[[CINEMA]] Online&lt;ref&gt;[http://www.cinema.de/kino/news-und-specials/s/star-trek/filme/star-trek-nemesis,1300424,ApplicationMovie.html Kritik bei CINEMA Online]&lt;/ref&gt;}}
+
+== Auszeichnungen ==
+
+* 2003 wurde der Film in vier Kategorien, u. a. als Bester Science-fiction-Film, für den [[Saturn Award]] nominiert, konnte jedoch keinen Preis gewinnen.
+* Ebenfalls 2003 gewann der Film einen [[Young Artist Award]] in der Kategorie ''Best Family Feature Film – Fantasy''.
+
+== Einzelnachweise ==
+&lt;references /&gt;
+
+== Weblinks ==
+
+* {{IMDb Titel|tt0253754}}
+* {{rottentomatoes|star_trek_nemesis}}
+* {{Memory Alpha|Star_Trek:_Nemesis}}
+* [http://www.filmmusikwelt.de/index.php?D=60d1cd024986b51390444b1027776f02&amp;V=file&amp;file=2d2f67eb29bc1216b78e1ea42b11873c Besprechung der Filmmusik]
+* [http://www.mytrek.de/nemesis Filmrezension]
+
+{{Navigationsleiste Star Trek}}
+
+{{SORTIERUNG:Star Trek Nemesis}}
+
+[[Kategorie:Filmtitel 2002]]
+[[Kategorie:US-amerikanischer Film]]
+[[Kategorie:Science-Fiction-Film]]
+[[Kategorie:Star Trek|Nemesis]]
+
+[[bg:Стар Трек X: Възмездието]]
+[[ca:Star Trek X: Nèmesi]]
+[[cs:Star Trek: Nemesis]]
+[[en:Star Trek Nemesis]]
+[[es:Star Trek X: Némesis]]
+[[et:Star Trek: Nemesis]]
+[[fi:Star Trek: Nemesis]]
+[[fr:Star Trek : Nemesis]]
+[[he:מסע בין כוכבים 10: נמסיס]]
+[[hi:स्टार ट्रेक नेमेसिस]]
+[[hu:Star Trek – Nemezis]]
+[[it:Star Trek: La nemesi]]
+[[ja:ネメシス/S.T.X]]
+[[ms:Star Trek Nemesis]]
+[[nl:Star Trek: Nemesis]]
+[[pl:Star Trek: Nemesis]]
+[[pt:Star Trek Nemesis]]
+[[ro:Star Trek: Nemesis]]
+[[ru:Звёздный путь: Возмездие]]
+[[simple:Star Trek: Nemesis]]
+[[sv:Star Trek Nemesis]]
+[[uk:Зоряний шлях: Відплата]]
+[[zh:星际旅行X：复仇女神]]

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:ev="http://www.w3.org/2001/xml-events"
+        version="1.1" baseProfile="full"
+        width="800px" height="800px" viewBox="0 0 800 800"> <!-- dont change viewbox, and aspect ratio-->
+<!-- translate to -400 to 400  -->
+<g transform="translate(400,400)">
+
+    <text x='-378' y='30' font-size='90px'   style='fill:#ff0000' font-family='Courier New' >mephistopheles</text>
+    <text x='-84' y='300' font-size='85px'   style='fill:#ef1000' font-family='Courier New' transform='rotate(-90,-84,300)'>faust</text>
+    <text x='-68' y='97' font-size='50px'   style='fill:#788700' font-family='Courier New' >euch</text>
+    <text x='95' y='-48' font-size='46px'   style='fill:#6a9500' font-family='Courier New' transform='rotate(-90,95,-48)'>dich</text>
+    <text x='-56' y='-53' font-size='39px'   style='fill:#55aa00' font-family='Courier New' >mein</text>
+    <text x='-66' y='-50' font-size='35px'   style='fill:#45ba00' font-family='Courier New' transform='rotate(-90,-66,-50)'>margarete</text>
+    <text x='-26' y='-137' font-size='27px'   style='fill:#2ad500' font-family='Courier New' >geist</text>
+    <text x='5' y='192' font-size='24px'   style='fill:#21de00' font-family='Courier New' transform='rotate(-90,5,192)'>marthe</text>
+    <text x='57' y='111' font-size='22px'   style='fill:#1ce300' font-family='Courier New' >gehn</text>
+    <text x='-34' y='-85' font-size='22px'   style='fill:#1be400' font-family='Courier New' transform='rotate(-90,-34,-85)'>bist</text>
+    <text x='-22' y='-98' font-size='22px'   style='fill:#19e600' font-family='Courier New' >teufel</text>
+    <text x='130' y='156' font-size='21px'   style='fill:#18e700' font-family='Courier New' transform='rotate(-90,130,156)'>gretchen</text>
+    <text x='-148' y='-58' font-size='21px'   style='fill:#18e700' font-family='Courier New' >gern</text>
+    <text x='-32' y='162' font-size='21px'   style='fill:#17e800' font-family='Courier New' transform='rotate(-90,-32,162)'>hast</text>
+    <text x='52' y='65' font-size='21px'   style='fill:#16e900' font-family='Courier New' >gott</text>
+    <text x='151' y='-49' font-size='20px'   style='fill:#15ea00' font-family='Courier New' transform='rotate(-90,151,-49)'>fort</text>
+    <text x='22' y='156' font-size='20px'   style='fill:#15ea00' font-family='Courier New' >meinem</text>
+    <text x='151' y='110' font-size='20px'   style='fill:#15ea00' font-family='Courier New' transform='rotate(-90,151,110)'>herz</text>
+    <text x='121' y='-112' font-size='20px'   style='fill:#14eb00' font-family='Courier New' >frosch</text>
+    <text x='-100' y='-84' font-size='19px'   style='fill:#11ee00' font-family='Courier New' transform='rotate(-90,-100,-84)'>dein</text>
+    <text x='-54' y='211' font-size='19px'   style='fill:#10ef00' font-family='Courier New' >deine</text>
+    <text x='122' y='-130' font-size='18px'   style='fill:#0ff000' font-family='Courier New' transform='rotate(-90,122,-130)'>herrn</text>
+    <text x='47' y='135' font-size='18px'   style='fill:#0ff000' font-family='Courier New' >seid</text>
+    <text x='171' y='-50' font-size='18px'   style='fill:#0ff000' font-family='Courier New' transform='rotate(-90,171,-50)'>komm</text>
+    <text x='2' y='-166' font-size='18px'   style='fill:#0df200' font-family='Courier New' >herzen</text>
+    <text x='-128' y='-91' font-size='18px'   style='fill:#0cf300' font-family='Courier New' transform='rotate(-90,-128,-91)'>freund</text>
+    <text x='18' y='211' font-size='17px'   style='fill:#0bf400' font-family='Courier New' >siebel</text>
+    <text x='-56' y='155' font-size='17px'   style='fill:#0bf400' font-family='Courier New' transform='rotate(-90,-56,155)'>habt</text>
+    <text x='-26' y='-187' font-size='17px'   style='fill:#0bf400' font-family='Courier New' >meiner</text>
+    <text x='101' y='226' font-size='17px'   style='fill:#0bf400' font-family='Courier New' transform='rotate(-90,101,226)'>meinen</text>
+    <text x='66' y='88' font-size='17px'   style='fill:#0bf400' font-family='Courier New' >nein</text>
+    <text x='-33' y='-148' font-size='17px'   style='fill:#0bf400' font-family='Courier New' transform='rotate(-90,-33,-148)'>brust</text>
+    <text x='104' y='196' font-size='17px'   style='fill:#0af500' font-family='Courier New' >gewiß</text>
+    <text x='-102' y='-132' font-size='17px'   style='fill:#0af500' font-family='Courier New' transform='rotate(-90,-102,-132)'>busen</text>
+    <text x='161' y='63' font-size='17px'   style='fill:#0af500' font-family='Courier New' >altmayer</text>
+    <text x='85' y='-161' font-size='17px'   style='fill:#0af500' font-family='Courier New' transform='rotate(-90,85,-161)'>blut</text>
+    <text x='-219' y='66' font-size='17px'   style='fill:#0af500' font-family='Courier New' >deinen</text>
+    <text x='184' y='171' font-size='17px'   style='fill:#0af500' font-family='Courier New' transform='rotate(-90,184,171)'>himmel</text>
+    <text x='14' y='194' font-size='17px'   style='fill:#0af500' font-family='Courier New' >wagner</text>
+    <text x='-156' y='-108' font-size='17px'   style='fill:#09f600' font-family='Courier New' transform='rotate(-90,-156,-108)'>kraft</text>
+    <text x='-22' y='-205' font-size='17px'   style='fill:#09f600' font-family='Courier New' >hexe</text>
+    <text x='-163' y='-61' font-size='17px'   style='fill:#08f700' font-family='Courier New' transform='rotate(-90,-163,-61)'>erde</text>
+    <text x='182' y='101' font-size='17px'   style='fill:#08f700' font-family='Courier New' >sehn</text>
+    <text x='248' y='-51' font-size='17px'   style='fill:#08f700' font-family='Courier New' transform='rotate(-90,248,-51)'>natur</text>
+    <text x='165' y='-137' font-size='17px'   style='fill:#08f700' font-family='Courier New' >andern</text>
+    <text x='155' y='-132' font-size='16px'   style='fill:#07f800' font-family='Courier New' transform='rotate(-90,155,-132)'>geschehn</text>
+    <text x='87' y='-223' font-size='16px'   style='fill:#07f800' font-family='Courier New' >schönen</text>
+    <text x='65' y='-216' font-size='16px'   style='fill:#07f800' font-family='Courier New' transform='rotate(-90,65,-216)'>brander</text>
+    <text x='11' y='173' font-size='16px'   style='fill:#07f800' font-family='Courier New' >schöne</text>
+    <text x='172' y='-152' font-size='16px'   style='fill:#07f800' font-family='Courier New' transform='rotate(-90,172,-152)'>deinem</text>
+    <text x='-233' y='-60' font-size='16px'   style='fill:#07f800' font-family='Courier New' >hören</text>
+    <text x='128' y='-50' font-size='16px'   style='fill:#07f800' font-family='Courier New' transform='rotate(-90,128,-50)'>lieb</text>
+    <text x='-220' y='96' font-size='16px'   style='fill:#07f800' font-family='Courier New' >getan</text>
+    <text x='209' y='-45' font-size='16px'   style='fill:#07f800' font-family='Courier New' transform='rotate(-90,209,-45)'>drum</text>
+    <text x='161' y='80' font-size='16px'   style='fill:#07f800' font-family='Courier New' >ewig</text>
+    <text x='-45' y='-210' font-size='16px'   style='fill:#07f800' font-family='Courier New' transform='rotate(-90,-45,-210)'>tritt</text>
+    <text x='110' y='172' font-size='16px'   style='fill:#06f900' font-family='Courier New' >singt</text>
+    <text x='-179' y='-104' font-size='16px'   style='fill:#06f900' font-family='Courier New' transform='rotate(-90,-179,-104)'>schön</text>
+    <text x='-147' y='-185' font-size='16px'   style='fill:#06f900' font-family='Courier New' >glück</text>
+    <text x='45' y='-242' font-size='16px'   style='fill:#06f900' font-family='Courier New' transform='rotate(-90,45,-242)'>chor</text>
+    <text x='-203' y='117' font-size='16px'   style='fill:#06f900' font-family='Courier New' >seht</text>
+    <text x='12' y='-245' font-size='16px'   style='fill:#06f900' font-family='Courier New' transform='rotate(-90,12,-245)'>mußt</text>
+    <text x='91' y='-188' font-size='15px'   style='fill:#05fa00' font-family='Courier New' >lust</text>
+    <text x='190' y='-158' font-size='15px'   style='fill:#05fa00' font-family='Courier New' transform='rotate(-90,190,-158)'>herein</text>
+    <text x='69' y='-242' font-size='15px'   style='fill:#05fa00' font-family='Courier New' >seele</text>
+    <text x='152' y='148' font-size='15px'   style='fill:#05fa00' font-family='Courier New' transform='rotate(-90,152,148)'>faßt</text>
+    <text x='-63' y='192' font-size='15px'   style='fill:#04fb00' font-family='Courier New' >fühl</text>
+    <text x='-207' y='-82' font-size='15px'   style='fill:#04fb00' font-family='Courier New' transform='rotate(-90,-207,-82)'>drängt</text>
+    <text x='-49' y='-269' font-size='15px'   style='fill:#04fb00' font-family='Courier New' >könnt</text>
+    <text x='-230' y='108' font-size='15px'   style='fill:#04fb00' font-family='Courier New' transform='rotate(-90,-230,108)'>stimme</text>
+    <text x='-153' y='-162' font-size='15px'   style='fill:#04fb00' font-family='Courier New' >sinn</text>
+    <text x='54' y='-54' font-size='15px'   style='fill:#04fb00' font-family='Courier New' transform='rotate(-90,54,-54)'>wein</text>
+    <text x='-244' y='133' font-size='15px'   style='fill:#04fb00' font-family='Courier New' >nieder</text>
+    <text x='-99' y='-208' font-size='15px'   style='fill:#03fc00' font-family='Courier New' transform='rotate(-90,-99,-208)'>liebchen</text>
+    <text x='4' y='-228' font-size='15px'   style='fill:#03fc00' font-family='Courier New' >dran</text>
+    <text x='-120' y='-215' font-size='15px'   style='fill:#03fc00' font-family='Courier New' transform='rotate(-90,-120,-215)'>siehst</text>
+    <text x='183' y='-89' font-size='15px'   style='fill:#03fc00' font-family='Courier New' >heut</text>
+    <text x='-203' y='193' font-size='15px'   style='fill:#03fc00' font-family='Courier New' transform='rotate(-90,-203,193)'>feuer</text>
+    <text x='-182' y='-202' font-size='15px'   style='fill:#03fc00' font-family='Courier New' >heil</text>
+    <text x='28' y='-255' font-size='15px'   style='fill:#03fc00' font-family='Courier New' transform='rotate(-90,28,-255)'>weib</text>
+    <text x='-56' y='265' font-size='15px'   style='fill:#03fc00' font-family='Courier New' >freude</text>
+    <text x='-194' y='-168' font-size='15px'   style='fill:#03fc00' font-family='Courier New' transform='rotate(-90,-194,-168)'>kannst</text>
+    <text x='11' y='273' font-size='15px'   style='fill:#03fc00' font-family='Courier New' >tausend</text>
+    <text x='-26' y='-208' font-size='15px'   style='fill:#03fc00' font-family='Courier New' transform='rotate(-90,-26,-208)'>hinein</text>
+    <text x='81' y='260' font-size='15px'   style='fill:#03fc00' font-family='Courier New' >deiner</text>
+    <text x='139' y='-141' font-size='15px'   style='fill:#03fc00' font-family='Courier New' transform='rotate(-90,139,-141)'>sieh</text>
+    <text x='-55' y='236' font-size='15px'   style='fill:#02fd00' font-family='Courier New' >herren</text>
+    <text x='-250' y='106' font-size='15px'   style='fill:#02fd00' font-family='Courier New' transform='rotate(-90,-250,106)'>sinnen</text>
+    <text x='201' y='-121' font-size='15px'   style='fill:#02fd00' font-family='Courier New' >hölle</text>
+    <text x='-225' y='-104' font-size='15px'   style='fill:#02fd00' font-family='Courier New' transform='rotate(-90,-225,-104)'>heran</text>
+    <text x='-1' y='244' font-size='15px'   style='fill:#02fd00' font-family='Courier New' >meer</text>
+    <text x='-245' y='-72' font-size='15px'   style='fill:#02fd00' font-family='Courier New' transform='rotate(-90,-245,-72)'>glas</text>
+    <text x='39' y='227' font-size='15px'   style='fill:#02fd00' font-family='Courier New' >füßen</text>
+    <text x='-176' y='183' font-size='15px'   style='fill:#02fd00' font-family='Courier New' transform='rotate(-90,-176,183)'>wollt</text>
+    <text x='155' y='233' font-size='15px'   style='fill:#02fd00' font-family='Courier New' >welch</text>
+    <text x='217' y='191' font-size='15px'   style='fill:#02fd00' font-family='Courier New' transform='rotate(-90,217,191)'>liebt</text>
+    <text x='0' y='-120' font-size='15px'   style='fill:#02fd00' font-family='Courier New' >menge</text>
+    <text x='117' y='-93' font-size='15px'   style='fill:#02fd00' font-family='Courier New' transform='rotate(-90,117,-93)'>lied</text>
+    <text x='106' y='237' font-size='15px'   style='fill:#02fd00' font-family='Courier New' >andre</text>
+    <text x='-178' y='224' font-size='14px'   style='fill:#01fe00' font-family='Courier New' transform='rotate(-90,-178,224)'>licht</text>
+    <text x='-27' y='280' font-size='14px'   style='fill:#01fe00' font-family='Courier New' >halb</text>
+    <text x='-214' y='-152' font-size='14px'   style='fill:#01fe00' font-family='Courier New' transform='rotate(-90,-214,-152)'>tier</text>
+    <text x='54' y='243' font-size='14px'   style='fill:#01fe00' font-family='Courier New' >tiere</text>
+    <text x='-65' y='-243' font-size='14px'   style='fill:#01fe00' font-family='Courier New' transform='rotate(-90,-65,-243)'>hört</text>
+    <text x='74' y='-204' font-size='14px'   style='fill:#01fe00' font-family='Courier New' >sollt</text>
+    <text x='-262' y='-51' font-size='14px'   style='fill:#01fe00' font-family='Courier New' transform='rotate(-90,-262,-51)'>fenster</text>
+    <text x='167' y='215' font-size='14px'   style='fill:#01fe00' font-family='Courier New' >geister</text>
+    <text x='-161' y='161' font-size='14px'   style='fill:#01fe00' font-family='Courier New' transform='rotate(-90,-161,161)'>trank</text>
+    <text x='188' y='136' font-size='14px'   style='fill:#01fe00' font-family='Courier New' >ward</text>
+    <text x='-159' y='219' font-size='14px'   style='fill:#01fe00' font-family='Courier New' transform='rotate(-90,-159,219)'>willst</text>
+    <text x='231' y='82' font-size='14px'   style='fill:#01fe00' font-family='Courier New' >möcht</text>
+    <text x='167' y='125' font-size='14px'   style='fill:#01fe00' font-family='Courier New' transform='rotate(-90,167,125)'>lebt</text>
+    <text x='229' y='129' font-size='14px'   style='fill:#01fe00' font-family='Courier New' >geschwind</text>
+    <text x='-9' y='-224' font-size='14px'   style='fill:#01fe00' font-family='Courier New' transform='rotate(-90,-9,-224)'>hilft</text>
+    <text x='215' y='-156' font-size='14px'   style='fill:#01fe00' font-family='Courier New' >valentin</text>
+    <text x='206' y='-159' font-size='14px'   style='fill:#01fe00' font-family='Courier New' transform='rotate(-90,206,-159)'>morgen</text>
+    <text x='157' y='197' font-size='14px'   style='fill:#01fe00' font-family='Courier New' >laßt</text>
+    <text x='-136' y='-216' font-size='14px'   style='fill:#00ff00' font-family='Courier New' transform='rotate(-90,-136,-216)'>zieht</text>
+    <text x='-64' y='176' font-size='14px'   style='fill:#00ff00' font-family='Courier New' >leibe</text>
+    <text x='273' y='-49' font-size='14px'   style='fill:#00ff00' font-family='Courier New' transform='rotate(-90,273,-49)'>schauen</text>
+    <text x='260' y='63' font-size='14px'   style='fill:#00ff00' font-family='Courier New' >sitzt</text>
+    <text x='173' y='-230' font-size='14px'   style='fill:#00ff00' font-family='Courier New' transform='rotate(-90,173,-230)'>armen</text>
+    <text x='113' y='217' font-size='14px'   style='fill:#00ff00' font-family='Courier New' >lieben</text>
+    <text x='131' y='-237' font-size='14px'   style='fill:#00ff00' font-family='Courier New' transform='rotate(-90,131,-237)'>stehn</text>
+    <text x='189' y='121' font-size='14px'   style='fill:#00ff00' font-family='Courier New' >gebt</text>
+    <text x='232' y='179' font-size='14px'   style='fill:#00ff00' font-family='Courier New' transform='rotate(-90,232,179)'>eins</text>
+    <text x='-51' y='250' font-size='14px'   style='fill:#00ff00' font-family='Courier New' >hätt</text>
+    <text x='262' y='165' font-size='14px'   style='fill:#00ff00' font-family='Courier New' transform='rotate(-90,262,165)'>leib</text>
+    <text x='53' y='-292' font-size='14px'   style='fill:#00ff00' font-family='Courier New' >schmuck</text>
+</g>
+
+</svg>
+
+<!-- size = 1023 (should be <= 800, otherwise change viewbox and translate param in svg -->

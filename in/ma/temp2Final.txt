@@ -1,0 +1,2698 @@
+Einleitung
+Das Teilen von Informationen ist ein Grundgedanke des WWW.
+Keine andere Technologie hat in den letzten Jahren die Art und Weise wie Menschen
+mit Informationen umgehen so stark verändert.
+Im WWW verbinden Hyperlinks verschiedene Dokumente, 
+wodurch sie zueinander in Beziehung gebracht werden. 
+Als nächsten Schritt können nun die Daten miteinander verknüpft werden.
+Im klassischen WWW werden Daten einfach als Tabellen, Grafiken oder Downloads angeboten
+und weisen keinen semantischen Bezug zueinander auf.
+Folglich ist ein aktuelles Konzept zur Weiterentwicklung des WWW der Aufbau eines
+semantischen Webs.
+Informationen und Daten können im WWW nur von Menschen wahrgenommen und in Zusammenhang gebracht werden.
+Beispielsweise erkennt ein Mensch beim Lesen des Wikipedia Artikels über
+Ilmenau (vergleiche), dass Ilmenau in Thüringen liegt und eine
+Universitätsstadt ist.
+Das semantische Web verfolgt den Ansatz solche Zusammenhänge in einer Form darzustellen, die auch
+von Maschinen verarbeitet werden können.
+Einer der Mitbegründer des WWW -- Tim Berners-Lee -- legte in Regeln des semantischen 
+Webs als 'Linked Data principles' fest. 
+Demzufolge sind Linked Data dadurch gekennzeichnet,
+dass die Daten durch URI identifizierbar sind.
+Außerdem müssen sie mit dem HTTP-Protokoll erreichbar sein.
+Weiterhin werden Anfragen mittels SPARQL oder RDF realisiert.
+Die Anfrageergebnisse enthalten wiederum Links zu weiteren nützlichen Informationen.
+Wenn diese Linked Data frei verfügbar sind, so spricht man von LOD.
+Es gibt viele Projekte, welche \acs{LOD} zur Verfügung stellen.
+Die Abbildung~ zeigt einen Ausschnitt bekannter LOD-Projekte.
+\dbpedia{} ist zum Beispiel eines der größten Projekte, welches die semantischen Informationen
+des Wikipedia-Projekts als Linked-Open-Data zur Verfügung stellt.
+Weiterhin existieren auch noch andere Projekte (beispielsweise Friend-of-a-Friend),
+die LOD zur Verfügung stellen. 
+Insgesamt gibt es ungefähr 62~Milliarden öffentliche 
+RDF-Tripel\footnote{\url{http://stats.lod2.eu}, Stand 11.08.2013, Datenbasis: 870 verschiedene LOD-Projekte}, 
+wobei die englische Version von \dbpedia{} 
+circa 470~Millionen Tripel\footnote{\url{http://wiki.dbpedia.org/Datasets}, Stand 11.08.2013, 
+dort beschrieben als Fakten} umfasst.
+Verarbeitung von Linked-Open-Data
+Die Verarbeitung von Linked-Open-Data stellt, allein durch die enorme Datenmenge, neue Herausforderungen
+an Datenbanksysteme. Große Datenmengen werden bei typischen SPARQL-Anfragen 
+ausgewertet. Dabei sind sie meist als
+RDF-Tripel, bestehend aus Subjekt-Prädikat-Objekt, gespeichert.
+Verschiedene Ansätze und Konzepte haben sich für die LOD-Verarbeitung bisher etabliert.
+Beispielsweise gibt es die Möglichkeit die als RDF-Tripel gespeicherten 
+Datensätze in einer relationalen Datenbank zu speichern und
+anschließend per Transformation der SPARQL-Anfragen zu relationalen SQL-Anfragen die erforderlichen
+Ergebnisse zu ermitteln (vergleiche). 
+Der Einsatz einer relationalen Datenbank unterliegt dabei aber 
+den speziell auf RDF-Tripeln optimierten Datenbanksystemen, wie zum Beispiel
+AllegroGraph (vergleiche).
+Konventionelle relationale Datenbanken sind nur bedingt für RDF-Tripel geeignet,
+da sie weitere, auch für relationale Datenbanksysteme, wichtige Konzepte 
+(wie zum Beispiel Transaktionsmanagement, Logging,...)
+verwenden, welche aber bei der RDF-Verarbeitung keine Rolle spielen. Dadurch wird
+die Verarbeitungsgeschwindigkeit drastisch reduziert.
+Hauptsächlich werden bei der LOD-Verarbeitung Lese-Anfragen an das Datenbanksystem 
+gestellt.
+Ein weiterer Punkt bei herkömmlichen Datenbanksystemen ist die Notwendigkeit, Daten
+auf Festspeicher abzulegen und teilweise dort zu verarbeiten.
+Dagegen kann heutzutage die ist ein Element inmemory Verarbeitung einen erheblichen Geschwindigkeitsvorteil
+bringen.
+Aktuelle Server-Systeme können bereits sehr große Datenmengen 
+ist ein Element inmemory verarbeiten, zum Beispiel sind in naher Zukunft Hauptspeicher-Größen von 12~TB 
+und mehr möglich.
+Daher ist es unter Umständen gar nicht notwendig, die Daten auf einer Festplatte zu speichern beziehungsweise
+die Verarbeitung in Teilmengen der Daten stattfinden zu lassen. 
+Natürlich benötigt ein reines ist ein Element inmemory Datenbanksystem auch Möglichkeiten Daten dauerhaft 
+auf Primärspeicher abzulegen (Recovery/Backup-Strategien vergleiche).
+Im Gegensatz zur herkömmlichen Verarbeitung der Daten, stellt die ist ein Element inmemory Verarbeitung neue Anforderungen
+an das Datenbanksystem. 
+Zum Beispiel müssen Datenstrukturen benutzt werden, die sparsam mit dem Hauptspeicher umgehen und nach Möglichkeit
+Kompressionsverfahren anwenden. Weiterhin soll der Geschwindigkeitsvorteil der ist ein Element inmemory Verarbeitung nicht verloren gehen.
+Das bedeutet also ein ständiger Kompromiss aus Geschwindigkeit und Hauptspeicherbedarf.
+Problemstellung und Motivation
+Im Rahmen dieser Arbeit sollen für einen bestehenden modernen C++-Prototypen eines RDF-Stores (\pname)
+Performancesteigerungen durch Ausnutzung von moderner Hardware-Features realisiert werden.
+Das \pname-Projekt stellt Möglichkeiten zur komprimierten ist ein Element inmemory
+Verarbeitung von SPARQL-Lese-Anfragen bereit. 
+Zunächst soll eine genaue Analyse des Projektes durchgeführt werden, um Performance- und Speicherengstellen
+zu finden. Es wurden bereits Vorkehrungen für die parallelisierte Verarbeitung der Daten getroffen, welche
+genauer untersucht werden sollen. 
+Besonders die verwendeten Operatoren für Scan-, Join- und Filter-Aufgaben sowie benutzten Datenstrukturen sollen
+im Bezug auf die Möglichkeiten moderner Rechnerarchitekturen (Parallelisierung, Memory-Layout (NUMA), Vektorisierung (SSE),
+Cache-Awareness, vergleiche) analysiert werden.
+Aufbauend auf der Analyse sollen kleine
+Testszenarien betrachtet werden, um das Potential verschiedener Optimierungsansätze abschätzen zu können. 
+Außerdem soll auch ein Vergleich mit dem technisch realisierbaren optimalen Fall durchgeführt werden.
+Nach den experimentellen Tests sollen im CameLOD-Projekt an den entsprechenden Stellen 
+Erweiterungen vorgenommen werden,
+so dass beispielsweise ein Geschwindigkeitszuwachs beim Verarbeiten von Datenmengen des \dbpedia{} Projektes erzielt werden kann. Die Erweiterungen zielen aber nicht nur auf zeit"-effizientere Verarbeitung sondern 
+ebenso auf Speichereffizienz ab. Daher sollen auch Möglichkeiten zur Verbesserung der Kompression und 
+Auslagerung (mittels Memory-Mapped-Files) der Daten betrachtet werden.
+Besonders wichtig ist weiterhin, dass der Geschwindigkeitszuwachs möglichst 
+Speicherplatz schonend ist. Eine Optimierung, 
+die sehr viel Speicher kostet, hätte nur wenig Vorteile für die
+ist ein Element inmemory Verarbeitung großer Datenmengen.
+Grundlegend muss also bei den Optimierungen ein ständiger Kompromiss aus Speichereffizienz
+und Performance gefunden werden.
+Aufbauend auf den implementierten Optimierungen im Projekt soll abschließend 
+eine Evaluierung, welche die Daten des \dbpedia{} Projektes als Grundlage benutzt, durchgeführt werden.
+Mittels dieser RDF-Daten sollen Mikrobenchmarks auf einem Serversystem ausgeführt
+und mit der nicht optimierten Variante verglichen werden.
+Insgesamt soll das CameLOD-Projekt als Ergebnis dieser Arbeit effizienter im Sinne des Speicherplatzbedarfs
+und der Verarbeitungsgeschwindigkeit werden.
+Aufbau
+In Kapitel~ sollen zunächst einige grundlegende aktuelle Techniken für
+die ist ein Element inmemory Verarbeitung von LOD, moderne CPU-Architekturen, Kompressionstechniken 
+und einige Begriffe beschrieben werden. Anschließend
+wird in Kapitel~ das CameLOD-Projekt, das Analysewerkzeug und das Referenzsystem, welches für 
+alle Messungen benutzt wird, genau dargestellt.
+Im Abschnitt~ wird das CameLOD-System analysiert und 
+Verbesserungsideen werden darauf aufbauend geschlussfolgert.
+Die Ideen sollen in Kapitel~ mittels Referenzimplementierung 
+verbesserter Verfahren und Mini-Benchmarks evaluiert und anschließend 
+in das CameLOD-Projekt integriert werden.
+Am Ende der Arbeit in Kapitel~ werden mittels Benchmarks 
+die integrierten Optimierungen mit der ursprünglichen
+Version des CameLOD-Projekts verglichen. Abschließend folgt in 
+Abschnitt~ ein Fazit.
+\enlargethispage{\baselineskip}
+\hide{
+\note{Einleitungskapitel soll nicht wesentlich länger werden}
+ Inhalt im Einleitungskapitel:
+ LOD- Beispiel \surd
+ Notwendigkeit für LOD-Verarbeitung
+ ist ein Element inmemory 
+ Warum keine bereits vorhandenen Lösungen einsetzen
+ Problematik: CPU-Entwicklung -> Ausnutzung in der Software?
+ Datengrundlage: \surd
+}
+Stand der Technik 
+In diesem Kapitel werden kurz die aktuellen Entwicklungen 
+in den Themenbereichen SPARQL und RDF-Verarbeitung, ist ein Element inmemory Datenbanksysteme, moderne Rechnerarchitekturen
+und Kompressionsverfahren für Datenbanksysteme beschrieben.
+Insbesondere sollen bei der Beschreibung auch moderne Ansätze für die jeweiligen Probleme 
+kurz dargestellt werden. 
+SPARQL und RDF-Daten
+SPARQL und RDF sind zentrale Begriffe des semantischen Webs.
+SPARQL ist die vom W3C festgelegte Anfragesprache zur Verarbeitung von RDF-Daten
+\footnote{\url{http://www.w3.org/standards/semanticweb/query}, Stand 03.10.2013}.
+RDF-Daten können als Graph dargestellt werden und stellen Aussagen der Form Subjekt-Prädikat-Objekt dar.
+Strukturell ergeben sich dabei ähnliche Graphen wie in Abbildung~ dargestellt.
+Dabei sind Kantenbezeichnungen immer Prädikate, also Beschreibungen, die
+ein spezielles Subjekt mit einem anderen Objekt in Beziehung setzen.
+Ein Ansatz zur Verarbeitung von RDF-Daten ist, sie als globale Tabelle bestehend 
+aus Tripeln zu speichern (vergleiche). Dabei ist die Tripel"=Repräsentation
+nur eine von vielen Möglichkeiten. Es kann zum Beispiel auch eine Darstellung mittels XML 
+erfolgen.
+Die Tripel"=Darstellung kann direkt aus dem Graphen abgeleitet werden.
+Jedes Tripel repräsentiert dabei einen Fakt bestehend aus
+Subjekt, Prädikat und Objekt.
+Beispielsweise ist in \dbpedia{} das Tripel
+	[S] \lstinline[language=XML]<http://dbpedia.org/resource/Star_Trek:_Enterprise>
+	[P] \lstinline[language=XML]<http://dbpedia.org/ontology/abstract>
+	[O] "'Star Trek: Enterprise (originally titled simply Enterprise...."'
+zu finden. Als Subjekt wurde ein konkreter Film festgelegt. 
+Das Prädikat beschreibt hingegen, dass im Objektteil eine Kurzfassung des Films dargestellt wird. 
+Bei der Verarbeitung von RDF-Daten mittels SPARQL Anfragen müssen 
+die Besonderheiten der Daten berücksichtigt werden. Dazu zählen die Tripel-Darstellung,
+die enormen Datenmengen (vergleiche das \dbpedia{}-Projekt) sowie die globale Sicht auf die Daten.
+In werden neben einer relationalen Algebradefinition 
+für SPARQL auch Transformationen zu SQL beschrieben.
+Dadurch ist erkenntlich, dass SPARQL-Anfragen auf RDF-Daten 
+mittels relationaler Datenbanken realisiert werden können.
+Problematisch an dem Ansatz ist, dass allgemeine relationale Datenbanksysteme
+die Kerneigenschaften der RDF-Daten nicht ausnutzen. 
+Daher sollen kurz die besonderen Eigenschaften der RDF-Daten zusammengefasst werden.
+Eigenschaften und Anfragen von RDF-Daten
+Ein RDF-Graph kann als eine globale Tabelle mit 
+drei Spalten (Subjekt, Prädikat und Objekt) betrachtet werden.
+Insgesamt gibt es weniger Prädikatwerte als Objektwerte oder Subjektwerte, da sie Eigenschaften
+darstellen und mehrfache Anwendung finden.
+Die Prädikatwerte und Subjektwerte weisen, durch ihre Darstellung als URI, häufig
+eine Präfixübereinstimmung auf.
+Anfragen werden durch Selektion der globalen Tabelle oder 
+per Joins realisiert, für einige Anfragetypen müssen 
+sogenannte Star-Joins verwendet werden. 
+Sie dienen dem Auffinden spezieller
+BGP\footnote{vergleiche \url{http://www.w3.org/TR/sparql11-query/\#GraphPattern}, Stand 28.10.2013}.
+BGP sind dabei mehrere Tripel-Muster, die im Graphen gefunden werden sollen.
+Die globale Tabelle umfasst sehr viele Zeilen, da
+der Graph in einer Tripeldarstellung gespeichert wird. Es gibt aber auch Varianten, 
+bei denen andere Darstellungen verwendet werden.
+Grundlegend werden beim Ansatz des semantischen Webs viele Lese-Anfragen durchgeführt. Daher 
+sind Einfüge und Update-Anfragen von geringerer Bedeutung.
+RDF-Stores
+Es gibt bereits eine Vielzahl von RDF-Stores, welche verschiedene 
+technische Ansätze verwenden.
+In wurden verschiedene RDF-Datenbankansätze 
+verglichen. Darunter finden sich keine reinen ist ein Element inmemory Lösungen, aber
+RDF-Lösungen, die Möglichkeiten bieten, Daten ist ein Element inmemory zu speichern, zum Beispiel
+Jena\footnote{zu finden unter \url{http://jena.apache.org}, Stand 07.10.2013} und
+Sesame\footnote{zu finden unter \url{http://www.openrdf.org/}, Stand 07.10.2013}.
+Grundlegend können aber auch diese Lösungen insgesamt nicht überzeugen,
+da sie nur Wege bieten die Daten unkomprimiert ist ein Element inmemory zu halten, weil sie beispielsweise
+Schnittstellen zur Verfügung stellen müssen mittels Disk-Speicherung zu arbeiten (über relationale 
+Datenbanksysteme oder eigene Triple-Storages).
+Daher können die beiden Stores keine Vorteile der reinen ist ein Element inmemory Verarbeitung ausnutzen, 
+wie etwa eine Kompression der Daten.
+Demzufolge erfüllen die dort dargestellten RDF-Stores nicht die Anforderungen.
+Es gibt noch weitere Projekte welche von Interesse sind, zum Beispiel RDFHDT, Hexastore, BitMat 
+und RDF-3X. Sie sollen im folgenden Abschnitt kurz betrachtet werden.
+RDFHDT
+Das RDFHDT-Projekt\footnote{zu finden unter \url{http://www.rdfhdt.org/}, Stand 11.10.2013}
+stellt Möglichkeiten der komprimierten Speicherung und Verarbeitung von großen RDF-Datensätzen bereit.
+Die RDF-Daten werden bei RDFHDT in der Form HDT gespeichert (vergleiche).
+HDT steht dabei für die Abkürzung Header, Dictionary und Triples und beschreibt die 
+Hauptkomponenten der Speicherung.
+Der Header beinhaltet dabei Metainformationen für den RDF-Graph.
+Das Dictionary übernimmt die Aufgabe eines Katalogs für alle Bezeichnungen des Graphs.
+Und die Tripel-Komponente stellt eine kompakte Darstellung der gespeicherten Tripel dar.
+Der Aufbau der komprimierten Datenstruktur erfolgt dabei in mehreren Schritten, 
+dargestellt in Grafik~. Zunächst werden RDF-Statistiken erzeugt und
+anschließend das Wörterbuch aufgebaut. Im letzten Schritt werden die Tripels mit 
+Hilfe des Wörterbuchs dargestellt. 
+Die HDT-Repräsentation der RDF-Daten stellt eine Wörterbuchkompression dar und erzielt 
+somit gute Kompression. Die Kompressionsraten sind nach sogar besser
+als herkömmliche Verfahren wie gzip, bzip2 oder ppmdi.
+Die Anfrageverarbeitung des HDT-FoQ-Stores (beschrieben in) bei RDFHDT erfolgt ist ein Element inmemory.
+Dabei werden beim Laden der Daten verschiedene Indizes aufgebaut, dazu zählen ein OP-S-Index, 
+ein PS-O-Index und ein SP-O-Index. Dadurch können die Anfragen direkt auf den sortierten Indizes ausgeführt werden.
+Die Operatoren sind nicht parallelisiert und die Anfragen erfolgen auf dem jeweiligen kompletten Index.
+In werden Benchmarks mit anderen RDF-Stores dargestellt. Insgesamt
+zeigt RDFHDF gute Eigenschaften beim Laden und Austausch von RDF-Daten und bei Anfragen
+kann die dargestellte ist ein Element inmemory Lösung (HDT-FoQ) Verbesserungen bei großen Datenmengen erzielen. 
+Hexastore
+Der in beschriebene Hexastore ist ein RDF-Store, welcher
+für jede Sortierreihenfolge (SPO, SOP, PSO, POS, OPS, OSP) einen Index zur Verfügung stellt.
+Zur Speicherung der Indizes wird ebenfalls ein Wörterbuchansatz verwendet, so dass die Indizes 
+nur noch aus Schlüsseln bestehen. Es werden im Index Listen aufgebaut, welche 
+untereinander geteilt werden. Somit kann gesichert werden, dass insgesamt nicht
+der 6-fache Speicher benötigt wird.
+In Abbildung~ ist allgemein die Speicherung des SPO-Index dargestellt.
+Ein Subjekt-Wert (s) steht mit einer sortierten Prädikatliste (p_1,...,p_x) in Verbindung.
+Jedes Prädikat ist mit einer Liste von Objekten (o_{11},... beziehungsweise o_{x1},...,o_{xy}) verknüpft.
+Die Objektlisten werden mit dem PSO-Index geteilt. Analog sind auch die anderen Indizes aufgebaut.
+Insgesamt kann durch das Teilen von gleichen Informationen eine gute Kompression erzielt werden, 
+auch wenn 6 Indizes angelegt werden.
+Im Vergleich zur Verwendung eines Indizes (PSO) benötigt die Hexastore-Variante ungefähr 4 mal so viel Hauptspeicher, kann aber durch die Indizierung einen erheblichen Geschwindigkeitsvorteil erzielen.
+In werden keine Aussagen zur Ausnutzung von mehreren CPUs des Testsystems dargestellt (das angegebene Testsystem benutzt nur einem Dual-Core-CPU).
+Der verwendete Prototyp in der Evaluierung wurde in Python implementiert.
+Zur genauen Implementierung und den verwendeten Python-Datenstrukturen werden keine Informationen angegeben,.
+Zusätzlich ist die Implementierung nicht öffentlich zugänglich. Daher kann schlecht abgeschätzt werden,
+ob im System Parallelisierung oder moderne CPU-Features benutzt werden.
+BitMat
+Als ein weiterer Ansatz zur Speicherung und Verarbeitung von RDF-Daten soll das BitMat-Projekt 
+betrachtet werden. In wird der Aufbau beschrieben.
+BitMat ist ein ist ein Element inmemory Store für RDF-Tripels. 
+Die RDF-Tripel werden als 3-dimensionale Matrix betrachtet (Bit-Cube).
+Für jedes Prädikat wird eine 2-dimensionale Matrix von Subjekt- und Objekt-Werten gespeichert.
+Ein Bit in der Matrix stellt dabei die Anwesenheit beziehungsweise Abwesenheit 
+des Tripels dar. Durch die Bit-Matrix-Datenstruktur sind Join Operationen
+mit einfachen Bitoperationen (AND und OR) durchführbar.
+Zur Kompression der Bit-Vektoren der Matrix 
+benutzt das BitMat-Projekt D-gap. 
+D-gap ist eine Form der Run-Length-Encodierung für dünn besetzte Bit-Vektoren.
+Es können für die Bit-Vektoren gute Kompressionsergebnisse erzielt werden.
+Beispielsweise wird in ein Datensatz UniProt (mit 200k Tripel)
+in einer BitMatrix komprimiert und somit ein Speicherbedarf von 1.4~MB erzielt.
+RDF-3X
+RDF-3x\footnote{zu finden unter \url{http://www.mpi-inf.mpg.de/~neumann/rdf3x/}, Stand 13.10.2013}
+ist der letzte RDF-Ansatz der betrachtet werden soll.
+In wird der Aufbau des Projekts beschrieben.
+Hauptsächlich wird ein Wörterbuch benutzt und 6 Indizes für die Tripel in komprimierten B^+-Bäumen 
+gespeichert. Nach einem eigenen byte-orientierten Kompressionsschema werden die Tripel im jeweiligen Index gespeichert. 
+Durch den index-all Ansatz kann für jedes Anfrage-Tripel-Muster ein passender Index gefunden werden und die Verarbeitung anschließend auf den sortierten Indizes erfolgen. 
+Operatoren werden hauptsächlich auf den durch das Wörterbuch bereitgestellten Integer-Keys durchgeführt.
+Spezielle parallelisierte Operatoren sind nicht vorhanden.
+Schlussfolgerung
+Die vier vorgestellten ist ein Element inmemory Ansätze zur Speicherung und Verarbeitung 
+von RDF-Daten benutzen alle Indizierung und Kompression.
+Bei den betrachteten Ansätzen wird kein Fokus auf die Ausnutzung moderner Hardware-Features gelegt.
+RDFHDF zeigt zwar gute Kompressionseigenschaften jedoch kann die Anfrageverarbeitung nicht überzeugen.
+Es ist somit eher als Austauschformat für RDF-Daten geeignet, was auch eines der Kernziele des Projekts ist.
+Hexastore ist ein index-all System und erzeugt einen viel zu großen Overhead bei der Speicherung.
+Auch stehen keine tiefgründigen Informationen über die Implementierung zur Verfügung. Es stellt insgesamt nur 
+ein experimentelles System dar. Parallelisierung und moderne CPU-Architekturen wurden nicht speziell 
+betrachtet.
+BitMat benutzt eine Run-Length-Kodierung um den benötigten Bit-Cube für die Speicherung aller 
+RDF-Tripel zu komprimieren. Die Anfrageverarbeitung kann mittels logischer Bit-Operatoren durchgeführt 
+werden. Es ist nicht erkenntlich, in welcher Form BitMat speziell auf Multi-Core Architekturen 
+optimiert wurde.
+RDF-3X ist auch ein index-all System. Alle Benchmark-Ergebnisse wurden auf 
+einem Dual-Core System durchgeführt. Aus diesem Grund ist erkenntlich, dass 
+keine Optimierung bezüglich hochgradiger Parallelisierung oder moderner Hardware
+angedacht ist.
+Zusammenfassend stellen die betrachteten Ansätze gute und neue Ideen für die RDF"=Ver"-arbeit"-ung bereit,
+benutzen aber wenige beziehungsweise keine expliziten moderne CPU"=Features, wie zum Beispiel Parallelisierung
+oder Vektorisierung.
+Die dargestellten RDF-Stores konnten nicht überzeugen, da sie die für diese Arbeit wichtigen Kriterien 
+Kompression, ist ein Element inmemory Verarbeitung und Verwendung moderne CPU-Features nicht vollständig erfüllen.
+Die Verarbeitung von RDF-Daten kann aber durch den Einsatz der genannten Kriterien effizienter erfolgen.
+Moderne Rechnerarchitekturen
+Die Verarbeitung von großen Datenmengen kann durch moderne Rechnerarchitekturen 
+profitieren. Folglich soll im nächsten Abschnitt kurz auf die Entwicklungen bezüglich der
+CPU-Architekturen und des Hauptspeichers eingegangen werden.
+CPUs
+In erster Linie sollen im Folgenden moderne Intel-CPUs und CPU-Konzepte betrachtet
+werden.
+Allgemein bieten modernen CPU-Architekturen einen 64-Bit Befehlssatz.
+Sie sind also für 64-Bit Operationen optimiert und bieten zusätzlich verschiedene Erweiterungen.
+Parallelisierung
+Die aktuellen CPU-Technologien sind Multi-Core-Architekturen.
+Allgemein gibt es dabei verschiedene Ansätze. Zum einen kann 
+ein Multi-Core-System aus mehreren physikalischen CPUs bestehen oder aber
+es befinden sich mehrere CPU-Kerne auf einer physikalischen CPU.
+Außerdem sind auch asymmetrische Systeme möglich, bei denen spezielle CPUs für Spezial-Aufgaben
+bereitgestellt werden.
+Hauptsächlich soll in dieser Arbeit der Fokus auf symmetrische Multi-Core Architekturen gelegt werden.
+Der Vorteil dieser Variante ist zum Beispiel die Möglichkeit, dass CPU-Kerne, welche 
+physikalisch in einem Gehäuse sind, sich einen gemeinsamen 
+Cache teilen können (vergleiche Intels i7 \cite[Abschnitt 2.2.9]{Intel6432}). 
+Im Gegensatz zu mehreren physikalischen CPUs, bietet
+Intel darüber hinaus auch eine Technologie die Hyper-Threading 
+genannt wird. Sie wurde ursprünglich bei 32~Bit-CPUs eingeführt um 
+die Performance von Multi-Threaded Anwendungen zu verbessern (vergleiche \cite[Abschnitt 2.2.8]{Intel6432}).
+Durch Hyper-Threading kann ein physikalischer Kern zwei logische Kerne besitzen. 
+Diese teilen sich etwa den System-Bus und die arithmetisch-logische Einheit (ALU). 
+In werden mittels Parallelisierungs"-frameworks Intel"=TBB und 
+OpenMP Benchmarks durchgeführt und dabei kann durch einfache Änderungen am 
+Code ein erheblicher Geschwindigkeitszuwachs erzielt werden.
+Bei OpenMP müssen beispielsweise Compileranweisungen (Pragma Direktiven) im Code eingefügt werden.
+Dagegen muss bei Intel"=TBB ein Ersatz der zu parallelisierenden For"=Schleife stattfinden.
+Bei parallelen Anwendungen können verschiedene Formen unterschieden werden.
+Beispielsweise gibt es Datenparallelität und Funktionsparallelität (oder auch Task-Parallelität)
+ (vergleiche \cite[Seite 9ff]{reinders2010intel}).
+Datenparallelität steht für das Konzept, die Daten in Teilmengen zu organisieren und
+anschließend parallel zu verarbeiten.
+Funktionsparallelität dagegen benutzt den Ansatz verschiedene unabhängige Tasks parallel auszuführen.
+Weiterhin gibt es auch noch ein Misch-Konzept (Pipelining), welches Task- und Daten-Parallelität
+umsetzt. 
+Aber nicht jedes Problem lässt sich mit mehreren parallelen CPUs schneller 
+bearbeiten. Hauptsächlich besteht jedes Problem aus zwei 
+Komponenten, einem parallelisierbaren Anteil und einem streng sequentiellen Anteil (Amdahl's-Law).
+In wird die Gültigkeit von Amdahl's-Law auf moderne CPU-Architekturen 
+überprüft. Insgesamt wird das Softwaremodell von Amdahl durch 
+verschiedene Hardwaremodelle erweitert und es wird gezeigt, dass 
+Amdahl's Law immer noch Gültigkeit besitzt.
+Vektorisierung und SIMD
+Multimedia-Anwendungen stellen hohe Ansprüche an CPUs. Deswegen gibt es verschiedene
+Befehlssatzerweiterungen für die Verarbeitung von Multi"-media"=Daten, welche Vektorisierung 
+benutzen.
+Bei Intel sind es zum Beispiel die SSE und AVX Erweiterung (vergleiche).
+In zukünftigen Intel-CPUs wird 
+die AVX-512 Erweiterung vorhanden sein (vergleiche).
+AVX-512 bietet zusätzlich zu speziellen Registern noch weitere interessante Erweiterungen, 
+wie etwa Befehle für kryptographische Hash-Funktionen (SHA) oder eine Hardware-Implementierung von
+Verfahren für Prüfsummen (Intel-CRC32).
+Insgesamt bieten die aufgeführten Intel-Erweiterungen in Bezug auf Vektorisierung 
+breitere (zum Beispiel 128~Bit bei SSE, 256~Bit bei AVX oder 512~Bit bei AVX-512) Register 
+und Befehle zur vektoriellen Verarbeitung von
+weniger breiten Werten, welche in den Registern verpackt sind.
+Daher ist es möglich zum Beispiel im Falle eines 512~Bit Registers, in einem Schritt
+8 Long-Werte (jeweils 64~Bit) zu verarbeiten.
+Das vektorielle Verarbeiten verschiedener Daten wird SIMD genannt.
+Der SIMD-Ansatz ist schematisch in Abbildung~
+dargestellt. Dabei werden 4 Long-Werte l_1,...l_4, welche in einem SSE/AVX Register geladen wurden,
+mittels des SSE-Befehls f(x) verarbeitet. 
+Exemplarisch kann f(x) dabei eine Addition eines festen Wertes sein.
+Als Ergebnis wird die Funktion f(x) auf alle Long Werte angewandt und 
+im SSE-Register gespeichert. Eine Durchführung dieser Operation bedarf dabei 
+nur einer CPU-Instruktion, im Gegensatz zur nicht vektorisierten Ausführung mit 4 Einzel-Operationen.
+Die Compiler GCC und ICC bieten gute Unterstützung zur Auto-Vektorisierung (vergleiche). 
+Es muss aber beim Programmieren darauf geachtet werden. 
+Zur Überprüfung kann mittels Log ermittelt werden, an welchen Stellen der
+Code vektorisiert wurde oder erkannt werden, an welchen Stellen der Code dahingehend verändert werden muss.
+In wurden neben Parallelisierungsansätzen auch Auto-Vektorisierung 
+untersucht und festgestellt, dass durch Vektorisierung eine Geschwindigkeitsverdoppelung
+im Vergleich zur nicht-vektorisierten Anwendung erzielt werden kann.
+Vektorisierung kann somit viele Anwendungen beschleunigen. Allerdings kann in zeit-effizienten Systemen 
+eine manuelle Vektorisierung unter Umständen eine noch höhere Geschwindigkeit erreichen, jedoch ist der entstehende 
+Code sehr stark auf die jeweilige Architektur optimiert. Beispielsweise müsste der Code
+komplett neu angepasst werden, wenn die AVX-512 Erweiterung in Intel-CPUs zur Verfügung steht.
+Daher stellt die Auto-Vektorisierung einen sehr interessanten Aspekt dar, da 
+der Compiler automatisch für die jeweilige verwendete CPU-Architektur die Vektorisierung durchführt.
+Für die manuelle Vektorisierung von C/C++-Code, stehen verschiedene Möglichkeiten zur Verfügung.
+Sie kann etwa über Intrinsic Anweisungen (Befehlsreferenz siehe)
+erfolgen oder über spezielle Vector-Datentypen beziehungsweise per inline Assember Code. 
+Superskalarität und Pipelining
+Heutige CPUs sind superskalar, das bedeutet, dass sie die Möglichkeit bieten 
+mehrere unabhängige Anweisungen gleichzeitig auszuführen (vergleiche).
+Superskalarität und Pipelining kann nicht direkt durch den Programmierer beeinflusst werden.
+Cache
+Um den Zugriff auf Daten und Anweisungen zu beschleunigen bieten moderne 
+CPUs verschiedene Caches (vergleiche \cite[Abschnitt 2.2.9]{Intel6432} und \cite[Seite 13ff]{drepper2007every}). 
+Dabei gibt es verschiedene Cache-Level, typisch sind 3-Level: L1, L2 und L3, welche eine Hierarchie bilden.
+In Abbildung~ ist eine mögliche L3-Cache-Hierarchie dargestellt. L1i ist dabei 
+ein Cache für CPU-Instruktionen und L1d für Daten. Typischerweise ist der L1-Cache schneller und 
+kleiner als der L2- beziehungsweise L3-Cache. 
+In einigen Multi-Core Architekturen (beispielsweise Intels i7 vergleiche \cite[Abschnitt 2.2.9]{Intel6432})
+teilen sich sogar mehrere logische CPUs einen L1 oder L2 Cache.
+Daher können, ohne explizites Laden aus dem Hauptspeicher, Daten zwischen mehreren Kernen 
+parallel verarbeitet werden. 
+So besitzt Intels Core i7 - 2600K (vergleiche \cite[Abschnitt 2.3]{Intel6432}) 
+einen 64~KB großen L1 Cache, 256~KB großen L2 Cache und einen für alle Kerne geteilten 
+L3 Cache mit 8~MB.
+Virtualisierung und weitere Erweiterungen
+Virtualisierung ist für die Anwendung im Sinne eines effizienten Datenbanksystems unwichtig.
+Aber weitere Erweiterungen wie AES-NI oder
+Intel-CRC32 können durchaus in Datenbanksystemen Anwendung finden.
+Die AES-NI-Erweiterung kann benutzt werden um Hash-Funktionen mit geringen Kollisionen zu konstruieren. 
+Fazit
+Insgesamt können Datenbanksysteme von modernen CPU-Architekturen profitieren.
+Anfrageverarbeitung kann durch Multi-Core CPUs parallel stattfinden. Mittels Vektorisierung können
+Prädikatauswertungen beschleunigt werden. Auch Caches und Cache-Hierarchien können die Verarbeitung 
+positiv beeinflussen.
+Wie in beschrieben stellen Hauptspeicher Zugriffe für Datenbanksysteme 
+einen Flaschenhals dar und mittels CPU-Cache können sie reduziert werden.
+Auch weniger direkt einsetzbare Befehlserweiterungen können im Datenbankfokus 
+Verbesserungen erbringen, beispielsweise Vektorisierung.
+Hauptspeicher
+Nicht nur die CPU-Architekturen wurden in den letzten Jahren weiterentwickelt, sondern 
+auch der Hauptspeicher durchläuft zunehmend eine Verbesserung.
+Insgesamt kann festgestellt werden, dass in aktuellen Systemen sehr viel Hauptspeicher vorhanden ist,
+beispielsweise bis zu 12~TB (vergleiche).
+Gerade im Bezug auf die Datenverarbeitung können somit neue Möglichkeiten eröffnet werden.
+Die Datenmengen die typischerweise verarbeitet werden können in modernen Systemen meist ist ein Element inmemory gehalten werden.
+Die ist ein Element inmemory Verarbeitung stellt somit eine neue Möglichkeit dar. Auch wenn Hauptspeicher in der Regel sehr schnell
+im Vergleich zu disk-Speicher ist, wurde er in sogar als Flaschenhals bezeichnet.
+Gegen diesen Flaschenhals gibt es auch einige Konzepte, zum Beispiel der bereits erwähnte CPU-Cache.
+NUMA und UMA
+In klassischen Systemen wird ein gleicher (uniformer) Zugriff auf den gesamten Hauptspeicher 
+von jeder CPU aus realisiert (UMA).
+Dagegen gibt es aber in aktuellen hoch-parallelen Systemen mit einer Vielzahl von CPU-Kernen 
+auch die Möglichkeit mittels NUMA auf den Hauptspeicher 
+zuzugreifen (vergleiche \cite[Seite 43ff]{drepper2007every}).
+Grundlegend wird bei NUMA der Speicher in zwei Typen eingeteilt (vergleiche Abbildung~). 
+Aus der Sicht einer CPU gibt es lokalen Speicher und entfernten Speicher (remote memory).
+Der Zugriff auf den lokalen Speicher kann sehr effizient erfolgen und wird daher zur lokalen
+Verarbeitung der aktuellen Daten des CPUs genutzt.
+Dagegen ist der remote memory Hauptspeicher eines anderen CPU-Kerns. Es müssen also beim Zugriff 
+die Daten vorher übertragen werden.
+Mehrere CPU-Kerne werden zu einem NUMA-Node zusammengefasst und teilen sich einen lokalen Speicherbereich.
+Zwischen den verschiedenen NUMA-nodes gibt es Kommunikationspfade, 
+wobei nicht zwingend eine Vollvermaschung nötig ist.
+In Abbildung~ ist ein mögliches NUMA-System dargestellt. Es besteht 
+aus 4 NUMA-Nodes, welche vollvermascht sind. Jeder NUMA-Node besitzt seinen eigenen lokalen Speicher
+und kann mehrere CPU-Kerne enthalten.
+Die verschiedenen Zugriffszeiten und Topologien sind Faktoren, welche
+bei der Entwicklung von hochparallelen Anwendungen beachtet werden.
+Für die Realisierung von NUMA in Anwendungen gibt es verschiedene Ansätze. 
+Zum einen kann es manuell über libnuma (vergleiche \cite[Seite 72ff]{drepper2007every}) 
+oder über verschiedene Frameworks benutzt werden.
+In wird ein NUMA-aware-Task-Scheduler beschrieben (Nas).
+Es wurde experimentell festgestellt, dass beispielsweise ein Programm
+zum Lösen von Gleichungen durch Nas beschleunigt werden kann.
+In wird dargestellt, dass auch Datenbanksysteme von NUMA profitieren können.
+Dabei wurden zunächst synthetische Tests bezüglich der Zugriffe 
+auf den Hauptspeicher in einem NUMA-System durchgeführt. Da Datenbanksysteme
+generell eine Teilung der Daten vornehmen, können sie durch den Einsatz von NUMA 
+mehr Performance erreichen. 
+Es wurde experimentell MySQL mit ist ein Element inmemory Storage
+angepasst und festgestellt, dass durch den Einsatz von NUMA
+ein Geschwindigkeitszuwachs von 10%-15% erzielt werden kann.
+Persistenter Speicher
+Gerade im Bezug zu ist ein Element inmemory Systemen stellt persistenter Speicher eine interessante Entwicklung dar.
+Persistenter Speicher bietet die Möglichkeit Datenstrukturen im Hauptspeicher anzulegen und 
+dabei ohne Serialisierung für Festspeicher dauerhaft zu speichern.
+In wird Mnemosyne beschrieben.
+Es handelt sich dabei um ein einfaches Interface zur Programmierung 
+mit persistenten Speicher. 
+Dabei werden zwei Hauptprobleme untersucht. Zum einen wie solcher Speicher
+erstellt und verwaltet wird und zum anderen wie Konsistenz im Fehlerfall gesichert wird, 
+da sonst bei Systemfehlern nicht gültige Daten permanent vorhanden sind.
+Es können globale persistente Daten mit dem Schlüsselwort 'pstatic'
+oder dynamisch angelegt werden. Außerdem werden Methoden zum direkten 
+Verändern der persistenten Variablen und Datenstrukturen mittels eines 
+leichtgewichtigen Transaktions-Mechanismus zur Verfügung gestellt. 
+In Benchmarks wurde gezeigt, dass Mnemosyne wesentlich schneller als
+beispielsweise Boost-Serialisierung ist.
+Mnemosyne stellt insgesamt nur eine Schnittstelle dar um persistenten Speicher
+(zum Beispiel NVRAM oder Phase-Change Memory (PCM)) effizient einzusetzen.
+Dagegen wird in eine Software Implementierung 
+von persistentem Speicher (SoftPM) dargestellt.
+Das bedeutet, es wird herkömmlicher Speicher um Konzepte zur Persistenz erweitert.
+SoftPM besteht im Kern aus zwei Komponenten (vergleiche Abbildung~).
+Die erste Komponente ist 'Location Independent Memory Allocator' (LIMA) und
+die zweite 'Storage-optimized I/O Driver' (SID).
+LIMA ist für die Verwaltung von Containern persistenter Daten verantwortlich, 
+die aus mehreren Memory Pages bestehen, verantwortlich.
+LIMA besteht aus den Modulen: Container-Manager, Write-Handler, 
+Discovery \& Allocator sowie Flusher.
+Der Flusher ist für das Senden der veränderten Chunks 
+zur SID Komponente verantwortlich.
+SID ist für das automatische Speichern der Daten 
+auf persistenten Speicher zuständig. Es arbeitet dabei transaktionsartig
+und bietet verschiedene Module für eine Reihe von Speichertypen (zum Beispiel SSD oder HDD).
+Um SoftPM zu nutzen müssen in einer Anwendung nur die nötigen Speicherallokationen, auf 
+die von SoftPM zur Verfügung gestellten, geändert werden.
+Insgesamt wird gezeigt, dass 'memcachedb' und 'sqlite3' (mit ist ein Element inmemory Speicherung),
+deutlich im Vergleich zur Serialisierung der Datenstrukturen, beschleunigt werden können 
+(bei memcachedb bis zu 10 mal schneller).
+ist ein Element vonmemory{Datenbanksysteme}
+Durch die ständige Entwicklung von neuen Hauptspeicher-Technologien
+sind ist ein Element inmemory Datenbanken ein aktueller Forschungsgegenstand (siehe).
+Hauptsächlich unterscheiden sie sich nur in der Speicherung
+der Daten (vergleiche).
+Bei einem IMDB werden dauerhaft alle Daten im Hauptspeicher 
+gehalten und eine permanente Kopie (Dump) auf Festspeicher gesichert.
+Dagegen werden bei herkömmlichen disk-basierten Datenbanksystemen 
+die Daten nur im Hauptspeicher verarbeitet. Also zuerst von Festplatte geladen.
+Der Hauptspeicher dient somit nur als Cache zur schnelleren Verarbeitung.
+Klassisch besitzt daher eine disk-basierte Datenbank einen Buffer-Manager, welcher 
+zur Verwaltung der bereits geladenen Seiten beziehungsweise Objekte einer Datenbank dient.
+Folglich bedeutet für IMDB das dauerhafte Halten aller Daten im Speicher, 
+dass die Rechnerarchitektur genügend Hauptspeicher zur Verfügung stellen muss.
+Es gibt verschiedene Methoden Persistenz in IMDB zu realisieren (vergleiche).
+Ähnlich wie in herkömmlichen Datenbanksystemen können Checkpoints oder explizite Backups/Logs
+genutzt werden. Speziell bei IMDB, werden diese Techniken aber nur zur 
+Erzeugung einer dauerhaften Kopie verwendet. Transaktionen benötigen daher keinen einzigen Festplatten"=Zugriff.
+Auch zur Wiederherstellung der ist ein Element inmemory Daten wird ein Backup benötigt, 
+da der Hauptspeicher in der Regel flüchtig ist (abgesehen von persistenten Hauptspeicher"=Techniken).
+Neben den bereits genannten ist ein Element inmemory RDF-Stores sollen an dieser Stelle die 
+ist ein Element inmemory Datenbanken SAP HANA und MonetDB kurz betrachtet werden.
+SAP HANA
+SAP HANA ist eine ist ein Element inmemory Datenbank für herkömmliche transaktionale SQL-Anwendungen und für
+spezielle SAP-Anwendungen (vergleiche).
+Ein Schwerpunkt des Systems liegt auf Parallelisierung bezüglich mehrerer Threads, CPU-Kerne 
+oder bis zu komplett verteilten Systemen.
+Im Kern besteht SAP HANA aus mehreren ist ein Element inmemory Verarbeitungsengines.
+Es bietet verschiedene Engines für relationale, Graph-, und Text-Daten.
+Dabei werden alle Daten so lange komplett im Hauptspeicher gehalten, wie
+Speicher zur Verfügung steht.
+Alle Datenstrukturen sind für cache-effiziente Verarbeitung optimiert und
+werden mittels verschiedener Techniken komprimiert.
+Falls nicht genügend Hauptspeicher vorhanden ist, werden Teile ausgelagert, beispielsweise 
+einzelne Tabellen oder Teiltabellen.
+Sie werden automatisch in den Hauptspeicher geladen, wenn sie von der Anwendung benötigt werden.
+SAP HANA bietet verschiedene Schnittstellen für den Anwender, beispielsweise SQL und MDX.
+Zur persistenten Speicherung sind Backup und Recovery-Strategien basierend auf Logging und 
+Sicherungspunkten vorhanden.
+MonetDB
+MonetDB stellt eine weitere bekannte relationale ist ein Element inmemory Datenbank dar.
+Primär wurde MonetDB für Data"=Warehouse Anwendungen entwickelt, also für die 
+Verarbeitung großer Datenmengen. 
+In wird die Architektur beschrieben.
+MonetDB ist ein column-Store, das bedeutet die Daten werden spaltenweise gespeichert und verarbeitet.
+Sie werden dabei in BAT-Strukturen (Binary Association Table) abgelegt.
+Mittels Memory"=Mapping wird die Speicherung der BATs auf Festplatte realisiert, daher werden die 
+Daten im Hauptspeicher und auf Festplatte in der gleichen Art und Weise organisiert.
+Anfragen werden cache-effizient (mittels Verfahren, wie zum Beispiel
+partitionierte Hash-Joins) und vektorisiert durchgeführt (wenn die X100 Erweiterung verwendet wird).
+Für die Anfrageoptimierung werden im Kostenmodell auch Speicherzugriffe einberechnet. 
+In allen Schritten der Anfrageverarbeitung werden die Daten spaltenweise verarbeitet. 
+Erst bei einer Ausgabe beziehungsweise dem Senden der Ergebnisse zum Clienten werden 
+die Ergebnistupel konstruiert.
+Da MonetDB modular aufgebaut ist gibt es einige Erweiterungen, wie beispielsweise einen 
+Anfragekern (X100, vergleiche), welcher vektorisiert und komprimiert arbeitet.
+Es können auch Graph-Daten verarbeitet werden, weiterhin gibt es auch Erweiterungen 
+bezüglich adaptiver Index-Strukturen, Selbstorganisation/-optimierung, Wiederverwendung von Ergebnissen
+und andere (vergleiche).
+Kompressionstechniken
+Kompressionsverfahren finden in verschiedenen Bereichen Anwendung.
+In Bezug auf Datenbanksysteme stehen dabei meist Index-Kompressionstechniken im Vordergrund.
+Beim Betrachten von reinen ist ein Element inmemory Datenbanken kann aber Kompression auch 
+weitergehend verwendet werden, da sie in diesem Falle benutzt wird, um den wichtigen und begrenzten Hauptspeicher
+zu sparen.
+In wird beispielsweise untersucht wie durch den Einsatz einfacher
+Kompressionstechniken in ist ein Element inmemory Datenbanken die Performance verbessert werden kann. Insgesamt wird
+festgestellt, dass durch Kompression cache-effizientere und somit schnellere Zugriffe erzielt werden können.
+Auch in wurden Kompressionstechniken für den Einsatz 
+in Datenbanksystemen betrachtet. Besonders wichtig ist dabei, dass die Techniken 
+einen möglichst geringen Dekompressionsaufwand verursachen. 
+Außerdem wurden Optimierungen für Datenbankoperatoren beschrieben, welche
+direkt auf dem komprimierten Daten arbeiten. Datenbanksysteme können somit
+von Kompression profitieren, aber die Kompressionsart muss sorgfältig ausgesucht werden.
+Es gibt viele verschiedene Kompressionstechniken, daher soll im folgenden Abschnitt nur eine 
+Auswahl von allgemeinen Kompressionsschemata betrachtet werden. Dazu zählen Wörterbuchkompression, Entropiekodierung
+und mehrere Integer-Sequenz-Verfahren. Die Techniken sollen besonders einen geringen Dekompressions-Overhead
+besitzen.
+Wörterbücher
+Wörterbücher können zur Kompression von Zeichenketten benutzt werden 
+(vergleiche \cite[Kapitel 3, Seite 173]{salomon2007data}).
+Zum Beispiel eignen sie sich um natürlich sprachliche Texte zu komprimieren, da in solchen Texten
+häufig Wörter mehrfach auftreten.
+Auch im Fokus auf RDF-Daten können Wörterbücher zur Kompression eingesetzt werden, da sie
+eine Tripel-Darstellung mittels Integer-Keys ermöglichen.
+Ein Wörterbuch D sei dabei eine Datenstruktur D: s wird abgebildet auf x, mit s= Menge der Zeichenketten sowie 
+x = Menge der Schlüsselwerte. 
+Das Wörterbuch kann beispielsweise jedes Wort (oder jeweils n Buchstaben) 
+eines Textes aufnehmen und anschließend wird der Text durch die generierten Schlüsselwerte repräsentiert. 
+Zusätzlich ist auch das Speichern der einzelnen Zeichenketten mit der Abbildung des Wörterbuchs nötig.
+Wörterbücher können beispielsweise mit Hash-Tabellen implementiert werden.
+Nachteilig an der Hash-Tabellen-Implementierung ist, dass etwa keine 
+Präfix-Suchen durchgeführt werden können. Außerdem verursachen Hash-Kollisionen unnötige Zeichenketten"-vergleiche.
+Eine weitere Möglichkeit Wörterbücher zu realisieren sind Tries (oder auch prefix-Bäume beziehungsweise radix-Tree genannt).
+In Abbildung~ ist beispielsweise ein kleiner Trie dargestellt. 
+Es wurden die Wörter 'compressor', 'compression','compare', 'master' und 'math' im Trie abgelegt.
+Ein Teil der Wörter weist dabei ein gemeinsames Präfix auf, 
+so ergeben sie die Präfixe 'comp' und 'ma'. 
+Bei einer einfachen Speicherung der Wörter in einer Liste 
+würden alle Präfixe der Wörter mehrfach abgespeichert werden. 
+Im Trie dagegen ist erkennbar, dass die Präfixe nur einmal gespeichert werden.
+Dagegen müssen aber für die Baumstruktur verschiedene Pointer verwaltet werden. 
+Eine Pfadkompression ist daher zwingend erforderlich, weil sonst alle Buchstaben einzeln 
+in jeweils einem Knoten gespeichert werden.
+Mittels Trie können die herkömmlichen Wörterbuchoperatoren Lookup, Insert, Modify und Delete
+realisiert werden. Darüber hinaus ist aber auch eine Präfix-Abfrage möglich, das heißt es können 
+Anfragen zur Suche von Zeichenketten mit einem bestimmten Präfix durchgeführt werden.
+In werden verschiedene Verfahren zur Kompression von String-Wörterbücher
+verglichen. Bei schnellen Lookup-Operationen kann insgesamt bis zu 20% Speicher eingespart werden. 
+Hauptsächlich werden dort keine Trie Implementierungen betrachtet, 
+sondern verschiedene Techniken (beispielsweise Re-Pair: das Ersetzen von häufigen Buchstaben-Paaren,
+oder Huffman/Hu-Tucker-Kodierung).
+In wird eine adaptive Radix-Tree (Trie) Implementierung für den Einsatz 
+in ist ein Element inmemory Datenbanken dargestellt. Im Kern ist die Implementierung
+erweitert worden um die automatische Reduktion der Baum"-tiefe (mittels Pfad"-kompression) und dem Löschen
+von unnötig langen Pfaden zu einzelnen Blättern. Außerdem werden effiziente Einfüge- und Lösch-Operationen 
+für diesen Trie beschrieben. 
+Mittels dynamischer Wahl von kompakten Datenstrukturen kann die Speicher"-effizienz
+der Trie Implementierung im Vergleich zu herkömmlichen Tries verbessert werden.
+Dazu werden verschiedene Knotentypen zum Speichern von 4, 16, 48 und 256 Kindern 
+bereitgestellt.
+Durch Benchmarks wird gezeigt, dass die Trie-Datenstruktur vergleichbar mit
+einer Hash-Tabellen-Implementierung bezüglich der Performance ist.
+Außerdem wurde die Datenstruktur in das ist ein Element inmemory Datenbanksystem HyPer (vergleiche)
+integriert und gezeigt, dass sie durchaus herkömmliche Index-Strukturen ersetzen kann.
+Entropiekodierung
+Entropiekodierung ist ein bekanntes Verfahren zur Kompression.
+Ein algorithmischer Vertreter ist zum Beispiel das Huffman-Verfahren (genau beschrieben in
+\cite[Kapitel 2, Seite 74ff]{salomon2007data}).
+Beim allgemeinen Huffman-Verfahren werden die Häufigkeiten der
+verwendeten Buchstaben des Textes ermittelt und anhand dessen
+werden die Code-Wörter berechnet.
+Dabei wird dem häufigsten Buchstaben das kürzeste Code-Wort zugeordnet.
+Die Code-Wörter bilden einen Präfix-Baum.
+Allgemein besteht das Huffman-Verfahren aus zwei Schritten.
+Im ersten Schritt wird der Text analysiert (absteigend sortierte Häufigkeiten der Buchstaben)
+und der Präfix-Baum aufgebaut.
+Im zweiten Schritt erfolgt die Kodierung des gespeicherten Textes mit Hilfe
+des Präfix-Baums.
+Zur Dekompression ist neben dem kodierten Text auch der Präfix-Baum nötig,
+an dieser Stelle kann beispielsweise auch ein einheitlicher statischer Präfix-Baum benutzt werden.
+Das reine Huffman-Verfahren ist statisch, das bedeutet, dass der Text vorher komplett vorhanden sein muss.
+Es gibt aber auch adaptive Huffman-Varianten, bei denen ohne vollständiges Wissen über den 
+Text ein Präfix-Code erzeugt wird.
+Es sind auch Varianten, bei denen keine vollständige Sortierung der Häufigkeiten nötig ist, 
+möglich (vergleiche).
+Das Huffman-Verfahren beziehungsweise Entropiekodierungen können zwar enorm gute Kompressionsraten erzielen, 
+jedoch bieten sie auf die komprimierten Werte keinen wahlfreien Zugriff oder nur mit Einschränkungen, 
+folglich ist die Dekompression aufwändiger. 
+Integer-Sequenzen
+Index-Strukturen in Datenbanksystemen können als Integer-Sequenzen aufgefasst werden.
+Für solche Sequenzen gibt es verschiedene Ansätze zur Kompression. 
+Eine einfache Änderung der Kodierung kann bereits gute Raten erzielen.
+In sind einige Kodierungsverfahren (Golomb, Elias Gamma, Elias Delta, Variable-Byte)
+für den Einsatz zur Integer-Kompression dargestellt. Integer-Kompression kann daher 
+bei disk-basierten Datenbanksystemen nützlich sein um Festplattenzugriffe zu reduzieren.
+Es gibt aber noch weitere Verfahren die besonders im Bezug auf Dekompression und wahlfreien Zugriff 
+überzeugen können. Aus diesem Grund sollen nun zwei Varianten betrachtet werden.
+Zunächst soll das Frame of Reference-Verfahren und anschließend die Run-Length-Kodierung betrachtet werden.
+Frame of Reference-Varianten
+Das FOR-Verfahren stellt ein einfaches Kompressionsschema 
+dar. Daher ist es auch Grundlage verschiedener erweiterter Verfahren (vergleiche). Häufig wird es mit einer Delta-Kompression verknüpft 
+(zum Beispiel PFOR-Delta in).
+Weiterhin wird in ein FOR-Verfahren, welches mittels Vektorisierung
+teilweise doppelt so schnell wie andere FOR-Varianten ist, beschrieben.
+Die Grundidee des FOR-Verfahren lässt sich in zwei Schritten darstellen.
+Zunächst sei eine Integer-Sequenz S=[....] gegeben, welche komprimiert werden soll.
+Bei einer unkomprimierten Speicherung würde für die Sequenz |S| mal container (mit container = size\_of (Long) = 64bit) Speicher benötigt.
+Beim FOR wird die Eingabe-Sequenz in Teile (Frames) fester beziehungsweise bekannter Größe eingeteilt.
+Für jeden Sequenz-Block S_i wird anschließend das Minimum min 
+(oder je nach Verfahren ein anderer Referenz-Wert) bestimmt, welcher explizit gespeichert werden muss.
+Anschließend wird ein neuer Block C_i mit
+\[ C_i = [ s - min \mid s ist ein Element von S_i ] \]
+gespeichert.
+Dabei besteht C_i nicht aus Long-Werten, sondern 
+aus dem kleinsten möglichen Speicherbedarf, der zur Speicherung der ermittelten
+Werte benötigt wird.
+Anhand 
+\[ \lceil \log_2( max \{c \mid c ist ein Element von C_i \} + 1) \rceil \]
+kann der Speicherbedarf eines Elements von C_i berechnet werden.
+Besonders interessant ist nicht nur die Kompression, sondern für den späteren Einsatz 
+auch die Dekompression. Beim reinen FOR-Verfahren erfolgt die Dekompression
+in wenigen Schritten.
+Zunächst muss der jeweilige Frame bestimmt werden, was direkt durch die feste Größe 
+realisiert werden kann. Anschließend erfolgt ein Speicherzugriff und der benötigte
+Speicherbereich für ein Element wird gelesen. Für die Rekonstruktion zum Originalwert
+ist nur noch eine Addition des Referenz-Wertes (min) erforderlich. 
+Um einen Einblick in die Variationen der FOR-Methode zu geben, sollen die Besonderheiten
+des in dargestellten PFOR-Verfahren kurz betrachtet werden.
+\paragraph{PFOR.}
+PFOR steht für Patched Frame-of-Reference. Bei PFOR werden zwei Klassen von Werten
+unterschieden zum einen Ausnahmen und zum anderen kodierte Werte.
+Die kodierten Werte sind als Integer-Zahlen mit einer Bit-Breite von b, welche 
+sich im Bereich von 1 \leq b \leq 24 befindet, dargestellt.
+Innerhalb eines Blocks ist die Bit-Breite konstant.
+Die Ausnahmen werden unkomprimiert gespeichert, da sie seltene 
+Ausreißer darstellen.
+Der Referenzwert bei PFOR ist daher nicht zwingend das Minimum, da es auch Ausnahmen
+unterhalb des Referenzwertes geben kann.
+In wird auch eine effiziente Implementierung für die Kompression und Dekompression
+dargestellt, welche loop-unrolling benutzt und sehr cache-effizient ist.
+Run-Length-Encoding
+Die RLE stellt ein weiteres Verfahren zur Kompression von Integer-Sequenzen 
+dar. 
+Die Hauptidee ist (vergleiche \cite[Kapitel 1, Seite 22ff]{salomon2007data}), dass in einer Integer-Sequenz S=[...] beispielsweise
+\[ S= [bbbbbaaacccddddffff], mit a,b,c,d,f beliebige Integer Zahlen \]
+häufig Blöcke von gleichen Zahlen auftreten.
+Die Blöcke können effizienter gespeichert werden, beispielsweise 
+in dem die Anzahl an Wiederholungen eines Elementes gespeichert wird.
+Für das Beispiel ergibt sich:
+\[ C = [5b3a3c4d4f]\]
+Grundlegend bedeutet das für eine Integer-Sequenz mit Blöcken der Länge 1, dass sie schlecht
+komprimiert werden kann.
+Auch ein wahlfreier Zugriff auf die unkomprimierten Elemente ist nicht direkt möglich.
+Ein Beispiel für ein RLE-Verfahren für BitVektoren 
+stellt das bereits erwähnte D-gap dar (vergleiche).
+Run-Length-Encoding allein oder auch in Kombination mit anderen Verfahren 
+(zum Beispiel mit Erkennung von Wort"-blöcken)
+finden in vielen Kompressionsalgorithmen Anwendung.
+Fazit
+Die dargestellten Kompressionstechniken können teilweise für die ist ein Element inmemory Verarbeitung 
+eines Datenbanksystems benutzt werden.
+Besonders interessant sind dabei die Run"=Length"=Kodierung und das Frame-Of-Reference Verfahren,
+da die Dekompression mit wenig Overhead implementiert werden kann.
+Außerdem kann durch den Einsatz von effizient implementierten Wörterbüchern Speicher gespart werden.
+Zusammenfassung
+Es wurden zunächst die Besonderheiten der RDF-Verarbeitung herauskristallisiert und
+anschließend folgte die Betrachtung verschiedener moderner Ansätze.
+Die vier vorgestellten ist ein Element inmemory RDF-Stores (RDFHDT, Hexastore, BitMat und RDF-3X) 
+bieten zwar interessante Ideen, können aber insgesamt
+im Bezug auf moderne Rechnerarchitekturen nicht überzeugen.
+Denn heutige Rechnerarchitekturen bieten einige nützliche
+Eigenschaften für Datenbanksysteme.
+Beispielsweise Befehlssatzerweiterungen (Vektorisierung), Caches,
+Parallelisierung oder neue Befehle.
+Durch die neuen Entwicklungen im Bereich der Hauptspeicher-Technologie sind 
+ist ein Element inmemory Systeme zur Verarbeitung von großen Datenmengen keine Illusion mehr.
+Effizienter Hauptspeicherzugriff kann mittels NUMA erfolgen.
+Auch persistenter Memory kann für ist ein Element inmemory Datenbanksysteme interessant sein.
+Der Aufbau von IMDB wurde dargestellt.
+Wichtig für IMDB ist weiterhin ein effizienter Zugriff auf den Speicher, denn 
+Hauptspeicher ist im Vergleich zu Cache sehr langsam.
+Daher sind auch Kompressionsschemata interessant.
+Hauptsächlich müssen die Kompressionsverfahren effiziente Zugriffe auf 
+die komprimierten Daten liefern, das bedeutet beispielsweise, dass eine explizite Dekompression
+aller Daten nicht in Betracht kommt.
+Es wurden unter diesen Kriterien verschiedene Kompressionsschemata, 
+Wörterbücher, Entropiekodierung und Kompression von Integer-Sequenzen, betrachtet.
+Einfache Kompressionsalgorithmen können durchaus in Datenbanksystemen Anwendung finden
+und den Zugriff auf Hauptspeicher effizienter gestalten. 
+Grundlagen 
+Zunächst müssen einige Grundlagen erklärt werden. Dazu zählt
+die Funktionsweise des CameLOD-Projekts.
+Weiterhin wird das für die Analyse verwendete Profiling-Tool und das Referenzsystem für die Messungen
+beschrieben.
+\pname
+In ist der Aufbau von CameLOD ausführlich dargestellt. Konzeptionell sollen
+kurz die wichtigsten Merkmale des Systems betrachtet werden.
+CameLOD ist eine komprimierte ist ein Element inmemory Datenbank zur Verarbeitung von RDF-Daten und ist der Hauptuntersuchungsgegenstand in dieser Arbeit.
+Ablauf
+Für das Arbeiten mit CameLOD ist ein zweigeteilter Ablauf (dargestellt in)
+nötig.
+Zunächst bedarf es einer Datenbasis in Form einer NTripel-Datei, welche im 'builddb'
+Schritt geladen wird.
+In diesem Schritt werden die Eingabedaten in das für CameLOD benötigte Format 
+konvertiert. Der Vorgang stellt die eigentliche Kompression dar und ist zwingend erforderlich.
+Je nach Datenbasis benötigt dieser Schritt viel Zeit.
+Nachdem die Daten in das nötige Format überführt wurden, werden die im Hauptspeicher
+angelegten Datenstrukturen für die Weiterverarbeitung mittels Serialisierung auf 
+die Festplatte gespeichert. Der Kompressionsvorgang ist somit nur bei veränderter Datenbasis nötig.
+Für den laufenden Betrieb wird keine Neukompression durchgeführt. Deutlich erkennbar ist, 
+dass die Daten nur lesend verarbeitet werden können. Es sind bisher auch 
+keine Operatoren zum dynamischen Einfügen neuer Datensätze vorgesehen, 
+folglich ist CameLOD ein reiner Lese-RDF-Store.
+Für die Verarbeitung von LOD sind Anfragen der wichtigste Bestandteil, 
+daher werden im 'CameLOD'-Schritt die komprimierten Daten beim Systemstart geladen
+und im Hauptspeicher abgelegt und stehen solange die Anwendung läuft zur Verfügung. 
+Anschließend können die Anfragen über verschiedene 
+Schnittstellen (Python, Konsole, Anfragedateien, REST) gestellt werden. 
+Aufbau und Funktionsweise
+In Abbildung~ sind die grundlegenden Bestandteile
+der Speicherung von CameLOD dargestellt. 
+Die NTripel der Eingabe-Datei werden in Chunks gespeichert.
+Ein Chunk besteht aus drei Vektoren (für Subjekt, Prädikat und Objekt-Informationen).
+Die Informationen sind in den Chunks als Integer-Werte gespeichert, welche durch das Dictionary 
+zur Verfügung gestellt werden. 
+Beim Aufbau der Datenbasis findet eine tripelweise Verarbeitung der NTripel-Datei statt.
+Die Zeichenketten für Subjekt, Prädikat und Objekt werden gespeichert und in einer Hash-Map
+abgelegt. Nach anschließender Sortierung erfolgt für die Zeichenketten eine Zuordnung von Integer-Werten
+(long).
+Die Long-Werte ergeben sich durch die Sortierreihenfolge. Das Dictionary stellt eine Übersetzung von 
+Zeichenketten zu Long-Werten und umgekehrt zur Verfügung.
+Im nächsten Schritt wird die NTripel-Datei ein weiteres Mal verarbeitet, 
+wodurch die Chunks für die jeweiligen Indizes aufgebaut werden.
+Beim Subjektindex ist der Vektor für die Subjektwerte sortiert. Analog sind die
+Prädikat und Objekt Indexes nach ihrer Spalte sortiert. 
+Die Tripel werden der Reihe nach in die Index-Chunk-Strukturen passend eingefügt.
+Falls ein Chunk mehr als die festgelegten Elemente enthält, erfolgt ein Split des Chunks. 
+Die Chunks eines Indexes sind untereinander verkettet.
+Nach dem erfolgreichen Aufbau der Datenbasis erfolgt eine Serialisierung alle Datenstrukturen 
+auf Festplatte.
+Im CameLOD-Schritt werden bei Anfragen die passenden Index-Strukturen auf Integer-Ebene 
+verarbeitet und nur bei einer Ausgabe sind Übersetzungen zu Zeichenketten durchzuführen.
+Eine Anfrage, welche sortierte Ergebnisse erfordert, verwendet die passende sortierte
+Index-Struktur.
+CameLOD ist ein index-every-System, das heißt es wird eine materialisierte sortierte Sicht für
+Subjekt, Prädikat und Objekt in Form des Indexes zur Verfügung gestellt. Demzufolge 
+werden alle Tripel mehrfach (dreimal) im Hauptspeicher gehalten.
+Weiterhin gibt es nicht nur Index-Strukturen für die SPO-Tripel sondern auch einen Geo-Index
+für spartial Anfragen, der im Rahmen dieser Arbeit aber nicht von großer Bedeutung ist.
+Operatoren und Anfragealgebra
+Im CameLOD-Projekt müssen zwei Grundtypen von Operatoren unterschieden werden.
+Zum einen gibt es Scan- und Filter"=Operatoren und zum anderen Join"=Operatoren, welche neue Ergebnis"=Chunks anlegen.
+Weiterhin gibt es auch Operatoren, die die Verarbeitung der Chunks parallelisiert stattfinden lassen.
+\paragraph{Scan/Filter.}
+In Abbildung~ ist Beispielsweise ein Filter- oder Scan-Aufruf dargestellt.
+Bei einer Filter- und Scan-Anfrage wird im einfachsten Fall der jeweilige Index ausgewählt und die
+dort gespeicherten Chunks sequentiell verarbeitet.
+Für jedes gespeicherte Tripel wird das Anfrage-Prädikat ausgewertet und in einem Bit-Vektor 
+wird das Ergebnis der Auswertung gespeichert.
+Die Bit-Vektor-Ergebnisse werden nun im Operator-Baum weitergereicht, so dass 
+der nächste Operator auf die Ergebnisse des vorhergehenden zugreifen kann.
+Auffallend ist, dass hauptsächlich die Verarbeitung mittels der gespeicherten Integer-Werte im 
+Index stattfinden (daher werden die Integer-IDs für die Werte 
+auch im Dictionary sortiert vergeben).
+Ein 'printer' Operator stellt am Ende mittels der Einträge im Dictionary die Tripel 
+als Zeichenketten in der Ausgabe dar.
+\paragraph{parallel\_do.}
+Zur intra-query Parallelisierung besitzt das CameLOD-Projekt 
+den speziellen Operator 'parallel\_do(query,n)'.
+Dabei wird die Anfrage auf n verschiedenen Tasks/Threads 
+parallel ausgeführt.
+Hauptsächlich erfolgt die Verarbeitung in drei Schritten, vergleiche Abbildung~.
+Im ersten Schritt wird der Anfrage-Trie n-1 mal repliziert, so dass jeder 
+Thread seinen eigenen Anfrage-Baum hat.
+Anschließend wird eine Partitionierung durchgeführt, so dass
+jeder Task/Thread einen eigenen Bereich an Chunks bekommt, welchen er bearbeiten soll.
+Am Ende werden alle Threads parallel ausgeführt (mittels des Intel TBB-Frameworks). 
+Weiterhin übernimmt der 'parallel\_do' Operator auch das Zusammenfügen und Sammeln
+der Ergebnisse der jeweiligen Tasks in einer Queue.
+CameLOD stellt auch neben den Index-Scans eine Reihe von Filter-, 
+Projektions-, Distinct-, Sortier- sowie 
+verschiedene Join"=Operatoren (index-join, merge-join, spatial-join, star-join,...) zur Verfügung.
+Für die RDF-Verarbeitung sind dabei die Join"=Operatoren von Interesse.
+\paragraph{merge-join/star-join.}
+Durch die vorhandene Sortierung der Daten kann bei den Join"=Operatoren 
+der Aufbau einer Hash-Tabelle oder eine explizite Sortierung entfallen (beispielsweise
+bei einem merge-join).
+Bei einem merge-join werden die Informationen eines Chunks über den min- und max-Wert
+der sortierten Spalte benutzt, um zu überprüfen, ob zwei Chunks in der 
+für den join verantwortlichen Spalte übereinstimmen.
+Je nachdem kann anschließend ein Join tupelweise erfolgen oder der Chunk wird ignoriert.
+Eine besondere Join-Implementierung stellt der star-join dar.
+Er wird benutzt um spezielle Graph Muster (Basic Graph Pattern) 
+zu finden (beispeilsweise ? pred_1 ?obj_1,....pred_n ?o_n).
+Der star-join benutzt zur Realisierung eine Variante des index-joins. 
+Es wird für jeden Subjekt-Wert überprüft, ob in dem dazugehörigen Chunk
+Prädikat-Werte vorhanden sind, die mit der Liste von Prädikaten übereinstimmen.
+Das Verfahren wird solange wiederholt bis die BGP-Kette
+vollständig abgearbeitet ist und alle Chunks verarbeitet wurden.
+\paragraph{Algebra.}
+In CameLOD wird eine eigene Algebra benutzt. Nach gibt es einen Parser, der
+SPARQL-Anfragen auf die CameLOD-Algebra umsetzt.
+Für die Anfragen in dieser Arbeit wird die CameLOD-Algebra verwendet. 
+Zum besseren Verständnis soll nun an einem Beispiel kurz 
+erklärt werden wie sie aufgebaut ist.
+\begin{lstlisting}
+1 := scan(s-index, "<http://example.org/foaf/alice>", =[_1, "<http://xmlns.com/foaf/0.1/name>"]);
+printer(1)
+\end{lstlisting}
+Die dargestellte Anfrage stellt einen einfachen Scan über den Subjektindex (s-index) dar. 
+Dabei werden alle Tripel ermittelt, die Alice \lstinline<http://example.org/foaf/alice> als Subjekt haben 
+und als Prädikat, gefiltert durch \lstinline=[_1,".../name"], einen Namen aufweisen.
+Insgesamt sollen also alle Tripel mit Alice als Namen ermittelt werden.
+Zur Übersicht wurde der Scan in der Variable '\lstinline!1!' abgelegt.
+Für die Aggregation oder Filterung werden Zugriffe auf Spalten der jeweiligen Tupel benötigt.
+In der Algebra kann dies durch '\lstinline!_I!' 
+(dabei ist I die zu benutzende Spalte des Tupels)
+erfolgen.
+Der Aufruf von '\lstinline!printer(1)!' realisiert am Ende der Anfrageverarbeitung 
+eine Textausgabe der Tripel mittels des Wörterbuchs. Dabei werden die Integer-Keys
+zu den jeweiligen Zeichenketten übersetzt. 
+\dbpedia{}
+Für alle Messungen und Anfragen mit CameLOD werden Daten aus dem \dbpedia{}-Projekt verwendet.
+\dbpedia{} ist dabei ein Projekt, welches LOD auf Basis des Wikipedias
+zur Verfügung stellt.
+In wird das genaue Vorgehen beim Aufbauen der LOD beschrieben.
+Insgesamt können 4 Schritte unterschieden werden.
+Im ersten Schritt wird die jeweilige Wikipedia-Seite von einer Quelle gelesen (entweder aus einem 
+Wikipedia Dump oder einer (lokalen) Wikipedia Installation).
+Anschließend wird die Wikipedia Seite geparst, wobei ein AST aufgebaut wird.
+Der AST wird dann zu verschiedenen Extraktoren weitergereicht. 
+Zum Beispiel können Labels, Zusammenfassungen, geographische Koordinaten, usw. extrahiert werden.
+Ein Extraktor erhält einen Syntax Tree und liefert die resultierenden RDF-Statements.
+Am Ende werden die gesammelten RDF-Statements in verschiedenen Ausgabeformaten gespeichert.
+\dbpedia{} bietet diverse Datensätze an. Als Basis dienen in dieser Arbeit 
+die englischen RDF-Daten\footnote{zu finden unter \url{http://downloads.dbpedia.org/3.8/en/}, Stand 06.10.2013},
+wobei auch verschiedene Ausgabeformate gewählt werden können. Insgesamt werden 42 einzelne Datensätze angeboten.
+Für CameLOD ist dabei nur das NTripel-Format wichtig.
+Aus den von \dbpedia{} bereitgestellten Datensätzen wurde ein kombinierter Datensatz
+für CameLOD erstellt (\dbpedia{}-Half). Er umfasst ungefähr 30~GB im NTripel-Format und beinhaltet 
+215~Mio Tripel. Auch ein kompletter Datensatz (\dbpedia{}-Full) mit 110~GB und 740~Mio Tripel wurde erstellt. 
+Intel VTune - Amplifier 2013
+Um eine genaue Analyse des bestehenden \pname-Projekts durchzuführen, wird das Pro"-filing"=Werkzeug
+Intel VTune Amplifier 2013 Update 9 benutzt. Es bietet eine große Vielzahl von Analysemöglichkeiten,
+welche im Folgenden näher beschrieben werden sollen.
+Profiling
+Profiling stellt eine Methode dar, um ein bestehendes System auf verschiedene Schwachstellen zu untersuchen.
+Dabei können diese Schwachstellen verschiedener Art sein. Zum Beispiel ist es möglich sogenannte Hotspots zu 
+bestimmen. Hotspots sind Code"=Abschnitte/Funktionsaufrufe, welche viel Zeit benötigen.
+Im Zuge der hochgradigen Parallelisierung von Anwendungssoftware stellen sich häufig 
+Fragen der Form: Wie gut nutzt eine Anwendung einen Multi-Core-CPU aus?
+Wird durch schlechtes Design eines parallelen Algorithmus viel Zeit benötigt?
+Oder verursacht eine Anwendung viele Cache-Miss-Zugriffe?
+Mittels Profiling können solche Fragen geklärt werden, da es die Anwendungssoftware 
+dahingehend untersucht.
+Dabei wird das Programm während der Laufzeit analysiert und alle Ergebnisse
+gespeichert, unter anderem beinhalten diese Ergebnisse Laufzeiten von Funktionsaufrufen.
+Intel VTune ist nur ein mögliches Profiling Tool. Beispielsweise gibt es auch noch 
+valgrind\footnote{\url{http://valgrind.org/}, Stand 24.09.2013} (zur Analyse des Speicherverbrauchs und eventueller Memory-Leaks) sowie
+perf\footnote{\url{https://perf.wiki.kernel.org/}, Stand 24.09.2013} (zur Hardware-Event Analyse)
+und weitere.
+VTune dagegen bietet verschiedene Analyseprofile und 
+Methoden, wobei die Ergebnisse auch gleichzeitig gut dargestellt und gefiltert werden.
+Analyse-Profile
+Intel VTune bietet zwei grundlegende Varianten des Profilings an.
+Es bietet zum einen 'User-Mode Sampling and Tracing Collection'-Profile und 
+zum anderen die Möglichkeit über 'Hardware Event-based Sampling' 
+ein Programm zu profilen.
+Aufbauend auf den zwei Grundmöglichkeiten bietet VTune eine Reihe von
+Analyseprofilen an, dargestellt in Tabelle~.
+VTune-Analyse-Profile 
+Für eine Performance-Analyse sind zunächst die User-Mode-Profile 
+von höherem Interesse, da mit ihnen schnell unter anderem Hotspots oder
+Codeabschnitte, welche viele Locks verursachen, gefunden werden können.
+Soll eine genauere Analyse (welche zum Beispiel Cache-Hits oder Anzahl an MicroOPs beinhalten soll)
+durchgeführt werden, so können die Hardware-Event-Profile benutzt werden.
+Referenzsystem
+Alle im weiteren Verlauf dieser Arbeit entstehenden Messungen und Profiling-Ergebnisse 
+wurden auf einem Referenzsystem ausgeführt.
+Das Serversystem hat dabei folgende Eigenschaften, welche aus dem System ausgelesen wurden:
+ Betriebsystem: Ubuntu 12.04.2 LTS 
+ Kernel-Version: 3.2.0-48-generic
+ CPU: zwei 6 Kern CPUs vom Typ: Intel(R) Xeon(R) CPU E5-2630 @ 2.30GHz
+ RAM: 128GB DDR3 RAM
+ HDD: 2TB S-ATA Festplatten im RAID-Verbund
+ GCC: gcc-Version 4.6.3, alle Compiliervorgänge wurden mit -O3 Optimierung durchgeführt 
+Besonders die verwendete CPU im System ist von Interesse.
+Es handelt sich um einen Server-CPU von Intel (Xeon CPU E5-2630).
+Das System verwendet zwei solcher CPUs und hat somit physisch 12 CPU-Kerne, mittels 
+Hyperthreading ergeben sich somit 24 logische Kerne.
+Es sollen kurz die besonderen Eigenschaften des CPUs dargestellt werden (vergleiche)
+Befehlssatz
+Der E5-2630 bietet den herkömmlichen Intel-64 Befehlssatz, besitzt also 
+64 Bit breite Register. Weiterhin wurde der Befehlssatz um 
+die Advanced-Vektor-Extension-Version~1 (AVX1) erweitert.
+AVX1 bietet hauptsächlich alle SSE Befehle und 
+Erweiterungen bezüglich der Verarbeitung mittels 256~Bit Registern (vergleiche).
+Es werden auch die Befehlserweiterungen Intel-CRC32 und AES-NI
+unterstützt. 
+Cache und Cache-Struktur
+Nach \cite[Abschnitt 18.9.8]{Intel6432} basiert der Intel-E5 auf Intel's Microarchitektur Sandy
+Bridge.
+In \cite[Abschnitt 1.1.1]{INTEL-E5DS} ist die Cache-Struktur beschrieben (vergleiche Abbildung~).
+So besitzt jeder Kern eines Intel Xeon CPU E5-2630 jeweils einen 32~KB L1 Cache für Instruktionen und Daten, 
+sowie jeweils einen L2 Cache mit 256~KB Größe.
+Der L3 Cache ist 15~MB groß und wird von allen Kernen benutzt.
+NUMA
+Das Referenz-Server-System besteht aus zwei Intel Xeon CPUs und stellt somit zwei NUMA-Nodes,
+mit jeweils 6 pyhsischen beziehungsweise 12 logischen Kernen, bereit.
+NUMA Struktur des Serversystems
+Die genauen Informationen wurden 
+mit numactl\footnote{numactl ist Teil der libnuma, vergleiche \url{http://linux.die.net/man/8/numactl}} 
+ermittelt und sind in Abbildung~ dargestellt.
+Beide NUMA-Nodes sind mittels Links verbunden. Ein Knoten erhält jeweils eine circa 64GB große Speicherpartition
+als lokalen Speicher. Dargestellt sind auch die relativen Distanzen zwischen den beiden Speicherbereichen.
+Insgesamt kann durch die Distanzen festgestellt werden, dass ein Zugriff auf den remote-Speicher 
+ungefähr doppelt so lange dauert wie auf den lokalen.
+Durch zwei NUMA-Nodes kann nicht wirklich viel Gewinn durch 
+den Einsatz von NUMA erhofft werden, es muss aber eine genauere Auswertung stattfinden.
+Effizienz
+In dieser Arbeit sollen nur zwei Effizienzbegriffe von Bedeutung sein.
+Zum einen wird der Fokus auf Laufzeiteffizienz und zum anderen auf Speichereffizienz gesetzt.
+Unter Laufzeiteffizienz soll im weiteren Verlauf der Arbeit die Verbesserung 
+der CPU-Laufzeit eines Prozesses verstanden werden.
+Für ist ein Element inmemory Datenbanksysteme ist Hauptspeicher eine beschränkte Ressource.
+Daher sollen Speichersparmaßnamen betrachtet werden. Der Begriff Speichereffizienz
+stellt dabei das Verringern des benutzten Hauptspeichers dar.
+Zusammenfassung
+Im letzten Abschnitt wurde zunächst der Hauptuntersuchungsgegenstand dieser Arbeit, das CameLOD-Projekt, 
+beschrieben. Zunächst erfolgte die Beschreibung des zweistufigen Ablaufs beim Arbeiten mit CameLOD.
+Es wurde auch der grundlegende Aufbau der Speicherung und des Zugriffs dargestellt.
+Weiterhin wurde beschrieben, wie die Umsetzung der Anfragen mittels der Index-Strukturen erfolgt.
+Dabei fand eine kurze Erläuterung der wichtigsten Datenbankoperatoren und ihrer Algebra statt.
+Für die Messungen sollen realistische Daten benutzt werden. Daher wurde auch die Datengrundlage, welche 
+durch \dbpedia{} zur Verfügung gestellt wird, dargestellt.
+Es soll eine Analyse des CameLOD-Projekts mittels VTune stattfinden, wofür eine
+Beschreibung der verschiedenen Analyseprofile des VTune-Tools nötig war.
+Das Referenzsystem wurde abgesteckt, da alle Messungen dieser Arbeit auf diesem System stattfinden sollen.
+Besonders wichtig ist dabei die verwendete CPU, ihr Befehlssatz, Cache-Größen und Hierarchien sowie
+die NUMA-Topologie.
+Auch die Effizienzbegriffe, welche für die Arbeit wichtig sind, wurden festgelegt. 
+\addtocontents{toc}{\protect\newpage}
+Analyse und Profiling 
+In dem folgenden Abschnitt soll das bestehende CameLOD-Projekt
+auf Performance- beziehungsweise Memory"=Schwachstellen untersucht werden.
+Dabei wurde das Profiling-Tool "'Intel VTune - Amplifier 2013"' verwendet.
+Es ist nötig die beiden Prozesse 'builddb' und '\pname' zu untersuchen.
+Als Grundlage dient die Revision 7346 vom 16.05.2013 des \pname-V2-Branches.
+Dieser Analyseschritt soll in erster Linie dazu dienen Schwachstellen aufzufinden, 
+um anschließend Ansätze zur Verbesserung zu entwickeln. 
+Profiling
+Zunächst soll der 'builddb' Schritt näher betrachtet werden und anschließend
+verschiedene Anfragen im '\pname' Schritt. In allen Analysen wurde mit einer Anzahl von 24 Threads
+gearbeitet.
+builddb
+Zum Profilen des 'builddb' Schritts wurde der \dbpedia{}-Half-Datensatz geladen 
+und mittels VTune analysiert.
+Dabei wurden verschiedene Analyse-Profile betrachtet. Zunächst 
+fand eine Untersuchung der Hotspots, also zeitintensive Teilschritte, und anschließend der Parallelität statt.
+Hotspots und Concurency
+Hotspots pro CPU-Kern -- Übersicht
+In Diagramm~ ist 
+die Auslastung aller CPU Kerne beim Einfügen des \dbpedia{}-Half Datensatzes 
+dargestellt. Deutlich erkennbar ist, dass im 'builddb'-Schritt hauptsächlich nur einer der CPU-Kerne 
+ausgelastet wird, verursacht durch das sequentielle Einlesen der NTripel-Datei.
+Insgesamt wurde für das Einfügen und Vorbereiten der Daten 
+etwa 2~h Zeit benötigt.
+{\newcolumntype{C}[1]{>{\centering}m{#1}}
+builddb: Hotspots - Funktionen (Botton-Up) -- CPU-Zeit, Wartezeit und Spinzeit [sec], unkategorisierte Werte wurden entfernt
+}
+In Tabelle~ sind die Laufzeiten 
+der einzelnen Funktionsaufrufe beim Einfügen aufgeschlüsselt. Es wurden nur Aufrufe mit einer
+CPU-Zeit größer als ungefähr 17 Sekunden dargestellt.
+Auffallend ist die hohe Laufzeit verursacht durch den Boost-Shared-Pointer (P). 
+Beim 'boost::shared\_ptr<>' handelt es sich um einen Smart Pointer, bei dem der Speicher automatisch
+freigegeben wird. Er arbeitet mittels Referenzzählung,
+wobei viel Laufzeit durch 'shared\_count' verursacht wird.
+Bei der Referenzzählung muss eine Synchronisation stattfinden, weil mehrere Threads parallel
+auf den Referenzzähler zugreifen können. 
+Weiterhin wird viel CPU-Zeit durch 'find\_insert\_position' Aufrufe (C)
+verbraucht, weil dort eine lineare Suche verwendet wird, obwohl eine binäre Suche geeigneter wäre.
+Der Operator zum Vergleichen von Zeichenketten 'CharArrayHashEqual::operator()' wird auch
+häufig aufgerufen, da er zur Behandlung von Kollisionen in der Hash-Table benötigt wird. Daher ist der Einsatz 
+einer Hash-Funktion mit weniger Kollisionen vorteilhaft.
+Das 'getline<>' (F) ist für das zeilenweise Einlesen der NTripel-Datei nötig und könnte
+durch Memory-Mapped-Files beschleunigt werden. 
+Auch für das Parsen der NTripel-Datei wird viel Zeit benötigt, deutlich an dem Aufruf
+des 'n3\_sep::operator()' (T) erkennbar.
+Zur besseren Übersicht wurde eine Gruppierung der Funktionsaufrufe vorgenommen, dargestellt 
+in Abbildung~.
+Es ist schlüssig, dass ein großer Teil der Zeit für Speicherallokation (A) verbraucht wird, da viele Zeichenketten
+und Objekte angelegt werden müssen.
+Deshalb ist es auch nicht möglich, sofern nicht unnötig Zeichenketten kopiert beziehungsweise erzeugt werden,
+an dieser Stelle Verbesserungen erwarten zu können, weil für die spätere Weiterverarbeitung aller Zeichenketten
+der NTripel-Datei Speicher angelegt werden muss.
+Auffallend ist der bereits angesprochene hohe Zeitaufwand durch den Einsatz von Smart-Pointern (P).
+Aber auch die Chunk-Operationen (C), das Einfügen und Finden der Einfügeposition, benötigen viel Zeit.
+Außerdem ist erkennbar, dass auch die Dictionary und Hash-Tabellen-Aufrufe (D) viel Zeit benötigen.
+Locks and Wait
+Außer den Hotspots war auch die Wartezeit und das Sperren der CPUs ein Untersuchungsgegenstand.
+Da der 'builddb' Schritt aktuell keine Parallelisierung verwendet, ergaben sich keine 
+wichtigen Erkenntnisse beim Profiling. Es muss genauer untersucht werden, ob ein paralleles 
+Einlesen der NTripel-Datei oder das parallele Speichern der Index-Strukturen
+einen Geschwindigkeitsgewinn hervorbringen kann.
+General Exploration
+VTune bietet im Analyse-Profile 'General Exploration' eine architekturbezogene 
+Hardware-Event"=basierte Analyse.
+Dabei können Sprungvorhersagen, CPI-Raten (CPU-Clocks per Instruction) und 
+weitere Werte untersucht werden.
+{\newcolumntype{C}[1]{>{\centering}m{#1}}
+builddb: General Exploration: Bottom-Up, dargestellt sind die ersten 8 Funktionsaufrufe, rot markiert sind die von VTune als kritisch eingestuften Werte 
+}
+In Tabelle~ sind die ersten 8 Werte bei der Analyse dargestellt.
+Auffallend sind die rot markierten Werte, da sie von VTune als kritisch eingestuft werden.
+Hauptsächlich werden diese kritischen Werte durch Fremdbibliotheken verursacht, daher kann hier nur 
+minimale Verbesserung erwartet werden. 
+Die verwendeten Shared-Pointer von Boost scheiden wiederum schlecht ab.
+Auch die anderen von VTune bereitgestellten Analyse-Profile wurden untersucht, ergaben aber
+keine weiteren wichtigen Erkenntnisse.
+Speicher
+Aktuell kann nur der \dbpedia{}-Half-Datensatz mit \approx 30~GB geladen werden.
+VTune bietet keine Möglichkeit den Speicherbedarf bestimmter Datenstrutkuren zu untersuchen, 
+daher kann an dieser Stelle nur eine Vermutung geäußert werden.
+Ursachen für das nicht erfolgreiche Laden des kompletten \dbpedia{}-Datensatzes
+liegen vermutlich in der Verwendung 
+einer 'std::set<string>' Datenstruktur des Dictionarys im 'builddb'-Schritt.
+Ein einfacher Ersatz der 'std::set' Datenstruktur durch einen Präfixbaum könnte Speicher einsparen.
+Anschließend wäre die Verarbeitung des \dbpedia{}-Full-Datensatzes mit \approx 110~GB möglich.
+\pname
+Auch '\pname' wurde näher untersucht, dabei wurden verschiedene Anfragen ausgeführt 
+und mittels VTune die Profilingergebnisse analysiert. 
+Anfragen
+CameLOD stellt verschiedene Operatoren zum Aufbau komplexer Anfragen bereit.
+Als wichtigster Operator ist hier der Scan-Operator anzusehen, 
+weil die meisten Anfragen Scans benutzen.
+Es wurden 13~Anfragen untersucht (teilweise mit und ohne Parallelisierung, siehe Anhang~), 
+dabei wurden 4 repräsentative Anfragen ausgewählt, welche im folgenden Abschnitt
+genauer mit VTune analysiert werden sollen. Die Analyse beschränkt sich nur auf 
+das Profil 'Hotspots und Concurency', da in den anderen Profilen nur wenige neue Informationen 
+zu erwarten sind.
+Zunächst sollen die Anfragen kurz beschrieben werden.
+\begin{lstlisting}[caption=Q1: profiling-2.q2 ]
+1 := scan(s-index);
+2 := sorted_aggregation(1, [count(_1)], [_0]);
+3 := filter(2, >[_1, 100]);
+null_op(3, "SI")
+------- sparql:
+select count ?s 
+where {
+ ?s ?p ?o. filter( count ?p > 100) 
+}
+\end{lstlisting}
+\begin{lstlisting}[caption=Q2: profiling-2-par.q2 ]
+1 := co_scan(s-index);
+2 := sorted_aggregation(1, [count(_1)], [_0]);
+3 := filter(2, >[_1, 100]);
+4 := parallel_do(3, 24);
+null_op(4, "SI")
+\end{lstlisting}
+Die Anfragen~Q und Q sind ermitteln identische Anfrageergebnisse.
+Das besondere an Anfrage~Q ist, dass Operatoren zur parallelen Verarbeitung verwendet werden.
+Beide Anfragen stellen einen Scan mit Aggregation und Filterung dar.
+Dabei wird der Subjekt Index gescannt und eine sortierte Aggregation nach der Subjektspalte 
+durchgeführt. Die Aggregation beinhaltet das Zählen der Prädikatspalte.
+Anschließend wird eine Filterung durchgeführt, so dass nur Tripel betrachtet werden, welche mindestens 
+100 Prädikatwerte aufweisen. 
+\begin{lstlisting}[caption=Q3: profiling-4b-par.q2 ]
+1 := co_scan(p-index, "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>");
+2 := index_join(1, s-index, _0, =[_1, "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>"]);
+3 := filter(2, <>[_2, _5]);
+4 := parallel_do(3, 24);
+null_op(4)
+------- sparql:
+prefix T <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+select ?s 
+where {
+ ?s T ?o. ?s T ?o2. filter(?o != ?o2) 
+}
+\end{lstlisting}
+In Anfrage~Q wird dagegen ein index-join mit Filterung und parallelisiertem Scan ausgeführt.
+Abgesehen von den parallelen Operatoren wird dabei zunächst ein Scan durchgeführt,
+welcher nur Prädikate eines Typs '\lstinline!T="<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>"!' ermittelt.
+Anschließend wird ein index-join dieser gefilterten Tripel mit dem Subjekt-Index durchgeführt.
+Dabei wird der Join nur ausgeführt, wenn das Subjekt mit \lstinline!T! übereinstimmt.
+Weiterhin erfolgt auch noch eine Filterung, so dass die Spalten 2 und 5 nicht gleich sein dürfen.
+\begin{lstlisting}[caption=Q4: profiling-6.q2 ]
+1 := scan(p-index);
+2 := sorted_aggregation(1, [count(_2)], [_1]);
+3 := sort(2, [_1], [_0, _1], limit 50);
+printer(3)
+------- sparql: 
+select count ?p 
+order by desc(count) limit 50
+\end{lstlisting}
+Die Anfrage Q besteht aus einem Scan, einer Aggregation und der Sortierung 
+der Ergebnisse. In erster Linie wird ein Scan des Prädikatindexes vorgenommen, 
+anschließend wird, gruppiert nach der Prädikatspalte, die Anzahl der verschiedenen Objektwerte 
+ermittelt.
+Abschließend erfolgt eine Sortierung nach der Prädikatspalte und es werden 
+die ersten 50 Subjekt- und Prädikatwerte ausgegeben. 
+\begin{lstlisting}[caption=Q5: People born in Berlin ]
+1 := scan(s-index, =[_1,"<http://dbpedia.org/ontology/birthPlace>"]);
+2 := filter(1, =[_2, "<http://dbpedia.org/resource/Berlin>"]);
+3 := star_join(2, s-index, _0, _1, [
+ "<http://dbpedia.org/ontology/birthDate>", 
+ "<http://xmlns.com/foaf/0.1/name>",
+ "<http://dbpedia.org/ontology/deathDate>"]);
+printer(3)
+------- sparql:
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix dbo: <http://dbpedia.org/ontology/>
+prefix : <http://dbpedia.org/resource/>
+select ?name ?birth ?death ?person 
+where {
+ ?person dbo:birthPlace :Berlin.
+ ?person dbo:birthDate ?birth.
+ ?person foaf:name ?name.
+ ?person dbo:deathDate ?death.
+}
+\end{lstlisting}
+In Q werden alle Namen, Geburts- und Todesdaten von gespeicherten Personen, welche 
+in Berlin geboren sind, ermittelt. 
+Dabei besteht die Anfrage aus einem Scan und Filterung aller Tripel mit Geburtsort Berlin.
+Anschließend wird ein star-join, welcher die Tripel ermittelt, die das Geburts- und Todesdatum 
+und den Namen der Person enthalten, durchgeführt.
+Q1
+{\newcolumntype{C}[1]{>{\centering}m{#1}}
+\pname: Hotspots Q1 - Top-Down, '+' kennzeichnen Level -- CPU-Zeit [sec]
+}Ein Ausschnitt der Top-Down-Ansicht ist in Tabelle~ dargestellt.
+Insgesamt dauerte die Anfrage 202.46~s, wobei nur ein CPU-Kern ausgenutzt wurde, da keine parallelisierten
+Operatoren im Einsatz kamen.
+Es fallen dabei 10.3~s auf die Bearbeitung der Anfrage. Die restliche Zeit wird zum 
+Laden der Daten von Festplatte benötigt.
+Wenig Zeit wird durch (B), die Bitset-Operationen, verursacht. Das ist soweit verständlich, 
+da in der Anfrage nur wenige Ergebnisse durch die Filterung betrachtet werden. 
+Die meiste Zeit wird im 'sorted\_aggregation::next'-Schritt (A) benötigt,
+weshalb nun eine genauere Betrachtung dessen, dargestellt in Tabelle~, erfolgen soll.
+{\newcolumntype{C}[1]{>{\centering}m{#1}}
+\pname: Hotspots Q1 - Top-Down, genauere Darstellung von 'sorted\_aggregation::next' -- CPU-Zeit [sec], gekürzt
+}
+Insgesamt fallen 6.01~s auf die inneren Funktionsaufrufe des Schritts. Es ist deutlich 
+erkennbar, dass die Laufzeit wesentlich durch Smart-Pointer (\approx 3.8~s),
+sowie auch durch die BitSets (C) verursacht wird.
+Q2
+In Abbildung~ ist sind die Hotspots pro CPU-Thread 
+für die reine Verarbeitung der Anfrage~Q dargestellt.
+Es ist deutlich erkennbar, dass alle CPU-Threads genutzt werden. Verständlich ist auch,
+dass Thread~0 deutlich mehr als alle anderen Threads ausgelastet wird, da am Ende 
+der parallelisierten Anfrage ein Zusammenführen der Teilergebnisse stattfinden muss.
+Dieser sequentielle Anteil ist nicht vermeidbar.
+{\newcolumntype{C}[1]{>{\centering}m{#1}}
+\pname: Hotspots Q2 - Top-Down, '+' kennzeichnen Level -- CPU-Zeit [sec]
+}Insgesamt dauert die Verarbeitung der Anfrage~Q 183.69~s. 
+In der dargestellten Tabelle~ ist die reine (kumulierte) CPU-Zeit von 199.25~s 
+(also ohne Parallelisierung) dargestellt.
+Dabei wird (A) parallelisiert ausgeführt. Erkennbar ist auch, dass bei Q sehr 
+viel Zeit für das Laden (\approx179~s) benötigt wird.
+Maßgebend für die Ausführung ist der Aufruf 'CameLOD::query::parallel\_do::next' verantwortlich.
+{\newcolumntype{C}[1]{>{\centering}m{#1}}
+\pname: Hotspots Q2 - Top-Down -- parallel\_do, '+' kennzeichnen Level -- CPU-Zeit [sec], Tabelle wurde gekürzt
+}
+Aus diesem Grund ist dieser in Tabelle~ näher dargestellt.
+Der parallel\_do-Aufruf besteht aus mehreren TBB Aufrufen.
+In der Tabelle sind nur die relevanten Stellen dargestellt.
+Auffällig ist wiederum die hohe CPU-Zeit, die durch die Verwendung von Smart-Pointern verursacht wird.
+Die CPU-Zeiten von (B) und (C) werden durch BitSet-Operationen bestimmt und 
+sind in der parallelisierten Variante minimal höher als in der sequentiellen.
+Q3
+Anfrage Q ist die erste Testanfrage die Join-Operationen beinhaltet.
+Insgesamt wird für die Anfrage 171.250~s Zeit benötigt. Wobei 233.880~s reine (kumulierte) CPU-Zeit anfällt. 
+{\newcolumntype{C}[1]{>{\centering}m{#1}}
+\pname: Hotspots Q3 - Top-Down, '+' kennzeichnen Level -- CPU-Zeit [sec], gekürzt
+}
+In Tabelle~ ist ein Überblick über die Aufteilung der 
+CPU-Zeit dargestellt, insgesamt werden ungefähr 70~s für die Ausführung der Anfrage 
+genutzt. Die meiste Bearbeitungszeit entsteht durch den 'CameLOD::query::parallel\_do::next' Aufruf (A).
+{\newcolumntype{C}[1]{>{\centering}m{#1}}
+\pname: Hotspots Q3 - Top-Down -- parallel\_do, '+' kennzeichnen Level -- CPU-Zeit [sec], gekürzt
+} 
+Der Aufruf (A) soll näher betrachtet werden und wird in Tabelle~ dargestellt.
+Ein geringer Anteil der CPU-Zeit wird durch Smart-Pointer und BitSet-Operationen verursacht, jedoch ist 
+hauptsächlich der Aufruf von 'join\_tuples' zeitintensiv.
+{\newcolumntype{C}[1]{>{\centering}m{#1}}
+\pname: Hotspots Q3 - Top-Down -- join\_tuples -- CPU-Zeit [sec], gekürzt
+} 
+In Tabelle~ wird daher der 'join\_tuples' Schritt näher betrachtet. Es ist erkenntlich,
+dass maßgebend BitSet-Operationen, Smart-Pointer und 
+die 'insert-tuple' und 'find-tuple'-Methoden der Chunks die CPU-Zeit des 'join\_tuple'-Aufrufs verursachen.
+Q4
+{\newcolumntype{C}[1]{>{\centering}m{#1}}
+\pname: Hotspots Q4 - Top-Down, '+' kennzeichnen Level -- CPU-Zeit [sec]
+}
+In Anfrage~Q werden Aggregations-, Scan- und Sortier-Operationen ausgeführt.
+In Tabelle~ sind die Funktionsaufrufe dargestellt.
+Insgesamt dauert die Verarbeitung ungefähr 169~s. 
+{\newcolumntype{C}[1]{>{\centering}m{#1}}
+\pname: Hotspots Q4 -Aggregation, gekürzt, '+' kennzeichnen Level -- CPU-Zeit [sec]
+}
+Betrachtet man den Ladevorgang nicht, 
+so ergibt sich für die Anfrage eine Dauer von circa 4~s. Besonders 
+der 'sorted\_aggregation::next'-Aufruf ist dafür verantwortlich, welcher in der Tabelle~ 
+genauer aufgeschlüsselt ist. In diesem Ausschnitt bestimmen Smart-Pointer
+den Großteil der CPU-Zeit.
+Q5
+{\newcolumntype{C}[1]{>{\centering}m{#1}}
+\pname: Hotspots Q5 - Top-Down, '+' kennzeichnen Level -- CPU-Zeit [sec]
+}
+{\newcolumntype{C}[1]{>{\centering}m{#1}}
+\pname: Hotspots Q5 - Top-Down des filter next Aufrufs, gekürzt, '+' kennzeichnen Level -- CPU-Zeit [sec]
+}Insgesamt wird eine Zeit von ungefähr 178~s für die Anfrage~Qbenötigt.
+Dabei fallen ungefähr 175~s auf das Laden der Daten an, womit sich circa 3~s 
+Zeit für die Anfrageverarbeitung ergeben. 
+In Tabelle~ sind die Aufrufe dargestellt.
+Es ist erkennbar, dass für den Smart-Pointer Zeit benötigt wird und weiterhin 
+für das Ermitteln des nächsten Tripels, welches mit dem Pattern übereinstimmt.
+Daher ist in Tabelle~ der next Aufruf genauer dargestellt.
+In diesem Ausschnitt ist erkennbar, dass der Hauptanteil der CPU-Zeit wiederum durch BitSet-Operationen
+und Smart-Pointer verursacht wird.
+Kompression
+CameLOD stellt im Grundprinzip eine Wörterbuchkomprimierung dar, 
+da die verwendeten Zeichenketten in einem Wörterbuch abgelegt werden und 
+die Repräsentation der Tripel anschließend durch die kodierten Zeichenketten stattfindet.
+Der \dbpedia{}-Half Datensatz mit ungefähr 30~GB an RDF-Tripeln kann durch
+CameLOD auf ungefähr 18~GB komprimiert werden.
+Ein großer Teil verbraucht dabei das Wörterbuch und die Mehrfachspeicherung
+der Indizes.
+Der \dbpedia{}-Half Datensatz umfasst 214999298 S-P-O-Tripel.
+Für Subjekt, Prädikat und Objekt werden jeweils 64 Bit Long Werte 
+gespeichert. 
+Somit ergibt sich für einen Index (beispielsweise der Subjekt-Index):
+\[ 3 mal 64~Bit mal 214999298 = 41279865216~Bit \approx 4.8~GB \]
+Somit folgt insgesamt für die Subjekt, Prädikat und Objekt Indizes ein Speicherverbrauch von:
+\[ 3 mal 4.8~GB = 14.4~GB \]
+Die verbleibende Differenz zu den benutzten 18~GB wird für den Geo-Index und das Wörterbuch
+verwendet (\approx 3.6~GB).
+Demzufolge sind für die Speicherung hauptsächlich die Indizes für die SPO-Tripel
+verantwortlich.
+Aktuell wird für ein Tripel 3 mal 64~Bit = 192~Bit zur Speicherung benötigt.
+Angenommen man könnte diese Speicherung auf 128~Bit reduzieren,
+ so ergäbe sich ein Speicherverbrauch von:
+\[ 128~Bit mal 214999298 = 27519910144~Bit \approx 3.2~GB\]
+für einen Index.
+Also insgesamt für die SPO-Indizes:
+\[ 3 mal 3.2~GB = 9.6~GB\]
+Um den geforderten Speicherverbrauch eines Tripels auf 128~Bit zu reduzieren, 
+wäre eine homogene Aufteilung beispielsweise in eine Speicherung von drei 
+\frac {128} 3 Bit \approx 42 Bit Teilen möglich.
+Diese Aufteilung bietet aber wenig Vorteile, da allgemein nur effiziente Speicherzugriffe 
+auf Standard-Datentypen (ubyte 8~Bit, uword 16~Bit, uint 32~Bit und ulong 64~Bit) 
+möglich\footnote{beispielsweise über einen Cast auf den jeweiligen Datentyp} sind.
+Daher ist eine byte-gerechte Aufteilung der jeweiligen Werte für Subjekt-, Prädikat- und 
+Objektwerte sinnvoller.
+Durch den Aufbau der SPO-Tripel bestehen einige der Spalten (zum Beispiel die Subjekt-Spalte 
+eines Chunks) aus Blöcken gleicher Integer-Zahlen, auch hier kann eine Kompression 
+Speicher einsparen. 
+Eine Kompression (mittels Huffman oder ähnlichen Verfahren) des Wörterbuches kann
+den Speicherbedarf reduzieren. Momentan werden die Zeichenketten durch ein globales Dictionary
+gespeichert. Der Subjekt- und Prädikat-Teil von RDF-Daten besteht aus URIs,
+welche häufig eine Präfix-Übereinstimmung aufweisen. Aktuell werden alle Zeichenketten
+gespeichert, auch wenn sie gemeinsame Präfixe aufweisen. 
+Durch das Einsparen der mehrfachen Speicherung der Präfixe, ist weniger Speicher nötig.
+Ein Präfix-Baum bietet sich hierfür an. Dennoch muss der Einsatz eines solchen Baums näher untersucht
+werden, da unter Umständen mehr Zeit für die Zugriffe auf die gespeicherten Zeichenketten erforderlich ist.
+Hauptsächlich findet die Verarbeitung der Daten in CameLOD nicht auf Basis der Zeichenketten, sondern 
+in den Index-Strukturen, statt. Sie bestehen dabei aus Integer-Werten, weshalb für die Zeichenketten
+eine langsamere Datenstruktur benutzt werden kann.
+Zusammenfassung der Analyseergebnisse
+Alle im letzten Abschnitt durchgeführten Betrachtungen und Ergebnisse sollen im Folgenden kurz 
+zusammengefasst werden. 
+Profiling
+Grundlegend ist für einen großen Teil der Laufzeit der Einsatz von Smart-Pointern und BitSet"=Datenstrukturen verantwortlich.
+Auch konnten einige Implementierungsverbesserungen bezüglich des Einfügens und Suchens 
+eines Tripels innerhalb eines Chunks ermittelt werden. An diesen Stellen ist eine 
+binäre Suche aufgrund der Sortierung zwingend erforderlich.
+Der Builddb-Schritt ist in der aktuellen Version in keiner Weise parallelisiert, demnach könnte
+ein paralleles Einlesen und Speichern der Index-Strukturen Verbesserungen erzielen. 
+Da die verwendete Hash-Funktion von Boost viele Kollisionen aufweist, entstehen 
+beim Aufbau viele Zeichenkettenvergleiche. Eine andere Hash-Funktion könnte an dieser Stelle
+weniger Vergleiche erzielen.
+Durch das Profiling konnte festgestellt werden, dass die parallelisierten Operatoren gut 
+umgesetzt sind. Ein gewisser sequentieller Anteil lässt sich nicht vermeiden, da die 
+parallel erzeugten Ergebnisse am Ende zusammengefasst werden müssen. 
+Prozentualer Zeitbedarf im builddb-Schritt
+Prozentualer Zeitbedarf im \pname{
+In den Tabellen~ und sind die prozentualen Anteile
+an der Gesamtzeit der geschlussfolgerten Problemstellen (BitSet-Operationen, Smart-Pointer, Hash-Kollisionen,
+Einfügeoperationen in den Chunks) der beiden Schritte builddb und CameLOD dargestellt.
+Kompression
+Auch die verwendete Kompression durch das CameLOD-Projekt wurde genauer betrachtet und 
+festgestellt, dass weitere Untersuchungen bezüglich der Index"=Strukturen und deren inneren 
+Tripel"=Speicherung mittels Integer-Sequenzen durchgeführt werden müssen.
+Weiterhin kann auch das Dictionary zum Speichern der Zeichenketten 
+durch den Einsatz einer anderen Datenstruktur (beispielsweise Trie) Speicher sparen. Dabei muss aber
+untersucht werden, wie sich die Zugriffszeiten auf die Zeichenketten verändern.
+\enlargethispage{2\baselineskip}
+Ansätze zur Effizienzsteigerung 
+Im folgenden Abschnitt sollen für die im vorhergehenden Kapitel ermittelten 
+Performanz- beziehungsweise Speicher-Schwachstellen Verbesserungen erläutert werden.
+Zunächst werden die jeweiligen Schwachstellen kurz dargestellt und 
+verschiedene Lösungsansätze, welche moderne CPU-Features verwenden, 
+beschrieben. Weiterhin folgt für jedes geschlussfolgerte Problem 
+ein Mini-Benchmark, um abzuschätzen ob an dieser Stelle Verbesserungen 
+zu erwarten sind. Dabei werden auch Vergleiche mit einer maximal möglichen technischen 
+Implementierung betrachtet. Auch wurde der eigene Code mittels Profiling untersucht.
+Ansätze
+In der Analyse des CameLOD-Projekts konnten einige problematische Stellen gefunden werden.
+Generell ergab sich dabei eine hohe Laufzeit, verursacht durch den Einsatz von Smart-Pointern.
+Bei der Anfrageverarbeitung benötigt weiterhin der Einsatz von Bitsets viel CPU-Zeit.
+Außerdem konnte festgestellt werden, dass beim Aufbau der Datenbank viel Zeit durch 
+Hash-Kollisionen und die damit verbundene Kollisionsbehandlung benötigt wird. 
+Auch der Speicherverbrauch wurde betrachtet und es kann durch den Einsatz von 
+Kompressions-Schemata für Integer-Sequenzen beziehungsweise Dictionary-Strukturen Speicher und 
+eventuell auch Verarbeitungszeit gespart werden.
+Die beschriebenen Grundprobleme sollen im folgenden Abschnitt genauer betrachtet werden,
+dabei wird grundlegend immer zunächst das Problem im Bezug auf das CameLOD-Projekt
+beschrieben. Anschließend folgen verschiedene Ansätze um das Problem effizienter zu lösen.
+Am Ende werden mittels Mini-Benchmarks verschiedene Implementierungen zur Lösung 
+verglichen und in der Auswertung werden Schlussfolgerungen für das CameLOD-Projekt 
+gezogen.
+Als Kernprobleme ergaben sich in der Analyse folgende Bereiche:
+ Smart-Pointer (an allen Stellen im System)
+ Hash-Funktionen (beim Aufbau der Datenbasis)
+ Bit-Vektoren (zur Speicherung der Anfrageergebnisse)
+ Kompression (Speicher kann eingespart werden)
+ Speicher (NUMA, Memory Mapped Files)
+ Chunk-Größe 
+ 
+Smart-Pointer
+Für einen großen Teil der Laufzeit des CameLOD-Projektes ist die Verwendung von 
+Smart-Pointern (genauer boost::shared\_ptr) verantwortlich.
+Der Einsatz von Smart-Pointer bietet viele Vorteile, da beispielsweise
+eine manuelle Speicherverwaltung entfallen kann (vergleiche \cite[Kapitel 7, S.157ff]{andrei2001modern}). 
+Es ist daher nicht einfach möglich, die Smart-Pointer durch Raw-Pointer zu ersetzen und
+auch nicht gewollt. Aber an einigen Stellen im Projekt könnten 
+durchaus Raw-Pointer eingesetzt werden, beispielsweise 
+bei der Verkettung der Chunks zu einer Liste.
+Problem
+Es gibt verschiedene Ansätze Smart-Pointer (genauer shared-Pointer, im Weiteren soll Smart-Pointer synonym 
+für einen shared-Smart-Pointer benutzt werden) zu implementieren.
+Klassisch sind zwei Verfahren zur Implementierung solcher Smart-Pointer üblich, zum einen über Referenzzählung und zum anderen mittels Referenzverlinkung (vergleiche \cite[S.165f]{andrei2001modern}).
+Smart-Pointer-Konzepte 
+In Abbildung~ sind die zwei allgemeinen Konzepte zur Realisierung
+von Smart-Pointern dargestellt. Beim Ansatz der Referenzzählung wird global 
+gezählt, wie häufig ein Shared-Pointer auf das Objekt zeigt.
+Ist die Anzahl an Referenzen auf Null gesunken, so kann das Objekt freigegeben werden.
+Wichtig für dieses Verfahren beim Einsatz in multi-threaded Anwendungen ist eine Synchronisation
+des Referenzzählers.
+Im Gegensatz dazu benutzt das Referenzverlinkungsverfahren keinen Zähler sondern 
+alle Smart-Pointer die auf ein Objekt zeigen bilden eine verkettete Liste.
+Ist in dieser Liste nur noch ein Element, so kann nach der Freigabe dessen
+auch das referenzierte Objekt freigegeben werden.
+Nachteilig an der Referenzverlinkung ist, dass alle Listenoperationen 
+synchronisiert werden müssen. Dadurch entsteht ein erheblicher Overhead, weshalb
+diese Variante im weiteren Verlauf nicht betrachtet wird.
+Neben den vorgestellten allgemeinen Varianten gibt es weitere ähnliche Verfahren,
+zum Beispiel kann das referenzierte Objekt die Referenzzählung selbstständig verwalten.
+In dem Fall spricht man von intrusive-shared-Pointer.
+Benchmark
+In einem Benchmark wurden verschiedene Smart-Pointer Implementierungen miteinander
+verglichen.
+Dabei wurden in einem Array eine variable Anzahl an Smart-Pointer angelegt und 
+zwei mal zugegriffen. Es soll somit die Verwendung in einem einfachen System simuliert werden.
+Natürlich müsste das Testszenario komplexer gestaltet werden, aber es reicht für einen 
+allgemeinen Eindruck aus.
+Insgesamt wurden 5 verschieden (Smart-)Pointer Implementierungen betrachtet. Es kamen keine
+Smart-Pointer basierend auf dem Referenzverlinkungsprinzip zum Einsatz, da sie nur schlecht für Multi"=Thread"=Anwendungen geeignet sind.
+\paragraph{boost, std.}
+Die von Boost und dem neuen C++11 Standard zur Verfügung gestellten Shared-Pointer Implementierungen
+wurden als boost und std untersucht. Grundlegend sind beide Implementierungen ähnlich, da sie mittels
+Referenzzählung arbeiten und im neuen C++ Standard teilweise Boost-Code übernommen wurde.
+\paragraph{counted.}
+Die counted-Variante stellt eine eigene minimale Implementierung eines thread-safe Smart-Pointer, basierend 
+auf Referenzzählung, dar.
+\paragraph{intrusive.}
+Die Boost"=Bibliothek bietet neben den eigenen Smart-Pointern auch die Möglichkeit 
+spezialisierte Smart-Pointer zu erstellen. Mit der intrusive-Variante kann 
+eine Klasse die Referenzzählung selbst übernehmen. Im Benchmark wurde eine einfache Klasse
+mit der intrusive-Variante benutzt.
+\paragraph{raw.}
+Als allgemeinen Referenzwert soll der Einsatz von normalen Pointern dienen.
+Es ist eine manuelle Speicherdeallokation nötig, welche in den Messungen nicht mit einfließen.
+Da bei den Smart-Pointer Varianten das Aufräumen des Speichers erst am Ende des Funktionsaufrufs 
+stattfindet und somit nicht in der eigentlichen Messung erfasst wird. 
+Auswertung
+In Diagramm~ sind die ermittelten Ergebnisse des Benchmarks dargestellt.
+Es wurden für jeden Datenpunkt 32 Messungen durchgeführt und im Diagramm sind Intervalle
+mit 99%-tiger Konfidenz dargestellt.
+Zunächst ist deutlich erkennbar, dass die Varianten boost und std sehr dicht beieinander liegen, 
+was durch den Fakt, dass sie grundsätzlich ähnliche Implementierungen darstellen, erklärbar ist.
+Besser als diese beiden Varianten sind nur die counted und intrusive Varianten.
+Bei der Implementierung konnte ein erheblicher zeitlicher Overhead, welcher durch die Verwendung von 
+Synchronisationsmechanismen für die Referenzzählung verursacht wird, beobachtet werden.
+Sie sind aber zwingend erforderlich, da das CameLOD-Projekt multi-threaded ist.
+Intrusive-Pointer sind ungefähr 20% schneller als die boost-Variante.
+Sehr deutlich ist der Fakt, dass Smart-Pointer erheblich viel Zeit benötigen, 
+da die dargestellte Raw-Pointer ungefähr 10 mal schneller sind als alle Smart-Pointer Varianten. 
+Fazit
+Im Benchmark konnten verschiedene Smart-Pointer-Implementierungen begutachtet werden.
+Grundlegend ergibt sich, dass Smart-Pointer in hoch"-effizienten Teilen des System gemieden werden sollten.
+Unter Umständen wäre eine Verwendung von intrusive-Pointern besser als die allgemeinen boost-Pointer, aber
+auch nicht an allen Stellen des Systems.
+Konkret kann für das CameLOD-Projekt 
+der Einsatz eines Memory-Contexts für die Anfrage-Verarbeitung geschlussfolgert werden.
+Dadurch erhält jede Anfrage ihren eigenen Speicherbereich und nachdem die Anfrage verarbeitet wurde, 
+kann dieser aufgeräumt werden oder sogar durch das Speichern und Wiederverwenden von 
+Ergebnis-Chunks ein Caching-Effekt entstehen.
+Eine manuelle Speicherverwaltung ist daher erforderlich.
+Auch können als Kompromiss die Index-Chunks 
+komplett mit raw-Pointern implementiert werden, dagegen aber die 
+Chunks, welche bei Join-Operationen zur Speicherung der Ergebnisse verwendet werden, mit intrusive-Pointern
+realisiert werden. Somit folgt eine konzeptionelle Trennung zwischen read-only-Chunks und result-Chunks,
+da für die Index-Chunks das Freigeben des Speichers nur beim Beenden von CameLOD erforderlich ist.
+% Zeitbedarf für Smart-Pointer/Raw-Pointer im CameLOD-Projekt
+In der Analyse konnte festgestellt werden, dass für die boost Smart-Pointer-Variante 
+der in Tabelle~ dargestellte prozentuale Anteil an der Gesamtzeit
+für die beiden Vorgänge 'builddb' und 'CameLOD' benötigt wird.
+In der Spalte 'raw' sind die prozentualen Anteile, welche entstehen, wenn die Smart-Pointer 
+theoretisch durch Raw-Pointer ersetzt werden, dargestellt. 
+Als Grundlage dienen dabei die Ergebnisse des Benchmarks. Das bedeutet es wurde 
+angenommen, dass Raw-Pointer etwa 10 mal schneller sind als Smart-Pointer. 
+Es ergibt sich zum Beispiel im builddb-Schritt eine Ersparnis von ungefähr 37% an der
+Gesamtzeit. Auch die Anfragen können durch den Einsatz von Raw-Pointern profitieren, wobei
+beispielsweise bei Q1, Q2 und Q4 mindestens 30% eingespart werden kann.
+Die Anfragen Q3 und Q5 können nur wenig Verbesserung durch Raw-Pointer erzielen, weil die Gesamtzeit
+bei diesen Anfragen hauptsächlich durch Bit-Set-Operationen bestimmt wird. 
+\enlargethispage{\baselineskip}
+Hash-Funktion
+In dem folgenden Abschnitt soll der Einsatz einer auf AES-NI basierenden Hash-Funktion 
+als Ersatz für die aktuell benutzte Boost-Hash-Funktion untersucht werden.
+Für das Hashen der verschiedenen Zeichenketten wird im \pname-Projekt viel Zeit benötigt,
+weil zunächst ein Dictionary aller Zeichenketten aufgebaut werden muss, um für die jeweiligen Chunks
+nur Integer/Long Werte zur Verarbeitung nutzen zu können.
+Dieses Konzept stellt eine Wörterbuchkomprimierung dar, weshalb eine schnelle
+und gute Hash-Funktion nötigt ist. 
+Problem
+\begin{lstlisting}[caption=Boost hash range ]
+template <class It> 
+inline std::size_t hash_range(It first, It last) {
+ std::size_t seed = 0;
+ for(; first != last; ++first) {
+ boost::hash<T> hasher; //< generate hash for single char
+ seed ^= hasher(v) + 0x9e3779b9 + (seed<<6) + (seed>>2);
+}
+ return seed;
+}
+\end{lstlisting}
+Aktuell wird die 'boost::hash\_range' Funktion verwendet.
+Ihre Grundfunktionalität ist in Code-Auszug~ 
+dargestellt (Quelle:).
+Grundlegend wird für jedes Zeichen i der Zeichenkette s, welche
+durch die Anfangs- und End-Zeiger first und last festgelegt ist,
+eine Kompressionsfunktion angewandt und mit dem vorhergehenden Hash-Wert verknüpft.
+Auffallend ist die sequentielle Verarbeitung der Zeichenkette. Es wird
+jedes Zeichen einzeln betrachtet und verarbeitet.
+Moderne CPUs besitzen jedoch 64~Bit Register, daher können 
+durch die byteweise Berechnung solche Register nicht vollständig ausgenutzt werden.
+Besser wäre eine Verarbeitung von Long- (64~Bit) oder sogar SSE- Blöcken (128~Bit) der Zeichenkette.
+In werden kryptographische Hash-Funktionen
+betrachtet, welche Hardware AES (AES-NI) zur blockweisen Verarbeitung verwenden.
+Leider sind die dort aufgeführten Hash-Funktionen kryptographische Hash-Funktionen, was bedeutet, 
+sie müssen zusätzliche Eigenschaften erfüllen, welche für die Anwendung in einer Hash-Tabelle 
+nicht notwendig sind. 
+Zum Beispiel müssen sie kollisionsarm und schlecht rekonstruierbar sein.
+Die Kollisionsarmut ist auch für eine Hash-Tabelle eine gute Eigenschaft, da weniger Kollisionen 
+behandelt werden müssen, hingegen wird der Sicherheits-Aspekt jedoch nicht benötigt.
+Auch viele der SHA3-Kandidaten benutzen AES-NI zur Konstruktion einer kryptographischen Hash-Funktion 
+(beispielsweise Grøstl,vergleiche).
+Die SHA3-Kandidaten setzen auf Sicherheit und sind daher um einiges langsamer als
+die Boost-Hash-Funktion.
+Inspiriert durch die SHA3 Kandidaten wurde eine für Hash-Tabellen einsetzbare Hash-Funktion entwickelt.
+Sie verwendet dabei die Damg{\aa}rd-Merkle-Konstruktion (DM-Konstruktion, vergleiche) 
+einer Hashfunktion basierend auf der Blockchiffre AES mit so wenig AES-Runden wie möglich.
+AES-NI Hash Funktion
+AES-NI-Hash Grundfunktionalität
+Die Grundidee der AES-NI-basierten Hash-Funktion ist in Abbildung~ dargestellt und
+lässt sich durch wenige Kernideen beschreiben.
+Eine Zeichenkette wird dabei blockweise verarbeitet. Die Blöcke sind 16~Byte groß und können demnach 
+in einem SSE-Register verarbeitet werden.
+Für jeden Block wird die DM-Konstruktion angewendet.
+Dabei wird ein neuer Hashwert H_i basierend auf dem alten Hashwert H_{i-1} 
+mittels einer Kompressionsfunktion AES(msg,key) folgendermaßen berechnet
+\[ H_0 = 0 \]
+\[ H_i = AES(Block_i,H_{i-1}), \forall i. \]
+Damit die Zeichenkette blockweise verarbeitet werden kann werden am Ende Nullen 
+angefügt, um eine durch die Blockgröße teilbare Zeichenkettenlänge zu erhalten.
+Der AES Verschlüsselungsschritt besteht aus nur zwei relevanten AES-Runden (die Start- und End-Runde),
+wobei am Anfang die Nachricht mit dem Schlüssel XOR verknüpft wird.
+Die AES-Runde wird durch die Hardware"-funktionalität von AES-NI realisiert (vergleiche).
+In der genauen Beschreibung der DM-Konstruktion werden nicht nur Nullen an die Zeichenkette angefügt, sondern
+eine Kodierung der Zeichenkettenlänge um kryptographische Sicherheit zu gewährleisten. In 
+der hier beschriebenen Implementierung wurde aus Performance-Gründen darauf verzichtet.
+Genauso werden in der Implementierung zunächst jeweils zwei 16 Byte Blöcke in einer Iteration 
+berechnet, anschließend die restlichen vollen 16 Byte Blöcke und am Ende werden durch geschicktes Laden 
+der Zeichenkette in eines der SSE-Registern die angehängten Nullen erzeugt.
+Der so erzeugte 128~Bit Hash-Wert wurde mittels einer Finalisierungsfunktion final()
+in einen 64~Bit Hash-Wert transformiert und zurückgegeben.
+\[ final(H) = low(H) \mathbin{\oplus} high(H) \]
+Zunächst wurde mittels CryptoPP-Bibliothek testweise auf dieser Grundidee eine
+Hash"=Funktion erzeugt, um festzustellen ob sich eine effiziente Implementierung lohnt.
+Die so erzeugte Funktion zeigte erstaunlich gute Kollisionsresistenz, deshalb wurde eine hardwarenahe 
+Implementierung mit C Intrinsics vorgenommen (vergleiche).
+Neben der AES-NI basierten Hash-Funktion wurde auch eine auf der Intel-CRC32 Befehlssatzerweiterung
+basierende Hash-Funktion erzeugt. Sie zeigte keine guten Eigenschaften bezüglich Laufzeit und Kollisionen 
+im Vergleich zur Boost-Hash-Funktion und wurde daher im Benchmark nicht betrachtet. 
+Benchmark
+Um die Implementierung der Hash-Funktion mit der Boost-Hash Funktion zu vergleichen 
+wurde ein Benchmark programmiert, dabei 
+wird eine beliebige NTriple"=Datei geladen und in ihre Subjekt-Prädikat-Objekt Bestandteile
+zerlegt. Anschließend wurden alle Zeichenketten in einer std::map abgelegt. Diese Map wurde 
+durchlaufen und mit den beiden Funktionen die jeweiligen Zeichenketten gehasht.
+Insgesamt wurde die Zeit zum Hashen aller Zeichenketten ermittelt und in einem weiteren Schritt 
+die summierten Kollisionen berechnet. 
+Als Datengrundlage dienten die englischen NTripel-Daten des \dbpedia{}-Projektes und ein kombinierter Datensatz (\dbpedia{}-Half \approx30~GB).
+Auswertung
+In Grafik~ wird die Zeit für die Berechnung der Hash-Werte für
+beide Funktionen dargestellt. Auffallend ist, dass beide Hash-Funktionen in etwa gleich schnell sind, 
+da sie in der Darstellung fast deckungsgleich verlaufen.
+Vermutlich ist die AES Variante nicht wesentlich schneller als die Boost, da für die SSE-Register 
+Kopiervorgänge benötigt werden.
+Dagegen zeigt Abbildung~ die summierten Kollisionen der untersuchten 
+Hash-Funktionen. Deutlich erkennbar ist, dass die AES-Funktion bei allen untersuchten Datensätzen keine einzige Kollision aufwies, dagegen gab es bei der Boost"=Hash"=Funktion immer Kollisionen.
+Kollisionen in Hash-Tabellen sind zeitaufwändig, da beispielsweise für die Behandlung
+Zeichenkettenvergleiche stattfinden müssen.
+Fazit
+Die Kollisionsarmut der AES-NI-basierten Hash-Funktion bringt einen wesentlichen Performance"=Vorteil 
+beim Einsatz in einer Hash-Tabelle. Hash-Kollisionen treten sehr häufig beim Aufbau der Datenbank
+auf. Der builddb Schritt kann somit beschleunigt werden.
+Prozentualer Zeitbedarf für Hash-Kollisionen im builddb-Schritt
+In Tabelle~ ist der prozentuale Zeitbedarf der Hash-Kollision 
+im builddb Schritt dargestellt. 
+Durch den Einsatz der AES-Hash-Funktion kann erreicht werden, dass nicht mehr Zeit für 
+das Hashen der Zeichenketten benötigt wird, aber weniger Kollisionsfälle behandelt werden. 
+Daher kann ungefähr 3% an der Gesamtzeit eingespart
+werden (genauer wird hier sicherlich noch mehr Ersparnis stattfinden, da auch weniger Zeichenketten neu
+gehasht werden müssen).
+Bit-Vektoren
+Bei der Analyse des bestehenden Systems konnte ermittelt werden, dass
+durch die Verwendung der boost-Bitvektoren (als Bitmaps) sehr viel Zeit 
+benötigt wird. Daher sollen im folgenden Abschnitt Verbesserungen bezüglich effizienterer 
+Bitmap-Datenstrukturen betrachtet werden.
+In der aktuellen Implementierung des \pname-Projekts werden häufig Bitvektoren eingesetzt.
+Zum Beispiel benutzt ein einfacher Scan für jeden Chunk einen Bitvektor um die Elemente zu markieren, welche
+das Scan-Prädikat erfüllen.
+Typisch sind daher Schleifenstrukturen mit folgendem Aufbau:
+\begin{lstlisting}
+for (size_t i = 0; i < num; i++) {
+ res->set_bit(i, XYZBOOL);
+}
+\end{lstlisting}
+Dabei wird eine Iteration über alle Elemente des Chunks durchgeführt und das Ergebnis einer Prädikatauswertung im 
+Bitvektor gespeichert.
+Zur Speicherung der Ergebnisse in allen Operatoren werden BitSets/BitMaps/Bit-Vektoren in dieser Art und Weise
+eingesetzt.
+Aktuell wird die BoostBitSet Implementierung benutzt, da sie weniger Speicher 
+als eine naive Implementierung benötigt.
+Eine naive Implementierung würde ein Array bestehend aus Bool Werten nutzen, dabei
+werden intern für die Darstellung der Bool-Werte Bytes verwendet.
+Dieser Ansatz benötigt 8 mal mehr Speicher als eine Implementierung auf Bit-Ebene.
+Dennoch soll er ebenfalls als maximale Grenze auch betrachtet werden.
+Benchmark
+Durch einen experimentellen Benchmark soll das Optimierungspotential
+nur durch Austausch beziehungsweise Modifikation der Bitvektoren untersucht werden.
+Dazu wurden die Laufzeiten beim Festlegen aller Elemente eines Bitvektors durch vorher ermittelte
+Zufallsbits mit verschiedenen Methoden gemessen.
+Bit-Vektor-Varianten
+Insgesamt wurden 6 Bit"=Vektor"=Implementierungen betrachtet.
+Die Funktionen der verschiedenen Methoden sollen kurz beschrieben werden.
+\paragraph{Std-Bit-Vektoren.}
+Die Standard Bibliothek von C++ bietet eine effiziente Datenstruktur für 
+Bit-Vektoren. Wenn ein std::vector<bool> angelegt wird, so greift 
+eine Optimierung, welche intern Bytes zur Speicherung benutzt und dort jeweils
+auf Bit-Ebene Operationen durchführt (kann durch die Beobachtung des Speicherverbrauchs geschlussfolgert werden,
+vergleiche).
+\paragraph{Boost-Bit-Vektoren.}
+Die Boost-Bit-Vektor Implementierung (genauer wird sie dort als boost::dynamic\_bitset benannt)
+ist felxibler als die Std-Bit"-vektoren, da sie die Möglichkeit bietet verschiedene
+Grundelemente als Blöcke zu benutzen.
+Zugriffe auf die gespeicherten Bits (speziell beim Setzen eines neuen Bit-Wertes)
+erfolgen in der Boost-Implementierung anhand der Auswertung des zu setzenden 
+Bit-Wertes (siehe Quelltext-Auszug der Implementierung des Setzens eines Bits innerhalb eines Blocks, Quelle 
+)
+\begin{lstlisting}[caption=Boost bit-set Schreib-Zugriffe ]
+...
+void do_set() {m_block |= m_mask;}
+void do_reset() {m_block &= ~m_mask;}
+void do_assign(bool x) {x? do_set() : do_reset();}
+...
+\end{lstlisting}
+\paragraph{long.}
+Zum Vergleich wurde eine Bit"-Vektor"=Implementierung erstellt, welche
+zur internen Speicherung einen Vektor mit uLong-Werten benutzt.
+Auf ein dynamisches Verhalten wurde verzichtet, da es für
+die Verarbeitung in CameLOD nicht benötigt wird (auch dort werden die Boost-Bit-Vektoren
+am Anfang mit einer festen Element-Anzahl initialisiert).
+Es wurden verschiedene Zugriffsvarianten getestet und festgestellt, dass sich die folgende
+Zugriffsvariante beim sequentuellen Setzen effizienter als die Boost"=Variante erwies. 
+Ein Zugriff zum Setzen eines Bits erfolgt schematisch anhand des Quelltextauszugs~.
+\begin{lstlisting}[caption=Skizze der Schreib-Zugriffe der eigenen Bit-Set Implementierung ]
+const unsigned long _masks[64] =... // mask for each bit access
+inline void set(const long& idx, const bool& value) {
+ // calc outer index 
+ long l = idx / (sizeOfByte * sizeof(long));
+ // calc inner index
+ long i = idx 
+ if(!(_store[l] & ( _masks[i]))) {// current stored bit = 0
+ _store[l] |= _masks[i] * value; // 0 OR 1*X = X 
+} else {// current stored bit = 1
+ _store[l] &= ~(_masks[i] * !value); // 1 AND NOT(1*NOT(X)) = X
+}
+}
+\end{lstlisting}
+Ignoriert man die Berechnung der Indizes für den Zugriff auf den Block 
+und der jeweiligen Maske, so ist deutlich der Unterschied zur Boost"=Implementierung erkennbar,
+denn in der eigenen Variante wird zunächst der Speicherinhalt des angesprochenen Bits überprüft
+und darauf aufbauend eine Bit"=Operation zur Veränderung ausgeführt. Die angegebenen Operationen
+sind äquivalent mittels Intrinsics als SSE/AVX-Befehle umsetzbar.
+\paragraph{sse.}
+Analog zur long-Variante wurde eine Variante mit einem 128~Bit-Integer Typ realisiert.
+Die Zugriffe erfolgen in ähnlicher Weise, nur dass SSE-Operatoren zum Einsatz kommen.
+\paragraph{byte.}
+Die byte-Variante stellt nur eine Referenz dar und ist analog zur long-Variante implementiert 
+worden. Anstelle der uLong-Werte im Vektor wurden uByte-Werte benutzt.
+\paragraph{naiv.}
+Eine weitere mögliche Referenz soll die naiv-Variante darstellen,
+hierbei wird für ein Bit ein komplettes uByte an Speicher verwendet.
+Auswertung
+Die Abbildung~ stellt die ermittelten Messungen dar.
+Es ist die Entwicklung der Laufzeiten der verschiedenen Methoden 
+bei Variation der Anzahl der Bitvektorelemente dargestellt.
+Die dargestellten Laufzeiten sind dabei Mittelwerte über 32~Messungen. Zusätzlich sind 
+Intervalle der jeweiligen Mittelwerte mit 99%-tiger Konfidenz visualisiert.
+ 
+Weiterhin ist in beiden Abbildungen erkennbar, dass die Boost-Datenstruktur in etwa der
+Std-Variante entspricht. Die schlechteste Variante ist die SSE-Version, auch wenn sie nur 
+geringfügig (\approx10%)
+langsamer als die Boost-Variante ist. Grundlegend ist der Ansatz, SSE-Register für einzelne Bit-Operationen
+zu benutzen nicht effizient, da die SSE-Register für mehrfache Operationen optimiert sind. 
+Durch die veränderte Zugriffsvariante konnte erreicht werden, dass die byte- und long-Varianten
+deutlich schneller sind als die Boost-Variante.
+Die byte-Variante ist cira 40% schneller als die Boost"=Variante. 
+Betrachtet man dagegen die long-Variante, so ist sie in etwa 60% schneller 
+als die Boost-Version.
+Die byte- und long-Varianten unterscheiden sich, weil es auf einer 64~Bit Architektur 
+effizienter ist, long-Werte zu verarbeiten.
+Verständlich ist auch der dargestellte Fakt, dass die naiv-Version
+allen anderen Versionen in Bezug auf Setz-Geschwindigkeit überlegen ist,
+aber aus Speichergründen soll sie nur als Referenz des technisch Möglichen angesehen werden.
+Es wurde auch der Speicherverbrauch der verwendeten Datenstrukturen untersucht und festgestellt,
+dass alle Varianten (außer die naiv-Variante) etwa gleich viel Speicher benötigen.
+Fazit
+Durch den Einsatz einer anderen Bit-Vektor"=Datenstruktur kann das CameLOD-Projekt 
+profitieren, da die Anfrageergebnisse durch Iteration über die jeweiligen Chunks entstehen und
+die Ergebnisse von Prädikatauswertungen in Bit-Vektoren gespeichert werden.
+Prozentualer Zeitbedarf für Bit-Set-Operationen im CameLOD-Projekt
+In Tabelle~ sind die prozentualen Zeiten für
+die Bit-Set-Operationen mittels boost für die Anfragen Q1, Q2, Q3, Q4 und Q5 dargestellt.
+Deutlich erkennbar ist, dass bei vielen Anfragen viel Zeit durch die Bit-Set-Operationen 
+verbraucht wird. Beispielsweise wird bei den Anfragen Q3 und Q5 ungefähr 56-69%
+der Gesamtzeit durch Bit-Set-Operationen verbraucht. Mit der vorgestellten long-Variante kann
+dieser Anteil auf ungefähr 33-41% gesenkt werden. Das bedeutet es kann mindestens 20%
+an Zeit eingespart werden.
+Bei den Anfragen Q1, Q2 und Q4 haben Bit-Operationen nur einen geringen Anteil an der 
+Verarbeitungszeit, weshalb hier nur wenig Gewinn erzielt werden kann. 
+Kompression
+CameLOD profitiert in erster Linie aus der verwendeten 
+Wörterbuchkompression zum Speichern der RDF-Daten.
+Es sollen im nächsten Abschnitt weitere Verbesserungen bezüglich 
+der Kompression der vorhandenen Daten beschrieben werden, welche keinen negativen Einfluss
+auf die Geschwindigkeit bei der Verarbeitung ausüben.
+Zunächst wird durch Analyse der gespeicherten Daten theoretisch nachgewiesen, 
+ob bestimmte Kompressionsschemata sinnvoll sind.
+Weiterhin soll experimentell untersucht werden, ob durch einfache Kompressionsschemata 
+sogar die Verarbeitungsgeschwindigkeit erhöht werden kann, da beispielsweise
+weniger große Speicherbereiche durchlaufen werden müssen. 
+Integer-Chunk-Kompression
+Die Indizes für Subjekt, Prädikat und Objekt in CameLOD bestehen aus Chunks
+von Integer-Sequenzen.
+Jedes Chunk besteht im einfachsten Fall aus 3 Integer-Sequenzen (jeweils für 
+Subjekt, Prädikat und Objekt eine Sequenz).
+Eine Kompression hinsichtlich einer Sequenz liefert nur geringe Vorteile für die Verarbeitung, daher ist
+es besser alle zu komprimieren.
+Besonders wichtig für die Kompression ist weiterhin, dass die Zugriffe auf 
+die unkomprimierten Werte nicht wesentlich langsamer sein dürfen, als die Direktzugriffe.
+Aus Performancegründen entfallen daher schon verschiedene Entropie-Verfahren (Huffman und ähnliche),
+weil sie zur Dekompression mehrere elementare Operationen benötigen. 
+Bei Huffman zum Beispiel das Durchlaufen des Huffman-Baums. Außerdem bietet eine Huffman"=Kompression
+keinen wahlfreien Zugriff. Dagegen soll die zusätzliche Kompression möglichst transparent
+und effizient integrierbar sein.
+Da die Daten bereits in Teilmengen durch die Chunk-Struktur aufgeteilt sind, bietet sich 
+ein Frame-of-Reference-Verfahren an.
+Für die gespeicherten Indizes wurden verschiedene wichtige Werte ermittelt,
+zunächst: 
+\[ max(chunk, column)= Maximum einer Spalte eines Chunks \]
+\[ min(chunk, column) = Minimum einer Spalte eines Chunks \]
+Weiterhin wurden die Differenzen des Maximums/Minimums einer Spalte innerhalb eines Chunks betrachtet:
+\[ diff(chunk, column) = max(chunk, column)-min(chunk, column) \]
+Falls eine Integersequenz eine Differenz ihrer Werte von d aufweist,
+so können die gespeicherten Integer-Zahlen mit \lceil \log_2(d +1) \rceil kodiert werden.
+Darauf aufbauend wird die Funktion bits definiert:
+\[ bits(chunk, column) = \lceil \log_2(diff(chunk, column) + 1) \rceil \] 
+Sie gibt an, wie viele Bits für einen Wert einer Sequenz (Subjekt, Prädikat oder Objekt) 
+innerhalb eines Chunks zur Kodierung benötigt werden.
+Um möglichst einfach auf die Elemente zuzugreifen, ist es besser nur spezielle Bit-Werte,
+welche Vielfache von 8 sind (byte-aligned), zu betrachten. Dazu wird die Funktion ALbits festgelegt mit:
+\[ ALbits(chunk, column) = \lceil bits(chunk, column) / 8\rceil mal 8 \] 
+Betrachtet man nun einen speziellen Index (zum Beispiel den Subjekt-Index), so kann 
+für den Speicherbedarf eines Tripels innerhalb eines Chunks c folgendes festgelegt werden:
+\[ Tbits(c) = bits(c, subject) + bits(c, predicate) + bits(c, object) \]
+Analog zu ALbits wird auch TALbits festgelegt:
+\[ TALbits(c) = ALbits(c, subject) + ALbits(c, predicate) + ALbits(c, object) \]
+Insgesamt ergibt sich für den gesamten Index also ein Speicherbedarf:
+\[ mem(index) = \sum \limits_{c ist ein Element von Chunks(index)} c.size() mal Tbits(c) \]
+und für den aligned-Speicherverbrauch:
+\[ ALmem(index) = \sum \limits_{c ist ein Element von Chunks(index)} c.size() mal TALbits(c) \]
+Um eine Abschätzung über den erwarteten Gewinn dieser Kompressionsmethode zu bestimmen, 
+wurden die beschriebenen Werte für die Indizes Subjekt, Prädikat und Objekt 
+auf Grundlage des \dbpedia{}-Half-Datensatzes (30~GB mit TupleCount=214999298 Tripeln) ermittelt.
+Die Daten wurden nach dem Laden innerhalb des CameLOD Projekts durch Iteration
+über alle Chunks aller Indizes extrahiert.
+Da in dieser Darstellung (vergleiche Tabelle~) nicht 
+alle min/max Werte aller Chunks dargestellt werden können, werden nur die folgenden Werte aufgelistet:
+\[ maxdiff(index,column) = \max\{diff(c,index,column) | c ist ein Element von Chunks(index) \} \]
+\[ maxTbits(index) = \max\{Tbits(c,index) | c ist ein Element von Chunks(index) \} \]
+\[ maxTALbits(index) = \max\{TALbits(c,index) | c ist ein Element von Chunks(index) \} \]
+\[ maxmem(index) = maxTbits(index) mal TupleCount\]
+\[ compRatio() = compressed / uncompressed \]
+Analyse der Index-Speicherung
+\hide{
+global: 
+ max_sub_diff: 4526 
+ max_pred_diff: 33356138 
+ max_obj_diff: 17675281841484666188 
+ calc max_opt bits: 102 
+ calc max_aligned bits: 112 
+ SumOptGBytes: 2.33311 
+ SumAlGBytes: 2.60087
+global: 
+ max_sub_diff: 8318395 
+ max_pred_diff: 10616487 
+ max_obj_diff: 17675281841484830278 
+ calc max_opt bits: 111 
+ calc max_aligned bits: 112 
+ SumOptGBytes: 0.931954 
+ SumAlGBytes: 1.07646
+global: 
+ max_sub_diff: 8318393 
+ max_pred_diff: 33356138 
+ max_obj_diff: 15929324381219793323 
+ calc max_opt bits: 112 
+ calc max_aligned bits: 120 
+ SumOptGBytes: 1.85747 
+ SumAlGBytes: 2.06635
+}
+Deutlich erkennbar in Tabelle~ ist, dass die maximalen 
+Differenzen für die jeweils sortierte Spalte
+der Indizes recht gering ausfallen. Grundlegend ist dafür die Sortierung verantwortlich, hier würde sich
+eine andere Art der Kompression anbieten, beispielsweise eine Delta-Methode. Die 
+Differenzen zwischen zwei aufeinander folgenden Zahlen innerhalb der sortierten Spalte 
+sollten gering ausfallen. Dennoch ist der Einsatz einer Delta-Methode nicht vorteilhaft, 
+da bei wahlfreiem Zugriff auf ein Element innerhalb des Chunks zunächst 
+eine Rekonstruktion mit allen Vorgängerwerten stattfinden muss.
+In Tabelle~ sind auch die erzielbaren Kompressionsraten für die 
+aligned-Variante dargestellt.
+Es ist gut erkennbar, dass eine Kompressionsrate von 0.23-0.44 erzielt werden kann.
+Dabei bedeutet eine Kompressionsrate von 0.44, dass 56% des Speichers eingespart werden kann. 
+Für einen der Indizes bedeutet das bei einer unkomprimierten Größe von 4.8~GB ein
+Speichergewinn von 2.6~GB. 
+Weiterhin ist in der Tabelle erkennbar, dass selbst die maxTbits Schätzung, welche nur die globalen maximalen Differenzen betrachtet, bereits Werte unterhalb 192~Bits liefert. Alle drei Indizes könnten demzufolge 
+mit 128~Bits kodiert werden. Eine reine 128~Bit Kodierung bietet aber wiederum wenig Vorteile, da
+ein großer Teil der Chunks (vergleiche Abbildungen~,,
+	, dargestellt ist die optimale und aligned-Variante) sogar weniger Bits benötigen.
+Beispielsweise ist in Abbildung~ deutlich zu erkennen, dass für
+mehr als 80% der Chunks weniger als 64 Bits in beiden dargestellten Varianten nötig sind.
+Bei der Analyse der Daten wurden weitere potentielle Speichergrößen zum Vergleichen ermittelt.
+Die mem(index) Werte geben dabei den Speicherbedarf bei reiner FOR-Kompression an.
+Deutlich erkennbar ist, dass beim Prädikat-Index sehr viel Speicher ( \approx80%) eingespart werden kann.
+Problematisch an der reinen FOR-Methode sind die Größen die kein Alignment bieten, so kann es 
+durchaus möglich sein, dass für das Subjekt 2~Bits und für das Prädikat 9~Bits in Betracht gezogen werden.
+Da bei der Speicherung aber Byte-Grenzen eingehalten werden müssen, sind bei der reinen Methode verschiedene Bitmasken nötig, um die gespeicherten Werte später zu dekomprimieren. Die Dekompression ist daher
+aufwändiger.
+Einen ähnlichen Ansatz verfolgt die als ALmem(index) angegebene Methode. Hierbei 
+werden keine krummen Elementbreiten verwendet, das bedeutet, dass alle berechneten 
+Bits für eine Spalte sind Vielfache von 8.
+Durch diesen Kompromiss können zwei grundlegende Probleme ausgeschlossen werden. Zunächst entfällt 
+das Dekomprimieren mittels verschiedener Masken (und den dadurch erhöhten Einsatz von Bit-Operationen).
+Außerdem kann zum Speichern ein Byte-Vektor mit geringem Overhead eingesetzt werden.
+Zusätzlich zeigen die Abbildungen (, und 
+), dass die aligned-Variante nur gering mehr Speicher im Vergleich
+zum reinen FOR-Verfahren benötigt. 
+Die Kompression und Dekompression ist durch die Vereinfachung 
+auf aligned-Elementbreiten mit wenigen elementaren Operationen möglich.
+Kompressions- und Dekompressions-Methode
+In diesem Abschnitt soll die Kompression beziehungsweise Dekompression einer Integer-Sequenz dargestellt werden.
+Der Kompressionsschritt teilt sich dabei in zwei Schritte.
+Zunächst wird von dem zu komprimierenden Vektor (INValues) das Minimum min und Maximum 
+ermittelt, anschließend werden die benötigten Bits mittels ALbits() berechnet.
+Darauf aufbauend kann die Anzahl an benötigten Bytes berechnet werden n = ALbits()/8.
+Im zweiten Schritt werden alle Elemente e der INValues-Sequenz durchlaufen
+und intern wird der Wert e-min in einem passenden 
+n-Byte-Array\footnote{ein n-Byte-Array soll ein Array bestehend aus n-Byte großen Integer Werten sein} abgelegt.
+Das n-Byte-Array ist in der C++-Implementierung ein reines Byte-Array, 
+bei dem Zugriffe über Index-Berechnungen erfolgen, genauer betrachtet, werden einfach die nötigen Bytes
+der Originalsequenz in das n-Byte-Array kopiert.
+Das Dekomprimieren besteht nur aus dem Ermitteln des Indizes 
+innerhalb des n-Byte-Arrays, dem Extrahieren/Laden der dort gespeicherten n-Byte-Zahl 
+und dem anschließenden Addieren des min-Wertes. In der C++-Implementierung
+wird die Dekompression mittels Cast auf ein Long-Array und einer vorberechneten Maske ermittelt.
+Benchmark
+Bisher wurde ohne Nachweis behauptet, dass die dargestellte Kompressionsmethode 
+effiziente Zugriffe auf die Chunks erlaubt und eine gute Kompressionsrate aufweist.
+In einem experimentellen Benchmark wurde ein Vergleich zwischen 
+den Zugriffszeiten einer unkomprimierten (un) sowie komprimierten Integer-Sequenz (comp) durchgeführt.
+In dem Benchmark wurden zuerst zufällige Long-Werte (mit festgelegter Bit-Anzahl) in einem Vector gespeichert,
+anschließend wurde für beide Varianten (un, comp) die benötigte Zeit zur Summation aller Elemente ermittelt.
+Außerdem wurde eine modifizierte Summation (compM) bei der komprimierten Variante betrachtet, 
+dabei wurden nur die Rohwerte des komprimierten Vektors zusammen mit \min mal elements 
+addiert. Prinzipiell kann dieses Vorgehen auch bei komplexeren 
+Operationen (wie zum Beispiel bei den \pname-Operatoren) verwendet werden.
+Es wurde bei den Messungen die Bit-Anzahl im Bereich [0,64] variiert.
+In den Abbildungen~ (7~Bits), (24~Bits) 
+und (64~Bits) ist eine repräsentative Auswahl der Ergebnisse dargestellt.
+Allgemein wurde bei einer festen Bit-Anzahl die Anzahl an Integer Elementen 
+verändert (von 0 bis \approx50~Millionen Elementen) und die benötigte Zeit für alle drei Varianten ermittelt.
+Es sind Mittelwerte über 32 Messungen und Intervalle mit 99%-tiger Konfidenz dargestellt.
+Auffallend ist, dass alle Varianten sehr dicht beieinander sind. 
+Dennoch ist in und die unkomprimierte Variante 
+am schnellsten. Für Abbildung~ ist dies einfach zu begründen, weil bei der Dekompression 
+mehr als ein reiner Speicherzugriff stattfindet. 
+In Grafik~ ist aber auch ein Fall erkennbar, in dem die modifizierte Variante (compM) 
+schneller als die anderen beiden Varianten ist.
+In Abbildung~ ist die summierte Laufzeit über alle Messfolgen, gruppiert nach der
+verwendeten Bit-Anzahl, dargestellt. Es zeigt sich, dass die compM-Variante im Bereich [0,32]
+die schnellste ist (ungefähr 15% schneller als die unkomprimierte). 
+Dagegen sind bei 64 Bit die komprimierten Varianten circa 20% langsamer.
+Gut erkennbar ist weiterhin, dass die unkomprimierte Variante im kompletten Bit-Bereich nahezu
+konstant ist. Als Ursache dafür, das die komprimierten Varianten bei höheren Bits (ab 32)
+langsamer sind, ist,dass Long (64~Bit) Zugriffe sehr effizient auf 64-Bit Architekturen sind.
+Dagegen sind Zugriffe auf einzelne Bytes weniger effizient.
+Dennoch kann im Bereich [0,32] ein erheblicher Gewinn mit der compM-Variante erzielt werden.
+Maßgeblich verantwortlich dafür ist der veränderte Zugriff und der Fakt, dass insgesamt weniger Speicherzellen
+geladen werden müssen.
+Betrachtet man dagegen den Speicherverbrauch, so ist er bei der unkomprimierten Variante unabhängig 
+von der Bit-Anzahl, demzufolge 64 Bit pro Element. 
+Dagegen folgt für die komprimierten Varianten bits pro Element. 
+Daher lässt sich eine Kompressionsrate von bits/64 erzielen.
+Fazit
+Es konnte gezeigt werden, dass das FOR in einer modifizierten Variante
+sehr gute Kompressionsraten im CameLOD-Projekt erzielen kann.
+Dabei können mindestens 50% des Speichers der Index-Strukturen eingespart werden.
+Gerade für die sortierte Spalte des jeweiligen Index kann mittels FOR 
+sehr viel Speicher eingespart werden.
+Für das CameLOD-Projekt können mittels veränderter Zugriffs-Methoden auf die komprimierten Sequenzen
+annähernd die gleichen oder sogar besseren Zugriffszeiten realisiert werden.
+Im CameLOD-Projekt müssen verschiedene Spaltentypen eingeführt werden, da die komprimierten
+Sequenzen nur Lese-Operationen zur Verfügung stellen. Dagegen sind bei Join-Operationen 
+Ergebnis-Chunks nötig, das heißt in den Sequenzen müssen Werte dynamisch eingefügt werden. 
+Integer-Sequenzen Run-length-Encoding
+Im CameLOD-Projekt besteht ein Chunk jeweils aus einer sortierten
+Integer-Sequenz, da beim Aufbau zunächst die Zeichenketten sortiert und anschließend fortlaufend nummeriert werden. 
+Daher ergibt sich beispielsweise für die sortierte Spalte eines Chunks folgender schematischer Aufbau:
+\[ S=[aaaaabbbbbbbcccccc], mit a \not= b \not= c \]
+Sequenzen dieser speziellen Struktur können effizienter 
+als mit den bisherigen Verfahren gespeichert werden. Eine Sortierung ist nicht zwingend erforderlich,
+sondern nur das Auftreten von Zahlen"-blöcken.
+Verfahren
+Es soll eine Array-ähnliche Struktur realisiert werden, die transparenten und effizienten Zugriff
+auf die sortierte Zahlen-Sequenz bietet sowie das Run-Lenght-Encoding (RLE)-Verfahren benutzt.
+Zunächst werden in der normalen Variante die Zahlen mehrfach gespeichert. Effizienter 
+ist dagegen die einfache Speicherung der Zahlen in folgender Form (beispielsweise bezogen auf S):
+\[ M=[abc] \]
+Betrachtet man nun ein einen Zugriff auf S[i] muss das passende Element mittels M rekonstruiert werden.
+Hierfür wird eine weitere Sequenz P benötigt. P speichert die ersten auftretenden Positionen der jeweiligen Elemente aus M in S und für das Beispiel ergibt sich
+\[ P=[0,5,13]. \]
+Soll nun ein Zugriff auf beispielsweise i=7 erfolgen, so wird 
+mittels binärer Suche (denn P ist sortiert) der Index j= \min \{k \mid P[k] \geqq i \} = 1 
+ermittelt und anschließend wird M[j]= M[1] = b zurückgegeben.
+Wahlfreier Zugriff ist in wenigen Fällen in CameLOD erforderlich, 
+meist wird über eine komplette Spalte iteriert.
+Da es wenig effizient ist, jeweils eine binäre Suche bei der Interation 
+auszuführen, soll nun auch noch eine Möglichkeit beschrieben werden, wie eine effiziente 
+Iteration über die dargestellte Speicherung erfolgen kann (es wird weiterhin auch die Anzahl an Elementen,
+die in der ursprünglichen Sequenz abgelegt sind gespeichert und mit size(M) angesprochen).
+Die Funktion csize(M) gibt die Anzahl an Elementen in der komprimierten Sequenz wieder. 
+\begin{lstlisting}
+// orginal:
+for(size_t i = 0; i < size(S); i++) {
+ doSomethingWith(S[i]);
+} // size(S) memory access
+// compressed variant:
+j = 0;
+c = M[j]
+nextP = P[j+1]
+for(size_t i = 0; i < size(S); i++) {
+ if(i>= nextP) {
+ j++;
+ c= M[j]
+ nextP = P[j+1]
+}
+ doSomethingWith(c);
+} // |M| + |P| times memory access
+\end{lstlisting} 
+In der optimierten Variante wird direkt auf die Sequenzen M und P zugegriffen
+und falls nextP überschritten wird, das aktuelle Element c aktualisiert.
+Daher ist nicht in jedem Schritt eine binäre Suche notwendig.
+Analyse
+Das Verfahren nicht direkt in einem Benchmark evaluiert werden, 
+da die Kompression datenabhängig ist.
+Um dennoch eine Auswertung zu ermöglichen, erfolgten Messungen im CameLOD-Projekt mit Hilfe 
+der gespeicherten Daten.
+Es wurde über alle Chunks aller Indizes iteriert 
+und die gespeicherten Sequenzen für Subjekt, Prädikat und Objekt
+mit dem Run-Length-Verfahren komprimiert.
+Die verwendete Array-Klasse bietet nur reine Kompressionsfähigkeiten.
+Für die Sequenz der Positionen folgte als Grunddatentyp uShort (16~Bit),
+da die Chunks nicht größer als 2000 Elemente sind (\log_2(2000) \approx 11 \approx 2~Bytes). 
+Auf eine weitere Kompression der Sequenzen mit dem FOR Verfahren fand nicht statt.
+Zur Auswertung wurden folgende Werte ermittelt:
+\[ compressedSize(chunk) = (8 + 2) mal \sum\limits_{col ist ein Element von\{sub,pred,obj\}} csize(chunk.col) \]
+\[ size(chunk) = size(chunk) mal 24 \]
+Beide Werte sind in Bytes und für den gesamten Index folgt:
+\[ compressedSize_{glob}(index) = \sum \limits_{c ist ein Element von index} compressedSize(c) \]
+\[ size_{glob}(index) = \sum \limits_{c ist ein Element von index} size(c).\]
+In die Berechnung der komprimierten Größe compressedSize fließt auch der Overhead durch 
+das Speichern der Positionen ein (2 Bytes für jeweils einen uShort Wert).
+Weiterhin wurde auch die Blockgröße untersucht und für einen Chunk chunk und einer Spalte col
+(beispielsweise Subjekt, Prädikat oder Objekt)
+die Werte
+\[ maxBlockSize(chunk,col) = größte Blockgröße innerhalb eines Chunkes einer Spalte \]
+\[ minBlockSize(chunk,col) = kleinste Blockgröße innerhalb eines Chunkes einer Spalte \]
+ermittelt.
+Für den Gesamten Index wurden anschließend die Werte
+\[ maxBlockSize_{glob}(index,col) = \max\{maxBlockSize(c,col) \mid c ist ein Element von Chunks(index) \} \]
+\[ minBlockSize_{glob}(index,col) = \min\{minBlockSize(c,col) \mid c ist ein Element von Chunks(index) \} \]
+berechnet.
+Für eine komprimierte Sequenz v sei die Auslastung Alpha(v) als
+\[ Alpha(v) = \frac {csize(v)} {size(v)}\]
+festgelegt.
+Darauf aufbauend wurde für einen Index die durchschnittliche Auslastung Alpha_{avg} mit
+\[ Alpha_{avg}(index) = \frac{\sum \limits_{c ist ein Element von Chunks(index)} 
+ (Alpha(c.sub) + Alpha(c.pred) + Alpha(c.obj))}{3 mal |Chunks(index)|} \]
+ermittelt.
+Analyse der Index-Speicherung
+In Tabelle~ sind die ermittelten Werte aufgelistet.
+Allgemein ergeben sich sehr hohe maximale Blockgrößen, das bedeutet, es 
+gibt Chunks, in denen in einer Spalte nur ein oder wenige Werte stehen.
+Betrachtet man die Blockgröße von 1999 so können dort nur maximal 2 Werte
+gespeichert sein, da die maximale Chunk-Größe 2000 beträgt.
+In diesem Fall ergibt sich eine sehr hohe Kompression, da nur 2 uLong Werte und 2 uShort Werte
+in der komprimierten Sequenz gespeichert werden müssen. 
+Im Vergleich zur unkomprimierten Version mit 2000 mal 24~Byte \approx 46~KB Speicherbedarf
+ergibt sich (8+2) mal 2~Byte = 20~Byte, und somit eine Kompressionsrate von 0.04.
+Es kann daher für einige Spalten über 96% an Speicher eingespart werden.
+Bei der Analyse wurde auch der gesamte Speicherbedarf berechnet.
+Für alle drei Indizes kann festgestellt werden, dass sehr viel Speicher bei der RLE-Kompression eingespart wird.
+Die Kompressionsraten der Indizes liegen alle bei ungefähr 60%. Demnach kann circa 40% 
+an Speicher durch das RLE-Verfahren eingespart werden.
+Der durchschnittliche Auslastungsfaktor Alpha_{avg} für die Indizes ist bei ungefähr 0.5. Das bedeutet, dass
+die komprimierte Sequenz ungefähr halb so viele Elemente wie die unkomprimierte besitzt.
+\hide{
+global: 
+ sumCompMem[MB]: 2899.56 
+ sumMem[MB]: 4920.94 
+ maxsubBlockSize 1998 
+ minsubBlockSize 1 
+ maxpredBlockSize 1961 
+ minpredBlockSize 1 
+ maxobjBlockSize 79 
+ minobjBlockSize 1 
+ avg utilisation 0.471616
+global: 
+ sumCompMem[MB]: 2786.4 
+ sumMem[MB]: 4920.94 
+ maxsubBlockSize 1001 
+ minsubBlockSize 1 
+ maxpredBlockSize 1999 
+ minpredBlockSize 1 
+ maxobjBlockSize 1459 
+ minobjBlockSize 1 
+ avg utilisation 0.453117
+global: 
+ sumCompMem[MB]: 3159.45 
+ sumMem[MB]: 4920.94 
+ maxsubBlockSize 1027 
+ minsubBlockSize 1 
+ maxpredBlockSize 1999 
+ minpredBlockSize 1 
+ maxobjBlockSize 2000 
+ minobjBlockSize 1 
+ avg utilisation 0.523724
+}
+In den Abbildungen~, und 
+sind die benötigten Bytes für die Tripel"=Speicherung der drei Indizes dargestellt.
+Dabei bedeutet 'rle', dass die beschriebene RLE-Kompression verwendet wurde 
+und 'un' steht für die unkomprimierte Variante.
+In allen drei Diagrammen ist deutlich sichtbar, dass viel Speicher eingespart werden kann.
+Obwohl für das RLE-Verfahren zusätzlicher Speicher für die Positionen benötigt wird. 
+Durch die Speicherung der Positionen in einem uShort-Vektor wurde der Overhead verringert.
+Daher benötigt die 'rle'-Methode in allen drei Indizes weniger Speicher als aktuell
+verwendet wird. Für den Subjek-Index können
+beispielsweise ungefähr 40% an Speicher eingespart werden.
+Auch für die anderen Index-Strukturen ergeben sich ähnlich hohe Kompressionsraten.
+Hauptsächlich kann durch das RLE-Verfahren sehr gut die sortierte Spalte komprimiert werden,
+da sie viele Blöcke aufweist. 
+Aber auch die anderen Spalten weisen häufig Blockstrukturen auf.
+Benchmark
+Das dargestellte Kompressionsverfahren muss auch effiziente Zugriffe 
+auf die Elemente bieten. Ein Benchmark soll die unkomprimierte Version 
+mit der komprimierten vergleichen.
+Dabei wurden zufällige Werte (uLong) ermittelt und anschließend
+eine Summation über alle Werte durchgeführt.
+Die zufälligen Werte werden dabei sortiert und mittels des Auslastungsparameters Alpha
+wird die Anzahl an möglichen Zufallszahlen variiert um die Kompressionsrate zu steuern.
+Durch eine Sortierung der Zufallssequenz kann erreicht werden, sodass 
+Blöcke entstehen, welche dem Auslastungsfaktor entsprechen.
+In der Analyse wurden Auslastungsfaktoren von Alpha\approx 0.5 ermittelt.
+Daher sollen im Benchmark nur insgesamt zwei Alpha-Werte (0.4 und 0.5) untersucht werden.
+Die Größe der Sequenzen wurde von 10^6 bis 45 mal 10^6 in 10^5 Schritten angepasst.
+Im Gegensatz zur beschriebenen Implementierung benutzt die Version für den Benchmark
+auch für die Positionen uLong Werte, da sonst nur 2^{16} Elemente möglich wären. 
+Insgesamt wurden vier Varianten betrachtet.
+Die un-Variante ist die Summation der unkomprimierten Sequenz als Vergleichswert.
+Die Variante (bi) benutzt binäre Suche bei jedem Elementzugriff 
+der komprimierten Sequenz.
+Weiterhin ist (mod) der modifizierte sequentielle Zugriff auf die komprimierten Werte.
+Und (calc) ermittelt die Summation basierend auf einer Multiplikation. 
+Da über die Positionsangaben die Blockgröße eines
+aktuellen Elementes ermittelt werden kann, ist es möglich die Summe mittels Multiplikation zu berechnen.
+Ähnliche Modifikationen sind auch bei der Anfrageverarbeitung möglich.
+In Abbildung~ sind die Messwerte für Alpha=0.4 
+und in Diagramm~ für Alpha=0.5 dargestellt.
+Es wurden Mittelwerte von 32 Messungen und Intervalle mit 99%-tiger Konfidenz berechnet.
+In Grafik~ und ist erkennbar, 
+dass die bi-Variante nicht sehr effizient ist. Hingegen
+sind die beiden anderen Varianten (mod und calc) annähernd so gut wie die unkomprimierte Version (un). 
+Die Werte für un und calc sind nahezu identisch.
+Bei den Raten 0.5 und 0.4 können etwa 40% Speicher eingespart werden.
+\enlargethispage{\baselineskip}
+Fazit
+Die Idee der Run-Lenght-Kodierung 
+zeigt nur bei Sequenzen mit Wiederholungen gute Ergebnisse.
+Die im CameLOD gespeicherten Daten weisen eine sehr hohe Wiederholungsrate auf, da
+beispielsweise Spalten sortiert sind.
+Daher kann bei der ermittelten Auslastung von Alpha=0.5 effizient auf
+die komprimierten Werte zugegriffen werden.
+Je geringer die Auslastung, desto effizienter sind die Zugriffe, wenn sie nicht wahlfrei erfolgen.
+Auch der Overhead durch das Speichern der Positionen kann durch geeignete Wahl 
+des Datentyps ausgeglichen werden.
+Es ist auch denkbar, die im RLE-Verfahren benutzten Sequenzen M und P
+mittels des vorher beschriebenen FOR-Verfahren weiter zu komprimieren.
+\enlargethispage{\baselineskip}
+Dictionary
+Alle Zeichenketten werden in der CameLOD-Implementierung sortiert in einer
+Datenstruktur gespeichert. Typische Zeichenketten von RDF-Tripel weisen aber hohe Ähnlichkeiten 
+in ihrem Aufbau auf, da die Subjekt- und Prädikat-Angaben meist URI sind. 
+Daher besitzen sie zum großen Teil die gleichen Präfixe, welche aktuell mehrfach gespeichert werden.
+Es ist also möglich durch den Einsatz einer anderen Datenstruktur Speicher zu sparen. Eine mögliche
+Datenstruktur für solche Zeichenketten ist ein Präfix-Tree / Patricia Trie.
+Im folgenden Abschnitt soll untersucht werden, ob sich der Einsatz eines solchen Trie's 
+lohnt. Denn auch wenn Speicher eingespart wird, entsteht eine möglicherweise erhöhte Zugriffszeit auf die Zeichenketten. Ursache dafür könnte die Baumstruktur und die damit verbundenen Zeigeroperationen sein.
+Auch kann durch die Verwaltung des Baums ein Speicher-Overhead entstehen, da für die Verkettung 
+64~Bit-Pointer notwendig sind.
+Trie
+Zur experimentellen Untersuchung wurde ein einfacher Präfix-Tree implementiert.
+Zunächst wurden alle Zeichenketten in einen Trie (trie) eingefügt. 
+Der Trie besitzt keine Pfadkompression, weshalb jedes Zeichen in einem 
+neuen Knoten gespeichert ist. Beim Einfügen findet auch die Sortierung statt.
+Anschließend dient der Trie als Grundlage für den Aufbau eines Patricia-Tries (compTrie).
+Der compTrie komprimiert die Pfade des Tries, daher werden weniger Knoten benötigt.
+Mittels der in CameLOD ermittelten Zeichenketten des \dbpedia{}-Half-Datensatzes 
+wurde ein reduzierter Datensatz (mit maximaler Zeichenkettenlänge von 80 Zeichen)
+erzeugt, da viele Zeichenketten der RDF-Tripel des \dbpedia{}-Half Datensatzes sehr lang sind.
+Diese Daten wurden nun zunächst in einen Trie eingefügt und anschließend mittels compTrie 
+komprimiert.
+Kompressionsraten des Wörterbuchs mittels Tries
+In Tabelle~ sind die ermittelten Werte aufgelistet.
+Gut erkennbar ist, dass die trie Variante keine gute Kompression aufweist, da für den 
+Baum sehr viele Pointer nötigt sind. Außerdem zeigt die compTrie Version 
+keine guten Ergebnisse, hauptsächlich begründet durch einen hohen Anteil 
+von Zeichenketten die keine gemeinsamen Präfixe besitzen.
+Auch wenn der Trie eine interessante Datenstruktur darstellt, eignet er sich 
+nicht gut für die Kompression aller RDF-Zeichenketten. 
+Präfixe
+Aus den Beobachtungen des \dbpedia{}-Datensatzes kann geschlussfolgert werden, dass 
+ungefähr 70% aller Zeichenketten URI darstellen.
+URI von Linked-Data besitzen sehr häufig gemeinsame Präfixe.
+Beispielsweise 
+\[<http://dbpedia.org/resource/Star\_Trek:\_Enterprise>,\]
+\[<http://dbpedia.org/resource/Category:Star\_Trek\_music>\]
+und 
+\[<http://dbpedia.org/ontology/abstract> \]
+besitzen das gemeinsame Präfix <http://dbpedia.org/.
+Eine Idee ist es, häufig auftretende Präfixe verkürzt zu speichern. 
+Für die URI wurden verschiedene Präfix-Muster betrachtet.
+Zunächst wurden in Variante (A) die kürzesten Präfixe, welche mit \lstinline!rA ="(<http://.*\\..*?/).*"! 
+übereinstimmen, extrahiert, wie beispielsweise
+\[ '<http://dbpedia.org/ressource/A/B..' match '<http://dbpedia.org/'.\]
+Der reguläre Ausdruck \lstinline!rA! beschreibt dabei den Teil der URI bis zum ersten Auftreten 
+des '/'-Zeichens nach dem Protokoll-Teil.
+In Variante (B) wurden dagegen die längsten Präfixe, 
+welche mit \lstinline!rB ="(<http://.*\\..*/).*"! übereinstimmen,
+ermittelt, beispielsweise 
+\[ '<http://dbpedia.org/ressource/A/B..' match '<http://dbpedia.org/resource/A/'.\]
+Das Muster \lstinline!rB! ermittelt das Präfix der URI bis zum letzten 
+vorkommenden '/'-Zeichen.
+Anschließend wurden die Häufigkeiten der beiden Varianten ermittelt.
+10 häufigsten \ac{URI} Präfixe -- Variante (A)
+10 häufigsten \ac{URI} Präfixe -- Variante (B)
+Es ergeben sich für Variante (A) die in Tabelle~ dargestellten Werte. 
+Variante (B) ist in Tabelle~ aufgelistet.
+Für Beide wurde der prozentuale Anteil bezogen auf das komplette Wörterbuch ermittelt.
+An den Tabellen ist erkennbar, dass '<http://dbpedia.org/...' in beiden Fällen das häufigste 
+Präfix von URI ist.
+Direkt danach folgen URI mit '<http://en.wikipedia.org/...'.
+Sogar die Anteile der zwei häufigsten Präfixe in beiden Varianten ist annähernd gleich.
+Variante (A) ist universeller, da hier die Präfixe kürzer sind und mehr Freiheit bei der 
+Wahl des verbleibenden Restes der URI besteht.
+Dagegen zeigt (B) für den \dbpedia{}-Half Datensatz sehr gute Ergebnisse.
+Variante (B) ist für eine Kompression in Form von Ersetzungen besser geeignet, da die gefundenen Präfixe 
+dort länger sind und somit mehr Speicher eingespart werden kann. 
+Basierend auf diesen Beobachtungen und Messungen kann geschlussfolgert werden, dass
+eine Kompression der Zeichenketten mittels Ersetzungsregeln erfolgversprechend ist.
+Grundlegend können natürlich nicht alle Präfixe ersetzt werden, da es im schlechtesten Fall 
+sehr viele Präfixe gibt. Weiterhin ist es auch nicht sinnvoll, kurze Präfixe mit längeren Ersatzzeichenketten
+zu ersetzen. Eine Betrachtung der 100 häufigsten Präfixe ist ausreichend.
+Es ist auch denkbar, die Präfixe nach dem möglichen Kompressionsgrad und der Häufigkeit auszuwählen.
+In den Tabellen~ und ist bereits gut erkennbar, dass 
+nach den ersten 10 Werten nur wenige Präfixe sehr häufig auftreten. Es ergibt sich 
+ein prozentualer Anteil von weniger als 1% für alle weiteren Präfixe.
+\paragraph{Ersetzungsregeln.}
+Sei p_i ein häufiges Präfix an der i-ten Stelle, so wird eine Ersetzung mit 
+\[ p_i \rightarrow '<'+code(i)+'>' \]
+durchgeführt.
+Da insgesamt nur 100 häufige Präfixe betrachtet werden, kann die Ersetzung
+eines Präfixes mittels 3 Zeichen erfolgen.
+Dazu wird als Funktion code(i) folgende Abbildung benutzt:
+\[ code(i) = chr(ord('~') + i) \]
+Die Funktion ord(a) gibt den ASCII-Code wieder und chr(x) wandelt einen ASCII-Code in ein Zeichen um.
+\paragraph{Rückersetzung.}
+Die Rückersetzung kann einfach durchgeführt werden.
+Sei s eine Zeichenkette, welche eventuell mit den Ersetzungsregeln verkürzt wurde.
+Dazu muss zunächst überprüft werden, ob das erste Zeichen s[0] ein '<' ist.
+Bei RDF-Daten, welche keine URI sind, darf am Anfang kein '<'-Zeichen stehen, daher
+kann das erste Zeichen von s als Indikator benutzt werden.
+Weiterhin muss das zweite Zeichen ein Buchstabe 
+a ist ein Element von \{ord('~'),...,chr( ord('~') + 100) \} sein.
+Das dritte Zeichen s[2] muss ein '>'-Zeichen sein, für herkömmliche unverkürzte URI 
+gilt dies nicht.
+Basierend auf dem zweiten Zeichen kann in einem Array das jeweilige Präfix i ermittelt 
+und somit die Rekonstruktion erfolgreich durchgeführt werden.
+Benchmark
+Aufbauend auf den Ersetzung- und Rückersetzungs-Regeln wurden Datenstrukturen (urianalyser und uricompressor)
+implementiert. 
+Der urianalyser ist für die komplette Präfix-Analyse verantwortlich.
+Im ersten Schritt werden daher alle Zeichenketten gelesen und 
+an den Analyser weitergegeben.
+Anschließend wird der uricompressor erzeugt. Er erhält die Präfixanalyse,
+ermittelt die Top-100 Präfixe und speichert sie effizient ab.
+Für die Speicherung werden zwei Arrays benötigt. Das erste Array ist für 
+die Präfixe und das zweite für die Längen der Präfixe.
+Der uricompressor bietet weiterhin Methoden zur Kompression und Dekompression der Zeichenketten.
+Im zweiten Durchlauf wurden die Zeichenketten komprimiert.
+In Tabelle~ sind für verschiedene Datensätze die ermittelten Ergebnisse dargestellt.
+Für den Datensatz, welcher nur aus URI besteht, kann eine Kompressionsrate von 
+ungefähr 62% erzielt werden. Das bedeutet, es können knapp 38% Speicher eingespart werden.
+Im Gegensatz dazu wurde auch das vollständige Wörterbuch untersucht. 
+Eine ähnlich hohe Kompressionsrate von ungefähr 72% kann auch hier erzielt werden, 
+da das Wörterbuch überwiegend aus URI besteht. Für das gesamte Wörterbuch 
+kann also mittels des Präfix-Ersetzungsverfahrens ungefähr 28% Speicher eingespart werden.
+Da RDF-Daten hauptsächlich aus URI bestehen kann für größere Datensätze als den
+\dbpedia{}-Half-Datensatz eine wesentlich höhere Kompressionsrate erzielt werden.
+Fazit
+Auch wenn die Datenstruktur Trie nicht überzeugen konnte, kann dennoch mittels 
+Präfix-Verkürzung ein erheblicher Gewinn an Speicher erzielt werden.
+Die implementierten Datenstrukturen (urianalyser und uricompressor) 
+können transparent im CameLOD-Projekt integriert werden.
+Dazu ist es nötig im builddb Schritt vor dem Speichern der Zeichenketten auf Festplatte
+die Prefix-Analyse mittels des urianalysers durchzuführen.
+Anschließend muss der uricompressor-Vorgang ausgeführt werden.
+Das Wörterbuch muss um die ermittelte Ersetzungstabelle ergänzt werden.
+Anschließend werden in den Zeichenketten die Ersetzungen mittels des uricompressors durchgeführt
+und die verkürzte Zeichenkette (sofern es sich um eine URI handelt) gespeichert.
+Alle nicht URI-Zeichenketten werden ungekürzt gespeichert.
+Im CameLOD Schritt werden Zeichenketten nur bei Ausgaben oder Anfragen direkt benutzt.
+Die Ausgaben können durch ein vorhergehendes Dekomprimieren mittels des uricompressors
+erfolgen.
+Werden in Anfragen URI benutzt, so müssen sie für ein Suchen im Wörterbuch 
+vorher durch den uricompressor komprimiert werden. 
+Weitere Veränderungen sind nicht nötig.
+Insgesamt kann das Verkürzen der Präfixe gute Kompressionsraten erzielen, auch wenn 
+nur 100 Präfixe betrachtet werden. Durch mehr Präfix-Verkürzungen kann zwar unter Umständen
+eine höhere Kompressiosrate folgen, dafür ist jedoch das Rekonstruieren nicht 
+so effizient umsetzbar. 
+Speicher
+Auch die Art der Zugriffe auf den Hauptspeicher kann verbessert werden.
+Daher sollen im folgenden Abschnitt zwei Möglichkeiten dargestellt werden.
+Zunächst kann mittels Memory Mapped Files eine Auslagerung der Daten auf disk-Speicher
+erfolgen und durch das seitenweise Laden effiziente Zugriffe ermöglicht werden.
+Weiterhin ist mittels NUMA eine Einteilung des Hauptspeichers in lokalen
+und entfernten Speicher möglich, womit parallelisierte Verarbeitungen beschleunigt werden können. 
+Memory-Mapped-Files
+Beim Aufbau der Datenbasis erfolgen viele Lese-Zugriffe auf Daten.
+Außerdem ist ein hoher Zeitbedarf beim Laden der serialisierten komprimierten Datenstrukturen 
+vor der eigentlichen Anfrageverarbeitung nötig. Beide Fälle sind nicht maßgebend für die
+Verarbeitungszeit verantwortlich, aber dennoch für das gesamte System wichtig.
+Weiterhin kann durch MMF das Serialisieren mittels Boost-Methoden
+umgangen werden und im Bezug auf eine spätere
+Erweiterung der ist ein Element inmemory Verarbeitung zu einer disk-basierten Lösung
+ein einfacher Buffer-Manager realisiert werden.
+Benchmark
+Um einen Vergleich durchzuführen wurden zwei Varianten betrachtet.
+In der Variante (std) wurde mittels herkömmlicher C++-Datei"=Lese"=Operationen
+der Zugriff auf eine Datei durchgeführt.
+Dagegen wurden bei (mmf) mittels Memory Mapped Files die Zugriffe durchgeführt.
+Zur Auswertung wurde die Summe aller Zeichen verschiedener Dateien des \dbpedia{}-Projektes 
+gebildet und die benötigte Zeit ermittelt.
+Dabei wurden 32 Messungen durchgeführt und die Mittelwerte und Intervalle mit 99%-tiger Konfidenz
+berechnet.
+In Abbildung~ sind die ermittelten Zeiten für beide Varianten dargestellt.
+Deutlich erkennbar ist, dass die MMF-Variante ungefähr \frac{1} {3} so viel Zeit wie die (std)-Variante 
+benötigt.
+Fazit
+Durch MMF kann das Lesen von Daten für das CameLOD-Projekt im builddb-Schritt beschleunigt werden.
+Durch den Einsatz von MMF kann zusätzlich ein Geschwindigkeitsgewinn beim Laden 
+vor der Anfrageverarbeitung erzielt werden, da die Serialisierung von Boost ersetzt werden kann. 
+Die benutzte Implementierung im Bechmark bietet eine Datenstruktur, welche 
+äußerlich wie ein Vektor wirkt, aber im Hintergrund MMF benutzt.
+Durch Erweiterungen kann ein transparenter Buffer-Manager für die Spalten-Vektoren 
+realisiert werden. Ähnlich wurde bei bei MonetDB vorgegangen.
+NUMA
+Das CameLOD-Projekt soll auch in Bezug auf NUMA untersucht werden.
+Da ein aussagekräftiger Benchmark große Teile des CameLOD-Projekts simulieren müsste, 
+wurde an dieser Stelle die Vorgehensweise verändert.
+Das CameLOD-Projekt benutzt Intel-TBB zur Parallelisierung.
+Nach kann der von TBB zur Verfügung gestellte 
+Partitionierungs-Scheduler 'affinity\_partitioner' verwendet werden 
+um cache-coherent-NUMA zu realisieren.
+Zur Untersuchung wurde der Scheduler in der aktuellen Implementierung des CameLOD Projekts
+ersetzt. Wichtig für den 'affinity\_partitioner' ist, dass vor 
+der zu betrachtenden Ausführung bereits die Daten lokal durch eine parallelisierte Schleife
+vorliegen. Der 'affinity\_partitioner' wird also mehrfach genutzt und 
+somit die Lokalität gewährt.
+Zur experimentellen Untersuchung auf den NUMA-Effekt im CameLOD-Projekt 
+wurde der Partitioner im parallel\_do Operator global angelegt, 
+dadurch wird er von jeder parallelisierten Anfrage benutzt.
+Zum Testen muss demnach zunächst eine Anfrage zur Herstellung der Datenlokalität und 
+anschließend die eigentliche Anfrage, welche zur Zeitmessung benutzt wird, durchgeführt werden.
+Benchmark
+Es wurden die Anfragen, welche den Parallelisierungs-Operator ('parallel\_do') beinhalten, 
+als Grundlage benutzt. Somit die beiden in Kapitel~ eingeführten Anfragen 
+Q, Q und weiterhin die Anfragen Q9, Q10, Q11, Q12 und Q13 (dabei handelt
+es sich um einfache parallelisierte Scan-, Filter-, Join- und Sortier-Anfragen, siehe Anhang~).
+Für die Messungen wurde zunächst die unveränderte Version (org) des CameLOD-Projekts benutzt 
+und anschließend die mit dem veränderten Partitions-Scheduler (mod).
+Insgesamt wurden 32 Messungen durchgeführt. Für die Mittelwerte wurde die Anfrage zur Herstellung
+der Datenlokalität nicht betrachtet.
+In Grafik~ sind die Ergebnisse für die 6 Anfragen dargestellt.
+Es ist kaum ein Unterschied zwischen den beiden Varianten zu erkennen.
+Teilweise sind die Anfragen mit der Veränderung schneller oder langsamer.
+Für Anfrage Q3 ist etwa eine Verschlechterung um circa 1s erkennbar. 
+Auch in wurden Messungen durchgeführt. Dabei
+konnte ein Geschwindigkeitszuwachs bei sehr hoher Thread-Anzahl erzielt werden. 
+Fazit
+Durch den Ersatz des Schedulers, welcher nach 
+cache-coherentes-NUMA bieten soll, konnte kein Gewinn erzielt werden.
+Das Referenzsystem besitzt aber nur zwei NUMA-Knoten. Unter Umständen
+kann bei einer höheren Knotenanzahl eine signifikantere Verbesserung erzielt werden. 
+Chunk-Größe
+Hauptsächlich hängt die Verarbeitung von der grundlegenden 
+Struktur des \pname-Projektes ab.
+Dabei werden die Daten in Chunks eingeteilt.
+Die maximale Chunk Größe ist von entscheidender Rolle für die Verarbeitung, 
+weil beim Überschreiten dieser Größe eine Teilung des Chunks stattfindet.
+Ist die reale Chunk-Größe zu klein, so wird der CPU-Cache (L1 und L2) nicht vollständig genutzt.
+Hingegen kann eine zu hohe reale Chunk-Größe bewirken, dass für die Verarbeitung eines
+Chunks mehrmals Daten in den Cache geladen werden müssen.
+Es liegt also nahe an dieser Stelle zu versuchen die Chunks
+bezogen auf die Cache Größe anzugleichen.
+Theoretisch bietet der verwendete Intel Xeon CPU E5-2630 für jeden physischen Kern
+einen L1 Cache der Größe 32KB für Daten und einen 256KB größen L2 Cache.
+Ein Tripel eines Chunks benötigt in der unveränderten Variante ohne Kompression
+3 uLong Werte, welche jeweils 8~Byte Speicher benötigen. Hierbei wird der geringe Overhead durch Speichern von Pointern und anderen Werten für die Organisation der Chunks untereinander vernachlässigt.
+Somit ergibt sich ein Chunk-Größen Bereich von:
+\[ \left[\frac{L1}{3 mal 8}, \frac{L2}{3 mal 8} \right ] \approx [1365, 10922] \]
+Eine optimale Größe der Chunks muss also in diesem Intervall liegen.
+Der Bereich kann natürlich nur als Näherung angesehen werden, da in der Anfrageverarbeitung
+auch weitere Variablen im Cache gehalten werden müssen. Aus diesem Grund soll in einem 
+experimentellen Benchmark der Einfluss der Chunk-Größe auf die Verarbeitungszeit
+der Anfragen betrachtet werden.
+Benchmark
+Insgesamt wurden 14 verschiedene Anfragen untersucht und Messungen mit verschiedenen Chunk-Größen durchgeführt.
+Die maximale Chunk-Größe variierten dabei im Bereich von 1000 bis 57000 mit einer Schrittweite von
+1000 Elementen. Das Intervall wurde gewählt, um auch das Verlassen des theoretisch optimalen Bereichs
+darstellen zu können.
+Die reale Chunk-Größe wurde auch ermittelt und lag im Intervall von 524 bis 29984.
+Der angegebene Bereich stellt Mittelwerte über alle Indizes dar.
+Dafür wurde im System bei fester maximaler Chunk-Größe ermittelt,
+wie viele Chunks jeder Index besitzt und anschließend mit Hilfe der
+Tripelanzahl (TupleCount) der Mittelwert gebildet:
+\[ avgChunkSize = \frac{3 mal TupleCount} {\sum \limits_{index} |Chunks(index)|} \]
+Da die Größe im Quelltext als Konstante festgelegt wurde und maßgebend beim Aufbau
+der Datenbank erforderlich ist, da die Chunks serialisiert auf Festplatte gespeichert werden, bestand
+die Messung aus 3 Schritten.
+Zunächst wurde die zu untersuchende Chunk-Größe als Konstante festgelegt und anschließend neu kompiliert.
+Weiterhin wurden die Daten geladen und auf Festplatte gespeichert.
+Im letzten Schritt wurden alle Anfragen durchgeführt und die Ausführungszeiten exportiert.
+Um Messschwankungen auszugleichen fanden 32 Wiederholungen einer Anfrage
+statt und dabei wurden Mittelwerte und Intervalle mit 99%tiger Konfidenz gebildet.
+Auswertung
+Grundlegend wurden alle 14 Anfragen untersucht, aber es sollen im folgenden Abschnitt nur die 
+ersten 4 Anfragen, welche in Abschnitt~ eingeführt wurden, betrachtet werden. Alle
+Anfragen weisen ähnliche Ergebnisse auf.
+Der zweite Datenpunkt der Diagramme ist dabei immer die aktuell verwendete 
+maximale Chunk-Größe von 2000 Elementen.
+In den Diagrammen wird immer avgChunkSize 
+dargestellt. Die gewählte maximale Chunk-Größe ist durch das Splitten der Chunks in der Implementierung
+immer ungefähr doppelt so groß.
+Q1
+In Grafik~ ist dargestellt wie sich die Ausführungszeit 
+der Anfrage Q in Abhängigkeit der Chunkgröße verändert.
+Es ist erkennbar, dass zwischen [5000,15000] die Verarbeitung am schnellsten erfolgt.
+Bei höherer Chunk-Größe schwanken die Werte sehr stark, aber die Verarbeitungszeit fällt im Mittel höher 
+aus.
+Im Vergleich zur aktuellen Chunkgröße ergibt sich bei avgChunkSize=7500 ein Geschwindigkeitszuwachs 
+von ungefähr 0.3s, was ungefähr 3% entspricht.
+Q2
+In Diagram~ dagegen wird die parallelisierte Variante
+der Anfrage Q dargestellt.
+Auch hier stellt sich ein ähnliches Minimum im Bereich von [5000,30000] ein.
+Im Gegensatz zu Q ergibt die veränderte Chunkgröße einen größeren Geschwindigkeitszuwachs. 
+Während bei der aktuellen Chunkgröße \approx2.3s zur Verarbeitung benötigt werden, liegt die Verarbeitungszeit 
+im genannten Bereich bei \approx1.2s. Das entspricht einem Zuwachs um etwa 50%. 
+Der erzielte Gewinn kann dadurch erklärt werden, dass die verschiedenen CPU-Kerne 
+eigenen Cache (L1 und L2) zur Verfügung haben und somit die Chunks sehr cache-effizient parallel 
+verarbeitet werden können. 
+Q3
+Die Ergebnisse für Anfrage~Q sind in Abbildung~
+dargestellt. Im Vergleich zu Q1 und Q2 kann hier ein negativer Einfluss auf die Verarbeitungszeit
+bei vergrößerter Chunk-Size geschlussfolgert werden. Grundlegend liegt dies an der Implementierung 
+des Index-Join-Operators, da ein Join bezogen auf ein Chunk tupelweise mit allen anderen Chunks
+durchgeführt wird. Sind die Chunks sehr groß ergeben sich daher mehr tupel-join Versuche.
+Für kleine Chunk-Größen im Bereich [0,2000] ist die Anfrageverarbeitung schnell. 
+\enlargethispage{\baselineskip}
+Q4
+In Abbildung~ ist die letzte Testanfrage Q dargestellt.
+Ähnlich wie bei den Anfragen Q und Q liegt hier das Minimum 
+der Verarbeitungszeit im Bereich [5000,20000].
+Beispielsweise ergibt sich bei ungefähr avgChunkSize=7000 eine Verarbeitungsgeschwindigkeit von
+circa 3.5s im Mittel, dagegen wird bei der originalen Chunk-Größe in etwa 3.9s benötigt.
+Es ergibt sich also ein Gewinn von 0.4s, was annähernd 10% entspricht. 
+Fazit
+In einem experimentellen Benchmark wurde die Korrelation zwischen Chunk-Größen und
+Verarbeitungszeit näher betrachtet. Insgesamt konnte festgestellt werden, dass alle
+Anfragen, welche keine Join-Operationen benutzten, von realen Chunk-Größen im Bereich [7000,15000] profitieren.
+Der ermittelte Bereich entspricht in etwa des theoretisch ermittelten L1 und L2 Cache-Bereichs für die Tripel.
+Für die maximale Chunk-Größe ergibt sich somit eine Wahl zwischen ungefähr [14000,30000].
+Besonders parallelisierte Anfragen 
+zeigen einen erheblichen Geschwindigkeitszuwachs bei höherer Chunk-Größe. 
+Zum Beispiel ergibt sich ein Zuwachs von ungefähr 50% bei Q.
+Nur Join Operationen profitieren nicht von höheren Chunk-Größen.
+Eine kleine Chunk-Größe ist hier erforderlich.
+Die offenbar architektur"-abhängige Chunk-Größe erfordert ein automatisiertes Verfahren zur Approximation
+eines Optimums.
+Ein solcher Chunk-Größen Optimierer kann an verschiedenen Stellen im System integriert werden.
+Ein Ansatz wäre die Chunk-Größe beim Aufbau der Datenbasis experimentell zu ermitteln.
+Dazu kann ein Beispiel-Chunk durchlaufen werden und die CPU-Zeit ermittelt werden.
+Das Vorgehen könnte ähnlich einem Gradientenabstiegsverfahren durchgeführt werden, wodurch
+schnell eine approximierte Lösung gefunden werden kann.
+Auch eine sehr grobe Abschätzung der Chunk-Größe kann mit der L1 und L2 
+Cache-Größe stattfinden.
+Die aktuell gewählte Chunk-Größe von 2000 stellt einen guten Kompromiss für
+Scan und Join Anfragen dar.
+Zusammenfassung und Konsequenzen für CameLOD
+Anhand der im vorhergehenden Kapitel geschlussfolgerten 
+Performance-Schwachstellen wurden verschiedene eigene Implementierungen untersucht.
+Zunächst wurden Smart-Pointer betrachtet. Insgesamt kann nur durch den Einsatz von 
+Raw-Pointern oder intrusive-Pointern ein Gewinn erzielt werden.
+Da nicht alle Stellen des CameLOD-Projekts zeitkritisch sind, ist es unter Umständen nicht
+nötig alle Smart-Pointer zu ersetzen. Weiterhin gibt es auch Stellen, welche aktuell Smart-Pointer benutzen,
+obwohl die referenzierten Objekte bereits von anderen Smart-Pointern verwaltet werden. 
+Beispielsweise kann die Verkettung der Chunks untereinander ohne Smart-Pointer realisiert werden, 
+da die Chunks in einem Index organisiert werden und während der gesamten
+Anwendungszeit zur Verfügung stehen müssen.
+Dagegen gibt es aber spezielle Chunks für Join-Ergebnisse, welche 
+dynamisch erzeugt und gelöscht werden müssen.
+Eine manuelle Speicherverwaltung und somit der Ersatz von Smart-Pointer durch Raw-Pointer
+kann ungefähr 30% mehr Geschwindigkeit erreichen.
+Weiterhin wurde im builddb-Schritt festgestellt, dass viele Hash-Kollisionen auftreten und 
+dardurch Zeichenketten"=Vergleiche durchgeführt werden müssen.
+Durch den Einsatz einer auf AES-NI basierten Hash-Funktion können die Kollisionen 
+stark verringert werden.
+Es wurde in der Analyse auch festgestellt, dass Bit-Set-Operationen bei einigen Anfragetypen 
+sehr stark in die Laufzeit einfließen. 
+Verschiedene eigene Implementierungen und andere Ansätze wurden in einem Benchmark gegeneinander
+verglichen und es kann im Einsatz von CameLOD ungefähr 20% an Zeit eingespart werden.
+Besonders wichtig für ist ein Element inmemory Systeme ist das Sparen von Hauptspeicher. Aus diesem Grund
+wurden verschiedene Kompressionstechniken, welche einfache Dekompressionsmethoden bereitstellen,
+untersucht. Es konnte festgestellt werden, dass die Sequenzen für die Tripel"=Darstellung
+in CameLOD durch die dargestellten Verfahren FOR und RLE profitieren können.
+Durch Benchmarks konnte gezeigt werden, dass die Methoden auch effizient
+umsetzbar sind. 
+Für CameLOD kann also geschlussfolgert werden, dass einige Sequenzen
+sehr gute Kompressionseigenschaften aufweisen. Zum Beispiel können die sortierten Spalten 
+bis zu 50% komprimiert werden.
+Durch Einsatz von verschiedenen 
+Typen für die Sequenzen kann erreicht werden, dass das jeweils passenste Verfahren ausgewählt wird.
+Eine Kombination von beiden Verfahren ist auch denkbar, wurde aber nicht näher betrachtet.
+Weiterhin kann auch Speicher im Wörterbuch von CameLOD gespart werden. 
+Hierzu kann beispielsweise eine Ersetzung von Präfixen stattfinden und knapp 38% 
+Speicher gespart werden.
+Hauptspeicherzugriffe können, wenn sie nicht cache-effizient erfolgen, einen Flaschen"-hals
+darstellen. Daher fand eine Betrachtung der Zugriffe mittels NUMA oder Memory Mapped Files 
+statt. Mittels NUMA konnte fast kein Gewinn erzielt werden. Dagegen stellen 
+Memory Mapped Files ein Ansatz dar, die Persistenz ohne Boost-Serialisierung zu ermöglichen.
+\enlargethispage{\baselineskip}
+Schließlich wurde die festgelegte Chunk-Größe des CameLOD-Projektes experimentell untersucht.
+Die aktuell gewählte Größe stellt einen guten Kompromiss
+zwischen Join und Scan Anfragen dar und entspricht in etwa der theoretisch optimalen L1-Cache-Größe.
+Auswertung 
+In diesem Abschnitt soll eine proof-of-concept Auswertung 
+von einfach zu realisierenden Verbesserungsideen des letzten Kapitels
+im CameLOD-Projekt durchgeführt werden. Dabei wird die unveränderte Version und die Variante 
+mit den Verbesserungen in verschiedenen Situationen verglichen.
+Es wurden allgemeine Verbesserungen (binäre Suche und parallelsiertes Laden/Speichern 
+der Indizes), welche im Analysekapitel zusätzlich geschlussfolgert wurden und an einigen Stellen Raw-Pointer
+integriert.
+Zunächst soll der 'builddb'-Schritt ausgewertet werden. Anschließend 
+folgen verschiedene Anfragen im 'CameLOD'-Teil.
+Als Datengrundlage dient der \dbpedia{}-Half Datensatz. 
+Benchmark
+Zur Auswertung der genannten allgemeinen Verbesserungen eignet sich ein getrennter Mini-Benchmark
+nicht. Aus diesem Grund wurden die Änderungen direkt in einem eigenen Entwicklungszweig umgesetzt.
+Der Quellcode des CameLOD-Projekts wurde auf den neuen 
+C++11-Standard umgestellt. Dieser bietet zum Beispiel die Möglichkeit 
+lambda-Funktionen zu benutzen, welche bei TBB zur Parallelisierung genutzt werden können.
+\paragraph{org.}
+Die Version (org) stellt die im Analyse-Kapitel~ betrachtete Version 
+mit wenigen Erweiterungen bezüglich des C++11 Standards als Referenz dar. Darunter zählen 
+beispielsweise das Entfernen von Warnungen und die Auflösung von Namenskonflikte zwischen Boost 
+und Std bezüglich Shared"=Pointern.
+Zur spätereren aussagekräftigen Simulation und Evaluierung von Raw-Pointern ist in der org Version 
+bei der Verkettung der Chunks, dem SPO-Index und 
+den Anfrage-Operatoren eine Ersetzung der Smart-Pointer durchgeführt wurden.
+Sie wurden durch referenzzählende intrusive-Pointer 
+ersetzt und bieten somit ähnliche Eigenschaften wie die Shared-Pointer.
+\paragraph{mod.}
+Es wurde eine Version (mod) mit den Veränderungen bezüglich binärer Suche, 
+bei den Chunk-Datenstrukturen zum Finden der Einfügepositionen, betrachtet.
+Außerdem wurde das Laden beziehungsweise Speichern der Index-Strukturen parallelisiert.
+Natürlich ist dieser Ansatz von der Festplattengeschwindigkeit abhängig und wird auch nicht alle
+CPU-Kerne gleichmäßig auslasten. Dennoch kann das CameLOD-Projekt davon profitieren.
+Die in der org Version eingeführen intrusive-Pointer für die Chunks 
+sind dahingehend verändert worden, dass sie keine Referenzzählung und Speicherdeallokation vornehmen.
+Dieser Ansatz dient zur Simulation von Raw-Pointern in relevanten Teilen der Anfrageverarbeitung.
+Aufbau und Laden 
+Zunächst soll der builddb-Schritt und das Laden der Daten bei der Anfrageverarbeitung betrachtet werden.
+Da das Aufbauen der Datenbasis circa 1.5~h benötigt, wurde an dieser Stelle
+auf Mittelwerte verzichtet, auch weil dieser Schritt als nicht zeitkritisch eingestuft werden kann.
+\paragraph{Aufbau.}
+In Diagramm~ sind die Zeiten für die Schritte des builddb-Prozesses dargestellt.
+Er teilt sich in den Aufbau des Wörterbuchs (dict), das Erzeugen der Tripel-Indizes (triple) und dem 
+abschließenden Speichern der Daten (save) auf Festplatte.
+Es ist deutlich erkennbar, dass die Änderungen in der (mod)-Version in zwei der drei Teilschritten 
+einen Geschwindigkeitsgewinn verursachen, besonders beim Erzeugen der Tripel kann viel Zeit eingespart werden.
+Ungefähr 27% an Zeit können hier durch den Einsatz der binären Suche gespart werden.
+Beim Aufbau des Wörterbuchs (dict) kann keine Zeit eingespart werden, vorallem weil 
+in diesem Teilprozess keine Ersetzungen stattgefunden haben.
+Wogegen die Speicherung (save), durch die Parallelisierung ungefähr 50% 
+weniger Zeit benötigt.
+Insgesamt benötigt die (mod) Variante nur noch ungefähr 80% der CPU-Zeit im Vergleich zur unmodifizierten.
+Somit benötigt der Aufbau der Datenbasis in der (mod)-Version nur noch ungefähr 1~h Zeit.
+\paragraph{Laden.}
+Es wurde auch das Laden der Daten im CameLOD-Schritt, also vor der Anfrageverarbeitung, analysiert.
+In Abbildung~ sind die Zeiten beider Varianten dargestellt.
+Dabei wurden für 13 verschiedene Anfragen jeweils über 32 Messungen 
+die Mittelwerte und Intervalle mit 99%-tiger Konfidenz berechnet. 
+Für die org Variante ergibt sich bei allen Anfragen ungefähr eine Ladezeit von 165s.
+Dagegen benötigt die mod Version nur ungefähr 130s. Insgesamt kann durch das parallele Laden und
+die Simulation von Raw-Pointern eine Verbesserung um etwa 22% erzielt werden.
+Anfrageverarbeitung
+Im letzten Schritt der Auswertung wurde die Anfrageverarbeitung betrachtet.
+Obwohl nur an wenigen Stellen des Systems Veränderungen bezüglich Smart-Pointer vorgenommen wurde,
+ist in den Diagrammem~ und erkennbar, 
+dass die Verarbeitung in fast allen Anfragen 
+beschleunigt werden konnte.
+Beispielsweise kann die Zeit für die Anfrage Q6 mit der (mod) Variante auf ungefähr 85%
+reduziert werden. Das bedeutet eine Verbesserung um etwa 15%. Q6 benutzt häufig die
+Chunk-Verkettung und kann durch die Veränderungen profitieren. 
+Anfrage Q13, welche parallelisiert ausgeführt wird, benötigt in der (org) Version 
+ungefähr 1s. Durch die Modifikationen konnte die Zeit auf etwa 0.9s reduziert werden, somit
+ist die Anfrage um circa 10% schneller.
+Nur die Anfragen Q3, Q4 und Q5 sind sichbar nicht schneller geworden, jedoch 
+ist auch keine Verschlechterung erkennbar.
+Bei einigen Anfragen fällt der Gewinn geringer aus, weil nur wenige 
+Shared-Pointer in der (mod) Variante ersetzt wurden.
+Ein höherer Gewinn kann durch weiteres Ersetzen erzielt werden. 
+Zusammenfassung
+Es wurde in einem Benchmark gezeigt, dass durch dein Einsatz einiger der ermittelten 
+Verbesserungen in fast allen Teilbereichen des CameLOD-Projekts Verarbeitungszeit gespart werden kann.
+Besonders das Aufbauen der Datenbasis konnte um etwa 20% beschleunigt werden.
+Auch das Laden der Daten vor der Anfrageverarbeitung konnte um circa 22% verbessert werden.
+Einige der Anfragen konnten wenig durch die Veränderungen beschleunigt werden, andere
+hingegen um ungefähr 10%. 
+Folglich müssen an mehr Stellen im System Ersetzungen der Pointer stattfinden.
+\enlargethispage{\baselineskip}
+Fazit 
+Im letzten Kapitel dieser Arbeit sollen die dargestellten Ideen und Verbesserungen 
+zusammengefasst werden. Außerdem soll auch ein Ausblick bezüglich 
+der effizienten Verarbeitung von Linked-Open-Data gegeben werden.
+Zusammenfassung
+Im Zuge des semantischen Webs werden immer mehr Linked-Open-Data 
+öffentlich zur Verfügung gestellt.
+Dabei wird der Ansatz verfolgt, semantische Informationen in einem Format
+zur Verfügung zu stellen, so dass sie beispielsweise von Computern verarbeitet werden können. 
+Die Datenmengen, die bei der LOD Verarbeitung anfallen, sind sehr groß und stellen somit
+neue Anforderungen an Datenbanksysteme.
+Reine relationale Datenbanken können zwar auch verwendet werden, um LOD
+zu verarbeiten, sie nutzen aber ihre speziellen Eigenschaften nicht aus.
+Darüber hinaus verwenden viele relationale Datenbanksysteme nur wenige
+Funktionen (Parallelisierung, Vektorisierung,...) moderner CPU-Architekturen. 
+Auch sind in modernen Rechner-Architekturen große Mengen an Hauptspeicher möglich.
+Spezielle In-Memory Datenbanksysteme für LOD, wie zum Beispiel CameLOD,
+können von solchen Features profitieren.
+Ziel dieser Arbeit ist es Erweiterungen des CameLOD-Projekts zu entwickeln
+um eine Erhöhung der Effizienz in Bezug auf Speicher und Verarbeitungszeit zu erzielen.
+Im semantischen Web werden LOD durch RDF-Graphen dargestellt.
+Die Anfrageverarbeitung erfolgt dabei durch den festgelegten Standard mittels SPARQL.
+Ein RDF-Graph besteht aus Subjekt-, Prädikat- und Objekt-Werten, wobei ein
+Subjekt-Prädikat-Objekt Tripel genau eine Aussage darstellt.
+LOD können als globale Tabelle bestehend aus den Tripeln 
+aufgefasst werden, es gibt aber auch andere Speichermöglichkeiten.
+Für die Verarbeitung haben sich bereits einige Ansätze etabliert.
+Beispielsweise wurden die In-Memory Stores (RDFHDT, Hexastore, BitMat und RDF-3X) 
+betrachtet. Wobei festgestellt werden konnte, dass sie zwar interessante Ansätze bieten, aber moderne
+Rechnerarchitekturen nicht vollständig beziehungsweise nur wenig ausnutzen. 
+Grundlegend verwenden alle betrachteten Ansätze Kompressionsverfahren und Indizierung um die Datenmengen 
+effizienter verarbeiten zu können.
+Moderne CPU-Architekturen bieten eine Reihe von Erweiterungen.
+Bezogen auf Intel-CPUs wurden verschiedene Erweiterungen näher betrachtet,
+beispielsweise Parallelisierung, Vektorisierung (SIMD),
+Superskalarität und Pipelining sowie Caches und Cache-Hierarchien. 
+Es wurden auch Erneuerungen bezüglich Hauptspeicher, dazu zählen Non-Uniform Memory Access (NUMA)
+und persistenter Speicher, betrachtet.
+ist ein Element inmemory Datenbanksysteme unterscheiden sich nur in der Speicherung beziehungsweise Verarbeitung 
+der Daten, denn im Gegensatz zu herkömmlichen Disk-basierten Datenbanksystemen werden alle
+Daten im Hauptspeicher verarbeitet und gehalten. Dennoch müssen ist ein Element inmemory Systeme auch Möglichkeiten
+bietet Daten persistent zu halten.
+Neben der ist ein Element inmemory LOD Verarbeitung gibt es bereits 
+andere relationale ist ein Element inmemory Datenbanksysteme, wie etwa
+SAP HANA und MonetDB.
+Gerade bei der ist ein Element inmemory Verarbeitung ist Hauptspeicher eine begrenzte Ressource.
+Kompressionstechniken können dabei genutzt werden um Speicher zu sparen.
+Dabei müssen die Techniken aber auch effiziente Zugriffe auf die komprimierten Daten liefern.
+Es wurden verschiedene Grundverfahren betrachtet, 
+beispielsweise Wörterbuchkompression, Entropiekodierung und 
+Integer"=Sequenz"=Kompressions"=Verfahren (Frame of Reference und Run-Length Encoding).
+Gerade die Verfahren für Integer"=Sequenzen bieten gute Möglichkeiten zur Kompression
+von Index-Strukturen in Datenbanksystemen. 
+	
+Hauptuntersuchungsgegenstand dieser Arbeit war das CameLOD-Projekt.
+Zuerst wurde der grundlegende Ablauf beim CameLOD-Projekt beschrieben.
+Dabei werden im ersten Schritt die Daten komprimiert gespeichert
+und im zweiten Schritt werden die Anfragen an das System gestellt.
+Es wurde auch die Grundstuktur des Systems beschrieben. Es findet eine Indizierung 
+alle RDF-Tripel in den drei möglichen Sortierreihenfolgen statt.
+Die Anfrageverarbeitung benutzt zur effizienten Ermittlung der Ergebnisse die Index-Strukturen.
+Die verschiedenen zur Verfügung gestellten Operatoren werden kurz beschrieben.
+Als Datengrundlage für alle Messungen dient das \dbpedia{}-Projekt.
+Es bietet verschiedene RDF-Daten zum Export an. Darauf aufbauend wurde ein kombinierter 
+Datensatz mit ungefähr 30~GB erstellt.
+Das CameLOD-Projekt wurde mittels VTune analysiert und es wurden kurz die verschiedenen
+Analyseprofile des VTune-Tools beschrieben.
+Alle Messungen erfolgten dabei auf einem Referenzsystem, dessen 
+Besonderheiten (CPU, der verwendete Befehlssatz, Cache-Größen und die NUMA-Topologie) beschrieben wurden.
+Auch die Effizienzbegriffe, welche für die Arbeit wichtig sind, wurden festgelegt.
+Für die zwei Teilprozesse, das Aufbauen und spätere Anfragen, fand mittels VTune eine Analyse statt.
+Verschiedene Analyseprofile kamen dabei zum Einsatz. 
+Grundlegend ist für einen großen Teil der Laufzeit der Einsatz von Smart-Pointern und BitSet
+Datenstrukturen verantwortlich. Auch einige Implementierungsverbesserungen konnten geschlussfolgert werden.
+Durch das Profiling konnte festgestellt werden, dass die parallelisierten Operatoren
+gut umgesetzt sind.
+Neben der Analyse wurde auch die Kompression betrachtet und bezüglich der Index-Strukturen 
+und des Wörterbuchs kann Speicher eingespart werden.
+Aufbauend auf den Analyseergebnissen konnten verschiedene Ideen und Ansätze zur 
+Verbesserung der Effizienz des Systems geschlussfolgert werden.
+Es wurden dabei Ansätze für Smart-Pointer, Hash-Funktionen, Bit-Vektoren, Kompression, Speicherzugriffe
+und Chunk-Größe betrachtet.
+In mehreren Mini-Benchmarks wurde überprüft, ob eine eigene Implementierung 
+oder bestimmte Kompressionschema vielversprechend sind.
+An einigen Stellen kann ein hoher Geschwindigkeits- beziehungsweise Speichergewinn erzielt werden.
+Beispielsweise kann durch den vollständigen Ersatz von Smart-Pointer durch Raw-Pointer 
+ungefähr 30% mehr Geschwindigkeit erreicht werden.
+Außerdem kann durch Kompressionsschemata für Integer-Sequenzen (veränderte FOR/RLE-Kompression) 
+ungefähr 50% Speicher eingespart werden.
+Auch die Speicherung des Wörterbuchs für die Zeichenketten der RDF-Tripel kann mittels
+Präfix-Ersetzung effizienter realisiert werden. Dabei kann 38% Speicher eingespart werden.
+Hauptspeicherzugriffe können, wenn sie nicht cache-effizient erfolgen, einen 
+Performance-Flaschenhals darstellen. Daher wurden auch mittels NUMA oder Memory Mapped Files die Zugriffe
+auf den Speicher betrachtet. Mittels NUMA konnte fast kein Gewinn erzielt werden. 
+Dagegen stellen Memory Mapped Files einen Ansatz dar, die Persistenz ohne Serialisierung zu
+realisieren.
+Am Ende wurde die festgelegte Chunk-Größe des CameLOD-Projektes experimentell untersucht. 
+Die aktuell gewählte Größe stellt einen guten Kompromiss zwischen Join- und Scan"=Anfragen dar 
+und entspricht in etwa der theoretisch optimalen L1-Cache-Größe.
+Es konnten nicht alle Verbesserungsansätze direkt in das CameLOD-Projekt umgesetzt werden.
+Demzufolge wurde eine Evaluierung ausgewählter Ideen vorgenommen.
+Dazu zählt der Ersatz von Smart-Pointern durch Raw-Pointern an den für die Anfrageverarbeitung
+kritischen Stellen. Weiterhin wurden einigen allgemeine Verbesserungen umgesetzt.
+In fast allen Teilprozessen des CameLOD-Systems konnten Verbesserungen erzielt werden.
+Dabei kann festgestellt werden, dass das Aufbauen der Datenbank mit den Verbesserungen 
+nur noch 80% der Zeit benötigt. Auch das Laden der Daten vor jeder Anfrageverarbeitung konnte
+um etwa 22% beschleunigt werden.
+Die Anfrageverarbeitung von 13 Testanfragen konnte effizienter gestalltet werden.
+Auch wenn nicht alle Erweiterungen in das CameLOD-Projekt integiert werden konnten, 
+wurde gezeigt, dass eine Verbesserung möglich ist. 
+Ausblick
+Das CameLOD-Datenbanksystem stellt einen neuen modernen Ansatz zur Verarbeitung von LOD dar.
+Nicht alle Erweiterungen bezüglich Smart-Pointer, BitSet-Strukturen oder Hash-Funktionen konnten in der Evaluierung
+in das System integriert werden. Es wurde gezeigt, dass sie für die Verarbeitung
+Geschwindigkeitsvorteile erzielen können.
+Besonders im Bezug auf Smart-Pointer ist der Einsatz eines Memory-Kontextes zur Verwaltung
+allokierter Speicherbereiche nötig. 
+Kompression ist ein wichtiger Bestandteil von ist ein Element inmemory-Systemen. Durch Messungen konnte 
+ermittelt werden, dass CameLOD von Kompressionsschemata für Integer-Sequenzen oder Wörterbüchern profitieren 
+kann. Aber zur Integration der Kompressionstechniken müssen Erweiterungen bezüglich verschiedener
+Chunk- oder Spalten-Typen im System vorgenommen werden. Auch eine Kombination 
+verschiedener Techniken wäre denkbar und muss näher betrachtet werden.
+Memory Mapped Files können dem CameLOD-Projekt eine transparente Schnittstelle zur Speicherung
+der Index-Strukturen auf Festplatte ermöglichen. Es wurden nur die Zugriffszeiten einfacher Memory Mapped Files
+untersucht. Zur Integration hingegen müssen Konzepte zur Speicherung in einer oder mehreren Dateien entwickelt werden. 
+Da das Referenzsystem nur 2 NUMA-Knoten zur Verfügung hatte, konnte fast kein Unterschied 
+zwischen den TBB-Schedulern erzielt werden. Außerdem bietet TBB nur eine geringe Unterstützung bezüglich
+NUMA-Systemen. Eine genauere Betrachtung ist an dieser Stelle nötig, zum einen auf einem System mit mehr 
+NUMA-Knoten und zum anderen durch einen besseren Scheduler.
+Denkbar ist auch der Ersatz der TBB-Funktionalität durch ein anderes Framework mit expliziter Unterstützung
+von NUMA. 
+~\\[2em]
+\begin{quote}
+ \begin{center}
+ "`Everything that has a beginning has an end, Neo."' \\
+ \bigskip{}
+ \textsc{Matrix Revolutions}
+ \end{center}
+\end{quote}
+\clearpage
+\sloppy
+\printbibliography

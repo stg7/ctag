@@ -1,0 +1,146 @@
+{{Infobox Film
+| Bild    = Matrixreloaded-logo.svg
+| DT      = Matrix Reloaded
+| OT      = The Matrix Reloaded
+| PL      = [[Vereinigte Staaten]]
+| PJ      = 2003
+| FSK     = 16
+| JMK     = 14&lt;ref&gt;[http://www.bmukk.gv.at/schulen/service/jmk/detail.xml?key=15614 Freigabe] der Jugendmedienkommission&lt;/ref&gt;
+| LEN     = 136
+| OS      = [[Englische Sprache|Englisch]]
+| REG     = [[Wachowski-Brüder]]
+| DRB     = Wachowski-Brüder
+| PRO     = [[Joel Silver]]
+| MUSIK   = [[Don Davis]]
+| KAMERA  = [[Bill Pope]]
+| SCHNITT = [[Zach Staenberg]]
+| DS      = *[[Keanu Reeves]]: Neo
+* [[Laurence Fishburne]]: Morpheus
+* [[Carrie-Anne Moss]]: Trinity
+* [[Monica Bellucci]]: Persephone
+* [[Jada Pinkett Smith]]: Niobe
+* [[Hugo Weaving]]: Smith
+* [[Harold Perrineau]]: Link
+* [[Lambert Wilson]]: Merowinger
+* [[Randall Duk Kim]]: Der Schlüsselmacher
+* [[Gloria Foster]]: Das Orakel
+* [[Collin Chou]]: Seraph
+* [[Helmut Bakaitis]]: Der Architekt
+* [[Ian Bliss]]: Bane
+* [[Daniel Bernhardt (Schauspieler)|Daniel Bernhardt]]: Agent Johnson
+* [[Essie Davis]]: Maggie
+* [[Harry J. Lennix]]: Commander Lock
+* [[Anthony Wong]]: Ghost
+* [[Roy Jones Jr.]]: Captain Ballard
+* [[Anthony Zerbe]]: Senator Hamann
+}}
+
+'''Matrix Reloaded''' (Originaltitel: ''The Matrix Reloaded'') ist ein [[Science-Fiction-Film]] aus dem Jahr 2003 und die Fortsetzung von ''[[Matrix (Film)|Matrix]]'' aus dem Jahr 1999. Regie führten wieder die [[Wachowski-Brüder]], die auch das Drehbuch schrieben. Die Hauptrollen wurden wieder mit [[Keanu Reeves]], [[Laurence Fishburne]] und [[Carrie-Anne Moss]] besetzt. Im November 2003 erschien der dritte Teil ''[[Matrix Revolutions]]''.
+
+== Handlung ==
+Neo erwacht aus einem Traum. Er hat geträumt, dass Trinity von einem Agenten erschossen wird, während sie aus einem Gebäude der Matrix fällt. Neo behält den Traum für sich. Morpheus, Kapitän des Hovercraft [[Nebukadnezar]], steuert sein Schiff auf eine Sendeposition, um sich mit anderen Kapitänen innerhalb der Matrix zu treffen. Gegenstand des Treffens ist ein Angriff der Maschinen auf Zion. Es ist die letzte von Menschen bewohnte Stadt in der realen Welt. Die Maschinen bohren einen Tunnel von der Erdoberfläche in Richtung Zion, das sich tief im [[Erdkern|Erdinneren]] befindet. Eine Armee von 250.000 Kampfrobotern, den Wächtern, wird voraussichtlich in 72 Stunden Zion erreichen.
+
+Angesichts des befürchteten Angriffs hatte der Kommandeur der Verteidigung von Zion, Commander Lock, angeordnet, dass alle Hovercrafts umgehend nach Zion zurückkehren müssen. Morpheus kann die Anwesenden davon überzeugen, dem Befehl nicht Folge zu leisten. Ein Schiff soll auf einer Sendeposition zurückgelassen werden, damit das Orakel mit ihnen Kontakt aufnehmen kann. Kapitän Ballard bleibt mit seinem Schiff ''Caduceus''. Währenddessen taucht ein Unbekannter vor der Tür der Versammlung auf und gibt ein Headset, wie es die Agenten nutzen, für Neo ab. Der Unbekannte erwähnt, dass Neo ihn befreit habe. Neo weiß damit, dass es sich um Agent Smith gehandelt haben muss. Kurz darauf tauchen drei Matrix-Agenten auf, die Neo besiegen kann. Nachdem Neo verschwunden ist, tauchen zwei weitere, identisch aussehende Smith-Agenten auf.
+
+Zurück in Zion, muss sich Morpheus bei Commander Lock dafür rechtfertigen, ein Hovercraft zurückgelassen zu haben. Der Senat von Zion verzichtet jedoch auf eine Bestrafung von Morpheus. Im Gegenteil, Morpheus darf sogar im Tempel von Zion eine leidenschaftliche Rede halten, um die Bewohner Zions auf den bevorstehenden Kampf gegen die Wächter einzustimmen. Als Kapitän Ballard wenig später den Kontaktwunsch des Orakels tatsächlich meldet, läuft Morpheus mit der ''Nebukadnezar'' erneut zu einer Sendeposition aus.
+
+Wieder in der Matrix trifft sich Neo in einem Hinterhof mit dem Orakel, nachdem der Beschützer des Orakels, Seraph, Neo zuvor einer Kampfprüfung unterzogen hat. Das Orakel bestätigt, dass es selbst kein Mensch sei, sondern ein Programm der Matrix. Das Orakel erklärt Neo, dass er Zion retten könne, wenn er die ''Quelle'', den Zentralcomputer der Maschinen, erreicht. Um dorthin zu gelangen, muss er den ''Schlüsselmacher'' finden. Dieser könne Schlüssel für geheime Hintertüren in der Matrix anfertigen und auch die Tür zum Zentralcomputer öffnen. Der Schlüsselmacher werde jedoch von einem Programm, dem Merowinger, gefangen gehalten. Das Orakel gibt Neo einen Tipp, wie er den Merowinger treffen kann.
+
+Neo bleibt auf dem Hinterhof zurück, auf dem Smith auftaucht. Dieser erklärt Neo, er sei kein „Agent des Systems“ mehr, sondern ein freier Mann. Diese Veränderung sei eine Folge des letzten Kampfes mit Neo, an dessen Ende Neo Agent Smith von innen her sprengte - und einen Teil von Smith „überschrieben“ habe (siehe Ende von [[Matrix (Film)#Handlung|Matrix]]). Es gelingt Neo, sich gegen acht identische Smiths zu verteidigen. Als ein Maschinen-höriger Agent auf der Suche nach Smith erscheint, wird der Agent von Smith zu einer Smith-Kopie umgeformt. Im sich anschließenden Kampf gegen dutzende identischer Smiths muss Neo schließlich einsehen, dass dieser Kampf nicht zu gewinnen ist, und flieht.
+
+Da die ''Nebukadnezar'' sich längere Zeit nicht in Zion gemeldet hat, schickt der Senat von Zion zwei Schiffe aus, um das Hovercraft von Morpheus aufzuspüren. Eines der ausgesandten Schiffe steht unter dem Kommando von Morpheus’ ehemaliger Gefährtin Niobe.
+
+Morpheus, Trinity und Neo treffen den Merowinger und seine Frau Persephone in einem luxuriösen Restaurant in einer Stadt der Matrix. Nach einem erfolglosen Gespräch verlassen sie das Restaurant wieder, werden aber von Persephone abgefangen. Persephone verspricht, den Schlüsselmacher im Tausch gegen einen leidenschaftlichen Kuss von Neo zu übergeben. Trinity lässt den Kuss widerwillig zu. Persephone hält Wort; die drei können den Schlüsselmacher befreien, müssen sich aber den Gehilfen des Merowingers zum Kampf stellen.
+
+Während Neo den Großteil der Gehilfen ausschaltet, werden Morpheus, Trinity und der Schlüsselmacher von einem Paar Kämpfer-Zwillinge des Merowingers verfolgt. Als Neo versucht, dem fliehenden Merowinger durch eine Tür zu folgen, steht er plötzlich hunderte Meilen entfernt. Morpheus, Trinity und der Schlüsselmacher werden zwischenzeitlich von der Polizei, den Zwillingen und diversen Agenten auf dem Highway der Stadt gejagt. Auf der Suche nach einem Ausgang aus der Matrix erhält Morpheus Hilfe von der inzwischen eingetroffenen Niobe. Morpheus und der Schlüsselmacher werden schließlich in letzter Sekunde vom heran fliegenden Neo gerettet.
+
+Wieder in Sicherheit erläutert der Schlüsselmacher den Kapitänen der drei Hovercrafts, wie Neo zum Zentralcomputer gelangen kann. Dieser befinde sich in einer geheimen Etage eines streng gesicherten Hochhauses. Durch die Sprengung des lokalen Elektrizitätswerks und Abschalten des Notfallprogramms des Elektrizitätswerks bestehe für kurze Zeit die Möglichkeit, die geheime Etage und dann die Tür zur ''Quelle'' zu erreichen.
+
+Neo hat aufgrund seines Traums Angst um Trinity und bittet sie, bei der kommenden Mission die Matrix nicht zu betreten. Trinity willigt ein. Die Mannschaft eines der drei Hovercrafts wird durch einen Wächterangriff getötet und die Mission droht zu scheitern. Trinity entschließt sich, doch in die Geschehnisse in der Matrix einzugreifen. Währenddessen taucht im Bereich der Hintertüren Smith mit seinen zahlreichen Kopien auf. Sie versuchen, Neo, Morpheus und den Schlüsselmacher aufzuhalten. Trinity gelingt es, das Notfallprogramm genau in dem Moment zu unterbrechen, in dem der Schlüsselmacher die Tür zur geheimen Etage öffnet. Der Schlüsselmacher kann zusammen mit Neo und Morpheus die Tür zur geheimen Etage unter dem Kugelhagel der Smiths durchschreiten; der Schlüsselmacher wird dabei tödlich verwundet.
+
+Während Trinity mit einem auftauchenden Agenten ringt, gelangt Neo zum „Architekten“ der Matrix. Der Architekt klärt Neo darüber auf, dass es vor dieser Matrix schon fünf andere gegeben habe. Neo habe nun genau zwei Möglichkeiten: Entweder er rette Trinity und töte dabei alle Menschen in der Matrix, oder er folge seiner eigentlichen Aufgabe – wie es bereits fünf andere zuvor taten. Die Aufgabe bestehe darin, zur ''Quelle'' zurückzukehren, um das Betriebssystem der Matrix neu zu starten. Neo könne dann 23 Personen aus der Matrix für den Neuaufbau von Zion auswählen. Neo entscheidet sich für Trinity, die bereits von einer Kugel getroffen wurde. Sie stirbt in seinen Armen. Neo entfernt die Kugel aus ihrem Körper und erweckt sie wieder zum Leben.
+
+Zurück auf der ''Nebukadnezar'' ist Morpheus verzweifelt, weil der Angriff der Maschinen auf Zion trotz der erfolgreichen Mission weiter geht, er aber ein Ende des Kampfes erwartete. Neo konfrontiert Morpheus damit, dass es nie Aufgabe des Auserwählten war, den Krieg gegen die Maschinen siegreich zu beenden. {{Zitat|Ich habe einen Traum geträumt, aber nun hat mich dieser Traum verlassen.|Quelle=Morpheus}}
+
+Kurz darauf wird die ''Nebukadnezar'' von Wächtern angegriffen. Die Besatzung kann das Schiff verlassen, bevor es zerstört wird. Die Wächter versuchen, die fliehenden Besatzungsmitglieder zu töten. Neo stellt sich den Wächtern entgegen. Es gelingt ihm durch Anspannung seiner Geisteskräfte, die Wächter außer Gefecht zu setzen. Dies war ihm bisher nur in der virtuellen Welt der Matrix gelungen. Bei dieser Aktion verausgabt sich Neo und fällt in ein [[Koma]].
+
+Zwischenzeitlich erscheint die ''Hammer'', ein weiteres Hovercraft, und nimmt die Besatzung der ''Nebukadnezar'' auf. Ein von Commander Lock geplanter Gegenangriff auf die Maschinen war fehlgeschlagen, da ein zu früh ausgelöster elektromagnetischer Impuls einen Großteil der Hovercraft-Flotte Zions zerstört hat. Der einzige Überlebende, Bane, befindet sich ohnmächtig mit an Bord. Gemeinsam erwarten die Menschen den Angriff der Maschinen.
+
+== Hintergrund ==
+* Für das Drehen der Auto-Verfolgungsjagd wurde auf dem im Jahre 1997 stillgelegten US-Luftwaffenstützpunkt ''Naval Air Station Alameda'' in [[Kalifornien]] extra ein Stück Highway nachgebaut, da sich kein tatsächlicher Highway finden ließ, den man für die Dreharbeiten verwenden konnte.
+* [[General Motors]] spendete 300 Autos für die Filmproduktion. Alle 300 Autos wurden zerstört.&lt;ref&gt;[http://www.imdb.com/title/tt0234215/trivia imdb]-Angabe&lt;/ref&gt;
+* In der Szene, in der Persephone einen Helfer des Merowinger mit einer silbernen Pistolenkugel erschießt, läuft im Hintergrund der Film ''[[Dracula und seine Bräute]]'' von 1960.
+* Das Buch, das Persephone zum Öffnen der geheimen Tür benutzt, um zum Schlüsselmacher zu gelangen, ist ''[[Die Welt als Wille und Vorstellung]]'' des deutschen Philosophen [[Arthur Schopenhauer]].
+* Kameramann [[Bill Pope]] hat im Film einen Gastauftritt als der Sicherheitsmann, der „Schafe zählt“.
+* [[Gloria Foster]], die im Film das Orakel darstellt, starb am 29. September 2001 noch vor dem Ende der Dreharbeiten. Für den zweiten Teil hatte sie fast alle geplanten Szenen abdrehen können, jedoch noch keine Szene für den dritten Teil der Trilogie begonnen. Im folgenden Film ''Matrix Revolutions'' wurde sie durch [[Mary Alice]] ersetzt.
+* Für die Rolle der Zee war ursprünglich Sängerin [[Aaliyah]] vorgesehen, diese starb jedoch am 25. August 2001 bei einem Flugzeugabsturz. Die bereits mit ihr gedrehten Szenen wurden im Film nicht verwendet. Ihre Rolle übernahm [[Nona Gaye]], die Tochter von Sänger [[Marvin Gaye]].
+* Neben dem Film wurde die neunteilige [[Anime]]-Serie [[Animatrix]] und das Computerspiel ''[[Enter the Matrix]]'' veröffentlicht.
+* Die Dreharbeiten begannen im März 2001 und endeten am 21. August 2002, wobei auch gleichzeitig für den dritten Teil ''Matrix Revolutions'' gedreht wurde. Gedreht wurde hauptsächlich in Australien, einige Szenen auch in den USA. Die Produktionskosten wurden auf rund 150 Millionen US-Dollar geschätzt. Der Film spielte in den Kinos weltweit rund 742 Millionen US-Dollar ein, davon rund 281 Millionen US-Dollar in den USA.&lt;ref&gt;[http://www.imdb.de/title/tt0234215/business imdb]-Angabe&lt;/ref&gt;
+* Kinostart in den USA war am 15. Mai 2003 und in Deutschland am 22. Mai 2003.&lt;ref&gt;[http://www.imdb.de/title/tt0234215/releaseinfo imdb]-Angabe&lt;/ref&gt;
+
+== Kritiken ==
+{{Zitat|Der spielerisch-philosophische Hintergrund leidet vor allem unter der Atemlosigkeit der Effekte, wobei überlange Dialoge uninspiriert mit lärmenden Action- und Kampfsequenzen wechseln. Die Abgründigkeit des gedanklichen Entwurfs geht dabei ebenso verloren wie der Sinn fürs Timing.|[[film-dienst]] &lt;small&gt;(12/2003)&lt;/small&gt;}}
+
+{{Zitat|Revolutionäres Actionkino, das Kopf und Kreislauf anregt – trotz einiger Längen.|[[Cinema]] &lt;small&gt;(06/2003)&lt;/small&gt;}}
+
+== Siehe auch ==
+* [[Welt am Draht]]
+
+== Einzelnachweise ==
+&lt;references /&gt;
+
+== Weblinks ==
+{{Wikiquote}}
+* {{IMDb Titel|tt0234215}}
+* {{OFDb|34402}}
+* {{rottentomatoes|matrix_reloaded}}
+&lt;!-- * [http://whatisthematrix.warnerbros.com/ Offizielle Homepage] --&gt;
+* [http://www.matrix-architekt.de/index.shtml Matrix-Architekt: Alle Dialoge, Standbilder und Erläuterungen einzelner Szenen]
+* [http://www.stadt-zion.de/zion-archiv/ Zion-Archiv]
+* Christian Kresse: [http://ck-production.de/the-ultimate-matrix-collection-der-rezipient-zwischen-paratext-und-film The Ultimate Matrix Collection: Der Rezipient zwischen Paratext und Film], ck-production.de, 2. Oktober 2010
+
+{{Navigationsleiste Matrix-Filmreihe}}
+{{Navigationsleiste Filme der Wachowski-Brüder}}
+
+[[Kategorie:Science-Fiction-Film]]
+[[Kategorie:Actionfilm]]
+[[Kategorie:US-amerikanischer Film]]
+[[Kategorie:Filmtitel 2003]]
+[[Kategorie:Dystopie]]
+[[Kategorie:Matrix (Film)]]
+
+[[ar:الماتريكس 2 (فيلم)]]
+[[ca:Matrix Reloaded]]
+[[cs:Matrix Reloaded]]
+[[da:The Matrix Reloaded]]
+[[el:The Matrix Reloaded]]
+[[en:The Matrix Reloaded]]
+[[eo:The Matrix Reloaded]]
+[[es:The Matrix Reloaded]]
+[[fa:ماتریکس: بارگذاری مجدد]]
+[[fi:Matrix Reloaded]]
+[[fr:Matrix Reloaded]]
+[[gl:Matrix Reloaded]]
+[[he:מטריקס רילודד]]
+[[hi:द मेट्रिक्स रिलोडेड]]
+[[hu:Mátrix – Újratöltve]]
+[[id:The Matrix Reloaded]]
+[[it:Matrix Reloaded]]
+[[ja:マトリックス リローデッド]]
+[[lt:Matrica. Perkrauta]]
+[[ml:ദ മാട്രിക്സ് റീലോഡഡ്]]
+[[ms:The Matrix Reloaded]]
+[[nl:The Matrix Reloaded]]
+[[no:The Matrix Reloaded]]
+[[pl:Matrix Reaktywacja]]
+[[pt:The Matrix Reloaded]]
+[[ro:Matrix - Reîncărcat]]
+[[ru:Матрица: Перезагрузка]]
+[[simple:The Matrix Reloaded]]
+[[sk:Sshnuke]]
+[[sr:The Matrix Reloaded]]
+[[sv:The Matrix Reloaded]]
+[[th:เดอะ เมทริกซ์ รีโหลดเดด : สงครามมนุษย์เหนือโลก]]
+[[tr:Matrix Reloaded]]
+[[uk:Матриця: Перезавантаження]]
+[[zh:黑客帝国2：重装上阵]]

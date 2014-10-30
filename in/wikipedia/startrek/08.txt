@@ -1,0 +1,148 @@
+{{Infobox Film
+| Bild    = Star trek 8 de.svg
+| DT      = Star Trek: Der Erste Kontakt
+| OT      = Star Trek: First Contact
+| PL      = [[Vereinigte Staaten|USA]]
+| PJ      = [[Filmjahr 1996|1996]]
+| LEN     = 106
+| OS      = [[Englische Sprache|Englisch]]
+| FSK     = 12
+| REG     = [[Jonathan Frakes]]
+| DRB     = [[Rick Berman]],&lt;br /&gt;[[Brannon Braga]],&lt;br /&gt;[[Ronald D. Moore]]
+| PRO     = Rick Berman
+| MUSIK   = [[Jerry Goldsmith]]
+| KAMERA  = [[Matthew F. Leonetti]]
+| SCHNITT = [[John W. Wheeler]]
+| DS      = 
+* [[Patrick Stewart]]: [[Völker im Star-Trek-Universum#Dienstgrade|Captain]] [[Figuren im Star-Trek-Universum#Captain Jean-Luc Picard|Jean-Luc Picard]]
+* [[Jonathan Frakes]]: [[Völker im Star-Trek-Universum#Dienstgrade|Commander]] [[Figuren im Star-Trek-Universum#Commander William Thomas Riker|William Riker]]
+* [[Brent Spiner]]: [[Völker im Star-Trek-Universum#Dienstgrade|Lieutenant Commander]] [[Figuren im Star-Trek-Universum#Lieutenant Commander Data|Data]]
+* [[LeVar Burton]]: [[Figuren im Star-Trek-Universum#Lieutenant Commander Geordi La Forge|Lieutenant Commander Geordi La Forge]]
+* [[Michael Dorn]]: [[Figuren im Star-Trek-Universum#Lieutenant Commander Worf|Lieutenant Commander Worf]]
+* [[Gates McFadden]]: [[Figuren im Star-Trek-Universum#Dr. Beverly Crusher|Dr. Beverly Crusher]]
+* [[Marina Sirtis]]: [[Figuren im Star-Trek-Universum#Counselor Deanna Troi|Counselor Deanna Troi]]
+* [[Alice Krige]]: [[Völker im Star-Trek-Universum#Borg|Die Borg-Königin]]
+* [[James Cromwell]]: [[Figuren im Star-Trek-Universum#Zefram Cochrane|Dr. Zefram Cochrane]]
+* [[Alfre Woodard]]: Lily Sloane
+}}
+
+'''Star Trek: Der Erste Kontakt''' ist der achte [[Star Trek|Star-Trek]]-Kinofilm und der zweite, der auf der Fernsehserie ''[[Raumschiff Enterprise: Das nächste Jahrhundert]]'' basiert. Mit [[Jonathan Frakes]] führte – wie zuvor schon [[Leonard Nimoy]] und [[William Shatner]] aus der Serie [[Raumschiff Enterprise]] – ein Hauptdarsteller Regie.
+
+== Handlung ==
+Nachdem das Raumschiff [[Enterprise (Raumschiff)#USS Enterprise (NCC-1701-D)|Enterprise-D]] im letzten Film zerstört wurde, befindet sich die Crew unter [[Figuren im Star-Trek-Universum#Captain Jean-Luc Picard|Captain Jean-Luc Picard]] nun auf dem neuen Raumschiff [[Enterprise (Raumschiff)#USS Enterprise (NCC-1701-E)|Enterprise-E]]. Diese befindet sich erst seit einem Jahr im All, als die Albträume Captain Picards wahr werden: Die [[Völker im Star-Trek-Universum#Borg|Borg]], eine Spezies erobernder [[Cyborg]]s, haben mit einer erneuten Invasion des [[Völker im Star-Trek-Universum#Föderation|Föderationsgebietes]] begonnen. Sechs Jahre zuvor war Picard von den Borg assimiliert und in ihr kollektives Bewusstsein integriert worden. Das Oberkommando der [[Völker im Star-Trek-Universum#Sternenflotte|Sternenflotte]] befürchtet, dass er für den nun bevorstehenden Kampf daher ungeeignet sein könnte und gibt der Enterprise den Befehl, die neutrale Zone zu den [[Völker im Star-Trek-Universum#Romulaner|Romulanern]] zu überwachen, ein militärisch sinnloser Auftrag. Nach entmutigenden Berichten der Flotte, die sich inzwischen den Borg ohne die Enterprise gestellt hat, widersetzt sich Picard dem Befehl und befiehlt den Flug zum Schlachtfeld im Orbit der Erde. Mit Picards überlegenen Kenntnissen über die Borg gelingt es der verbleibenden Flotte, das feindliche Schiff zu vernichten.
+
+Kurz vor der Zerstörung entkommt jedoch ein kleineres Borgschiff aus dem Mutterschiff und kann durch einen erzeugten Zeitwirbel entkommen. Nach dem Verschwinden dieses Borgschiffs ist die Erde eine Borgwelt: Sie ist offenbar in der Vergangenheit von den Borg assimiliert worden. Da die Enterprise während der [[Zeitreise]] des Borgschiffes ebenfalls in den Zeitwirbel geraten ist, scheint sie der Manipulation der Vergangenheit durch die Borg entgangen zu sein. Die Enterprise folgt dem Borgschiff daraufhin in die Vergangenheit, um „den angerichteten Schaden zu reparieren“. Danach bricht der Zeitwirbel zusammen.
+
+Als die Enterprise die Vergangenheit erreicht, ist das Borgschiff dabei, einen Ort auf der Erde in [[Montana]] zu beschießen. Der Enterprise gelingt es, das Borgschiff zu zerstören. Anschließend stellt die Mannschaft fest, dass man sich im 21. Jahrhundert, kurz nach dem Dritten Weltkrieg befindet. Das genaue Datum kann kurz darauf bestimmt werden, es ist der 4. April 2063: ein Tag vor dem ersten Kontakt der Menschheit mit Außerirdischen.
+
+Es stellt sich heraus, dass die Borg eine Raketenbasis, von der am nächsten Tag das erste Raumschiff mit [[Warp-Antrieb]] starten soll, bombardierten. Durch dessen Flug wurde eine zufällig das Sonnensystem passierende Gruppe von [[Völker im Star-Trek-Universum#Vulkanier|Vulkaniern]] auf die Menschheit aufmerksam und stellte schließlich den Kontakt her, womit auch der Grundstein für die spätere Gründung der Föderation gelegt wurde. Dieses Ereignis wollten die Borg offenbar verhindern.
+
+Picard, Data, Troi und Crusher beamen sich zu dieser Raketenbasis, um den Schaden zu analysieren. Dort finden sie das beschädigte Warpschiff „Phönix“ und später auch den Erfinder des Warp-Antriebes [[Figuren im Star-Trek-Universum#Zefram Cochrane|Zefram Cochrane]]. Cochrane, ein offensichtlicher Alkoholiker, zweifelt nach dem Angriff noch mehr an seiner Erfindung und betrinkt sich, woraufhin Troi versucht, ihn psychologisch zu betreuen. Seine schwerverletzte Assistentin Lily Sloane wird zur medizinischen Behandlung auf die Enterprise [[Teleportation|gebeamt]]. Eine Gruppe Techniker beginnt mit der Reparatur des Schiffes, damit der erste Kontakt stattfinden kann.
+
+Auf der Enterprise treten rätselhafte Fehler bei den Umweltkontrollsystemen auf Deck 16 auf, die sich langsam auf das ganze Schiff ausdehnen. So steigt die Temperatur in weniger als einer Stunde um 10&amp;nbsp;°C, als Ursache wird ein technischer Defekt vermutet. Doch als Picard auf der Erde von diesen Schwierigkeiten erfährt, reagiert er besorgt. Kurz zuvor meinte er, in seinem Geist die Borg zu hören. Er kehrt mit Data zurück auf die Enterprise, wo er kurz darauf auf der Brücke das Problem erkennt: Die Temperatur beträgt 39,1&amp;nbsp;°C – genau wie in einem Borgschiff. Die Borg gelangten offensichtlich kurz vor der Zerstörung ihres Schiffes auf die Enterprise und begannen unbemerkt mit der Assimilation. Kurz darauf geht der Kontakt zu Teilbereichen des Schiffs verloren, was diese Vermutung bestätigt: Die Borg arbeiten an der Übernahme der Enterprise. Kurz darauf versuchen sie, die Kontrolle über den Computerkern des Schiffs zu übernehmen, was Data mit einer Verschlüsselung des Computers im letzten Moment verhindern kann.
+
+Es beginnt ein Kampf um die Kontrolle des Schiffs. Die Schiffsbesatzung will versuchen, ein Loch in die Plasmatanks am Warpkern zu schießen. Da das [[Plasma (Physik)|Plasmakühlmittel]] bei Berührung organische Stoffe in Flüssigkeit umwandelt würden die Borg dort getötet werden. Doch nach ersten Kämpfen zwischen der Crew und den Borg wird klar, dass die Crew chancenlos ist. Sie nehmen die Flucht auf, nur Data wird entführt. Die Borg beginnen sofort mit der Assimilation, welche jedoch scheitert. Kurz darauf erscheint ihm die bis dahin unbekannte Königin der Borg. Die Borgkönigin versucht, die Kontrolle über den Computer zu bekommen, wofür sie von Data die Codes benötigt. Sie erfährt vom größten Traum des [[Android (Roboter)|Androiden]], ein Mensch zu werden, und beginnt ihn zu ködern: Die Borg beginnen damit, organisches Material mit Datas Körper zu verbinden.
+
+Auch die Krankenstation wird von den Borg überfallen, sodass Personal und Patienten die Flucht ergreifen. Dabei wird die dort behandelte Lily von der Gruppe getrennt und irrt hilflos im Schiff umher, trifft jedoch wenig später auf Picard. Picard gelingt es, das Vertrauen der verstörten Lily zu gewinnen und beide ziehen gemeinsam weiter. Sie suchen zunächst Zuflucht auf dem Holodeck, wo sie sich in einer Dixon-Hill-Simulation in einem Nachtclub verstecken. Picard deaktiviert die Sicherheitskontrollen und erschießt mit einer Maschinenpistole einen Borg, der sich kurz darauf als assimiliertes Crew-Mitglied erweist. Ohne Gefühlsregung nimmt Picard den toten und mit technischen Bauteilen versehenen Körper aus und findet schließlich den Neuroprozessor. Durch diesen ist es Picard möglich, alle Befehle, die dieser Borg vom Kollektiv bekam, zu lesen.
+
+Auf der Brücke teilt Picard den anderen Führungsoffizieren den Plan der Borg mit, die Borg dieser Zeit am anderen Ende der Galaxis im Delta-Quadranten zu kontaktieren, damit diese Verstärkung schicken: Die Erde dieser Zeit wäre ein leichtes Ziel. Um ein Signal in den Delta-Quadranten zu schicken, muss der Deflektorschirm auf der Außenhülle des Schiffs verändert werden, was Picard, Worf und Hawk verhindern können.
+
+Auf der Erde konnte die Phönix inzwischen repariert werden. Troi, Riker und La Forge gelang es nach mehreren Versuchen auch, den an sich selbst zweifelnden Cochrane zu überzeugen: Sie zeigten ihm, zu welcher Zukunft sein Flug der Menschheit verhelfen wird. Cochrane beschließt, den Flug zu unternehmen, Riker und La Forge schließen sich ihm an.
+
+Unterdessen dringen die Borg im Schiff immer weiter vor. Daher wird auf der Brücke die Möglichkeit der Selbstzerstörung der Enterprise diskutiert. Picard lehnt diesen Vorschlag zornig ab, überwirft sich mit Worf und zieht sich in seinen Raum zurück. Lily folgt ihm und stellt ihn zur Rede. Es wird deutlich, dass Picard durch seine frühere eigene Assimilation wild entschlossen ist, den Borg Widerstand zu leisten und keinesfalls aufzugeben. Lily vergleicht ihn mit dem rachsüchtigen Käpt'n Ahab aus [[Moby Dick]]. Picard erkennt nun, dass er kurz davor ist, einen ähnlichen Fehler wie der letztlich gescheiterte Ahab zu begehen. Er besinnt sich und gibt schließlich den Befehl zur Selbstzerstörung der Enterprise.
+
+Während der Rest der Besatzung sich durch Rettungskapseln auf die Erde in Sicherheit bringt, bleibt Picard auf dem Schiff, um Data, der weiterhin von den Borg festgehalten wird, zu retten. Er gelangt zur Borgkönigin und bietet sich im Austausch für die Freilassung Datas an. Doch Data weigert sich zu gehen und gibt vor, zu den Borg übergelaufen zu sein. Er deaktiviert die Selbstzerstörung und übergibt den Borg die Computerkontrolle.
+
+Die Phönix ist mittlerweile gestartet und bereitet sich im Weltraum auf den ersten Warpflug vor. Die Borgkönigin befiehlt Data, auf das völlig wehrlose Schiff zu feuern.
+
+Doch die durch Data abgefeuerten Quantentorpedos der Enterprise verfehlen ihr Ziel. Data zerstört daraufhin einen Plasmatank und Plasmakühlmittel strömt aus. Picard versucht, sich in Sicherheit zu bringen, indem er an herabhängenden Schläuchen hochklettert, doch die Borgkönigin hält sich an ihm fest und versucht ihn herunterzuziehen, was Data verhindert, wobei er die von den Borg eingebauten organischen Hautteile wieder verliert. Das Plasma zerstört den organischen Teil der Königin und alle Borg auf dem Schiff sterben.
+
+Bei der Durchführung des ersten Warpfluges der Menschheit entdeckt ein vulkanisches Schiff die Warpsignatur der Phönix und nimmt Kurs auf die Erde. Zefram Cochrane kann kurz darauf den ersten Kontakt der Menschheit mit Außerirdischen herstellen.
+
+Wenig später kehrt die Enterprise in ihre Zeit zurück.
+
+== Hintergrund ==
+=== Produktion ===
+* Die Rolle des Zefram Cochrane sollte ursprünglich von [[Tom Hanks]] verkörpert werden. Hanks musste aber wegen seines Regiedebüts ''[[That Thing You Do]]'' absagen.
+* Verworfene Titel für den Film waren unter anderem ''Star Trek – Generations 2'', ''Star Trek: Borg'', ''Star Trek: Regeneration'' und ''Star Trek – Resurrection''. Letzterer wurde fallen gelassen, da gleichzeitig der Film ''[[Alien – Die Wiedergeburt]]'' (im Englischen: ''Alien – Resurrection'') produziert wurde.
+* [[Alice Krige]] spielte ihre Rolle der Borg-Königin erneut im Serienfinale von ''[[Star Trek: Raumschiff Voyager]]'' (''Endspiel''), in zwei weiteren Doppelfolgen der Serie wurde sie durch [[Susanna Thompson]] ersetzt.
+* [[Robert Picardo]] ist hier kurz in der Rolle des bordeigenen „Holodocs“ zu sehen, welchen er auch in der Serie ''Star Trek: Raumschiff Voyager'' verkörpert. Er wird aktiviert, als Doktor Crusher vor den Borg aus der Krankenstation fliehen muss. Diese Rolle bekam er, weil Jonathan Frakes seinen Posten als Regisseur durch seine Regie der Folge „Das Holosyndrom“ dieser Serie erhielt. Als Dank an Picardo verschaffte er ihm eine Rolle im Film. Das gleiche gilt für [[Dwight Schultz]], der in der betreffenden Folge ebenfalls mitspielte und deshalb einen kurzen Auftritt auf der Erde als Barclay hat, er spielte diese Rolle aber auch schon in der Original-Next-Generation-Serie. 
+* Auch [[Ethan Phillips]], der in ''Star Trek: Raumschiff Voyager'' den [[Figuren im Star-Trek-Universum#Neelix|Neelix]] darstellt, hat einen kurzen Auftritt im Film. Er ist der Türsteher des Ballsaales auf dem Holodeck, der die Borg aufgrund ihrer Kleidung wegschicken will.
+
+=== Verschiedenes ===
+* Eine ironische Bemerkung Zefram Cochranes im Film ist das erste und bisher einzige Mal, dass in Star Trek der Begriff ''Star Trek'' gebraucht wird. Nach der Aufklärung über die Zukunft und die Borg fragt er Riker, Troi und La Forge: „Aber was seid ihr? Seid ihr Astronauten, auf so einer Art Star Trek?“
+* Eine weitere Bemerkung Cochranes spielt ganz offen (auf ironische Weise) mit einer der oft-diskutierten Fragen von Star Trek. So entgegnet er La Forge: „Müssen die Menschen im 24. Jahrhundert niemals pinkeln?“ Tatsächlich war bis dahin in keiner Folge in allen Serien des Star-Trek-Universums jemals eine Toilette zu sehen und erst in ''[[Star Trek: Enterprise]]'' (in der Episode „Das Eis bricht“) von einer die Rede.
+* Nachdem in ''[[Raumschiff Enterprise: Das nächste Jahrhundert]]'' die Borg nur wenig in die Handlung einbezogen wurden, um ihren dämonischen und geheimnisvollen Charakter zu bewahren, ist dies ihr größter und einziger Auftritt in einem Star-Trek-Film. Erst in der Serie ''Star Trek – Raumschiff Voyager'' spielen die Borg eine wesentlich größere Rolle, da die Serie im Delta-Quadranten, der Heimat der Borg, spielt.
+* '' Erster Kontakt'' ist auch der Name einer Episode aus der vierten Staffel der Serie ''Raumschiff Enterprise: Das nächste Jahrhundert.''
+* Das Raumschiff Defiant sollte eigentlich zerstört werden, dies wurde aber nicht realisiert, da man die Defiant noch bei [[Star Trek: Deep Space Nine]] benötigte.
+* Das Raumschiff der Norway-Klasse ist hier das erste und einzige mal zu sehen, das [[Computer Generated Imagery|CGI]]-Modell ging durch einen Computer-Fehler verloren.
+* Picard hört am Anfang das Stück „Vallon sonore“ aus dem 5. Akt der Oper ''[[Les Troyens]]'' von [[Hector Berlioz]].
+* Patrick Stewart spielt in dem Fernsehfilm [[Moby Dick (1998)]] selbst Captain Ahab.
+* James Cromwell hatte bereits in der den Filmen vorhergehenden Serie sowie in der Serie „Star Trek: Deep Space Nine“ verschiedene Rollen.
+* Als Captain Picard Lily Sloane über die [[Völker und Allianzen im Star-Trek-Universum #Borg|Borg]] aufklärt, antwortet Sloane: „Klingt schwedisch.“ Dies ist eine Anspielung auf die schwedische Tennislegende [[Björn Borg]].
+
+=== Einspielergebnisse und Auszeichnungen ===
+Der Film spielte weltweit etwa 149 Millionen Dollar ein, davon 90 Millionen allein in den USA. Damit ist er nach [[Star Trek (2009)]] der erfolgreichste Film dieser Reihe. ''Star Trek: Der erste Kontakt'' wurde in der Kategorie ''Bestes Make-up'' für einen [[Oscar]] nominiert.
+
+=== Beziehungen innerhalb des Star-Trek-Universums ===
+* Die Entführung Picards durch die Borg ist ein wesentlicher Bestandteil dieses Charakters, der bereits in der Serie ''Star Trek – Das nächste Jahrhundert'' mehrfach thematisiert wurde.
+* Auf diese Reise der Borg in die Vergangenheit wird in der Serie ''[[Star Trek: Enterprise]]'' in der Folge „Regeneration“ Bezug genommen: Die Serie ''Enterprise'' spielt ca. 210 Jahre vor dem Film und Wissenschaftler finden auf der Erde die Trümmer des Borgschiffes. In der Doppelfolge „Die dunkle Seite des Spiegels“ der vierten Staffel ist eine alternative Version des ersten Kontakts zu sehen. Dort werden die Vulkanier von Zefram Cochrane erschossen und die Geschichte der Menschheit nimmt eine vollkommen andere Wendung. 
+* Das Raumschiff Phoenix ist auch im Vorspann von ''Star Trek: Enterprise'' zu sehen.
+* In diesem Film kommt erstmals das neue Raumschiff Enterprise-E zum Einsatz, nachdem ihre Vorgängerin, die Enterprise-D im Film ''[[Star Trek: Treffen der Generationen]]'' zerstört wurde.
+
+=== Dritter Weltkrieg ===
+Commander Rikers erschreckende Schilderung des [[Dritter Weltkrieg|Dritten Weltkrieges]] – {{&quot;|die meisten der großen Städte sind zerstört, es gibt kaum noch Regierungen, 600.000.000 Tote}} – verweist auf ein düsteres Zukunftsszenario in der Mitte des [[21. Jahrhundert]]s. Datas Hinweis auf die radioaktiven Isotope in der Atmosphäre ist ein Verweis auf den Einsatz von [[Kernwaffe|Nuklearwaffen]] durch die Großmächte im Dritten Weltkrieg.
+
+== Kritiken ==
+{{Zitat|Der Höhepunkt der Feierlichkeiten ‚30 Jahre Star Trek‘ war der achte Kinofilm: Die Crew der ‚neuen Generation‘ war schon im siebten Leinwand-Abenteuer reichlich vertreten, doch nun spielt sie allein die erste Geige. Diesmal geht es wieder gegen die bösen Borgs. Jene Aliens – halb Maschine, halb organische Wesen –, die bereits in diversen Folgen der Serie als gefürchtete Gegner herhalten mussten. Wem Teile der Geschichte vertraut vorkommen, der irrt sich nicht, denn das vierte Kinoabenteuer der Enterprise, damals noch unter Kirk, erzählt eine ähnliche Story. Doch zum Glück sorgen variantenreiche Einfälle für eine gute Science-Fiction-Story mit Action, Humor und teilweise guten Darstellern.|[[Prisma (Fernsehzeitschrift)|Prisma Online]] &lt;ref&gt;[http://www.prisma-online.de/tv/film.html?mid=1996_star_trek_viii_der_erste_kontakt Kritik bei Prisma Online]&lt;/ref&gt;}}
+
+{{Zitat|Eine gruselige Story, die nichts mehr mit der ‚Wir gucken in eine positive Zukunft‘-Grundhaltung früherer ‚Star Trek‘-Märchen zu tun hat. Hier wird bewusst auf düsteren Horror gesetzt, selbst Picard ging noch nie so brutal zur Sache.|[[Berliner Zeitung|Berliner Zeitung]]}}
+
+{{Zitat|Das Regiedebüt überzeugt mit aufwendigen Special-Effects und einer im Vergleich zur TV-Serie wesentlich actionbetonteren Inszenierung. Die ‚Next Generation‘-Crew hat das Abenteuer fest im Griff, auch wenn Borg-Königin Alice Krige als tödliche Verführerin die Männerwelt auf der Enterprise Data eingeschlossen schon sehr in Angst und Schrecken versetzt.|[[Cinema]]}}
+
+{{Zitat|Auch nach 30 Jahren Star Trek, wissen die Denker und Macher immer noch mit Neuerungen zu begeistern. Erstmals treten die Borg in einem Kinofilm in Erscheinung und versuchen eine Maschine in einem tiefst menschlichen Urverlangen, das Gleichsein, zu manipulieren und sogar gegen die einstigen Freunde zu wenden. Düster...schaurig...ursprünglich...Star Trek'tastisch|[[FAZ]]}}
+
+== Weblinks ==
+* {{IMDb Titel|tt0117731|Star Trek: Der erste Kontakt}}
+* {{Rotten Tomatoes|star_trek_first_contact|Star Trek: Der Erste Kontakt}}
+* {{Metacritic|star-trek-first-contact|Star Trek: Der Erste Kontakt}}
+* {{Memory Alpha|Star_Trek:_Der_erste_Kontakt|Star Trek: Der erste Kontakt}}
+* Filmtracks.com: [http://www.filmtracks.com/titles/star_trek8.html ''Star Trek – First Contact: Music composed and conducted by Jerry Goldsmith''] (englisch)
+
+== Einzelnachweise ==
+&lt;references /&gt;
+
+{{Navigationsleiste Star Trek}}
+
+{{SORTIERUNG:Star Trek Der Erste Kontakt}}
+[[Kategorie:Filmtitel 1996]]
+[[Kategorie:US-amerikanischer Film]]
+[[Kategorie:Science-Fiction-Film]]
+[[Kategorie:Star Trek|Erste Kontakt #Der]]
+
+{{Link FA|en}}
+
+[[bg:Стар Трек VIII: Първи контакт]]
+[[ca:Star Trek VIII: Primer contacte]]
+[[cs:Star Trek: První kontakt]]
+[[en:Star Trek: First Contact]]
+[[es:Star Trek VIII: primer contacto]]
+[[et:Star Trek: Esimene kontakt]]
+[[fi:Star Trek – ensimmäinen yhteys]]
+[[fr:Star Trek : Premier Contact]]
+[[he:מסע בין כוכבים 8: המפגש]]
+[[hu:Star Trek: Kapcsolatfelvétel]]
+[[id:Star Trek: First Contact]]
+[[it:Primo contatto (film)]]
+[[ja:スタートレック ファーストコンタクト]]
+[[nl:Star Trek: First Contact]]
+[[pl:Star Trek: Pierwszy kontakt]]
+[[pt:Star Trek: First Contact]]
+[[ro:Star Trek: Primul contact]]
+[[ru:Звёздный путь: Первый контакт]]
+[[simple:Star Trek: First Contact]]
+[[sk:Star Trek VIII: Prvý kontakt]]
+[[sl:Zvezdne steze: Prvo srečanje]]
+[[sv:Star Trek: First Contact]]
+[[uk:Зоряний шлях: Перший контакт]]
+[[zh:星艦奇航記VIII：戰鬥巡航]]

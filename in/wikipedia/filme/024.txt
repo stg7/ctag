@@ -1,0 +1,403 @@
+{{Infobox Film
+| DT      = Der Herr der Ringe:&lt;br /&gt;Die Gefährten
+| OT      = The Lord of the Rings:&lt;br /&gt;The Fellowship of the Ring
+| Bild    = Der Herr der Ringe 1 logo.jpg
+| PL      = [[Vereinigte Staaten|USA]], [[Neuseeland]]
+| PJ      = 2001
+| LEN     = Kinofassung:&lt;br /&gt;178 Minuten&lt;br /&gt;Extended Edition:&lt;br /&gt;218
+| OS      = [[Englische Sprache|Englisch]]
+| FSK     = 12 (Kinofassung)&lt;br /&gt;FSK 16 (Extended Edition)
+| JMK     = 10&lt;ref&gt;[http://www.bmukk.gv.at/schulen/service/jmk/detail.xml?key=9C8F2C66436B472CAB9A019C218F5FA9 Bundesministerium für Unterricht, Kunst und Kultur (BMUKK)]&lt;/ref&gt;
+| REG     = [[Peter Jackson]]
+| DRB     = [[Fran Walsh]],&lt;br /&gt;[[Philippa Boyens]],&lt;br /&gt;Peter Jackson
+| PRO     = [[Barrie M. Osborne]],&lt;br /&gt;Peter Jackson,&lt;br /&gt;Fran Walsh,&lt;br /&gt;[[Tim Sanders]]
+| MUSIK   = [[Howard Shore]]
+| KAMERA  = [[Andrew Lesnie]]
+| SCHNITT = [[John Gilbert (Cutter)|John Gilbert]]
+| DS      = 
+* [[Elijah Wood]]: [[Figuren in Tolkiens Welt#Frodo Beutlin|Frodo Beutlin]]
+* [[Ian McKellen]]: [[Figuren in Tolkiens Welt#Gandalf|Gandalf]]
+* [[Sean Astin]]: [[Figuren in Tolkiens Welt#Samweis Gamdschie (Sam)|Samweis Gamdschie]]
+* [[Viggo Mortensen]]: [[Figuren in Tolkiens Welt#Aragorn|Aragorn]]/[[Figuren in Tolkiens Welt#Aragorn|Streicher]]
+* [[Liv Tyler]]: [[Figuren in Tolkiens Welt#Arwen|Arwen Undomiel]]
+* [[Sean Bean]]: [[Figuren in Tolkiens Welt#Boromir|Boromir]]
+* [[Orlando Bloom]]: [[Figuren in Tolkiens Welt#Legolas|Legolas]]
+* [[John Rhys-Davies]]: [[Figuren in Tolkiens Welt#Gimli|Gimli]]
+* [[Christopher Lee]]: [[Figuren in Tolkiens Welt#Saruman|Saruman]]
+* [[Dominic Monaghan]]: [[Figuren in Tolkiens Welt#Meriadoc Brandybock|Meriadoc Brandybock]]
+* [[Billy Boyd]]: [[Figuren in Tolkiens Welt#Peregrin Tuk|Peregrin Tuk]]
+* [[Cate Blanchett]]: [[Figuren in Tolkiens Welt#Galadriel und Celeborn|Galadriel]]
+* [[Hugo Weaving]]: [[Figuren in Tolkiens Welt#Elrond|Elrond]]
+* [[Ian Holm]]: [[Figuren in Tolkiens Welt#Bilbo Beutlin|Bilbo Beutlin]]
+* [[Marton Csokas]]: [[Figuren in Tolkiens Welt#Galadriel und Celeborn|Celeborn]]
+* [[Andy Serkis]]: [[Figuren in Tolkiens Welt#Gollum/Sméagol|Gollum]]
+* [[Craig Parker]]: [[Figuren in Tolkiens Welt#Haldir|Haldir]]
+* [[Alan Howard]]: Stimme [[Figuren in Tolkiens Welt#Sauron|Saurons]]
+* [[Norman Forsey]]: Ohm Gamdschie
+| SYN     = ja
+}}
+
+Der [[Fantasyfilm]] '''Der Herr der Ringe: Die Gefährten''' ist der erste Teil einer [[Trilogie|dreiteiligen]] Verfilmung des Romans ''[[Der Herr der Ringe]]'' von [[J. R. R. Tolkien]]. Regie führte der Neuseeländer [[Peter Jackson]]. Die Weltpremiere fand am 10. Dezember 2001 in [[London]] statt. In Deutschland startete der Film am 19. Dezember 2001 und lockte 11,7 Millionen Besucher in die deutschen Kinos.&lt;ref&gt;[http://lumiere.obs.coe.int/web/film_info/?id=17253 Besucherzahlen in der Europäischen Union]&lt;/ref&gt; Weltweit spielte der Film 870,7 Mio. US-Dollar an den Kinokassen ein.&lt;ref&gt;{{Internetquelle|hrsg=Box Office Mojo|titel=The Lord of the Rings: The Fellowship of the Ring|url=http://boxofficemojo.com/movies/?id=fellowshipofthering.htm |zugriff=2011-06-16|sprache=en}}&lt;/ref&gt; 2002 folgte der zweite Teil ''[[Der Herr der Ringe: Die zwei Türme (Film)|Der Herr der Ringe: Die zwei Türme]]'' und 2003 der dritte Teil ''[[Der Herr der Ringe: Die Rückkehr des Königs (Film)|Der Herr der Ringe: Die Rückkehr des Königs]]''.
+
+Der Film spielt in der fiktiven Welt [[Regionen und Orte in Tolkiens Welt#Mittelerde|Mittelerde]]. Er handelt von der Geschichte des Hobbits Frodo, der in den Besitz eines mächtigen Ringes gerät. Dieser Ring soll zerstört werden, um zu verhindern, dass Sauron, der Dunkle Herrscher, ihn erhält. Sauron wäre damit in der Lage, Mittelerde zu unterwerfen.
+
+== Handlung ==
+''Die Gefährten'' erzählt zunächst die Vorgeschichte des sogenannten [[Gegenstände in Tolkiens Welt#Der Eine Ring|Einen Rings]], der von dem Dunklen Herrscher Sauron geschmiedet wurde. Der Ring besitzt magische Kräfte und verleiht Sauron große Macht. Trotzdem gelang es den freien Völkern Mittelerdes, Sauron zu bezwingen. Isildur nahm den Einen Ring an sich, wurde aber getötet. Zweitausend Jahre später, als der Ring schon fast in Vergessenheit geraten war, fand ihn Smeagol, ein Halbling, der durch den Ring zur Kreatur Gollum wurde. Der Ring verfluchte das Leben der Kreatur fünfhundert Jahre lang, bis er sich auf die Suche nach einem neuen Träger machte und so dem [[Figuren in Tolkiens Welt#Hobbits|Hobbit]] Bilbo Beutlin in die Hände fiel.
+
+Die eigentliche Handlung beginnt nun – 60 Jahre später – im Auenland. Bilbo entschließt sich, von dort fortzugehen und seinem Neffen Frodo Beutlin den Ring zu vermachen. Durch das Studium alter Aufzeichnungen findet der Zauberer Gandalf heraus, dass es sich bei diesem um den Ring des dunklen Herrschers Sauron handelt. Sauron, der in sein altes Reich Mordor zurückgekehrt ist, lässt seine Diener, die [[Figuren in Tolkiens Welt#Nazgûl (Ringgeister)|Nazgûl]], nach dem Ring suchen, durch den er seine alte Stärke wiedererlangen würde. Frodo muss daher aus seiner Heimat fliehen. Seine Freunde Samweis Gamdschie, Meriadoc Brandybock und Peregrin Tuk schließen sich ihm nacheinander an.
+
+Sie flüchten vor ihren Verfolgern nach Bree, wo ein Treffen mit Gandalf verabredet war. Dieser erscheint nicht, da er von dem Zauberer Saruman in dessen Heimat [[Regionen und Orte in Tolkiens Welt#Isengart|Isengard]] festgehalten wird. Stattdessen treffen die Hobbits in Bree auf Aragorn, den rechtmäßigen Erben des Throns von Gondor. Dessen Identität jedoch bleibt zunächst verborgen, da er sich als „Streicher“ ausgibt. Er will sie in die Elbenstadt [[Regionen und Orte in Tolkiens Welt#Bruchtal|Bruchtal]] führen.
+
+Auf der Reise dorthin wird Frodo bei einem Angriff der Nazgûl schwer verletzt. Durch die Hilfe der Elbin Arwen gelangt er noch rechtzeitig nach Bruchtal, um von Elrond geheilt zu werden.
+
+In Bruchtal entscheidet ein Rat aus Vertretern der freien Völker Mittelerdes, dass eine Gemeinschaft von neun Gefährten den Ring nach Mordor bringen soll, um ihn dort zu vernichten.
+Die Gemeinschaft besteht aus Gandalf, Aragorn, den Hobbits Frodo, Sam, Pippin und Merry, dem Menschen Boromir, dem Elb Legolas und dem Zwerg Gimli.
+
+Auf dem Weg nach Mordor müssen die Gefährten das [[Regionen und Orte in Tolkiens Welt#Nebelgebirge|Nebelgebirge]] überwinden. Der Versuch, dieses am Berg Caradhras zu überqueren, scheitert im Schneesturm. Deshalb beschließen sie, einen Umweg durch die Minen von [[Regionen und Orte in Tolkiens Welt#Moria|Moria]] zu nehmen. Dort finden sie die Leichen der dort einst lebenden Zwerge vor. Außerdem kommt es zu einem Kampf mit einigen Orks. Schließlich taucht ein [[Figuren in Tolkiens Welt#Balrogs|Balrog]] auf. Dieser ist ein Höllendämon aus der alten Welt, der von den Zwergen bei ihrem Schürfen nach [[Mithril]] aufgescheucht wurde und deren Reich in Moria schließlich vernichtete. Die Gefährten ergreifen vor ihm die Flucht. Gandalf will den Balrog auf der Brücke von Khazad-dûm aufhalten. Beide stürzen zusammen in eine Schlucht, und seine Gefährten müssen die Reise ohne ihn fortsetzen.
+
+Sie erreichen das Elbenreich [[Regionen und Orte in Tolkiens Welt#Lórien|Lórien]], das von Galadriel und Celeborn regiert wird. Dort schaut Frodo in Galadriels Spiegel und erkennt die Gefahren, die noch vor ihm liegen. Er bietet Galadriel den Ring an, die – selber Ringträgerin – diesem Angebot widerstehen kann. Galadriel überreicht bei der Abreise allen Gefährten Geschenke, die ihnen bei ihrer weiteren Reise noch von großen Nutzen sein werden. Frodo Beutlin bekommt von Galadriel eine [[Gegenstände in Tolkiens Welt#Galadriels Phiole|Phiole]] mit dem Licht von Earendils Stern. Mit den Booten, die sie von den Elben Lóriens bekommen haben, fahren die Gefährten auf dem [[Regionen und Orte in Tolkiens Welt#Anduin|Anduin]] flussabwärts bis nach Parth Galen.
+
+Die Gemeinschaft wird auf dem Weg dorthin von [[Figuren in Tolkiens Welt#Orks|Uruk-hai]], von Saruman gezüchteten Orks, verfolgt. Boromir erliegt der Kraft des Ringes und will ihn unterhalb von Amon Hen Frodo abnehmen. Frodo ergreift die Flucht und beschließt allein weiterzureisen. In Parth Galen kommt es zu einem finalen Kampf mit den Uruk-hai, bei dem die Gemeinschaft auseinandergerissen wird. Boromir versucht allein die Hobbits Merry und Pippin vor den angreifenden Uruk-hai zu beschützen. In diesem Kampf wird Boromir von drei Pfeilen tödlich getroffen. Merry und Pippin werden von den Uruk-hai verschleppt. Als endlich Aragorn, Legolas und Gimli zum Schlachtfeld kommen, finden sie nur noch den schwer verwundeten Boromir vor, der in Aragorns Armen stirbt. Sam findet Frodo, als dieser allein in eines der Elbenboote steigt. Beide reisen jetzt ohne die anderen Gefährten weiter. Aragorn, Legolas und Gimli beschließen, die verschleppten Hobbits zu befreien und nehmen die Verfolgung auf.
+
+== Entstehungsgeschichte ==
+=== Erster Drehbuchentwurf ===
+[[Datei:Peter Jackson01.jpg|thumb|Regisseur [[Peter Jackson]] bei der Weltpremiere des dritten Teils des Herrn der Ringe in [[Wellington]] ([[Neuseeland]])]]
+Der Regisseur [[Peter Jackson]] trug sich schon lange mit dem Gedanken, den Roman ''[[Der Herr der Ringe]]'' zu verfilmen. Er war sich der Schwierigkeit dieser Aufgabe durchaus bewusst. Auch war ihm schon früh klar, dass man die Geschichte unmöglich in einem einzigen Film unterbringen könne.
+
+In den frühen 90er Jahren machte sich Peter Jackson gemeinsam mit seiner Ehefrau [[Fran Walsh]] daran, ein Drehbuch zu verfassen. Zunächst begannen die beiden damit, den Roman stark zu kürzen. Bereits in diesem frühen Stadium fielen viele Handlungsstränge komplett heraus. Die erste Version des Drehbuches sah lediglich zwei Filme vor. ''Die Gefährten'' und [[Der Herr der Ringe: Die zwei Türme (Film)|''Die zwei Türme'']] sollten zu einem Film zusammengefasst und [[Der Herr der Ringe: Die Rückkehr des Königs (Film)|''Die Rückkehr des Königs'']] ein eigenständiger Film werden.
+
+Recht früh interessierten sich die großen Firmen aus [[Hollywood]], besonders die [[Weinstein-Brüder|Gebrüder Weinstein]] der Filmproduktionsfirma [[Miramax]], für das Projekt. Jackson und seine Frau begannen nun, das Drehbuch zu visualisieren und Tolkiens Welt in der Realität entstehen zu lassen. Verantwortlich für den gesamten [[Spezialeffekt|SFX]]-Bereich war [[Weta Digital]], die Effektschmiede von [[Richard Taylor (Filmdesigner)|Richard Taylor]], mit der Jackson bereits für die Effekte von ''[[Braindead]]'' zusammengearbeitet hatte.
+
+Doch während das Projekt bereits Formen annahm, wurden Miramax die Ausmaße des Projektes bewusst – aus Angst vor unkalkulierbaren Kosten wollte man nun, dass die Geschichte in nur einem Film erzählt werden sollte. Dies lehnte Jackson strikt ab. Gerüchten zufolge soll ein weiterer Grund für das Ende der Verhandlungen auch die Zugehörigkeit von Miramax zum [[Disney]]-Konzern gewesen sein. Tolkien hatte in seinem Testament ausdrücklich jegliche Verwertung des Romans durch Disney untersagt.
+
+=== Zweiter Drehbuchentwurf ===
+Auf der Suche nach einem neuen Geldgeber kam Jackson mit dem Studio [[New Line Cinema]] ins Gespräch. Die Firma wollte nicht nur zwei, sondern sogar drei Filme produzieren lassen.
+
+Die bestehenden Drehbuchentwürfe mussten komplett überarbeitet werden. Jackson und seiner Ehefrau kam jetzt [[Philippa Boyens]] als Co-Autorin zur Hilfe. New Line Cinema erwarben in der Zwischenzeit die Rechte von Miramax.
+
+Peter Jackson konnte in der Folge einige namhafte ''Herr-der-Ringe''-Experten für das Projekt begeistern. So holte er sich unter anderem die [[Illustrator]]en [[Alan Lee (Künstler)|Alan Lee]] und [[John Howe (Illustrator)|John Howe]] mit ins Boot. Ihre Zeichnungen und Skizzen waren die Grundlage für die Arbeiten an der Ausstattung des Films.
+
+Besonderen Wert legte Peter Jackson auf die Darstellung des Auenlandes. Die Ausstatter begannen bereits weit über ein Jahr vor dem Drehbeginn mit den Arbeiten, sie pflanzten Gemüse und Blumen an, bauten die im Roman beschriebenen Hobbitbehausungen aus und statteten diese mit angefertigten Möbeln und Gebrauchsgegenständen aus.
+
+=== Produktion und Nachproduktion ===
+Der Hauptdreh begann am [[11. Oktober]] [[1999]] und schloss am [[22. Dezember]] [[2000]] ab. Bis zum Spätsommer [[2003]] folgten außerdem noch viele Drehtage für zusätzliche oder veränderte Szenen.
+
+Letztlich arbeitete Peter Jackson über 7 Jahre an dem Werk. Unter Experten galt der Neuseeländer schon seit längerer Zeit als eines der größten Regietalente der letzten Jahre, aber seine Filme waren bisher einfach zu brutal (''[[Braindead]]'') oder zu künstlerisch (''[[Heavenly Creatures]]'') und damit nicht für die breite Masse geeignet.
+
+=== Drehorte ===
+[[Datei:Matamata Hobbingen.JPG|thumb|Drehort „Hobbingen“ in der Nähe von Matamata (Neuseeland)]] Die ''Herr-der-Ringe''-Trilogie entstand größtenteils in [[Neuseeland]]. Die Studioaufnahmen fanden hauptsächlich in [[Wellington]] statt. Vor allem aber die Außenaufnahmen sorgten in Neuseeland für einen regelrechten „Herr-der-Ringe“-Tourismus. So entstand beispielsweise in [[Matamata (Neuseeland)|Matamata]] das Dorf Hobbingen (engl. „Hobbiton“). Der [[Ngauruhoe|Mount Ngauruhoe]] im [[Tongariro-Nationalpark]] kam als Schicksalsberg zu Filmehren. Weitere Drehorte waren der Whitireia und der Harcourt Park. Auch heute noch werden von Reiseanbietern Touren zu den Drehorten angeboten. Einen wesentlichen Anteil daran hat auch das Marketing der neuseeländischen Regierung. So wurden im Laufe der Zeit beispielsweise von der neuseeländischen Post Briefmarken zum Thema „Herr der Ringe“ veröffentlicht. Zudem hat die Nationalbank von Neuseeland eine spezielle thematische Münzreihe aufgelegt. Das Buch ''„The Lord of the Rings Location Guidebook“'' von Ian Brodie mit ausführlichen Wegbeschreibungen wurde bereits über 200.000-mal verkauft.&lt;ref&gt;[http://www.uni-protokolle.de/nachrichten/id/86088/ Der Herr der Ringe als Tourismusfaktor]&lt;/ref&gt;
+
+=== Filmmusik ===
+[[Datei:Howard Shore.jpg|thumb|Howard Shore bei der Pressekonferenz zum dritten Teil der Verfilmung in [[Wellington]] ([[Neuseeland]])]]
+Für die Musik in allen Teilen der Trilogie konnte Peter Jackson den Komponisten [[Howard Shore]] gewinnen.
+
+Nachdem Shore zuvor für eher ausgefallene und experimentierfreudige Partituren (zum Beispiel für ''[[The Cell]]'' und für Filme von [[David Fincher]]) bekannt war, verlangte ''Der Herr der Ringe'' eine klassische Abenteuersinfonie. Bei seiner Komposition orientierte sich Shore am [[Leitmotiv]]-Prinzip [[Richard Wagner]]s, indem er für jeden Ort und jede Rasse Mittelerdes eine Melodie entwarf. So war die Filmmusik für ''Die Gefährten'' hauptsächlich auf das heroische Thema für die Gemeinschaft des Ringes und die spielerischen Flötenmelodien der Hobbits zentriert. Als Gegenpart kamen kriegerische, stampfende Rhythmen für die Orks und Saruman dazu.
+
+Viel Wert legte Shore auf den Einsatz von Chören, die die mystische Atmosphäre des Films unterstützen. Als Titelsong für den Film ''Die Gefährten'' wurde ''May It Be'', gesungen von der irischen Sängerin [[Enya]], gewählt.
+
+Der Soundtrack verkaufte sich gut und erhielt zahlreiche Auszeichnungen, darunter einen [[Academy Awards|Oscar]] für die beste Filmmusik.
+
+== Veränderungen gegenüber der Buchvorlage ==
+Obwohl er einen mit einer Spieldauer von drei Stunden ungewöhnlich langen Kinofilm drehte, musste Regisseur Peter Jackson zwangsläufig die Handlung kürzen. Darüber hinaus veränderte das Team an mehreren Stellen aus dramaturgischen Gründen das Drehbuch gegenüber dem Handlungsstrang der Romanvorlage.
+
+So stellt der Film der eigentlichen Handlung einen [[Prolog (Literatur)|Prolog]] voran, der die komplizierte Vorgeschichte kurz szenisch zusammenfasst und von [[Figuren in Tolkiens Welt#Galadriel und Celeborn|Galadriel]] gesprochen wird. Auch [[Ralph Bakshi]] hatte in seinem Zeichentrickfilm bereits auf dieses Stilmittel zurückgegriffen. Tolkien hingegen erklärt die Hintergründe in seinem Buch nicht, sondern lässt Protagonisten und Leser das wahre Ausmaß der Gefahr und der Identität des Ringes schrittweise entdecken.
+Außerdem lässt der Film größere Zeitabschnitte aus. Zwischen der Übergabe des Rings an Frodo und dem erneuten Auftauchen Gandalfs vergehen in der Romanvorlage 17 Jahre. Auch der Aufbruch Frodos aus dem Auenland gestaltet sich langsamer. Meriadoc Brandybock (Merry) stößt in Tolkiens Geschichte erst später hinzu, und seine Entscheidung und die Peregrin Tuks (Pippins), Frodo zu begleiten, wird als besonderer Freundschaftsdienst betont, während das Treffen im Film mitten im Maisfeld eher zufällig stattfindet. Zudem ist Frodo im Roman bereits 50 Jahre alt, wirkt aber im Film wesentlich jünger, diese Änderung betrifft aber auch König Theoden in Teil 2, der in der Vorlage 75 Jahre alt ist, und andere Figuren der Trilogie. 
+
+Die Hobbits Merry und Pippin werden vor allem in den Auenland-Szenen stärker als Unruhestifter und Tunichtgute vorgestellt, als dies bei Tolkien der Fall war. Diese Rolle zieht sich durch die ganze Trilogie. Jackson erklärt in seinem Kommentar auf der DVD, dass er ganz bewusst die Figuren benutzte, um mehr Komik in die Geschichte zu bringen.
+
+Jackson strich die Kapitel im Alten Wald aus Zeitgründen komplett aus der Handlung. Bis heute gilt die Figur [[Figuren in Tolkiens Welt#Tom Bombadil|Tom Bombadil]] selbst in der wissenschaftlichen Szene als eine der rätselhaftesten Figuren, wobei Tolkien selbst erklärte, dass sie für die Geschichte „''eigentlich nicht wichtig ist''“.&lt;ref&gt;Essay zu ''[http://www.polyoinos.de/tolk_stuff/tom_bombadil.html Tom Bombadil]''&lt;/ref&gt; Der Abstecher in die Hügelgräber erklärt, woher die Hobbits die Dolche haben, mit denen sie die Nazgûl verletzen können. Im Film bekommen die Hobbits ihre Dolche von Aragorn.
+
+In der Romanvorlage wird der Leser nicht direkt Augenzeuge der Nazgûl, die in Bree die Betten der Hobbits zerstören, sondern erfährt dies erst am nächsten Tag. Auch hier weist Jacksons Film Parallelen zu Bakshis Zeichentrickverfilmung auf. In dieser gleicht der Aufbau des Films jener Szene, inklusive der Kameraeinstellung. 
+
+Bei der Auseinandersetzung zwischen Saruman und Gandalf nimmt Saruman Gandalf den Stab ab. In der Romanvorlage verliert Gandalf seinen Stab nicht.
+
+Arwen wird als neue Hauptfigur eingeführt, während sie im Buch vor allem eine passive Rolle hat. In den ''Gefährten'' trifft sie Aragorn und die Hobbits nach der Nazgûl-Attacke auf der Wetterspitze, bringt Frodo mit ihrem Pferd in Sicherheit und beschwört die Flut des Bruinen. In der Romanvorlage treffen die Hobbits dagegen auf den Elben Glorfindel, der sein Pferd alleine mit Frodo losschickt, während Elrond es ist, der den Bruinen anschwellen lässt. Die Betonung einer weiblichen Hauptfigur Arwen als „Kriegerprinzessin“ erweckte im Vorfeld der Verfilmung den größten Wirbel der möglichen Veränderungen. Vor allem, da es hieß, dass Arwen auch in Helms Klamm an der Seite von Aragorn kämpfen werde.
+
+Jackson veränderte auch den Charakter Aragorns in einen sehr viel zweifelnderen, unsichereren Menschen, als ihn Tolkien beschrieb: Die Regisseurs-Crew wollte einen stärkeren Akzent auf die tatsächliche Entscheidung Aragorns legen, sich zum König von Gondor zu erklären. Deutlichstes Beispiel dafür ist sein Auftritt in Bruchtal. In der Romanvorlage schmiedet Aragorn vor dem Aufbruch der Gefährten aus den Splittern von Narsil sein neues Schwert Andúril. Im Film tauchen die Bruchstücke des Schwertes auf, aber Aragorn lässt sie in Bruchtal. Während Tolkien also in seinem Buch vor allem mit [[Archetypus|archetypischen]] Charakteren arbeitet, die sich zum Großteil nicht verändern, verfolgt Jackson streng die Idee des sich entwickelnden Charakters.
+
+Bei der Entscheidung über die Route nach Gondor ist es in der Romanvorlage Gandalf, der für Moria votiert, nachdem der Weg über den Gebirgspass von Caradras wegen eines Schneesturms – durch einen Zauber von Saruman hervorgerufen – unmöglich wurde. Erst als Boromir und Legolas protestieren, befragt er Frodo, der daraufhin Gandalf sein Vertrauen ausspricht. Im Film schlägt Gandalf den Weg über den  Caradras vor und überlässt schließlich im Schneesturm Frodo die Bürde, sich gegen ihn zu entscheiden. Eine dramaturgische Veränderung Jacksons, die Tolkiens Darstellung der Beziehung zwischen Gandalf und Frodo widerspricht.
+
+Die Verteilung der Geschenke von Galadriel an die Gemeinschaft wurde von Jackson zwar gedreht, später aber für die Kino-Fassung herausgeschnitten. Es ist dadurch unklar, woher die Gemeinschaft in den nachfolgenden Teilen Gegenstände wie das Elbenseil oder die Broschen, die Merry und Pippin während ihrer Entführung fallen lassen, hat. In der Special Extended Edition ist diese Szene zu sehen.
+
+Bevor Frodo die Gemeinschaft verlässt, trifft er im Film noch einmal auf Aragorn, der ihn vor den Uruk-hai beschützt und freiwillig ziehen lässt. Eine Dramatisierung der Handlung, die in der Romanvorlage nicht auftaucht.
+
+== Synchronisation ==
+
+'''Synchronfirma:''' FFS Film- &amp; Fernseh-Synchron, München
+
+'''Buch &amp; Dialogregie:''' Andreas Fröhlich
+
+{| class=&quot;wikitable&quot;
+|- bgcolor=lavender
+|&lt;center&gt;'''Rolle'''
+|&lt;center&gt;'''Schauspieler'''
+|&lt;center&gt;'''Synchronsprecher'''
+|- bgcolor=#ffffff
+|Frodo Beutlin
+|[[Elijah Wood]]
+|[[Timmo Niesner]]
+|-
+|Gandalf
+|[[Ian McKellen]]
+|[[Joachim Höppner]]
+|-
+|Aragorn/Streicher
+|[[Viggo Mortensen]]
+|[[Jacques Breuer (Schauspieler)|Jacques Breuer]]
+|-
+|Samweis Gamdschie
+|[[Sean Astin]]
+|[[Patrick Bach]]
+|-
+|Arwen Undómiel
+|[[Liv Tyler]]
+|[[Elisabeth Günther]]
+|-
+|Galadriel
+|[[Cate Blanchett]]
+|[[Dörte Lyssewski]]
+|-
+|Gimli
+|[[John Rhys-Davies]]
+|[[Wolfgang Hess (Synchronsprecher)|Wolfgang Hess]]
+|-
+|Peregrin Tuk
+|[[Billy Boyd]]
+|[[Stefan Krause (Synchronsprecher)|Stefan Krause]]
+|-
+|Merry Brandybock
+|[[Dominic Monaghan]]
+|[[Alexander Döring]]
+|-
+|Legolas
+|[[Orlando Bloom]]
+|[[Philipp Moog]]
+|-
+|Elrond
+|[[Hugo Weaving]]
+|[[Wolfgang Condrus]]
+|-
+|Boromir
+|[[Sean Bean]]
+|[[Torsten Michaelis]]
+|-
+|Bilbo Beutlin
+|[[Ian Holm]]
+|[[Mogens von Gadow]]
+|-
+|Saruman
+|[[Christopher Lee]]
+|[[Otto Mellies]]
+|-
+|Wirt Butterblume
+|[[David Weatherley]]
+|[[Wolfgang Völz]]
+|-
+|Torwächter
+|[[Martyn Sanderson]]
+|[[Fred Maire]]
+|-
+|Gollum/Sméagol
+|[[Andy Serkis]]
+|[[Andreas Fröhlich]]
+|-
+|Der Ring/Sauron
+|[[Alan Howard]]
+|[[Michael Brennicke]]
+|-
+|Everard Stolzfuß
+|[[Noel Appleby]]
+|[[Michael Rüth]]
+|-
+|Bauer Maggot
+|[[Cameron Rhodes]]
+|[[Ulrich Frank]]
+|-
+|Alter Eichler
+|[[Bill Johnson (Schauspieler)|Bill Johnson]]
+|[[Norbert Gastell]]
+|-
+|Ohm Gamdschie
+|[[Norman Forsey]]
+|[[Jochen Striebeck]]
+|-
+|Haldir
+|[[Craig Parker]]
+|[[Martin Halm]]
+|-
+|Ork 1
+|
+|[[Gudo Hoegel]]
+|}
+
+== Rezeption ==
+=== Kritiken ===
+{{Zitat|Der erste Teil von J.R.R. Tolkiens Fantasy-Klassiker um den archaischen Kampf von Gut und Böse in einer magischen Welt fremder Völker und Kulturen, inszeniert als bildgewaltiges Abenteuerkino, das die Schrecken wie die poesievollen Momente der ausufernden Fabel eindrucksvoll festhält.|[[Lexikon des internationalen Films]]&lt;ref&gt;{{LdIF|515997}}&lt;/ref&gt;}}
+
+{{Zitat|Unvergessliche Bilder, atemberaubende Spannung und große Emotionalität: ‚Der Herr der Ringe‘ wird die Zuschauer von den Eindrücken erschlagen mit offen stehenden Mündern aus dem Kinosaal gehen lassen – garantiert!|Carsten Baumgardt auf Filmstarts.de&lt;ref&gt;[http://www.filmstarts.de/kritiken/Herr%20der%20Ringe%20-%20Die%20Gef%E4hrten.html Ausführliche Kritik von Carsten Baumgardt (Filmstarts.de)]&lt;/ref&gt;}}
+
+{{Zitat|Technisch eindrucksvolle, dem Geist des Originals durchaus entsprechende Verfilmung vom ersten Band der berühmten Tolkien-Trilogie: Leider dadurch aber auch eine ein wenig zu glatte und emotionsarme Angelegenheit.|Allesfilm.com&lt;ref&gt;[http://www.allesfilm.com/show_filmkritik.php?id=20217 Ausführliche Kritik auf Allesfilm.com]&lt;/ref&gt;}}
+
+{{Zitat|Ich würde jetzt gerne sagen, dass dies der neue Standard ist, an dem sich Big-Budget-Filme messen müssen, aber machen wir uns nichts vor. In den nächsten Jahren wird es für die Blockbuster der Konkurrenz sehr schwer werden, ‚The Two Towers‘ und ‚The Return of the King‘, den beiden anderen Teilen des Lord of the Rings, etwas entgegenzusetzen. Etwas annähernd vergleichbares ist jedenfalls erst einmal nicht zu erwarten.|Moviegod.de&lt;ref&gt;[http://www.moviegod.de/kino/kritik/89/der-herr-der-ringe-die-gefaehrten/seite-5 Ausführliche Kritik bei Moviegod.de]&lt;/ref&gt;}}
+
+{{Zitat|‚Der Herr der Ringe – Die Gefährten‘ fesselt bis zur letzten Minute. Er richtet sich nicht an ein spezielles Publikum, nicht nur an die zahllosen Leser und die Zehntausende von Fans rund um den Globus. Das liegt an der Vielschichtigkeit der literarischen Vorlage, die viele – unterschiedlich motivierte – Zugänge bietet, an der werkgetreuen und phantasiereichen filmischen Umsetzung, der gelungenen Regie und nicht zuletzt dem verinnerlichten Spiel der Darsteller. Letzteren hat sicher sowohl die extrem lange Drehzeit, als auch die bizarrschöne Natur Neuseelands geholfen, tief in die von ihnen gespielten Figuren zu schlüpfen.|Richard Rendler auf Filmreporter.de&lt;ref&gt;[http://www.filmreporter.de/kino/5149;Der-Herr-der-Ringe-Die-Gefaehrten Ausführliche Kritik bei Filmreporter.de]&lt;/ref&gt;}}
+
+=== Nachwirkungen ===
+Neben der Verfilmung der ''„[[Harry Potter|Harry-Potter]]“''-Romane gehört die Verfilmung des ''„Herr-der-Ringe“''-Romans zu den Wegbereitern für eine neue Fantasywelle in den Kinos. Zu einigen der folgenden Fantasy-Verfilmungen gehören Filme wie beispielsweise ''„[[Die Chroniken von Narnia: Der König von Narnia (2005)|Die Chroniken von Narnia: Der König von Narnia]]“'' (2005) oder ''„[[Eragon – Das Vermächtnis der Drachenreiter]]“'' (2006).
+
+Die Filmtrilogie hat zahlreiche Parodien bzw. Anspielungen in anderen Filmen zur Folge gehabt. Hierzu gehört beispielsweise die Schweizer Filmproduktion ''„[[The Ring Thing]]“''. Eine der bekanntesten Parodien auf den Film gab es bei den [[MTV Movie Awards]] 2002, bei der Elronds Rat in Bruchtal u. a. mit [[Jack Black]] und [[Sarah Michelle Gellar]] parodiert wurde. Diese Parodie findet man als sogenanntes [[Easter Egg]] auch auf der DVD-Veröffentlichung zu ''„Die Gefährten“''. Eine weitere Parodie gab es im Rahmen der britischen Serie [[French &amp; Saunders]], bei der in einem Osterspecial 2002 ebenfalls Teile aus dem ersten Teil der Verfilmung parodiert wurden. Außerdem wurden in bekannten Zeichentrickserien wie [[South Park]] oder den [[Die Simpsons|Simpsons]] Elemente aus dem Werk eingebracht und selbst in der romantischen Komödie [[Nie wieder Sex mit der Ex]] wurden Gandalfs Worte „''You shall not pass''“ aufgegriffen.
+
+Auch zahlreiche Fanprojekte haben sich in der Folge mit der Verfilmung von Peter Jackson befasst. Zu den bekannteren gehören hierbei sicherlich das Projekt ''„Lord of the Weed“'', bei welchem die Anfangssequenz aus ''„Die Gefährten“'' neu [[Synchronisation|synchronisiert]] und mit neuer Musik unterlegt wurde, sowie der russische Fanfilm ''„[[The Trouble of the Rings]]“'', der alle drei Teile von Jacksons Verfilmung nachstellt.
+
+== DVD-Veröffentlichungen ==
+''Der Herr der Ringe: Die Gefährten'' wurde im Herbst 2002 als [[DVD]] mit der Kinoversion veröffentlicht. Schon diese ''einfache'' DVD hatte sehr viel Hintergrundwissen als Bonusmaterial zu bieten. Kurz vor Kinostart des Films ''Der Herr der Ringe: Die zwei Türme'' wurde eine Special Extended Edition veröffentlicht. Sie hat rund 30 Filmminuten mehr; es kommen komplett neue Szenen hinzu, andere werden ausführlicher behandelt.&lt;ref&gt;http://www.schnittberichte.com/schnittbericht.php?ID=765 Schnittbericht zu „Die Gefährten“&lt;/ref&gt; Als sogenannte [[Easter Egg]]s (''Ostereier'') wurden ein Trailer zu ''Der Herr der Ringe: Die zwei Türme'' und eine [[MTV Movie Awards]]-Parodie auf Elronds Rat (mit [[Jack Black]]) „versteckt“. Eine weitere Veröffentlichung, die sogenannte „Sammler-Edition“, enthält neben der Special Extended Edition zwei [[Regionen und Orte in Tolkiens Welt#Argonath|Argonath]]-DVD-Stützen, entworfen vom Designer der visuellen Effekte des Films und produziert von Sideshow Weta, eine Sonderausgabe der National Geographic DVD ''Der Herr der Ringe: Die Gefährten – Beyond The Movie'' mit Dokumentationen, eine Sonderausgabe des offiziellen ''The-Lord-Of-The-Rings''-Fanclub-Magazins in Hobbitformat (auf [[Englische Sprache|englisch]]) und exklusiven Sammelkarten aus dem ''The-Lord-Of-The-Rings''-[[Sammelkartenspiel]] von Decipher.
+
+Im Oktober 2007 gab es vorübergehend eine „Limited Edition“, in der sowohl die Kinofassung als auch die Extended Edition enthalten waren.
+
+Aktuell ist auch eine Blu-Ray Fassung der Extended Edition im Handel erhältlich, die alle 3 Teile beinhaltet.
+&lt;!-- == Synchronsprecher ==
+{| class=&quot;wikitable&quot;
+| style=&quot;vertical-align:top; width:25%&quot; |
+* Frodo Beutlin: [[Timmo Niesner]]
+* Bilbo Beutlin: [[Mogens von Gadow]]
+* Gandalf: [[Achim Höppner]]
+* Aragorn: [[Jacques Breuer (Schauspieler)|Jacques Breuer]]
+* Samweis Gamdschie: [[Patrick Bach]]
+* Peregrin Tuk: [[Stefan Krause]]
+* Meriadoc Brandybock: [[Alexander Döring]]
+* Gimli: [[Wolfgang Hess (Synchronsprecher)|Wolfgang Hess]]
+* Legolas: [[Philipp Moog]]
+* Boromir: [[Torsten Michaelis]]
+* Arwen Undómiel: [[Elisabeth Günther]]
+* Galadriel: [[Dörte Lyssewski]]
+* Elrond: [[Wolfgang Condrus]]
+* Haldir: [[Martin Halm]]
+| style=&quot;vertical-align:top; width:25%&quot; |
+* Saruman: [[Otto Mellies]]
+* Wirt Butterblume: [[Wolfgang Völz]]
+* Torwächter: [[Fred Maire]]
+* Everard Stolzfuß: [[Michael Rüth]]
+* Bauer Maggott: [[Ulrich Frank]]
+* Alter Eichler: [[Norbert Gastell]]
+* Ohm Gamdschie: [[Jochen Striebeck]]
+* Ted Sandigmann: [[Ivar Combrinck]]
+* Ork: [[Gudo Hoegel]]
+* Sauron: [[Michael Brennicke]]
+* Gollum: [[Andreas Fröhlich]]
+* Celeborn: [[Stephan Hoffmann]]
+|}--&gt;
+
+== Auszeichnungen (Auswahl) ==
+Bei der [[Oscarverleihung 2002]] erhielt der Film vier Oscars: Für die [[Oscar/Beste Filmmusik|Filmmusik]], die [[Oscar/Beste visuelle Effekte|visuellen Effekte]], das [[Oscar/Bestes Make-up|Make-up]] und [[Oscar/Beste Kamera|Kamera]]. Insgesamt war der Film für 13 Oscars nominiert, darunter auch für die beste Regie und als bester Film. Bei der Verleihung der [[Golden Globe|Golden Globes 2002]] hingegen ging der Film trotz vierfacher Nominierung (darunter ''Bester Film (Drama)'' und ''Beste Regie'') leer aus.
+
+Im Rahmen der [[British Academy of Film and Television Arts|BAFTA Awards 2002]] erhielt ''Der Herr der Ringe: Die Gefährten'' fünf Auszeichnungen. Zu den wichtigsten gehörten der Preis als bester Film, für die beste Regie sowie der Publikumspreis. Der Erfolg des Filmes in Deutschland spiegelte sich unter anderem in der Verleihung des [[Box Office Germany Award|Bogey-Awards]] in Titan für zehn Millionen Kinobesucher in 100 Tagen wider.
+
+Zu einigen weiteren Auszeichnungen gehören zwei Darstellerpreise bei den [[Empire Awards|Empire Awards 2002]] für Elijah Wood (bester Darsteller) und Orlando Bloom (bestes Filmdebüt) sowie der Preis als bester Film.&lt;ref&gt;[http://www.imdb.com/title/tt0120737/awards Auszeichnungen und Nominierungen]&lt;/ref&gt;
+
+Die Originalmusik zum Film wurde 2003 mit einem [[Grammy Awards 2003|Grammy]] ausgezeichnet.
+
+Die [[Deutsche Film- und Medienbewertung (FBW)]] zeichnete den Film mit dem Prädikat „wertvoll“ aus.
+
+== Sonstiges ==
+* [[Christopher Lee]] ist der einzige Darsteller, der J. R. R. Tolkien persönlich gekannt hatte.
+* Regisseur [[Peter Jackson]] ist in einem [[Cameo-Auftritt|Cameoauftritt]] Karotte kauend in Bree zu sehen.
+* [[Ian Holm]], Darsteller des Bilbo Beutlin, hat Frodo in der 1981 für die [[BBC]] adaptierten Radiofassung gesprochen.
+* [[Stuart Townsend]] war zunächst für die Rolle des Aragorn vorgesehen, wurde aber frühzeitig durch [[Viggo Mortensen]] ersetzt.
+* Für die Rolle der Galadriel hatte Regisseur Jackson ursprünglich die neuseeländische Schauspielerin [[Lucy Lawless]] vorgesehen. Aufgrund ihrer Schwangerschaft musste diese ablehnen.
+* [[Sean Connery]] lehnte die Rolle des Gandalf ab, weil er die Handlung angeblich nicht recht verstanden haben soll. Eine Entscheidung, welche ihn angeblich eine Gewinnbeteiligung von etwa $ 300 Mio. kostete.&lt;ref&gt;[[Cinema]]: Hintergrundartikel ''Voll von der Rolle: Hollywoods Besetzungskarussel'' Ausgabe 02/11, S. 81.&lt;/ref&gt;
+* Am 27. März 2005 wurde der Film das erste Mal im deutschen [[Free-TV]] auf [[RTL Television|RTL]] gezeigt.
+* Zum Zeichen ihrer Freundschaft, die bei dem Filmdreh entstand, haben sich die mitwirkenden Schauspieler der neun Gefährten allesamt tätowieren lassen.&lt;ref&gt;[http://www.spiegel.de/kultur/kino/0,1518,172237,00.html Spiegel-Online-Bericht: ''Ein Tattoo, sie ewig zu binden.''] 11. Dezember 2001, aufgerufen 5. März 2010&lt;/ref&gt; Nur John Rhys-Davies, der die Rolle des Gimli spielt, wollte aus persönlichen Gründen kein Tattoo.&lt;ref&gt;http://www.razyboard.com/system/morethread-sir-ian-mckellen-lady_of_rivendell-1416406-4011573-20.html&lt;/ref&gt;
+
+== Literatur ==
+* Mark Achilles: ''Fantasy Fiction – die Suche nach dem wahren Menschsein bei „Harry Potter“ und „Der Herr der Ringe“.'' In: Thomas Bohrmann, Werner Veith, Stephan Zöller (Hrsg.): ''Handbuch Theologie und Populärer Film. Band 1.'' Ferdinand Schöningh, Paderborn 2007, ISBN 978-3-506-72963-7, S. 95–113.
+* Ian Brodie: ''The Lord of the Ring Location Guidebook.'' Harper Collins Publishers (New Zealand) Limited, 2. Auflage 2002, ISBN 1-86950-491-7.
+* Jude Fisher, John R. R. Tolkien: ''Der Herr der Ringe. Die Gefährten. Das offizielle Begleitbuch.'' Klett-Cotta, Stuttgart 2001, ISBN 3-608-93504-5.
+* Brian Sibley: ''Der Herr der Ringe. Wie der Film gemacht wurde''. Klett-Cotta, Stuttgart 2002, ISBN 3-608-93502-9.
+
+== Einzelnachweise ==
+&lt;references /&gt;
+
+== Weblinks ==
+{{Commonscat|The Lord of the Rings film trilogy|Der Herr der Ringe (Filmtrilogie)}}
+* {{IMDb Titel|tt0120737}}
+* {{OFDb|5462}}
+* [http://www.zeit.de/2001/51/Gnadenloser_Angriff_auf_den_Markt Kritik von Jan Distelmeyer aus Die Zeit 51/2001]
+* [http://www.warnerbros.de/movies/herrderringe/ Offizielle Webseite zum Film] (deutsch)
+* [http://www.lordoftherings.net/ Offizielle Website zum Film] (englisch)
+* [http://www.wsws.org/de/2002/apr2002/tolk-a12.shtml Tolkien und die Flucht vor der Moderne] · Filmkritik von Margaret Rees
+* {{Schnittberichte|N=Der Herr der Ringe: Die Gefährten|ID1=2102|V1=RTL Nachmittag - Kinofassung|ID2=2103|V2=ORF 1 Nachmittag - Kinofassung|ID3=768|V3=Kinofassung FSK 12 - Extended Version FSK 16 (DVD-2)|ID4=765|V4=Kinofassung FSK 12 - Extended Version FSK 16 (DVD-1)}}
+
+{{NaviBlock
+|Navigationsleiste Filme von Peter Jackson
+|Navigationsleiste Mittelerde (Filme)}}
+
+{{Normdaten|SWD=4675753-3}}
+
+{{DEFAULTSORT:Herr Der Ringe Die Gefahrten #Der}}
+[[Kategorie:Filmtitel 2001]]
+[[Kategorie:Literaturverfilmung]]
+[[Kategorie:Filmdrama]]
+[[Kategorie:Fantasyfilm]]
+[[Kategorie:Monumentalfilm]]
+[[Kategorie:Fiktive Welt der Werke Tolkiens]]
+[[Kategorie:Neuseeländischer Film]]
+[[Kategorie:US-amerikanischer Film]]
+[[Kategorie:Independentfilm]]
+
+{{Link GA|fr}}
+
+[[af:The Lord of the Rings: The Fellowship of the Ring (rolprent)]]
+[[ar:سيد الخواتم: رفقة الخاتم (فيلم)]]
+[[az:Üzüklərin hökmdarı: Üzük qardaşlığı (film, 2001)]]
+[[bg:Властелинът на пръстените: Задругата на пръстена]]
+[[bn:দ্য লর্ড অফ দ্য রিংস: দ্য ফেলোশিপ অফ দ্য রিং]]
+[[bs:Gospodar prstenova: Prstenova družina]]
+[[ca:El senyor dels anells: La germandat de l'anell]]
+[[cs:Pán prstenů: Společenstvo Prstenu]]
+[[cy:The Lord of the Rings: The Fellowship of the Ring]]
+[[da:Ringenes Herre - Eventyret om Ringen (film)]]
+[[el:Ο Άρχοντας των Δαχτυλιδιών: Η Συντροφιά του Δαχτυλιδιού]]
+[[en:The Lord of the Rings: The Fellowship of the Ring]]
+[[eo:La Mastro de l' Ringoj: La Kunularo de l' Ringo (filmo)]]
+[[es:El Señor de los Anillos: la Comunidad del Anillo]]
+[[et:Sõrmuste isand: Sõrmuse vennaskond]]
+[[eu:Eraztunen Jauna: Eraztunaren Elkartea]]
+[[fa:ارباب حلقه‌ها: یاران حلقه (فیلم)]]
+[[fi:Taru sormusten herrasta: Sormuksen ritarit (elokuva)]]
+[[fo:Ringanna Harri - Ringliðið (filmur)]]
+[[fr:Le Seigneur des anneaux : La Communauté de l'anneau]]
+[[ga:The Lord of the Rings: The Fellowship of the Ring]]
+[[gd:Lord of the Rings ( film )]]
+[[gl:The Lord of the Rings: The Fellowship of the Ring]]
+[[he:שר הטבעות: אחוות הטבעת]]
+[[hi:द लॉर्ड ऑफ द रिंग्स: फेलोशिप ऑफ द रिंग]]
+[[hr:Gospodar prstenova: Prstenova družina]]
+[[hu:A Gyűrűk Ura: A Gyűrű Szövetsége (film)]]
+[[id:The Lord of the Rings: The Fellowship of the Ring (film)]]
+[[is:Hringadróttinssaga: Föruneyti hringsins]]
+[[it:Il Signore degli Anelli - La Compagnia dell'Anello]]
+[[ja:ロード・オブ・ザ・リング]]
+[[ka:ბეჭდების მბრძანებელი: ბეჭდის საძმო]]
+[[ko:반지의 제왕: 반지 원정대]]
+[[lb:The Lord of the Rings: The Fellowship of the Ring (Film)]]
+[[lt:Žiedų Valdovas: Žiedo brolija (2001 filmas)]]
+[[lv:Gredzenu Pavēlnieks: Gredzena brālība]]
+[[ml:ദ ലോർഡ് ഓഫ് ദ റിങ്സ്: ദ ഫെലോഷിപ്പ് ഓഫ് ദ റിങ്]]
+[[ms:The Lord of the Rings: The Fellowship of the Ring]]
+[[nl:The Lord of the Rings: The Fellowship of the Ring]]
+[[no:Ringenes herre: Ringens brorskap (film)]]
+[[pl:Władca Pierścieni: Drużyna Pierścienia (film)]]
+[[pt:The Lord of the Rings: The Fellowship of the Ring]]
+[[qu:Siwikunap Apun: Siwi masikuna (kuyu walltay)]]
+[[ro:Stăpânul Inelelor: Frăția Inelului (film)]]
+[[ru:Властелин колец: Братство Кольца]]
+[[sh:The Lord of the Rings: The Fellowship of the Ring]]
+[[sl:Gospodar prstanov: Bratovščina prstana]]
+[[sq:The Lord of the Rings: The Fellowship of the Ring]]
+[[sv:Sagan om ringen (film)]]
+[[ta:த லார்டு ஆப் த ரிங்ஸ்: த பெலொசிப் ஆப் த ரிங் (திரைப்படம்)]]
+[[th:ลอร์ดออฟเดอะริงส์: อภินิหารแหวนครองพิภพ]]
+[[tr:Yüzüklerin Efendisi: Yüzük Kardeşliği (film)]]
+[[uk:Володар перснів: Братерство персня]]
+[[vi:The Lord of the Rings: The Fellowship of the Ring]]
+[[zh:指环王：护戒使者]]

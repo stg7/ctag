@@ -1,0 +1,128 @@
+{{Infobox Film
+| Bild    = Star trek 9 de.svg
+| DT      = Star Trek: Der Aufstand
+| OT      = Star Trek: Insurrection
+| PL      = [[Vereinigte Staaten|USA]]
+| PJ      = 1998
+| LEN     = 103
+| OS      = [[Englische Sprache|Englisch]]
+| FSK     = 12
+| REG     = [[Jonathan Frakes]]
+| DRB     = [[Rick Berman]],&lt;br /&gt;[[Michael Piller]]
+| PRO     = Rick Berman
+| MUSIK   = [[Jerry Goldsmith]]
+| KAMERA  = [[Matthew F. Leonetti]]
+| SCHNITT = [[Peter E. Berger]]
+| DS      = 
+* [[Patrick Stewart]]: [[Völker im Star-Trek-Universum#Dienstgrade|Captain]] [[Figuren im Star-Trek-Universum#Captain_Jean-Luc_Picard|Jean-Luc Picard]]
+* [[Jonathan Frakes]]: [[Völker im Star-Trek-Universum#Dienstgrade|Commander]] [[Figuren im Star-Trek-Universum#Commander_William_Thomas_Riker|William Riker]]
+* [[Brent Spiner]]: [[Völker im Star-Trek-Universum#Dienstgrade|Lieutenant Commander]] [[Figuren im Star-Trek-Universum#Lieutenant_Commander_Data|Data]]
+* [[LeVar Burton]]: [[Figuren im Star-Trek-Universum#Lieutenant_Commander_Geordi_LaForge|Lieutenant Commander Geordi LaForge]]
+* [[Michael Dorn]]: [[Figuren im Star-Trek-Universum#Lieutenant_Commander_Worf|Lieutenant Commander Worf]]
+* [[Gates McFadden]]: [[Figuren im Star-Trek-Universum#Dr. Beverly Crusher (Commander)|Dr. Beverly Crusher]]
+* [[Marina Sirtis]]: [[Figuren im Star-Trek-Universum#Counselor Deanna Troi (Commander)|Counselor Deanna Troi]]
+* [[F. Murray Abraham]]: Ahdar Ru’afo
+* [[Donna Murphy]]: Anij
+* [[Anthony Zerbe]]: [[Völker im Star-Trek-Universum#Dienstgrade|Admiral]] Matthew Dougherty
+* [[Gregg Henry]]: Gallatin
+* [[Daniel Hugh-Kelly]]: Sojef
+* [[Michael Welch]]: Artim
+* [[Mark Deakins]]: Tournel
+* [[Stephanie Niznik]]: Kell Perim
+}}
+
+'''Star Trek: Der Aufstand''' ist der neunte [[Star Trek|Star-Trek]]-Kinofilm und der dritte, der auf der Fernsehserie ''[[Raumschiff Enterprise: Das nächste Jahrhundert]]'' basiert. Wie zuvor schon bei ''[[Star Trek: Der erste Kontakt]]'' war [[Jonathan Frakes]], der Darsteller von William T. Riker, Regisseur des Films.
+
+== Handlung == 
+
+Während einer diplomatischen Mission erhält die [[Enterprise (Raumschiff)|Enterprise]] die Nachricht, dass Lt. Commander Data einen getarnten Beobachtungsstützpunkt der Föderation offenbar in einem [[Amok]]lauf angegriffen und enttarnt habe. Der Beobachtungsstützpunkt wurde gemeinsam mit dem Volk der Son’a betrieben, befand sich auf der Heimatwelt der Ba’ku, einem Planeten in einer Region merkwürdiger kosmischer Phänomene, bekannt als ''Briar Patch''. Die Ba’ku sind anscheinend eine „Prä-[[Warp-Antrieb|Warp]]-Zivilisation“, die eine reine [[Landwirtschaft|Agrarkultur]] betreibt, dabei aber über hoch entwickelte kognitive und motorische Fähigkeiten verfügt. Außerdem hat ihr Planet eine besondere Eigenschaft: Die Strahlung der umgebenden Planetenringe bewirkt bei den Bewohnern die ständige Zell-Regeneration und somit ein praktisch unendliches Leben. 
+
+Der leitende Offizier, Admiral Matthew Dougherty, fordert Datas Baupläne an, jedoch will Picard selber herausfinden, was mit Data passiert ist. Der Crew der Enterprise gelingt es schließlich, Data ausfindig zu machen, und gemeinsam versuchen sie zu ergründen, was seine irrationale Handlungsweise verursacht hat. Sie finden dabei in einem Stausee ein getarntes Raumschiff, in dem eine [[Holografie|holografische Simulation]] des Ba’ku-Dorfes aufgebaut ist. Weiter finden sie heraus, dass eine Verschwörung von Teilen der Sternenflotte mit den Anführern der Son’a existiert. Die Son’a sind ein sterbendes Volk, das bisher in viele illegale Aktivitäten wie Waffenhandel mit dem [[Völker_im_Star-Trek-Universum#Dominion|''Dominion'']] verwickelt war. Gemeinsam mit der Sternenflotte versuchen sie, das Volk der Ba’ku, welches aus ca. 600 Personen besteht, ohne deren Wissen oder Einwilligung auf einen anderen Planeten umzusiedeln, um die regenerativen Eigenschaften der Ba’ku-Heimatwelt kommerziell ausbeuten zu können.
+
+Im Verlauf ihres Aufenthaltes bemerkt auch die Enterprise-Crew die besonderen Eigenschaften des Planeten, so regenerieren sich beispielsweise Geordi LaForges Augen, Worf kommt in die [[Klingonen|klingonische]] Pubertät, den Jak'tahla, und Picard wird zusehends schlanker. Ebenfalls flammt die Liebe zwischen Cmd. Riker und Deanna Troi wieder auf. Es stellt sich heraus, dass die friedlichen und einfach lebenden Ba’ku eine bewusste Entscheidung für ein Leben mit der Natur und gegen die Entwicklung fortschrittlicher Technologien getroffen haben, welche sie einst besaßen. Gegen die Anordnung Admiral Doughertys beginnt die gegen ihn rebellierende Enterprise-Crew um Picard mit der Evakuierung des Ba’ku-Dorfes, um die Verschleppung zu sabotieren. Gleichzeitig macht sich Riker mit der ''Enterprise'' auf, um den Föderationsrat zu kontaktieren und das Vorhaben zu verhindern.
+
+Picard wird bei einem Gefecht gegen Son’a-Drohnen gefangen genommen und findet heraus, dass die Son’a in Wirklichkeit verstoßene Ba’ku sind. Diese Verfemten verließen vor langer Zeit ihren Heimatplaneten, als sich ihre Rasse von ihrer überlegenen Technologie lossagte und sich auf dem Planeten im ''Briar Patch'' ansiedelte. Einige Son’a sind auf ihrem neuen Heimatplaneten geboren, während andere noch Mitglieder der ursprünglichen „Flüchtlinge“ sind.
+
+Riker schafft es indessen, die Föderation zu warnen, verliert aber in einem Gefecht gegen zwei schwer bewaffnete Son’a-Kreuzer den Warpkern und muss nach innovativer Beseitigung des Schiffes den langsamen Rückweg zu Picard und der Crew antreten.
+
+Gleichzeitig entdeckt Picard im Orbit des Planeten einen Injektor, mit dem die Son’a die regenerative Strahlung des Planeten „ernten“ wollen, dabei aber dessen Atmosphäre vergiften. Der Captain schafft es, die ''Son’a'' um deren ruchlosen Anführer Adhar Ru’afo ohne deren Wissen in eine Simulation ihres eigenen Schiffes zu beamen, welche in dem Holo-Raumschiff abläuft, das ursprünglich für die Ba’ku bestimmt war und inzwischen in den Weltraum befördert wurde.
+
+Picard kann zwar den Start des Injektors aufhalten, nicht aber Ru’afo, der sich vom Holoschiff auf den Injektor beamt und den Countdown manuell neu einleitet. Picard folgt ihm, und es kommt zum Kampf, den er für sich entscheiden kann; jedoch ist die Selbstzerstörungsautomatik aktiviert. Im letzten Moment wird Picard von der rechtzeitig zurückgekehrten ''Enterprise'' gerettet, während Ru’afo mit seinem Injektor untergeht. 
+
+Dank des Eingreifens der Crew der ''Enterprise'' kann die Verschwörung aufgedeckt und die Verschleppung der ''Ba’ku'' endgültig gestoppt werden. Die Son’a kehren in den Schoß ihrer ursprünglichen Gesellschaft zurück.
+
+== Hintergrund und Sonstiges ==
+
+* Nach dem sehr erfolgreichen Actionfilm ''[[Star Trek: Der erste Kontakt]]'' war ''Star Trek: Der Aufstand'' eher eine ruhige Episode in der Geschichte der [[Star Trek|Star-Trek]]-Filme. Unter dem Arbeitstitel „Prime Directive“ geplant, war er an der Kinokasse ein mittlerer Erfolg bei Einnahmen von ca. 70 Millionen US-Dollar gegenüber Produktionskosten von 58 Millionen Dollar.
+* Für die Kinofassung fielen etliche Szenen der Schere zum Opfer. Diese sind auf der ''Special-Edition''-DVD des Filmes enthalten. Dabei handelt es sich um folgende Szenen:
+** Mehrere Einstellungen mit dem von [[Armin Shimerman]] verkörperten Barmann ''Quark'' aus [[Star Trek: Deep Space Nine]] fehlen.
+** Die Szenen mit ''Riker'' und ''Troi'' in der Schiffsbibliothek sind länger. Es fehlt, wie sich beide weiter necken und mit Papierkügelchen bewerfen. Nachdem sie deswegen von der Bibliothekarin ermahnt werden, macht ein ebenfalls anwesendes Crewmitglied zusätzlich mit und bewirft die beiden. Bei dem Darsteller des vom Planeten ''Trill'' stammenden Crewmitgliedes handelt es sich um [[Max Grodenchik]], dem Darsteller des [[Ferengi]] ''Rom'' aus [[Star Trek: Deep Space Nine]].
+** Auch die Szene mit ''Picard'' und ''Anij'' am Wasserfall ist länger. Hier fehlt eine sich anschließende Kussszene zwischen beiden. ''Picard''-Darsteller ''Patrick Stewart'' war über die Entfernung dieser Szene etwas verschnupft und meinte in einem Interview, dass er ein guter Küsser sei, dies nun aber niemand sehen könnte.
+** Für den [[Showdown]] zwischen ''Picard'' und ''Ru’afo'' gab es noch ein alternatives Ende. ''Ru’afo'' kämpft sich zur Injektorsteuerung hoch und vertreibt ''Picard''. Als er die Maschinerie wieder in Gang setzen will, zeigt ihm ''Picard'' triumphierend eine entfernte Sicherung. ''Picard'' steht dabei auf einer Plattform, die daraufhin zurückfährt. Der nun wirkungslose Injektor wird gestartet und ''Ru’afo'' wird mit dem Projektil in die Planetenringe geschossen. Man sieht, wie ''Ru’afo'' durch die Kraft der Ringe immer jünger wird und schließlich zu Nichts zerfällt. Dies wurde nur im Roman realisiert.
+* Viele Innensets der ''Enterprise E'' waren Variationen von Innendekorationen der Serie [[Star Trek: Raumschiff Voyager]]. Für die ''Son’a''-Arrestzelle wurde ein ''Voyager''-Frachtraum, für die Bibliothek der ''Voyager''-Maschinenraum und für &quot;Die Yacht des Captains&quot;, die hauptsächlich von Data geflogen wird, ein ''Voyager''-Shuttle verwendet.
+* Auch ''Counselor Trois'' Büro stammt vom Set der ''Voyager'': Dort dient es als ''[[Figuren im Star-Trek-Universum#Captain Kathryn Janeway|Captain Janeways]]'' Bereitschaftsraum.
+* Die Krankenstation der ''Enterprise E'' entspricht ebenso der der ''Voyager''.
+* Das Set des Schönheits-OP-Raumes auf dem ''Son’a''-Schiff sah man in der Serie ''Star Trek: Raumschiff Voyager'' wieder. In der Episode 4x23 ''Living Witness (Der Zeitzeuge)'' diente es als kyriansches Museum.
+* Das Innenset des Shuttles von ''Picard'' und ''Worf'' war ein verändertes ''Runabout'' aus ''Star Trek: Deep Space Nine''.
+* Es ist der erste ''Star-Trek''-Film, der nicht an Orten auf oder im Umfeld der Erde spielt. Es ist auch der erste Streifen der Reihe, dessen Weltraum-Szenen komplett am Computer geschaffen wurden.
+* ''Matthew-Dougherty''-Darsteller ''Anthony Zerbe'' ist bereits neun Jahre zuvor einen ähnlichen Filmtod wie in ''Star Trek IX'' gestorben. Im [[James Bond|James-Bond]]-Thriller ''[[Lizenz zum Töten]]'' zerplatzt sein Kopf in einer Dekompressionskammer, während er diesmal zu Tode geliftet wird.
+* ''Ru’afos'' Handlanger ''Gallatin'' wurde nach dem Heimatkreis von ''Star-Trek''-Autor ''[[Brannon Braga]]'' benannt.
+* Die Szenen, in denen ''Data'' in den See läuft, entstanden am ''[[Convict Lake]]'' im ''Mammouth Lakes Park'' in [[Kalifornien]].
+* Während Captain Picard und Worf das Raumschiff von Data entführen, lenken sie diesen ab indem sie das Lied „A british tar“ aus der Operette ''[[H.M.S. Pinafore]]'' von [[Gilbert &amp; Sullivan]] singen.
+
+== Kritiken ==
+
+{{Zitat|Das nunmehr neunte ‚Star Trek‘-Kinoabenteuer zehrt erneut von der recht noblen [[Humanismus|humanistischen]] Gesinnung der Serie, dümpelt dramaturgisch allerdings auf dem bescheidenen Niveau einer durchschnittlichen Fernsehfolge.|[[Lexikon des internationalen Films]]}}
+
+{{Zitat|Nach dem großartigen düsteren 8. Film führte Frakes auch beim 9. Star-Trek Abenteuer Regie, der leider weder inhaltlich noch erzähltechnisch überzeugen konnte. Die scheinbar moralische Fragestellung ist schwach ausgearbeitet, der Grund für das Meutern der Enterprise-Besatzung eher fragwürdig.|[[moviepilot|moviepilot.de]]&lt;ref&gt;Oliver Lysiak: [http://www.moviepilot.de/movies/star-trek-ix-der-aufstand Star Trek IX – Der Aufstand] auf [[moviepilot|moviepilot.de]]&lt;/ref&gt;}}
+
+[[Roger Ebert]] stellte in seiner Kritik in der ''Chicago Sun-Times'' vom 11. Dezember 1998 fest, dass die [[Ethik|ethischen]] Konflikte in diesem Film über die Umsiedlung der 600 Bewohner des Planeten der Ba’ku nicht tiefgründig genug ausgearbeitet wurden. Vor allem sei für ihn nicht einzusehen, warum man die Interessen der Bewohner – die ursprünglich ja nicht einmal getötet werden sollten – höher bewerten solle, als die Möglichkeit, die Vorteile der regenerativen Strahlung – die letztlich ja [[ewiges Leben]] bedeuten würde – für Millionen von Menschen in der ganzen Föderation nutzbar zu machen. Er nennt den Film nicht überzeugend und gab ihm 2 von 4 Sternen.&lt;ref&gt;[http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=/19981211/REVIEWS/812110304/1023 Kritik von Roger Ebert]&lt;/ref&gt;
+
+Andrew O'Hehir schrieb für Salon.com, dass Zuschauer, die mit dem Star-Trek-Universum nicht vertraut sind, den Film trivial und wenig aufregend finden, während Fans ihn genießen werden.&lt;ref&gt;[http://www.salon.com/ent/movies/reviews/1998/12/11reviewc.html Kritik von Andrew O'Hehir]&lt;/ref&gt;
+
+Denis Hoffmann zeigte sich in seiner Rezension für Zelluloid.de dagegen wesentlich wohlwollender: 
+
+{{Zitat|[[Jonathan Frakes]] hat schon mit ‚Der Erste Kontakt‘ bewiesen, daß er als Regisseur ein glückliches Händchen hat. Auch seine zweite Mission kann durchaus als gelungen bezeichnet werden. Er hat aus ‚Der Aufstand‘ einen sehr unterhaltsamen Film gemacht, der sowohl gelungene [[Special-Effects]], als auch handfeste Action bietet.|Zelluloid.de&lt;ref&gt;[http://www.zelluloid.de/filme/kritik.php3?id=307&amp;tid=563 Denis Hoffmann: Rezension bei Zelluloid.de]&lt;/ref&gt;}}
+
+== Weblinks ==
+* {{IMDb Titel|tt0120844}}
+* {{OFDb|1371}}
+* {{Memory Alpha|Star_Trek:_Der_Aufstand|Star Trek: Der Aufstand}}
+* [http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=/19981211/REVIEWS/812110304/1023 Rezension von Roger Ebert bei rogerebert.com] (engl.)
+* [http://www.jammersreviews.com/st-films/insurrection.php Kritik bei Star Trek Hypertext] (engl.)
+
+== Einzelnachweise ==
+&lt;references /&gt;
+
+{{Navigationsleiste Star Trek}}
+
+{{SORTIERUNG:Star Trek Der Aufstand}}
+[[Kategorie:Filmtitel 1998]]
+[[Kategorie:US-amerikanischer Film]]
+[[Kategorie:Science-Fiction-Film]]
+[[Kategorie:Star Trek|Aufstand #Der]]
+
+[[bg:Стар Трек IX: Бунтът]]
+[[ca:Star Trek IX: Insurrecció]]
+[[cs:Star Trek: Vzpoura]]
+[[en:Star Trek: Insurrection]]
+[[es:Star Trek IX: insurrección]]
+[[et:Star Trek: Ülestõus]]
+[[fi:Star Trek – kapina]]
+[[fr:Star Trek : Insurrection]]
+[[he:מסע בין כוכבים 9: מרד]]
+[[hu:Star Trek: Űrlázadás]]
+[[id:Star Trek: Insurrection]]
+[[it:Star Trek: L'insurrezione]]
+[[ja:スタートレック 叛乱]]
+[[lb:Star Trek: Insurrection]]
+[[ms:Star Trek Insurrection]]
+[[nl:Star Trek: Insurrection]]
+[[pl:Star Trek: Rebelia]]
+[[pt:Star Trek: Insurrection]]
+[[ro:Star Trek: Rebeliune]]
+[[ru:Звёздный путь: Восстание]]
+[[simple:Star Trek: Insurrection]]
+[[sv:Star Trek: Insurrection]]
+[[uk:Зоряний шлях: Повстання]]
+[[zh:星际旅行IX：起义]]

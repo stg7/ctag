@@ -1,0 +1,1079 @@
+
+
+Algorithmen zum Lösen von Vertex und Set Cover Instanzen
+
+zur Planung von Angriffen auf Netzwerke
+
+- Stand: 29. Juni 2012-
+
+Steve Göring
+
+Zusammenfassung
+Angriffe auf Netzwerke betreffen meist nicht nur einzelne Knoten des Netzes. Je grösser
+die Netzwerke, desto schwieriger wird das Identifizieren von möglichen Schwachstellen.
+Optimale Angriffe auf Overlay- Netzwerke zu planen ähnelt dem Set-Cover und VertexCover Problem, insbesondere der gewichteten Problemvarianten. Es werden verschiedene Algorithmen zum Lösen von Vertex-Cover- und Set-Cover-Instanzen untersucht und
+verglichen. Die genannten Probleme sind nicht einfach lösbar, da sie in die Klasse der
+NP-vollständigen Probleme fallen, daher werden verschiedene exakte, randomisierte und
+approximative Algorithmen für verschiedene Varianten der Vertex-Cover und Set-CoverProbleme untersucht. Besonders die Laufzeit, Implementierbarkeit, Grundidee und Genauigkeit der jeweiligen Algorithmen ist für die Analyse von Interesse.
+
+wird noch überarbeitet
+
+1 Einleitung
+In den Medien hört man oft von Angriffen auf Netzwerken, zum Beispiel zuletzt der Angriff
+auf die NASA Server, der als ünknown Nasa Hack" bekannt ist [Zeit]. Zur Realisierung von
+solchen Angriffen werden verschiedene Techniken benutzt. Dabei kommt es auch darauf an
+welchem Zweck der Angriff dienen soll, etwa der Komplettausfall einer Webseite oder eines
+ganzen Webservices.
+
+Auch Netzwerke, die nicht der öffentlichkeit zugänglich sind, können ein Ziel darstellen, zum
+Beispiel virtuelle private Netzwerke von Firmen, die aufgebaut werden um transparent von
+verschiedenen Firmenstandorten zu arbeiten.
+
+Im Vergleich zum Angriff auf einzelne Rechner ist es beim Attackieren von Netzwerken schwieriger die Angriffe zu planen. Gerade durch Techniken der Dezentralisierung, Replikation und
+weiteren bedarf es mehr Planung bei einem Angriff - oder aber beim Analysieren eines Angriffszenarios zum Schutz des Netzwerks. Beispielsweise kann das in Abbildung 1(a) dargestellte vereinfachte Netzwerk betrachtet werden. Es besteht aus 6 Rechnern mit den Namen
+a, b, c, d, e und f . Die Topologie des Netzwerks sei vorher ermittelt worden. Nun möchte ein
+potentieller ängreifer" mit möglichst wenig Aufwand so viel Schaden wie möglich anrichten,
+das heisst er möchte die Struktur des Netzes stark schädigen. Zum Beispiel führt er einen
+Angriff auf die Knoten b, c und e aus und isoliert so den Rest (dargestellt in Abbildung 1(b)).
+Zum Verhindern eines Angriffs muss ein potenzieller "Beschützer" des Netzwerkes die anfälligen Knoten identifizieren und besonders absichern.
+
+Angriffe auf Netzwerke können unter Umständen nicht nur einzelne Knoten treffen, sondern
+auch benachbarte Knoten beeinflussen. Optimale Angriffe auf Overlay-Netzwerke zu betrachten kann unter Umständen jedoch sehr schwierig zu berechnen sein, da die Probleme dem
+
+1
+
+a
+c
+
+b
+
+e
+d
+
+f
+
+(a) Angriffsziele: b, c, e
+
+a
+
+c
+
+b
+
+e
+d
+
+f
+
+(b) nach dem Angriff
+Abbildung 1: Beispielnetzwerk
+
+Vertex-Cover und im allgemeinen Fall sogar dem schwierig zu approximierenden Set-CoverProblem ähneln.
+
+In diesem Hauptseminar sollen daher verschiedene Verfahren recherchiert und bewertet werden, welche die Vertex- beziehungsweise Set-Cover-Instanzen lösen. Insbesondere sollen dabei
+
+ängegriffene" Knoten unterschiedliche Gewichte besitzen können und partielle überdeckun-gen möglich sein. Von Interesse sind sowohl exakte Algorithmen mit niedriger Laufzeit als
+auch Approximationsalgorithmen.
+Im Hauptteil der Arbeit werden zunächst die Notationen und Problemvarianten in Kapitel 2
+beschrieben. Anschliessend werden in Kapitel 3 verschiedene Approximationsalgorithmen und
+exakte Algorithmen für die aufgeführten Problemvarianten des Vertex-Cover und Set-CoverProblems behandelt. Danach folgt in Abschnitt 4 eine kurze Auswertung und Gegenüberstellung der verschiedenen Algorithmen. Am Ende folgt in Kapitel 5 ein Fazit.
+
+2 Grundlagen
+Im folgenden Kapitel werden einige Notationen festgelegt und formale Beschreibungen des
+Vertex-Cover und des Set-Cover-Problems dargestellt. Dabei werden auch verschiedene Varianten der Grundprobleme eingeführt und erläutert. Für die später beschriebenen Algorithmen
+ist das unentbehrlich.
+
+2.1 Notationen
+Zunächst sollen Notationen zum Beschreiben von Graphen und besondere Laufzeitnotationen
+festgelegt werden. Anschliessend folgen Hinweise zur Genaugigkeitsnotation der Approximationsalgorithmen in dieser Arbeit.
+
+2.1.1 Graphennotationen
+Ein Netzwerk wird üblicherweise als (un)gerichteter Graph G = (V, E) aufgefasst. V stellt
+dabei die Knotenmenge und E die Kantenmenge dar. Im gerichteten Fall ist E ` V *V und im
+ungerichteten ist E ` {{a, b} | a 2 V ^ b 2 V }. Für den weiteren Verlauf wird festgelegt, dass|
+
+V | = n die Anzahl der Knoten und |E| = m die Anzahl der Kanten beschreiben. Ausserdem
+wird keine genauere Unterscheidung getroffen, ob der Graph gerichtet oder ungerichtet ist.
+
+Ein gewichteter Graph G = (V, E, wv ) ist, sofern nicht im Kontext anders beschrieben, ein
+Graph dessen Knoten gewichtet sind. Dabei ist wv : V ! R+ die Knotenkostenfunktion
+(Kostenfunktion). Ferner gilt für einen ungewichteten Graphen 8x 2 V : wv(x) = 1.
+
+2
+
+2.1.2 Laufzeitnotationen
+Für einige Algorithmen, insbesondere die mit exponentieller Laufzeit, ist der polynomielle
+Anteil in der Laufzeit von geringerer Bedeutung. In diesem Fall wird die Notation O* benutzt.
+Alle Algorithmen mit polynomieller Laufzeit benutzen die übliche O Notation.
+
+2.1.3 r-Approximationsalgorithmen
+Im weiteren Verlauf werden unter anderen auch Approximationsalgorithmen beschrieben.
+Dabei bedeutet "r-Approximationsalgorithmus", dass die gefundene Lösung maximal um den
+Faktor r von der optimalen Lösung abweicht, auch als Genauigkeit r eines Algorithmus bezeichnet.
+
+2.2 Vertex-Cover-Problem
+Unter einem Vertex-Cover versteht man in der Graphentheorie eine Menge von Knoten eines
+Graphen, so dass alle Kanten des Graphen inzident zu mindestens einem dieser Knoten sind.
+Intuitiv erkennt man, dass alle Knoten des Graphen die genannte Eigenschaft erfüllen, doch
+die Menge der Knoten soll weitere Bedingungen genügen. Mit V C(G) soll die Menge aller
+Vertex-Cover des Graphen G bezeichnet werden.
+
+2.2.1 Minimales Vertex-Cover-Problem
+Zunächst kann man die Grösse des Vertex-Covers betrachten. Das führt direkt zur Formulierung des minimalen Vertex-Cover-Problems (mVCP). Beim mVCP soll ein Vertex-Cover mit
+minimaler Grösse gefunden werden[PrKu92]. Formal ist ein Vertex-Cover C ` V dabei eine
+Knotenüberdeckung des Graphen, das heisst es gilt:
+
+8(u, v) 2 E : u 2 C . v 2 C
+Ist k = |C| die minimale Anzahl an Knoten eines Vertex-Covers, das heisst
+
+8Ci 2 V C(G) : |Ci| >= |C|
+so wird C Lösung des mVCP s genannt. Zur Verdeutlichung des mVCP s soll nun ein Beispiel
+eines Graphen betrachtet werden.
+
+Beispiel -- V = {a, b, c, d, e, f }, E = {{a, b}, {a, c}, {c, b}, {c, f }, {c, d}, {d, e}, {e, b}}
+Der hier formal beschrieben Graph G = (V, E) greift das Anfangsbeispiel, dargestellt in Abbildung 1(a), auf. Es ist erkennbar, dass die Knoten b, c und e ein Vertex-Cover mit minimaler
+Grösse bilden.
+
+Das Auffinden einer Lösung des mVCP s ist NP-vollständig (vergleiche [DiSa05]). Ein Beweis
+findet man in [CLRS09, Kapitel 34, Seite 1090f]. Dort wird eine polynomielle Reduktion des
+Cliquen-Problems (Clique ist NP-vollständig) auf das Vertex-Cover-Problem beschrieben, das
+heisst:
+
+CLIQU E <=p V C
+
+3
+
+Beweis. Im ersten Schritt muss gezeigt werden, dass V ertex - Cover 2 N P gilt. Gegeben
+sei ein Graph G = (V, E) und k 2 N+. Rät man nun eine Lösung C0 ` V , kann ein Verifikationsalgorithmus in polynomieller Zeit überprüfen ob |C0| = k und C0 alle Kanten E
+
+überdeckt.
+
+Im zweiten Schritt wird die Reduktion CLIQU E <=p V C beschrieben. Die Grundidee der
+Reduktion beruht darauf, dass aus der Eingabe (G, k) für Clique eine Eingabe (G0, k0) für das
+Vertex-Cover Problem in polynomieller Zeit konstruiert wird, so dass gilt:
+
+G hat k-Clique , G0 hat k0-Vertex-Cover
+Dabei wird als G0 das Komplement von G gewählt (vergleiche Abbildung 2), also G0 = (V, E0)
+
+a
+
+c
+b
+
+e
+
+d
+f
+(a) G, {a, d, f} bilden 3-Clique
+
+a
+
+c
+b
+
+e
+
+d
+f
+(b) G0, {b, c, e} bilden 3-Vertex-Cover
+Abbildung 2: Beispiel für Reduktion von Clique auf Vertex-Cover
+mit E0 = (V * V ) \E. Die Konstruktion von G0 ist in polynomieller Zeit möglich. Im nächsten
+Schritt muss gezeigt werden, dass gilt:
+
+G hat k Clique , G0 hat (n - k)-- -z ""
+
+=k0
+
+-Vertex-Cover
+
+Dazu sei zunächst K ae V eine k-Clique von G. Aus der Definition einer k-Clique folgt direkt
+für K: 8
+
+u, v 2 K : (u, v) 2 E, mit |K| = k
+
+In G0 heisst das für K: 8
+
+u, v 2 K : (u, v) /2 E0, mit |K| = k
+
+Betrachtet man nun die Menge C = V \ K, so folgt unmittelbar
+
+8(u, v) 2 E0 : u 2 C . v 2 C, mit |C| = n - k
+was genau der Definition eines Vertex-Covers entspricht.
+
+Genauer gesagt sind alle hier in der Arbeit aufgeführten Varianten des Vertex-Cover-Problems
+NP-vollständig. Nur durch sehr starke Vereinfachungen im Graphen kann man ein VertexCover in polynomieller Zeit exakt bestimmen.
+
+Ein Beispiel wäre hier die Betrachtung von Vertex-Covern in Bäumen ( übungsaufgabe aus
+[CLRS09, Kapitel 35, Seite 1111, Aufgabe 35.1-4]). Ein möglicher Algorithmus VCT zum
+Auffinden eines Vertex-Covers in einem Baum würde zunächst ein Blatt betrachten. Da ein
+Blatt v eines Baums den Knotengrad deg(v) = 1 besitzt, ist es offensichtlich, dass es günstiger
+
+4
+
+a
+
+cb
+e
+
+d
+gf
+
+h
+(a) Baum
+
+3
+2b
+e
+
+d
+
+1f
+h
+(b) Iterationsschritte
+
+Abbildung 3: Vertex-Cover Baum: Beispiel
+
+ist den Elternknoten w des Blattes v in das Vertex-Cover C aufzunehmen, da w potentiell
+mehr Kanten überdeckt. Anschliessend werden alle Kanten die zu w führen gelöscht und das
+Verfahren interativ auf den verkleinerten Baum ausgeführt.
+
+In den Abbildungen 3(a) und 3(b) ist ein Beispieldurchlauf des beschriebenen Algorithmus
+dargestellt. Im ersten Schritt wird der Knoten h als Blatt identifiziert und der Elternknoten
+g zum noch leeren Vertex-Cover C = {} hinzugefügt. Darauf wird die Kante d - g aus dem
+Baum entfernt und nur noch der verbleibende Baum, ohne die Knoten h und g, betrachtet.
+Der zweite Durchlauf ermittelt nun den Knoten f als Blatt. Anschliessend wird der Knoten
+c der Menge C = {g} hinzugefügt und die Kante {a, c} gelöscht. Im verbleibenden letzten
+Schritt wird eines der Blätter b oder d erkannt und der Wurzelknoten a der Menge C = {g, c}
+hinzugefügt. Der Baum wurde nun vollständig abgearbeitet und der Algorithmus hat die
+Menge C = {g, c, a} als minimales Vertex-Cover berechnet. In jedem Schritt des Algorithmus
+wird eine Kante gelöscht, solange bis keine weiteren Kanten verfügbar sind. Die Blätter des
+Baums können in linearer Zeit gefunden werden. Eine Aktualisierung in jedem Schritt, bei
+dem der Baum verändert wird, ist einfach zu implementieren. Der beschriebe Algorithmus
+zeigt, dass ein minimales Vertex-Cover in einem Baum in linearer Zeit O(m) gefunden werden
+kann.
+
+Beim Betrachten anderer vereinfachter Graphen können ähnliche Algorithmen zum Finden
+von Vertex-Cover Lösungen bestimmt werden. Beispielsweise können Matching-Algorithmen
+Vertex-Cover in bipartiten Graphen in polynomieller Zeit finden. In dieser Arbeit werden aber
+Netzwerke durch Graphen repräsentiert, das heisst, dass die Graphen, mit denen man es bei
+der Planung eines Angriffs zu tun hat, keine Bäume oder andere vereinfachte Graphen sind.
+Daher sollen im weiteren Verlauf nur noch allgemeine Graphen betrachtet werden.
+
+2.2.2 k-Vertex-Cover
+Es ist nicht immer erforderlich ein minimales Vertex-Cover zu finden, so könnte eine Wunschgrösse des Vertex-Covers von Bedeutung sein. Eine parametrisierte Variante des VCPs, genannt das k-Vertex-Cover-Problem (kVCP), beschreibt genau den genannten Fall. Denn es
+wird speziell ein Vertex-Cover C der Grösse k = |C| gesucht [Tail09].
+
+2.2.3 Gewichtetes Vertex-Cover
+Gerade im Falle eines Angriffsszenarios könnten einige Knoten eine besondere Rolle spielen,
+auf der einen Seite könnten es Knoten sein die leichter anzugreifen sind, denen eine beson5
+
+dere Bedeutung zugewiesen wird oder deren Angriff mehr Aufwand erfordern. Zur formalen
+Beschreibung der aufgeführten Situation können den Knoten Gewichte zugeordnet werden.
+Betrachtet wird dabei eine verallgemeinerte Variante des mVCP s, namens gewichtete VertexCover-Problem (gVCP). Es soll dabei ein Vertex-Cover C mit minimalem Gesamtgewicht
+gefunden werden, genauer muss C die Bedingung P
+
+x2C w
+
+v(x) ! min erfüllen [GHKO03].
+
+2.2.4 Partielles Vertex-Cover
+Der Angriff, dargestellt in Abbildung 1(b), erreicht die vollständige Isolation aller Knoten des
+Netzwerkes. Ein Angreifer kann aber auch als Ziel einen partiellen Ausfall des Netzwerkes haben. In der Graphentheorie wird das als partielles Vertex-Cover-Problem (pVCP) bezeichnet.
+Dabei soll ein Vertex-Cover C mit |C| <= k gefunden werden, welches mindestens t Kanten überdeckt [KnLR08]. Formal bedeutet es, dass die folgenden Bedingungen für C erfüllt
+werden müssen: |{
+
+(u, v) 2 E | u 2 C . v 2 C}| >= t mit |C| <= k
+
+2.2.5 Exaktes partielles Vertex-Cover
+Beim exakten partiellen Vertex-Cover-Problem (epVCP) ist die Einschränkung an das VertexCover noch höher als beim pVCP, denn das Vertex-Cover C muss aus genau k Knoten bestehen.
+
+2.2.6 Formulierung als ganzzahliges lineares Optimierungsproblem
+Die aufgeführten Bedingungen des mVCP s und des gVCP s stellten Minimierungsprozesse
+dar, es liegt Nahe eine Lösung der Probleme in der Optimierung zu suchen. Zunächst soll das
+gVCP als Optimierungsproblem formuliert werden. Als Zielfunktion ergibt sich:
+
+F (~x) = X
+
+xi
+
+wv(i) * xi ! min
+
+mit den Nebenbedingungen:
+
+xi + xj >= 1, 8(i, j) 2 E
+
+xi 2 {0, 1}
+xi = 1 bedeutet dabei, dass der Knoten i im Vertex-Cover enthalten ist. Es ist erkennbar,
+dass es sich um ein ganzzahliges lineares Optimierungsproblem (gLOP) handelt [Halp99]. Bei
+gLOP en besteht eine Lösungsmöglichkeit in der Betrachtung des dazugehörigen (relaxierten)
+linearen Optimierungsproblem (LOP). Das lineare Optimierungsproblem entsteht aus dem
+gLOP durch Vernachlässigung der Ganzzahligkeitsbedingung (der Vorgang wird bei binären
+Variablen als LP-Relaxation bezeichnet, vergleiche [DoDr, Kapitel 6, Seite 135ff]). Das relaxierte LOP zum gVCP ist:
+
+F (~x) = X
+
+xi
+
+wv(i) * xi ! min
+
+xi + xj >= 1, 8(i, j) 2 E
+
+0 <= xi <= 1, xi 2 R
+
+Die Formulierung als lineares Optimierungsproblem bildet die Grundlage für einige der in
+Abschnitt 3.1 beschriebenen Algorithmen. üblicherweise betrachtet man zu LOP en auch die
+dazugehörigen dualen Probleme. Das duale Problem zum (gewichteten) Vertex-Cover-Problem
+
+6
+
+ist das maximale Matching-Problem. Auch die anderen Varianten des Vertex-Cover Problems
+können analog als gLOP formuliert werden.
+
+Das relaxierte LOP kann benutzt werden um einen 2-Approximationsalgorithmus zu entwerfen, in dem man das LOP mit Verfahren aus der Optimierung löst (Simplex oder Khachian/Karmarkar).
+
+Mittels "Branch-and-Bound" könnte auch das ganzzahlige LOP gelöst werden, aber für Angriffe müssen nicht immer die optimalen Lösungen gefunden werden. Eine gute Annäherung
+ist ausreichend. Ein Vorteil der Approximationsalgorithmen ist, dass sie schneller und einfacher als der "Branch-and-Bound"- Ansatz sind.
+
+2.3 Set-Cover-Problem
+Bisher wurden nur einfache Graphen ohne Mehrfachkanten betrachtet. In einigen Angriffsszenarien stehen aber nicht die Informationen zur kompletten Topologie zur Verfügung, zum Beispiel wenn nur bekannt ist, dass bestimmte Knotenmengen irgendwie verbunden sind. Diese
+Formulierung führt direkt zur Abstraktion des Netzwerks auf einen Hypergraphen H = (X, E)
+mit der Menge von Elementen X und der Menge E ` 2X von Teilmengen von X. Das bedeutet, dass ein Hypergraph Kanten besitzt, die mehr als 2 Knoten verbinden können. Ein
+Vertex-Cover in einem Hypergraphen zu finden entspricht dem Set-Cover-Problem.
+
+Ein Set-Cover ist eine Mengenüberdeckung. Es wird eine Auswahl von Teilmengen eines
+Universums gesucht, die vereinigt alle Elemente des Universums überdecken. Genau wie bei
+dem Vertex-Cover-Problem können verschiedene Varianten betrachtet werden. Zunächst soll
+die ungewichtete Variante und anschliessend die gewichtete betrachtet werden.
+
+2.3.1 Minimales Set-Cover-Problem
+Das minimale Set-Cover-Problem (mSCP) ist ein kombinatorisches Problem, bei dem, ausgehend von einer Menge U = {u1, ..., um} (Universium) mit m = |U | und n Teilmengen{
+
+V1, ..., Vn} = S, Vi ae U , eine Auswahl Z ` {1, ..., n} der Teilmengen Vi gefunden werden
+soll, die S
+
+i2Z V
+
+i = U mit minimalem k = |Z| erfüllt (ähnlich [CyKW09]). Zur einfacheren
+
+Darstellung der Teilmengen wird die folgende Matrix A 2 {0, 1}n*m definiert mit
+
+ai,j = (1 , wenn uj 2 Vi0 , sonst
+(vergleiche [CaFT98]). Die Zeile i der Matrix A entspricht dem charakteristischen Vektor der
+Menge Vi bezüglich U . Zunächst soll ein Beispiel betrachtet werden.
+
+Beispiel -- U = {1, 2, ..., 5}, V1 = {1}, V2 = {1, 2}, V3 = {3, 4, 5}, S = {V1, V2, V3} Die
+Abbilding 4 stellt das Beispiel grafisch dar. Eine mögliche Auswahl wäre Z1 = {1, 2, 3} (k = 3).
+Sie erfüllt aber nicht die Minimalitätsbedingung, denn Z2 = {1, 3} (k = 2) überdeckt U mit
+weniger Elementen aus S (genauer: Z2 ist die einzige Lösung des mSCP s im Beispiel). Für
+die definierte Matrix A ergibt sich dann:
+
+A = 0@
+
+1 0 0 0 0
+1 1 0 0 0
+0 0 1 1 11A
+
+Auch wenn es für einfache Beispiele nicht schwer ist eine Lösung zu finden, gehört das SetCover-Problem auch zur Klasse der NP-vollständigen Probleme. Ein Reduktionsbeweis ist in
+
+7
+
+U = V1 [ V2 [ V3
+
+V2
+
+V1V3
+
+13 25 4
+
+Abbildung 4: Beispiel für Set-Cover: {V2, V3} bildet minimale Set-Cover Lösung
+[Gold10, Kapitel 4, Seite 114f ] zu finden. Es wird eine Reduktion von SAT zu Set-Cover beschrieben. Da das Set-Cover-Problem auch als allgemeineres Vertex-Cover-Problem betrachtet
+werden kann, wird an dieser Stelle auf den Reduktionsbeweis verzichtet.
+
+2.3.2 Gewichtetes Set-Cover
+Die zweite Variante des Set-Cover-Problems ist das gewichtete Set-Cover-Problem (gSCP).
+Es soll ein Set-Cover mit minimalen Gesamtkosten gesucht werden. Eine Kostenfunktion c
+mit c : S ! R+ ordnet dabei jeder Menge Vi 2 S ein Gewicht c(Vi) zu. Für die Auswahl Z
+muss dann gelten X
+
+i2Z
+
+c(Vi) ! min
+
+(ähnlich [CaFT98]).
+
+2.3.3 Formulierung als ganzzahliges lineares Optimierungsproblem
+
+ähnlich der Formulierung des Vertex-Cover-Problems als Optimierungsproblem kann auch
+das gSCP als ganzzahliges lineares Optimierungsproblem beschrieben werden [CaFT98], mit
+der Zielfunktion:
+
+F (~x) =
+
+nX
+
+j=1
+
+c(Vj ) * xj ! min
+
+unter den Nebenbedingungen:
+
+mX
+
+j=1
+
+ai,j * xj >= 1, i = 1, ..., n
+
+xj 2 {0, 1}, j = 1, ..., m
+xj = 1 heisst dabei, dass die Menge Vj in der Lösung des Set-Covers enthalten ist.
+Analog zum Vertex-Cover-Problem kann auch das Set-Cover-Problem durch LP-Relaxation
+zu einem relaxierten linearen Optimierungsproblem umformuliert werden, dabei ändert sich
+nur die Ganzzahligkeitsbedingung in:
+
+0 <= xi <= 1, i = 1, ..., m
+Einige der Approximationsalgorithmen in 3.2 benutzen das relaxierte LOP als Grundlage.
+Das duale Problem zum (gewichteten) Set-Cover-Problem ist das Set-Packing-Problem.
+
+8
+
+3 Lösungsalgorithmen
+In diesem Kapitel werden zu den im Abschnitt 2 eingeführten Varianten des Vertex-Cover
+und Set-Cover-Problems verschiedene Algorithmen beschrieben, zuerst die Algorithmen für
+die Vertex-Cover-Varianten, anschliessend die Set-Cover-Probleme.
+
+3.1 Vertex-Cover
+Das Vertex-Cover-Problem wurde in Abschnitt 2.2 beschrieben. Da es ein NP-vollständiges
+Problem ist, sind keine polynomiellen exakten Lösungsalgorithmen bekannt.
+
+3.1.1 Minimales Vertex-Cover-Problem
+Beim mVCP bekommt der Algorithmus als Eingabe den Graphen G = (V, E) und bestimmt
+ein minimales Vertex-Cover.
+
+Naiver Vertex-Cover-Algorithmus
+Um eine Vorstellung der Laufzeitdimensionen zu erhalten, soll zunächst ein naiver Algorithmus für das mVCP betrachtet werden:
+
+1 function naivMVC(Graph G = (V, E))
+2 for Vi ` V ascending sorted do
+3 if Vi covers all Edges E then
+4 return Vi
+5 end if
+6 end for
+7 end function
+
+Die Grundidee ist, dass alle Teilmengen Vi ` V (i = 1...2n) aufsteigend betrachtet werden
+und jeweils ein Test stattfindet, ob alle Kanten E überdeckt werden. Intuitiv ist die LaufzeitO
+
+(2nm).
+
+Cormen et al
+Der naive Algorithmus läuft in exponentieller Zeit, aber nicht immer ist eine optimale Lösung
+erforderlich. Daher wird auch in [CLRS09, Kapitel 35, Seite 1109] ein 2-Approximationsalgorithmus
+beschrieben.
+
+1 function Cormen(Graph G = (V, E))
+2 C  ;
+3 E0  E
+4 while E0! = ; do
+5 let (u, v) be an arbitrary edge from E0
+6 C = C [ {u, v}
+7 remove from E0 every edge incident on either u or v
+8 end while
+9 return C
+10 end function
+
+Der beschriebene Algorithmus wählt in jedem Schritt eine Kante (u, v) aus und fügt die
+Knoten u und v zum Vertex-Cover hinzu. Anschliessend werden alle Kanten inzident zu u
+oder v nicht mehr betrachtet. Bei der Benutzung von Adjazenzlisten zur Darstellung der
+
+9
+
+Kanten des Graphens erhält man einen Algorithmus mit der Laufzeit O(m + n) und mit der
+Genauigkeit von 2.
+
+Da in jeder Iteration nur Kanten entfernt werden, die die bereits hinzugefügte Knoten überdecken, ist offensichtlich, dass am Ende des Algorithmus ein Vertex-Cover zurückgegeben wird.
+Nicht so offensichtlich ist die Aussage, dass die zurückgegebene Lösung maximal doppelt so
+gross ist wie die optimale Lösung (vergleiche [CLRS09, Kapitel 35, Seite 1100]).
+
+Beweis. Zunächst sei die in Zeile 5 gewählte Kantenmenge mit A bezeichnet. Betrachtet man
+nun eine optimale Lösung C*, so muss C* auch die Menge A überdecken. In A gibt es keine
+Kanten mit gemeinsamen Endpunkten, da in Zeile 7 in jeder Iteration die Kanten gelöscht
+werden, deren Knoten inzident zu der gewählten Kante aus A sind. Für C* folgt, dass es
+mindestens einen Knoten jeder Kante aus A beinhalten muss. Somit folgt:
+
+|C*| >= |A| (1)
+
+Für das berechnete Vertex-Cover C ergibt sich, da in jedem Schritt die Knoten der Kanten
+aus A hinzugefügt werden und sie in A nicht mehrfach vorkommen, automatisch:
+
+|C| = 2|A| (2)
+Kombiniert man (1) und (2) so folgt direkt:
+
+|C| <= 2|C*|
+
+Monien-Speckenmeyer
+Approximationsalgorithmen versuchen einen Kompromiss aus Genauigkeit und Laufzeit zu
+schaffen. Möchte man einen genaueren Algorithmus haben, so müssen weitere Einschränkungen an die Eingabe gestellt oder eine höhere Laufzeit akzeptiert werden. So wird auch
+in [MoSp85] ein weiterer Approximationsalgorithmus beschrieben, der eine Genauigkeit von
+2 - 1k+1 aufweist, wobei k die kleinste Zahl ist, die die Bedingung |V | <= (2k + 3)k * (2k + 2)
+erfüllt und ausserdem in Zeit O(|V | * |E|) das minimale Vertex-Cover bestimmt.
+
+1 function MonienSpeckenmeyer(Graph G = (V, E))
+2 //Phase (1)
+3 determine smallest k , that satisfies: |V | <= (2k + 3)k * (2k + 2)
+4 M  ;
+5 while there is an odd circle C of length <= 2k + 1 do
+6 M = M [ V (C)
+7 G = G - V (C)
+8 delete all isolated vertices from G
+9 end while
+10 //Phase (2)
+11 apply the Nemhauser-Trotter-algorithm to G yielding a partition V1, V2, V3
+12 M = M [ V2
+13 G0 = G - (V1 [ V2)
+14 //Phase (3)
+15 apply the algorithm A1 to G0, which computes an independent set I ` V (G0) for G0
+16 M 0 = V (G0) - I
+17 M = M [ M 0
+18 return Vertex-Cover M
+19 end function
+
+10
+
+Zum Verständnis des Algorithmus muss man wissen was der Nemhauser-Trotter-Algorithmus,
+der in Zeile 11 benutzt wird, berechnet. Er ermittelt, mit der Laufzeit O(pn * m), eine Partitionierung der Knoten mit den Eigenschaften:
+
+a) V2 ist ein minimales Vertex-Cover für den Graph, der aus V1 [ V2 hervorgeht,
+b) es gibt keine Kanten {u, v} mit u 2 V1 und v 2 V3,
+
+c) sei C* das minimale Vertex-Cover des Graphen G0, das sich aus den Knoten der Menge
+
+V3 ergibt, dann gilt: |C*| >= 12 |V3|
+
+Grundlegend wird beim Nemhauser-Trotter-Algorithmus ein minimales Vertex-Cover in einem vorher konstruierten bipartiten Graphen bestimmt. Dabei wird automatisch die Partitionierung vorgenommen. Minimale Vertex-Cover in bipartiten Graphen zu finden, kann durch
+Matching-Algorithmen für kardinalsmaximale Matching realisiert werden. Für den Algorithmus MonienSpeckenmeyer ist ausserdem der benannte Algorithmus A1 wichtig. Er bestimmt
+ein Independent Set I ` V in Laufzeit O(m * n) und ist ausschlaggebend für die Laufzeit
+des gesamten Algorithmus. Dabei ist ein Independet Set eine Menge von Knoten eines Graphens, zwischen denen es keine Kanten gibt. Auf den Nachweiss der Korrektheit und des
+Approximationsfaktors wird in dieser Arbeit verzichtet, da der Algorithmus auf mehreren
+Teilalgorithmen, die für sich betrachtet nicht trivial sind, aufbaut.
+
+3.1.2 k-Vertex-Cover-Problem
+In diesem Abschnitt werden Algorithmen für das k-Vertex-Cover-Problem beschrieben. Sie
+können auch benutzt werden um Lösungen für das im vorhergehenden Abschnitt 3.1.1 beschriebene minimale VCP zu finden, in dem von k = 1, ..., n der k-Vertex-Cover Algorithmus
+angewendet wird. Falls der k-Vertex-Cover Algorithmus nun ein Vertex-Cover bestimmen
+kann, so wurde ein minimales Vertex-Cover gefunden. Algorithmen für das k-Vertex-Cover
+Problem erhalten als Eingabe den Graphen G = (V, E) und zusätzlich die Grösse k des zu
+ermittelnden Vertex-Covers.
+
+Buss
+Ein bekannter Algorithmus für das kVCP ist der unter anderen in [BaFR98] beschriebene
+Algorithmus von Buss.
+
+1 function Buss(Graph G = (V, E) , k)
+2 C = ;
+3 K = {v 2 V | grad(v) >= k} // get all vertices with grad(v) >= k
+4 if |K| > k then
+5 // there is no vertex-cover of size k
+6 return ; and exit
+7 end if
+8 C = K
+9 V = V - K
+10 remove all edges incident with nodes from K
+11 k0 = k - b
+12 remove any resulting isolated vertices in G
+13 if |E| > k * k0 then
+14 // there is no vertex-cover of size k
+15 return ; and exit
+16 end if
+17 if resulting graph has a vertex cover of size k0 (test with brute-force) then
+
+11
+
+18 return K and exit
+19 else
+20 return ; and exit
+21 end if
+22 end function
+
+Grundlegend bedient sich der Algorithmus der Technik der Reduktion, denn es wird eine
+Transformation des Problems in ein anderes Problem, dessen Problemgrösse durch k beschränkt ist, durchgeführt. Der Algorithmus benutzt die Beobachtung, dass jeder Knoten
+v eines Vertex-Covers der Grösse k mindestens den grad(v) >= k besitzen muss. Da in der
+Zeile 17 die Brute-Force-Methode eingesetzt wird um ein Vertex-Cover in einem veränderten Graphen zu finden, folgt unmittelbar, dass der Algorithmus exponentielle Laufzeit haben
+muss. In der genauen Analyse wird gezeigt, dass sich eine Laufzeit von O(kn + 2k * k2k+2)
+ergibt.
+
+In [BaFR98] werden auch noch weitere Algorithmen zum Lösen des k-Vertex-Cover-Problems
+beschrieben, deren Laufzeiten aber auch exponentiell sind und sich nur gering unterscheiden.
+
+3.1.3 Gewichtetes Vertex-Cover
+Eine interessantere Problemvariante des Vertex-Cover-Problems ist das gewichtete VertexCover-Problem. Jeder Knoten erhält dazu ein Gewicht und es soll ein Vertex-Cover mit minimalem Gesamtgewicht gefunden werden. Jeder der Algorithmen erhält als Eingabe den
+gewichteten Graphen G = (V, E, wv ).
+
+Bar-Yehuda Even
+Zuerst wird der Faktor-2-Approximationsalgorithmus von Bar-Yehuda und Even für das gVCP betrachtet. In [BYEv81] wird er als Algorithmus zum Lösen des Set-Cover-Problems
+beschrieben, aber er kann auch im Spezialfall eines gewichteten Vertex-Covers eingesetzt werden (vergleiche [BYEv85, Seite 34]) und liefert gute Ergebnisse.
+
+1 function BarYehudaEven(Graph G = (V, E, wv))
+2 for e 2 E do
+3 d = min{wv(u) | u 2 E}
+4 for u 2 e do
+5 wv(u) = wv(u) - d
+6 // Note: wv(u) always >= 0
+7 end for
+8 end for
+9 return C = {u | wv(u) = 0}
+10 end function
+
+Das Grundkonzept des Algorithmus ist eine iterative Gewichtsreduktion der Knoten des Graphens. Es ist leicht erkennbar, dass sich eine Laufzeit von O(m) ergibt, denn die innere Schleife
+in Zeile 4 ist für Graphen in zwei Schritten ausgeführt. Nicht so offensichtlich ist zu erkennen,
+dass die Menge C, die in Zeile 9 berechnet wird, ein Vertex-Cover ist und zusätzlich die Eigenschaft P
+
+c2C w
+
+v(c) <= 2 * P
+
+c2C* w
+
+v(c) erfüllt, wobei C* ein optimales gewichtetes Vertex-Cover
+
+sei. In [BYEv85, Seite 31ff] wird durch mehrere Schritte ein Beweis angegeben. Grundlegend
+baut der Beweis auf folgender überlegung auf: Sei W (X, wv) = P
+
+x2X w
+
+v(x) und w, w1, w2 verschiedene Gewichtsfunktionen, die w(v) >= w1(v) + w2(v) erfüllen. So folgt für die optimalen
+gewichteten Vertex-Cover C*, C*1 und C*2 bezüglich der Gewichtsfunktionen w, w1, w2 in G :
+W (C*, wv) >= W (C*, w1) + W (C*, w2).
+
+12
+
+Halperin
+Ein weiterer Approximationsalgorithmus zum Lösen des gewichteten Vertex-Cover-Problems
+ist der von Halperin in [Halp99] beschriebene. Der Algorithmus baut auf einer veränderten
+Relaxation des Optimierungsproblems auf:
+
+F (~vi) = P
+
+i2V w
+
+v(i) * 1+v0*vi2 ! min
+
+vi 2 Rn, ||vi|| = 1, 8i 2 V
+(vj - v0) * (vi - v0) = 0, 8(i, j) 2 E
+
+(3)
+
+1 function Halperin(Graph G = (V, E, wv))
+2 solve relaxation (3)
+3 S1 = {i | v0 * vi >= x}
+4 S2 = {i | v0 * vi <= x}
+5 find a large independent set I in S2:
+6 Choose an n-dimensional random vector r, and let be I0 = {i 2 S2 | vi * r >= c}
+7 remove vertices from I0 which are non isolated in the subgraph induced by I0
+8 the remaining vertices form an independent set I
+9 return S1 [ (S2 \ I)
+10 end function
+
+Für den Algorithmus von Halperin sind zusätzlich noch die Konstanten x und c erforderlich.
+Sei \Delta  = maxv2V {grad(v)} der maximale Grad des Graphens, so muss x mit x = `( ln ln \Delta ln \Delta  )
+
+und c = q 2x1-x * ln \Delta  gewählt werden, um eine Approximationsrate von 2 - 2x + o(x) zu
+erhalten. Die Laufzeit ist hauptsächlich durch das Lösen der Relaxation bestimmt und hängt
+vom verwendeten Verfahren ab. Benutzt man den Algorithmus von Khachian/Karmarkar, so
+ergibt sich polynomielle Laufzeit.
+
+3.1.4 Partielles Vertex-Cover
+In diesem Abschnitt sollen Algorithmen zum Lösen des partiellen Vertex-Cover-Problems
+vorgestellt werden. Die jeweiligen Algorithmen erhalten als Eingabe den Graphen G = (V, E)
+und die ganzen Zahlen t und k. Es soll ein partielles Vertex-Cover der Grösse <= k gefunden
+werden, welches mindestens t Kanten überdeckt.
+
+Kneis et al - deterministisch
+Zuerst soll der deterministische Algorithmus, der in [KnLR08] beschrieben wird, betrachtet
+werden. Er testet ob ein partielles Vertex-Cover im Graphen G mit den Parametern t und k
+enthalten ist.
+
+1 function KneisDet(Graph G = (V, E), t, k)
+2 select a node v of maximum degree d
+3 N (v) = {v1, ..., vd} and deg(v1) >= ... >= deg(vd)
+4 if deg(v) <= 3 then
+5 apply branching rules for graphs of maximum degree three
+6 else
+7 for i = 1, ..., d - 1 do
+8 if i >= deg(vi) then
+9 return No
+10 else
+
+13
+
+11 if i < d - 1 ^ KneisDet(G - v, k - 1, t - d) then
+12 return Yes
+13 else
+14 return KneisDet(G - vd-1, vd, k - 2, t - deg(vd-1) - deg(vd))
+15 end if
+16 end if
+17 end for
+18 end if
+19 end function
+
+Aber jeder Knoten v, der den Test in Zeile 11 erfolgreich besteht, gehört zu dem partiellen
+(t, k)-Vertex-Cover. Demzufolge kann während des Tests eine Lösung konstruiert werden. Als
+Laufzeit wird O*(1.26t) angegeben.
+
+Kneis et al - randomisiert
+Weiterhin wird in [KnLR08] noch ein randomisierter Algorithmus (KneisRand) mit einseitigem Fehler beschrieben, der eine Laufzeit von O*(1.2993t) aufweist. Grundsätzlich wählt
+er zufällig einen Knoten und testet ob er zu einem (t, k)-Vertex-Cover gehören kann. Die
+Laufzeitschranke entsteht dabei durch Derandomisierung.
+
+Kneis beschreibt auch noch in [KnLR08] einen Algorithmus zum Lösen des pVCPs in Graphen
+mit maximalen Knotengrad von drei, der in dieser Arbeit nicht betrachtet werden soll, da die
+Einschränkungen zu stark sind. Er weist eine Laufzeit von O*(1.26t) auf.
+
+Mestre
+Auch für das partielle Vertex-Cover-Problem gibt es Approximationsalgorithmen. In [Mest05]
+findet sich ein Algorithmus mit einem Genauigkeitsfaktor von 2 und Laufzeit O(n * log n + m).
+Der Algorithmus von Mestre bedient sich dem Konzept der Primal-Dual-Approximation, das
+heisst er benutzt primale und duale Optimierungsproblem zum Lösen des partiellen VertexCover-Problems. Interativ wird sich der Lösung genähert. In jeder Iteration findet dabei eine
+sogenannter "pruning-step" und ein "dual-update-step" statt. Im "pruning-step" wird überprüft ob ein neuer Knoten v eine zulässige Lösung des primalen Optimierungsproblems ist,
+falls der Fall eintritt wird der Knoten in die Lösung aufgenommen und für weitere Betrachtungen gesperrt. Wenn die aktuelle Lösung bereits t Kanten überdeckt beendet der Algorithmus.
+Falls noch keine Lösung gefunden wurde, folgt der "dual-update-step" Schritt. Dort wird ein
+Knoten v bestimmt, der am Rand des dualen Optimierungsproblems liegt. Der Vorgang wird
+wiederholt bis eine Lösung gefunden wurde.
+
+3.1.5 Exaktes partielles Vertex-Cover
+Beim exakten partiellen Vertex-Cover soll ein partielles Vertex-Cover mit Grösse <= k, welches
+genau t Kanten überdeckt gefunden werden. Kneist beschreibt in [KnLR08] auch für diese
+Problemvariante einen Algorithmus.
+
+1 function KneisExact(Graph G = (V, E), t, k)
+2 choose random orientation for each edge {u, v}:
+3 v ! u (to u),
+4 v  u (to v) or
+5 v - u (undirected)
+6 compute all inner components CP
+7 for comp 2 CP do
+8 if comp has <= k nodes and covers t edges then
+
+14
+
+9 return comp is (t, k)-vertex-cover
+10 end if
+11 end for
+12 end function
+
+Der Algorithmus KneisExact bedient sich dem Konzept der zufälligen Orientierung von Kanten. Als innerer Knoten v wird ein Knoten bezeichnet, dessen inzidente Kanten entweder
+ungerichtete oder in Richtung v führen. Eine innere Komponente U ist eine minimale Menge
+von inneren Knoten, so dass u  v für jede Kante {u, v} 2 E mit u 2 U und v /2 U gilt.
+Die Erfolgswahrscheinlichkeit ist nur abhängig von der zufälligen Wahl der Richtungen der
+t Kanten des Vertex-Covers, also >= 3-t. Durch Derandomisierung erhält man somit einen
+Algorithmus mit Laufzeit von O*(3t) und konstanter Fehlerwahrscheinlichkeit.
+
+3.2 Set-Cover
+Nachdem unterschiedliche Algorithmen für die Vertex-Cover-Probleme betrachtet wurden,
+sollen nun für das Set-Cover-Problem Lösungen betrachtet werden. Zuerst wird das minimale
+und dann das gewichtete Set-Cover-Problem besprochen.
+
+3.2.1 Minimales Set-Cover-Problem
+Ziel des minimalem Set-Cover-Problems ist es, ein Set-Cover minimaler Grösse zu finden. Als
+Eingabe bekommen die Algorithmen das Universum U und die Menge der Teilmengen S.
+
+Johnson
+Der Algorithmus von Johnson berechnet mit einer Genauigkeit von ln k ein minimales SetCover [John74], wobei k = maxV 2S {|V |} <= m ist.
+
+1 function Johnson(subsets S = {V1, ..., Vn} , universe U )
+2 Z = ;
+3 uncovered = U
+4 for i = 1, ..., n do
+5 set(i) = Vi
+6 end for
+7 while uncovered != ; do
+8 choose j, with j <= n ^ |set(j)| ! max
+9 Z = Z [ j
+10 uncovered = uncovered - set(j)
+11 for i = 1, ..., n do
+12 set(i) = set(i) - set(j)
+13 end for
+14 end while
+15 return Z
+16 end function
+
+In jedem Schritt des Algorithmus wird die grösste Teilmenge Vi zum Set-Cover hinzugefügt.
+Anschliessend werden überdeckte Elemente aus allen Teilmengen Vi entfernt. Der Vorgang wird
+solange wiederholt bis alle Elemente aus U überdeckt werden. Der von Johnson beschriebene
+Algorithmus läuft in polynomieller Zeit.
+
+15
+
+3.2.2 Gewichtetes Set-Cover Problem
+Nun folgen Algorithmen für das gewichtete Set-Cover-Problem. Sie erhalten als Eingabe das
+Universum U , die Menge der Teilmengen S und die Gewichtsfunktion c.
+
+Bar-Yehuda Even SC
+Der in Abschnitt 3.1.3 eingeführte Algorithmus von Bar-Yehuda Even zum Lösen des gewichteten Vertex-Cover-Problems kann analog auch für Hypergraphen angewandt werden. Somit
+kann ohne Veränderung auch das gewichtete Set-Cover-Problem gelöst werden. Dadurch, dass
+Kanten eines Hypergraphen aus mehr als zwei Knoten bestehen können, ergibt sich eine veränderte Laufzeit von O( P
+
+i2Z |V
+
+i|) und einen Genauigkeitsfaktor von f mit f = maxu2U {|{i | u 2 Vi}|-- -z ""
+
+=F }( F bestimmt die Anzahl an Teilmengen V
+i die u enthalten).
+
+Young
+Young beschreibt in [Youn] einen greedy Approximationsalgorithmus für das gewichtete SetCover Problem mit einer Approxmationsrate von ln n - ln ln n + O(1). Der Algorithmus ist
+eine Erweiterung vom Johnson-Stein Algorithmus und unterscheidet sich nur geringfügig.
+
+1 function Young(subsets S = {V1, ..., Vn} ,universe U (with m elements), weights c)
+2 Z = ;
+3 // Note f (X) = | S
+
+i2X V
+
+i|
+
+4 while f (Z) != m do
+5 choose j, with price c(Vj)f(Z[j)-f(Z) ! min
+6 Z = Z [ j
+7 end while
+8 return Z
+9 end function
+
+Es wird ein Set-Cover konstruiert durch Hinzufügen einer der Mengen Vi, die das Gewicht
+pro Anzahl der Elemente, die noch nicht überdeckt sind, minimiert. Der Algorithmus läuft in
+polynomieller Zeit mit einer Genauigkeit von ln m.
+
+Abschliessend sei noch erwähnt, dass in [CyKW09] mehrere exponentielle Approximationsalgorithmen für das gewichtete Set-Cover-Problem beschrieben werden, welche nicht angesprochen
+wurden, weil die Laufzeiten zu schlecht sind.
+
+16
+
+4 Auswertung
+Vertex-Cover-Problem
+Algorithmus Laufzeit Art* Genauigkeit** Code***
+
+minimales Vertex-Cover-Problem
+Naiver VC O(2nm) BF
+Cormen O(n + m) AP 2
+Monien-Speckenmeyer O(m * n) AP 2 - 1k+1
+
+k-Vertex-Cover-Problem
+Buss O(kn + 2k * k2k+2) BF
+
+gewichtetes Vertex-Cover-Problem
+Bar-Yehuda Even O(m) AP 2
+Halperin polyomiell AP 2 - ffl
+
+partielles Vertex-Cover-Problem
+KneisDet O*(1.396t) D
+KneisRand O*(1.2993t) R
+Mestre O(n * log n + m) AP 2
+
+exaktes partielles Vertex-Cover-Problem
+KneisExact O*(3t) R
+
+Set-Cover-Problem
+Algorithmus Laufzeit Art* Genauigkeit** Code***
+
+minimales Set-Cover-Problem
+Johnson polyomiell AP log m
+
+gewichtetes Set-Cover-Problem
+Bar-Yehuda Even O( P
+
+i2Z |V
+
+i|) AP maxu2U {|{i | u 2 Vi}|}
+
+Young polynomiell AP ln m
+
+* Art: BF = Brute-Force, AP = Approximation, R = randomisiert, D = deterministisch
+** Genauigkeit: Approximationsfaktor des Algorithmus
+
+*** Code(komplexität): Algorithmus kann = gut, = mittel, = schlecht umgesetzt werden
+
+Erkennbar beim Vergleich der Vertex-Cover und Set-Cover-Algorithmen ist, dass die SetCover-Algorithmen meist eine höhere Laufzeit oder einen höheren Approximationsfaktor aufweisen. Begründet wird der Fakt durch den bereits genannten Zusammenhang, dass das SetCover-Problem eine Verallgemeinerung des Vertex-Cover-Problems darstellt. Einzig der Algorithmus von Bar-Yehuda Even kann in beiden Problemfällen angewendet werden. Zum Planen
+von Angriffen eignet sich eher Algorithmen der Vertex-Cover-Varianten. Werden die gewichteten und ungewichteten Problemvarianten verglichen, ist auffällig, dass sie sich sehr ähnlich
+sind und daher beide gut geeignet sind. Auffällig sind ausserdem die exponentiellen Laufzeiten bei einigen Algorithmen, das begründet sich auf der NP-Vollständigkeit der genannten
+
+17
+
+Probleme und dadurch, dass die Algorithmen optimale Lösungen ermitteln. Allgemein kann
+behauptet werden, dass die aufgeführten Approximationsalgorithmen grundsätzlich in polynomieller (maximal mit O(x2)) Zeit laufen. Die Approximationsalgorithmen des Vertex-Covers
+bieten maximal den Approximationsfaktor von 2, das heisst, die berechneten Lösungen sind
+maximal doppelt so gross, wie die optimalen. Es liegt in der Natur der Approximationsalgorithmen, dass sie bessere Ergebnisse liefern als exakte Algorithmen.
+
+Auch wenn die partiellen Vertex-Cover-Problemvarianten durchaus interessant wirken, stellt
+sich bei der Betrachtung der Algorithmen heraus, dass sie auch bei Approximationen weniger
+gut umsetzbar sind.
+
+Die "Codekomplexität" der Set-Cover Algorithmen wurde mit gut bewertet, aber trotzdem
+
+überwiegt der Genauigkeitsnachteil.
+
+Anmerkend sei noch erwähnt, dass die Algorithmen deren "Codekomplexität" mit schlecht
+bewertet wurden, meist Lösungen durch komplexen Optimierungsansätzen oder mit komplizierte Verfahren ermitteln. Im Rahmen dieses Hauptseminars konnten nicht alle Grundlagen
+zu solchen Verfahren besprochen werden, da sie ganze Bücher füllen.
+
+Abschliessend soll noch genannt werden, dass in diesem Hauptseminar auf Algorithmen die
+auf neuronale Netze (siehe [CTXL+04]), evolutionäre beziehungsweise genetische Algorithmen
+(siehe [OlHY07a], [OlHY09], [OlHY07b]) oder Auktionen ([KeSM10]) aufbauen nicht besprochen wurden, weil die genannten Techniken meist keine genauen Aussagen über Laufzeit und
+Genauigkeit bieten. Weiterhin gibt es noch weitere nicht aufgeführte Problemvarianten, zum
+Beispiel das k-Set-Cover-Problem oder partielle Set-Cover-Varianten.
+
+5 Fazit
+Das Vertex-Cover und Set-Cover-Problem sind klassische und oft diskutierte Probleme in der
+Informatik. Bei weitem konnte nur ein kleiner Einstieg in die Problematik geboten werden.
+Dennoch wurden einige Algorithmen aufgezeigt, die sich zum Planen von Angriffen auf Netzwerke eignen. Es ist abhängig von den gewählten Rahmenbedingungen, welcher Algorithmus
+am sinnvollsten ist. Besonders günstig scheinen gewichtete und ungewichtete Vertex-CoverAlgorithmen zu sein. Es ist auch denkbar eine Kombination von mehreren Algorithmen zu
+Verwenden, genauer gesagt könnten zwei Approximationsalgorithmen ausgeführt werden und
+verwendet das kleinere Cover.
+
+Todo list
+wird noch überarbeitet . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+
+18
+
+Literatur
+[AuKS09] P. Austrin, S. Khot und M. Safra. Inapproximability of Vertex Cover and
+
+Independent Set in Bounded Degree Graphs. In Computational Complexity,
+2009. CCC '09. 24th Annual IEEE Conference on, july 2009, S. 74 -80.
+
+[AvIm] David Avis und Tomokazu Imamura. A list heuristic for vertex cover.
+
+Operations Research Letters Band 35, S. 2007.
+
+[BaFR98] R. Balasubramanian, Michael R. Fellows und Venkatesh Raman. An improved
+
+fixed-parameter algorithm for vertex cover. Information Processing Letters
+65(3), 1998, S. 163 - 168.
+
+[BuGo91] J. Buss und J. Goldsmith. Nondeterminism within P. STACS 91, 1991,
+
+S. 348-359.
+
+[BYEv81] R. Bar-Yehuda und S. Even. A linear-time approximation algorithm for the
+
+weighted vertex cover problem. Journal of Algorithms 2(2), 1981, S. 198-203.
+
+[BYEv85] R. Bar-Yehuda und S. Even. A local-ratio theorem for approximating the
+
+weighted vertex cover problem. Annals of Discrete Mathematics Band 25, 1985,
+S. 27-46.
+
+[CaFT98] Alberto Caprara, Matteo Fischetti und Paolo Toth. Algorithms for the Set
+
+Covering Problem. Annals of Operations Research Band 98, 1998, S. 2000.
+
+[CLRS09] Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest und Clifford Stein.
+
+Introduction to algorithms. The MIT press. 3. Auflage, 2009.
+
+[CTXL+04] Xiaoming Chen, Zheng Tang, Xinshun Xu, Songsong Li, Guangpu Xia, Ziliang
+
+Zong und Jiahai Wang. An Hopfield network learning for minimum vertex
+cover problem. In SICE 2004 Annual Conference, Band 2, aug. 2004, S. 1150
+-1155 vol. 2.
+
+[CyKW09] M. Cygan, L. Kowalik und M. Wykurz. Exponential-time approximation of
+
+weighted set cover. Information Processing Letters 109(16), 2009, S. 957-961.
+
+[DiSa05] Irit Dinur und Samuel Safra. On the hardness of approximating minimum
+
+vertex cover, 2005.
+
+[DoDr] W. Domschke und A. Drexl. Einführung in Operations Research, Band 7.
+[GHKO03] Sudipto Guha, Refael Hassin, Samir Khuller und Einat Or. Capacitated vertex
+
+covering. JOURNAL OF ALGORITHMS Band 48, 2003, S. 257-270.
+
+[Gold10] O. Goldreich. P, Np, and Np-completeness: The Basics of Computational
+
+Complexity. Cambridge University Press. 2010.
+
+[GuNW06] Jiong Guo, Rolf Niedermeier und Sebastian Wernicke. Parameterized
+
+Complexity of Vertex Cover Variants, 2006.
+
+[Halp99] Eran Halperin. Improved Approximation Algorithms for the Vertex Cover
+
+Problem in Graphs and Hypergraphs, 1999.
+
+[John74] D.S. Johnson. Approximation algorithms for combinatorial problems*. Journal
+
+of computer and system sciences 9(3), 1974, S. 256-278.
+
+19
+
+[KeSM10] D. Kempe, M. Salek und C. Moore. Frugal and Truthful Auctions for Vertex
+
+Covers, Flows and Cuts. In Foundations of Computer Science (FOCS), 2010
+51st Annual IEEE Symposium on, oct. 2010, S. 745 -754.
+
+[KnLR08] Joachim Kneis, Alexander Langer und Peter Rossmanith. Improved Upper
+
+Bounds for Partial Vertex Cover, 2008.
+
+[Mest05] J. Mestre. A primal-dual approximation algorithm for partial vertex cover:
+
+Making educated guesses. Approximation, Randomization and Combinatorial
+Optimization. Algorithms and Techniques, 2005, S. 610-610.
+
+[MoAA11] S.V.R. Mohan, B.D. Acharya und M. Acharya. A Sufficiency Condition for
+
+Graphs to Admit Greedy Algorithm in Solving the Minimum Sum Vertex
+Cover Problem. In Process Automation, Control and Computing (PACC), 2011
+International Conference on, july 2011, S. 1 -5.
+
+[MoSp85] B. Monien und E. Speckenmeyer. Ramsey numbers and an approximation
+
+algorithm for the vertex cover problem. Acta Informatica 22(1), 1985,
+S. 115-123.
+
+[OlHY07a] P. S. Oliveto, J. He und X. Yao. Evolutionary Algorithms and the Vertex
+
+Cover Problem, 2007.
+
+[OlHY07b] P.S. Oliveto, J. He und X. Yao. Evolutionary algorithms and the Vertex Cover
+
+problem. In Evolutionary Computation, 2007. CEC 2007. IEEE Congress on,
+sept. 2007, S. 1870 -1877.
+
+[OlHY09] P.S. Oliveto, Jun He und Xin Yao. Analysis of the -EA for Finding
+
+Approximate Solutions to Vertex Cover Problems. Evolutionary Computation,
+IEEE Transactions on 13(5), oct. 2009, S. 1006 -1029.
+
+[PrKu92] I. Pramanick und J.G. Kuhl. A practical method for computing vertex covers
+
+for large graphs. In Circuits and Systems, 1992. ISCAS '92. Proceedings., 1992
+IEEE International Symposium on, Band 4, may 1992, S. 1859 -1862 vol.1.
+
+[Tail09] P.J. Taillon. Parameterized VERTEX COVER in Graphs of Small Degree. In
+
+Computer Science and Information Engineering, 2009 WRI World Congress
+on, Band 1, 31 2009-april 2 2009, S. 728 -732.
+
+[WaKO91] T. Watanabe, S. Kajita und K. Onaga. Vertex covers and connected vertex
+
+covers in 3-connected graphs. In Circuits and Systems, 1991., IEEE
+International Sympoisum on, jun 1991, S. 1017 -1020 vol.2.
+
+[XU] Ke XU. Benchmarks with Hidden Optimum Solutions for Graph Problems.
+
+http://www.nlsde.buaa.edu.cn/~kexu/benchmarks/graph-benchmarks.htm.
+Stand: 29.06.2012.
+
+[Youn] Neal E. Young. Greedy Set-Cover Algorithms.
+[Zeit] Zeit. ünknowns" hacken Nasa und andere Websites.
+
+http://www.zeit.de/digital/datenschutz/2012-05/unknown-nasa-hack.
+Stand: 21.05.2012.
+
+[ZWLX09] Yongguo Zeng, Dezheng Wang, Wei Liu und Ao Xiong. An approximation
+
+algorithm for weak vertex cover problem in IP network traffic measurement. In
+Network Infrastructure and Digital Content, 2009. IC-NIDC 2009. IEEE
+International Conference on, nov. 2009, S. 182 -186.
+
+20

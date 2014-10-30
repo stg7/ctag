@@ -1,0 +1,126 @@
+{{Infobox Film
+| Bild    = Star trek 4 de.svg
+| DT      = Star Trek IV: Zurück in die Gegenwart
+| OT      = Star Trek IV: The Voyage Home
+| PL      = [[Vereinigte Staaten|USA]]
+| PJ      = [[Filmjahr 1986|1986]]
+| LEN     = 119
+| OS      = [[Englische Sprache|Englisch]]
+| FSK     = 12
+| REG     = [[Leonard Nimoy]]
+| DRB     = [[Steve Meerson]], [[Peter Krikes]], [[Harve Bennett]], [[Nicholas Meyer]], [[Leonard Nimoy]]
+| PRO     = Harve Bennett
+| MUSIK   = [[Leonard Rosenman]]
+| KAMERA  = [[Don Peterman]], ASC
+| SCHNITT = [[Peter E. Berger]]
+| DS      = 
+* [[William Shatner]]: ''Admiral'' James T. Kirk
+* [[Leonard Nimoy]]: ''Captain'' Spock
+* [[DeForest Kelley]]: ''Dr.'' Leonard „Pille“ McCoy
+* [[James Doohan]]: ''Captain'' Montgomery „Scotty“ Scott
+* [[George Takei]]: ''Commander'' Hikaru Sulu
+* [[Walter Koenig]]: ''Commander'' Pavel Chekov
+* [[Nichelle Nichols]]: ''Commander'' Nyota Uhura
+* [[Mark Lenard]]: ''Botschafter'' Sarek
+* [[Robin Curtis]]: ''Lieutenant'' Saavik
+* [[Jane Wyatt]]: Amanda Grayson
+* [[Majel Barrett]]: ''Dr.'' Christine Chapel
+* [[Robert Ellenstein]]: ''Präsident des Föderationsrates''
+* [[John Schuck]]: ''klingonischer Botschafter''
+* [[Brock Peters]]: ''Admiral'' Cartwright
+* [[Catherine Hicks]]: ''Dr.'' Gillian Taylor
+}}
+
+'''Star Trek IV: Zurück in die Gegenwart''' ist der vierte [[Star Trek|Star-Trek]]-Kinofilm und basiert auf der Fernsehserie [[Raumschiff Enterprise]].
+
+Der Film schließt direkt an den Film ''[[Star Trek III: Auf der Suche nach Mr. Spock]]'' an, in dem die [[Enterprise (Raumschiff)|USS Enterprise]] zerstört wurde. Das von der Enterprise-Crew verwendete Raumschiff ist daher ein in Star Trek III gekaperter [[Völker im Star-Trek-Universum|klingonischer]] Bird of Prey, der auf den Namen ''Bounty'' getauft wurde.
+
+Der Film handelt von einer Zeitreise ins Jahr 1986, also in die Gegenwart der Filmentstehung. Er gehört zu den komödiantischsten Filmen dieser Reihe mit vielen Seitenhieben auf die Welt des späten 20. Jahrhunderts und die Lebensweise der 1980er Jahre.
+
+Die Regie führte [[Leonard Nimoy]], der Darsteller von Mr. Spock.
+
+== Handlung ==
+
+Nach der Regeneration von Mr. Spock auf dem Planeten Vulkan beschließen Admiral James T. Kirk und seine Crew, zur Erde zurückzukehren. Dort wollen sie sich dafür verantworten, dass sie ohne Genehmigung mit der Enterprise zum Planeten Genesis geflogen sind (siehe [[Star Trek III: Auf der Suche nach Mr. Spock|Teil III]]). Spock schließt sich seinen Kameraden an. Da die Enterprise zerstört wurde, treten sie die Rückkehr mit dem von ihnen gekaperten klingonischen Raumschiff an. 
+
+Die Erde wird jedoch mittlerweile von einer unbekannten Sonde bedroht, die rätselhafte, hochenergetische Signale aussendet, die sämtliche Energiesysteme lahmlegen und die Ozeane verdampfen; es bildet sich eine dichte Wolkenschicht und in Folge verheerende Unwetter. Das Ende der Menschheit scheint unausweichlich. Der Präsident der Föderation sendet eine letzte Nachricht ins All, in der er vor einer Annäherung an die Erde warnt.
+
+Kirk und seine Crew empfangen diese Warnung. Spock fällt der Umstand auf, dass die Signale der Sonde auf die Ozeane gerichtet und somit nicht notwendigerweise für die Menschen bestimmt sind, und findet heraus, dass sie sich unter Wasser wie Gesänge von [[Buckelwal]]en anhören müssen. Offenbar erwartet die Sonde eine Antwort, doch die Wale wurden auf der Erde bereits im [[21. Jahrhundert|21.&amp;nbsp;Jahrhundert]] ausgerottet. Darauf beschließt Kirk, einen [[Zeitreise|Zeitsprung]] in das [[20. Jahrhundert|20.&amp;nbsp;Jahrhundert]] zu unternehmen und von dort Wale ins 23. Jahrhundert zu holen, damit diese der Sonde antworten.
+
+Die Mannschaft landet im [[San Francisco]] des Jahres 1986. In einem Aquarium finden sie ein Buckelwalpärchen namens George und Gracy, das für ihre Zwecke bestens geeignet scheint. Allerdings hat der Zeitsprung die Energieversorgung ihres Raumschiffes stark beeinträchtigt, so dass sie Strahlung aus dem Atomreaktor eines Kriegsschiffes (bezeichnenderweise des Flugzeugträgers ''[[USS Enterprise (CVN-65)|USS Enterprise]]'') abzapfen müssen, um das Reaktormaterial ihres Schiffes wieder zu stabilisieren.
+
+Da ihnen die gesellschaftlichen und politischen Verhältnisse der 80er Jahre ziemlich unbekannt sind, kommt es zu zahlreichen komischen, aber auch einigen brenzligen Situationen. Kirk und Spock begegnen der Biologin Gillian Taylor, die ihren beiden Walen sehr zugetan ist, und ihnen gelingt es nur mit sehr viel Mühe und nach einigen Patzern, ihr Vertrauen zu gewinnen. Während das (wegen seiner Tarnvorrichtung unsichtbare) Raumschiff auf den Waltransport vorbereitet wird, werden die Buckelwale überraschend aus ihrem Bassin ins offene Meer entlassen. Mit Hilfe von Gillian gelingt es der Crew jedoch, die Tiere zu orten und an Bord zu beamen, bevor sie zusammen in die Zukunft zurückreisen.
+
+Zurück im 23. Jahrhundert beantworten die Wale das Signal der Sonde, die daraufhin abdreht. Anschließend muss sich die Crew der Enterprise für die Kaperung der auf Genesis gesprengten Enterprise verantworten. Zur Strafe wird Admiral Kirk zum Captain degradiert und ihm als Resultat das Kommando über ein neues Schiff übertragen: die ''Enterprise [[Enterprise (Raumschiff)|NCC-1701-A]]''.
+
+== Trivia ==
+
+* Der Flugzeugträger im Film, ''USS Enterprise'', wurde durch die ''[[USS Ranger (CVA-61)|USS Ranger]]'' gedoubelt, da die [[United States Navy|US Navy]] keine Filmaufnahmen in Reaktorräumen erlaubt und die ''Enterprise'' zum Zeitpunkt der Dreharbeiten auf See war.
+* Der Film wurde 1987 in den folgenden Kategorien für vier Oscars nominiert: ''Best Cinematography'', ''Best Effects (Sound Effects Editing)'', ''Best Music (Original Score)'', ''Best Sound''.
+* Der Film gewann 1987 einen [[Saturn Award]] für die besten Kostüme.
+* Am Ende des Films wird aus dem Gedicht ''Wale weinen nicht'' von [[D. H. Lawrence]] zitiert.
+* Hauptsächlich wird dieser Star-Trek-Film in [[(T)Raumschiff Surprise – Periode 1]] parodiert. In beiden Fällen müssen Kirk bzw. Kork mit ihren Besatzungen in die Vergangenheit reisen, um die Welt zu retten.
+* Die Szenen im Aquarium von San Francisco wurden im [[Monterey Bay Aquarium]] gedreht.
+
+== Kritiken ==
+{{Zitat|Die formal und inhaltlich durchschnittliche Science-Fiction-Unterhaltung gewinnt im Vergleich zu den eher fantastischen Beiträgen der Serie durch ihr realistisch-ökologisches Thema an Interesse: Schutz der in der Gegenwart tatsächlich von Ausrottung bedrohten Wale.|[[Lexikon des internationalen Films]]|ref=&lt;ref&gt;[http://www.filmevona-z.de/filmsuche.cfm?wert=798&amp;sucheNach=titel Kritik im Lexikon des internationalen Films]&lt;/ref&gt;}}
+
+{{Zitat|Wieder unter der Regie von ‚Mr. Spock‘ Leonard Nimoy gelang diesmal ein spannender Science-Fiction-Film mit Öko-Botschaft und spaßigen Seitenhieben auf unsere Zeit. Nicht nur für Fans der Serie gute Unterhaltung.|[[Prisma (Fernsehzeitschrift)|Prisma Online]]|ref=&lt;ref&gt;[http://www.prisma-online.de/tv/film.html?mid=1986_star_trek_iv_zurueck_in_die_gegenwart Kritik bei Prisma Online]&lt;/ref&gt;}}
+
+{{Zitat|Ein vergnügliches Stück Unterhaltung […], das so vertraute Figuren einsetzt, dass man sie glatt für alte Freunde halten könnte.|[[James Berardinelli]]|ref=&lt;ref&gt;{{Internetquelle
+|autor=[[James Berardinelli]]
+|url=http://www.reelviews.net/php_review_template.php?identifier=403
+|sprache=englisch
+|titel=Star Trek IV: The Voyage Home
+|werk=Reelviews
+|zugriff=2008-08-04
+|kommentar=
+|zitat=and enjoyable sample of entertainment […] utilizing characters so familiar that they feel like old friends.
+}}&lt;/ref&gt;}}
+
+== Weblinks ==
+* {{IMDb Titel|tt0092007|Star Trek IV: Zurück in die Gegenwart}}
+* {{rottentomatoes|1=star_trek_iv_the_voyage_home|2=Star Trek IV: Zurück in die Gegenwart}}
+* {{Memory Alpha|Star_Trek_IV:_Zurück_in_die_Gegenwart|Star Trek IV: Zurück in die Gegenwart}}
+
+== Einzelnachweise ==
+&lt;references/&gt;
+
+{{Navigationsleiste Star Trek}}
+
+{{SORTIERUNG:Star Trek 4 Zuruck In Die Gegenwart}}
+
+[[Kategorie:Filmtitel 1986]]
+[[Kategorie:US-amerikanischer Film]]
+[[Kategorie:Science-Fiction-Film]]
+[[Kategorie:Star Trek|Zuruck In Die Gegenwart]]
+
+{{Link FA|en}}
+{{Link GA|en}}
+
+[[be-x-old:Зорны шлях: Вандраваньне дадому]]
+[[bg:Стар Трек IV: Пътуване към вкъщи]]
+[[ca:Star Trek IV: Missió: Salvar la Terra]]
+[[cs:Star Trek IV: Cesta domů]]
+[[en:Star Trek IV: The Voyage Home]]
+[[es:Star Trek IV: misión: salvar la Tierra]]
+[[et:Star Trek 4: Kodutee]]
+[[fi:Star Trek IV: kotiinpaluu]]
+[[fr:Star Trek 4 : Retour sur Terre]]
+[[he:מסע בין כוכבים 4: השיבה הביתה]]
+[[hu:Star Trek IV: A hazatérés]]
+[[id:Star Trek IV: The Voyage Home]]
+[[it:Rotta verso la Terra]]
+[[ja:スタートレックIV 故郷への長い道]]
+[[nl:Star Trek IV: The Voyage Home]]
+[[no:Star Trek IV - reisen hjem]]
+[[pl:Star Trek IV: Powrót do Domu]]
+[[pt:Star Trek IV: The Voyage Home]]
+[[ro:Star Trek IV: Călătoria acasă]]
+[[ru:Звёздный путь 4: Путешествие домой]]
+[[simple:Star Trek IV: The Voyage Home]]
+[[sk:Star Trek IV: The Voyage Home]]
+[[sl:Zvezdne steze 4: Potovanje domov]]
+[[sv:Star Trek IV - Resan hem]]
+[[uk:Зоряний шлях 4: Подорож додому]]
+[[zh:星际旅行IV：抢救未来]]

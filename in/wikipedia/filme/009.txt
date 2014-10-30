@@ -1,0 +1,330 @@
+{{Infobox Film
+| BILD    = Star wars ep 1 de.svg
+| 2       = Logo der Filmreihe
+| DT      = Star Wars: Episode I – Die dunkle Bedrohung
+| OT      = Star Wars: Episode I – The Phantom Menace
+| PL      = [[Vereinigte Staaten|USA]]
+| PJ      = 1999
+| LEN     = &lt;small&gt;Kinofassung (1999):&lt;/small&gt; 133 Minuten,&lt;br /&gt;&lt;small&gt;Blu-Ray-Fassung (2011):&lt;/small&gt; 136,&lt;br /&gt;&lt;small&gt;3D-Kinofassung (2012):&lt;/small&gt; 136
+| OS      = [[Englische Sprache|Englisch]]
+| FSK     = 6&lt;ref&gt;[http://www.fsk.de/fskonline/PDF/1107/82376aV.pdf Freigabebescheinigung] der FSK&lt;/ref&gt;
+| JMK     = 10 (Originalversion)&lt;br /&gt;JMK 8&lt;ref&gt;[http://www.bmukk.gv.at/schulen/service/jmk/detail.xml?key=16755 Freigabe] der Jugendmedienkommission (JMK), abgerufen am 13. Februar 2012&lt;/ref&gt; (3D-Version)
+| REG     = [[George Lucas]]
+| DRB     = George Lucas
+| PRO     = [[Rick McCallum]]
+| MUSIK   = [[John Williams (Komponist)|John Williams]]
+| KAMERA  = [[David Tattersall]]
+| SCHNITT = [[Ben Burtt]],&lt;br /&gt;[[Paul Martin Smith]]
+| DS      = 
+* [[Liam Neeson]]: [[Figuren aus Star Wars#Qui-Gon Jinn|Qui-Gon Jinn]]
+* [[Ewan McGregor]]: [[Obi-Wan Kenobi]]
+* [[Natalie Portman]]: [[Figuren aus Star Wars#Padmé Amidala|Königin Amidala (Padmé Naberrie)]]
+* [[Jake Lloyd]]: [[Figuren aus Star Wars#Anakin Skywalker/Darth Vader|Anakin Skywalker]]
+* [[Pernilla August]]: [[Figuren aus Star Wars#Shmi Skywalker|Shmi Skywalker]]
+* [[Frank Oz]]: [[Figuren aus Star Wars#Yoda|Yoda]]
+* [[Ian McDiarmid]]: [[Figuren aus Star Wars#Palpatine/Darth Sidious|Senator Palpatine (Darth Sidious)]]
+* [[Ray Park]]/[[Peter Serafinowicz]] (Stimme): [[Figuren aus Star Wars#Darth Maul|Darth Maul]]
+* [[Hugh Quarshie]]: [[Figuren aus Star Wars#Captain Panaka|Captain Panaka]]
+* [[Ahmed Best]]: [[Figuren aus Star Wars#Jar Jar Binks|Jar Jar Binks]]
+* [[Anthony Daniels]]: [[Figuren aus Star Wars#C-3PO|C-3PO]]
+* [[Kenny Baker (Schauspieler)|Kenny Baker]]: [[Figuren aus Star Wars#R2-D2|R2-D2]]
+* [[Terence Stamp]]: Kanzler Valorum
+* [[Brian Blessed]]: [[Figuren aus Star Wars#Boss Nass|Boss Nass]]
+* [[Andrew Secombe]]: [[Figuren aus Star Wars#Watto|Watto]]
+* [[Lewis Macleod]]: [[Figuren aus Star Wars#Sebulba|Sebulba]]
+* [[Silas Carson]]: Vizekönig Nute Gunray, [[Figuren aus Star Wars#Ki-Adi-Mundi|Ki-Adi-Mundi]], Lott Dodd
+* [[Samuel L. Jackson]]: [[Figuren aus Star Wars#Mace Windu|Mace Windu]]
+* [[Keira Knightley]]: Sabé
+}}
+
+[[Datei:Star Wars Logo.svg|miniatur|Logo der Star-Wars-Reihe]]
+'''Star Wars: Episode I – Die dunkle Bedrohung''' ist ein US-amerikanischer [[Science-Fiction]]-Film aus dem Jahr 1999 und der erste Teil der [[Prequel]]-Trilogie, die die Vorgeschichte der berühmten [[Star Wars|Star-Wars]]-Filme (1977–1983) erzählt. Die weiteren Filme sind ''[[Star Wars: Episode II – Angriff der Klonkrieger]]'' (2002) und ''[[Star Wars: Episode III – Die Rache der Sith]]'' (2005).
+
+Ende 2011 erschien der Film in einer leicht geänderten Version erstmals auf [[Blu Ray]] und am 8. Februar 2012 aufbauend auf dieser Version in [[3D]] konvertiert erneut in den deutschen (sowie leicht zeitversetzt den weltweiten) Kinos.
+
+== Handlung ==
+Der abgeschiedene Planet [[Naboo]] wird von der Handelsföderation, einem galaxisweiten Großunternehmen, blockiert. Die Föderation protestiert damit gegen die erhöhten Handelszölle. Insgeheim steht die Führung der Handelsföderation in einem Bündnis mit einem gewissen [[Figuren aus Star Wars#Darth Sidious/Palpatine/Der Imperator|Darth Sidious]], der auf galaktischer Regierungsebene im Verborgenen seine schützende Hand über diese Rechtsbrüche zu halten scheint. Daraufhin entsendet der Kanzler des Galaktischen Senats einen [[Jedi]]-Meister und seinen Schüler ([[Figuren aus Star Wars#Qui-Gon Jinn|Qui-Gon Jinn]] und [[Figuren aus Star Wars#Obi-Wan Kenobi|Obi-Wan Kenobi]]), um in dem Konflikt zu vermitteln. Von Sidious aufgefordert, besetzt die Handelsföderation den Planeten mit ihrer [[Android (Roboter)|Droidenarmee]]. Die beiden Jedi können zusammen mit [[Figuren aus Star Wars#Padmé Amidala|Padmé Amidala]], der Königin des Planeten, fliehen. Da der Hyperraumantrieb ihres Raumschiffs während der Flucht beschädigt worden ist, müssen sie jedoch auf dem abgelegenen Wüstenplaneten [[Orte aus Star Wars#Tatooine|Tatooine]] landen.
+
+Auf Tatooine gelten die Gesetze der Galaktischen Republik nicht und Sklavenhaltung ist an der Tagesordnung. Qui-Gon versucht Ersatzteile für sein Raumschiff zu erwerben, aber der Schrotthändler [[Figuren aus Star Wars#Watto|Watto]], der im Besitz dieser Ersatzteile ist, klärt ihn darüber auf, dass die republikanischen Zahlungsmittel (Galaktische Credits) auf Tatooine wertlos sind.
+
+Während eines plötzlichen Sandsturms finden die Reisenden Unterkunft bei [[Figuren aus Star Wars#Anakin Skywalker/Darth Vader|Anakin Skywalker]], dem neunjährigen Sklaven Wattos, und seiner Mutter. Anakin schlägt dem Jedi vor, dass er in einem Podrennen für ihn starten und so die benötigten Ersatzteile gewinnen könnte. Ein Podrennen ist ein Wettkampf mit bis zu 900 km/h schnellen Kapseln, die von zwei (oder mehr) Antriebseinheiten gezogen werden. Qui-Gon, der die außergewöhnliche Begabung Anakins spürt, geht auf den Vorschlag ein. Er wettet mit Anakins Besitzer Watto um die benötigten Ersatzteile und die Freiheit des Jungen. Anakin Skywalker gewinnt das Rennen und ist damit frei.
+
+Qui-Gon bittet ihn, mit ihm zu kommen, um sich einer Jedi-Ausbildung zu unterziehen. Beim Abflug zum Hauptplaneten der Republik, [[Orte aus Star Wars#Coruscant|Coruscant]], wird Qui-Gon von einem merkwürdigen dunklen Krieger namens Darth Maul, der von seinem Lehrer Darth Sidious entsandt wurde, angegriffen und es gelingt ihm nur knapp zu entkommen.
+
+Auf dem Zentralplaneten angekommen, beginnt Amidala damit, die benötigte politische Unterstützung für ihren Planeten zu sammeln. Als dies an der Zerstrittenheit des Senats zu scheitern droht, folgt sie dem Ratschlag Palpatines, dem [[Senat]]or des Naboo-Systems, den Kanzler abwählen zu lassen und einen durchsetzungsfähigeren einsetzen zu lassen. Es trägt sich zu, dass u.&amp;nbsp;a. Palpatine als Nachfolger für den Kanzler nominiert worden ist. Während ihres Aufenthalts auf Coruscant erfährt Amidala außerdem von einem mit ihr zusammen gereisten Gungan mit dem Namen [[Figuren aus Star Wars#Jar Jar Binks|Jar Jar Binks]], von der großen Streitmacht der Gungans. Daraufhin beschließt sie, nach Naboo zurückzukehren, da sie bemerkt, dass der Senat fast ausschließlich mit korrupten Politikern besetzt ist. Währenddessen stellt Qui-Gon Anakin dem Rat der Jedi vor. Dieser erkennt zwar Anakins außerordentliche Begabung, widerspricht aber der Ausbildung, weil er zu alt sei und schon zuviele negative Gefühle in sich trage. Dafür erhält Qui-Gon den Auftrag, die Königin Naboos weiter zu beschützen, so dass er zusammen mit Obi-Wan und auch Anakin erneut nach Naboo aufbricht.
+
+Auf Naboo angekommen, berät sich Amidala mit dem Anführer der Gunganer, Boss Nass. Trotz der langen Feindschaft zwischen Menschen und Gunganern willigt er ein, Amidala zu helfen, da die Droidenarmee der Handelsföderation die Gungans aus ihrer Hauptstadt vertrieben hat. Der Plan der Königin ist einfach: Während die Gungans einen Ablenkungsangriff auf Theed, die Hauptstadt von Naboo unternehmen, will sie zusammen mit einigen Untergrundkämpfern in den Palast eindringen und den dort regierenden Vizekönig der Handelsföderation, Nute Gunray, gefangen nehmen.
+
+Als die Widerstandskämpfer in der Hauptstadt ankommen, treffen sie den dunklen Kämpfer von Tatooine wieder. Die Jedi trennen sich von den anderen, um es mit ihm aufzunehmen. Amidala und ihre Truppen dringen in den Palast ein, wo sie jedoch gestellt werden. Durch ein Ablenkungsmanöver des Doubles von Amidala gelingt es ihnen schließlich doch, den Vizekönig gefangen zu nehmen. Unterdessen versteckt sich Anakin in einem Raumjäger-Cockpit und löst aus versehen den Autopiloten aus, der ihn in den Weltraum zum Kontrollschiff der Handelsföderation trägt, welches gerade von anderen Raumjägern der Naboo angegriffen wird. Durch Zufall und großes Glück gelingt es ihm, dieses zu zerstören und damit die Droidenarmee zu deaktivieren. Beim gleichzeitig stattfindenden Kampf der beiden Jedi mit dem dunklen Kämpfer stirbt Qui-Gon, doch sein Schüler Obi-Wan entscheidet den Kampf für sich.
+
+Es stellt sich heraus, dass der dunkle Kämpfer ein Sith, ein Mitglied eines Gegenordens der Jedi war, von dem man glaubte, dass er seit 1000 Jahren ausgestorben sei. Da die Sith immer zu zweit agieren, fragen sich [[Figuren aus Star Wars#Yoda|Yoda]] und [[Figuren aus Star Wars#Mace Windu|Mace Windu]], ob der Meister oder der Schüler getötet wurde. Wegen seines Mutes im Kampf gegen den Sith erhält Obi-Wan den Rang des Jedi-Ritters und die Erlaubnis, Anakin Skywalker zu einem Jedi auszubilden. Außerdem erfährt man, dass Palpatine zum neuen Kanzler der Republik gewählt wurde. Mit einer ausgelassenen Parade feiern die Menschen Naboos und die Gungans gemeinsam ihre neugewonnene Freundschaft und den Sieg über die Föderation.
+
+== Filmmusik ==
+Die Filmmusik schrieb der amerikanische Komponist [[John Williams (Komponist)|John Williams]], der auch für die Musik in der Originaltrilogie von [[Star Wars]] verantwortlich war. Er vertonte unter anderem [[Indiana Jones]], [[Harry Potter]] 1–3 und [[Schindlers Liste]].
+
+Die neue Trilogie der Star-Wars-Reihe begann Williams wie gewohnt mit der berühmten Fanfare. Die Themen, die er verwendete, waren fast ausschließlich neue und hatten nichts mit den vorangegangen Kompositionen zu tun, aber einige Motive sind aus der ersten [[Trilogie]] erhalten geblieben, z.&amp;nbsp;B. das Motiv von Darth Sidious oder die Melodie der Macht. Grund dafür war, dass die entscheidenden Charaktere aus den Episoden IV–VI in diesen Filmen nicht auftraten. Doch auch in ''Die dunkle Bedrohung'' komponierte Williams Leitmotive. Das wichtigste ist dabei „Anakin's Theme“. Außerdem schrieb Williams ein Thema für die Droiden, [[Figuren aus Star Wars#Padmé Amidala|Prinzessin Amidala]] und [[Figuren aus Star Wars#Darth Maul|Darth Maul]]. Zum Abschluss des Filmes schrieb der Komponist erneut ein anmutiges, friedliches Thema, was den Frieden symbolisiert und wiederum einen exotischen Hauch besitzt. Traditionsgemäß setzte Williams die Star-Wars-Reihe fort mit dem Hauptthema aus „The Throne Room“.
+
+== Sonstiges ==
+
+* [[George Lucas]] drehte diesen Film erst 16 Jahre nach dem letzten Star-Wars-Film „[[Star Wars: Episode VI - Die Rückkehr der Jedi-Ritter|Die Rückkehr der Jedi-Ritter]]“, da er nun die Möglichkeit sah, seine Ansprüche an die Glaubwürdigkeit seiner Phantasiewelten umsetzen zu können. „Star Wars: Episode I – Die dunkle Bedrohung“ spielte schließlich weltweit über 900 Mio. US-Dollar ein und ist damit einer der erfolgreichsten Filme aller Zeiten.
+* In Episode I treten einige Figuren der Filme von 1977 bis 1983 auf, nämlich die Droiden C-3PO (noch ohne Goldverkleidung) und R2-D2, Jedi-Meister Yoda, Jabba der Hutte mit seinem Diener, der noch junge Obi-Wan Kenobi, der ebenfalls noch junge Anakin Skywalker sowie der Imperator Palpatine, hier noch in seiner Identität als Senator von Naboo.
+* Die Figur des Jar Jar Binks wirkte auf viele Fans der früheren Star-Wars-Filme zu kindisch und tollpatschig und polarisiert daher ebenso wie die Ewoks aus „Die Rückkehr der Jedi-Ritter“.
+* Zu Anakins Freunden auf Tattooine zählt auch ein nicht-menschlicher Junge aus der gleichen Rasse (Rodianer) wie der Kopfgeldjäger Greedo aus Episode IV. In einer aus der endgültigen Fassung des Films herausgeschnittenen Szene streitet sich Anakin mit diesem Jungen und nennt ihn „Greedo“. Diese Szene ist in der 3D-Wiederveröffentlichung aus 2012 schließlich enthalten. Dieser Junge ist der Vater des Kopfgeldjägers Greedo, der in Episode IV von Han Solo erschossen wird.
+* In einer Szene im Galaktischen Senat laufen auf einer Plattform im Hintergrund mehrere [[E.T.]]s herum. George Lucas bedankte sich bei [[Steven Spielberg]] auf diese Weise für dessen Hommage auf Star Wars im Spielfilm [[E.T.]]
+* [[Keira Knightley]] spielt eine Nebenrolle als Sabé, [[Sofia Coppola]] als Saché, beides Dienerinnen von Königin [[Figuren aus Star Wars#Padmé Amidala|Amidala]]. Dabei wurde das Auftreten Knightleys anfangs geheim gehalten, um den Eindruck zu erwecken, Natalie Portman habe tatsächlich die gedoubelte Königin gespielt.
+* Die Gungans erscheinen zwar relativ unterentwickelt, sind jedoch in der Lage, U-Boote und Schildgeneratoren zu bauen.
+* Der Film hat die Star-Wars-Fangemeinde in zwei Lager gespalten: einige sehen in „Die dunkle Bedrohung“ einen würdigen Nachfolger der ersten Episoden, andere sind der Meinung, George Lucas habe aus Episode I einen Kinderfilm mit zu ''glattem'' Stil gemacht.
+* Am Ende des Abspanns wird eine Zeit lang bei völlig schwarzer Leinwand das charakteristische Atmen Darth Vaders eingespielt.
+* 2012 wurde der Film in 3D konvertiert und kam [[#3D-Wiederveröffentlichung|wieder in die Kinos]]. Er startete weltweit zwischen 8. und 10. Februar 2012. &lt;ref&gt;[http://www.cinemablend.com/new/Star-Wars-The-Phantom-Menace-Gets-A-3D-Release-Date-23481.html Kinostart für den ersten Star-Wars-3D-Film bekanntgegeben] (englisch), Abruf: 4. März 2011.&lt;/ref&gt;&lt;ref&gt;http://www.imdb.de/title/tt0120915/releaseinfo&lt;/ref&gt;
+* In der [[Blu-ray]]- und [[#3D-Wiederveröffentlichung|3D-Wiederveröffentlichung]] wird [[Figuren_aus_Star_Wars#Yoda|Jedimeister Yoda]] nicht mehr, wie im Original von [[Frank Oz]] als Puppe, sondern als computergenerierte Animationsfigur dargestellt.
+
+== Kritiken ==
+''Episode I – Die dunkle Bedrohung'' wurde nach 16 Jahren Wartezeit auf einen weiteren Star-Wars-Film besonders sehnsüchtig erwartet. Entsprechend den hohen und divergierenden Erwartungen waren die Reaktionen auf den Film unter Kritikern wie Fans gemischt. 
+Das Kritikerportal ''Metacritic'' erfasst dabei für ''Die dunkle Bedrohung'' einen Wert von 52 %, was für allgemein gemischte Kritiken spricht.&lt;ref&gt;[http://www.metacritic.com/movie/star-wars-episode-i---the-phantom-menace Kritikensammlung bei Metacritic]&lt;/ref&gt; Dabei stehen 15 positiven Kritiken fünf negative gegenüber. 
+Das vergleichbare Portal ''Rotten Tomatoes'' erfasste für den Film dagegen einen guten Wert von 62 %, welcher auf 160 erfassten Rezensionen beruht.&lt;ref&gt;[http://www.rottentomatoes.com/m/star_wars_episode_i_the_phantom_menace/ Kritikensammlung bei Rotten Tomatoes]&lt;/ref&gt;  
+
+[[Roger Ebert]] thematisierte in seiner Filmkritik (3,5 von 4 Sternen) vom 17. Mai 1999 die Frage, wie ''Episode I'' als erstveröffentlichter Star-Wars-Film aufgenommen worden wäre:
+{{Zitat|Wenn es sich um den ersten Star-Wars-Film handeln würde, so würde man ''Die dunkle Bedrohung'' als visionären Durchbruch feiern. […] Wie schnell wir uns doch an Wunder gewöhnen.|Roger Ebert, [[Chicago Sun-Times]]&lt;ref&gt;[http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=/19990517/REVIEWS/905170301/1023 Filmkritik von Roger Ebert]&lt;/ref&gt;}} 
+
+{{Zitat|Entstanden ist dabei ein dramaturgisch eher simples Abenteuerspektakel mit allzu viel Kampfgetümmel und Schlachtenlärm, das aber mit einem wahren Feuerwerk optischer Einfälle verblüfft und überwältigt. […]; die Möglichkeiten der Animation scheinen unbegrenzt; und Lucas hat Phantasie genug, diese Möglichkeiten einfallsreich zu nutzen. Die Bilderwelt, die in ihren besten Momenten fast wie eine Comic-Version der Werke des [[Hieronymus Bosch]] erscheint, beschäftigt die Augen des Betrachters so nachhaltig, dass man sich bereitwillig seiner Schaulust überlässt.|Jürgen Labenski|Reclams elektronisches Filmlexikon&lt;ref name=&quot;Krusche&quot;&gt;Dieter Krusche, [[Jürgen Labenski]] in „Reclams elektronisches Filmlexikon“ (CD-ROM), Reclam, Stuttgart 2001.&lt;/ref&gt;}}
+
+{{Zitat|[…] dadurch, dass man schon weiss, wie die Geschichte Jahre später weitergeht, stellt sich trotz schöner vieler bunter Computerbilder bald schon eine enorme Langeweile ein. […] für Fans ist dies vielleicht ein zufriedenstellendes, wenn auch äußerst oberflächliches Spektakel, für den Sciencefiction-Film ist es aber sicherlich kein Gewinn.|Prisma.de&lt;ref name=&quot;prisma&quot;&gt;prisma.de: [http://www.prisma-online.de/tv/film.html?mid=1999_star_wars_die_dunkle_bedrohung ''Star Wars - Episode 1: Die dunkle Bedrohung''], aufgerufen am 19. Sep. 2008&lt;/ref&gt;}}
+
+Bis heute bleibt ''Star Wars: Episode I – Die dunkle Bedrohung'' der umstrittenste aller Star-Wars-Filme. So erschien 2010 ein 70-minütiger, negativer Review, welchem wenige Monate später in einer 108-seitigen Erwiderung Satz für Satz widersprochen wurde.&lt;ref&gt;[http://www.slashfilm.com/star-wars-fan-writes-108page-rebuttal-red-letter-medias-phantom-menace-review/ Satz-für-Satz-Erwiderung auf RLM-Review]&lt;/ref&gt; 
+&lt;ref&gt;[http://www.cinemassacre.com/2009/03/10/star-wars-movie-review-part-2/ Review von Cinemassacre]&lt;/ref&gt;&lt;ref&gt;[http://www.redlettermedia.com/phantom_menace.html Review von RedLetterMedia]&lt;/ref&gt;
+
+== Erfolg ==
+
+=== Ursprüngliche Kinoverröffentlichung ===
+
+''Star Wars: Episode I'' spielte weltweit rund 924 Millionen [[US-Dollar]] (~ 702,2 Mio. [[Euro]] &lt;!-- Wechselkurs: 1€ = 1,3158 US-$--&gt;; ~ 843,9 Mio. [[Schweizer Franken]] &lt;!-- 1€ = 1,2018 Schweizer Franken; Stand 02.05.2012 --&gt;) ein, davon rund 431 Millionen US-Dollar (~ 327,6 Mio. Euro bzw. 393,7 Mio. Schweizer Franken &lt;!-- Wechselkurs und Stand gemäß vorangegangenem Hinweis --&gt;) in den USA und rund 54 Millionen US-Dollar (~ 41 Mio. Euro bzw. 49,3 Mio. Schweizer Franken &lt;!-- Wechselkurs und Stand gemäß vorangegangenem Hinweis --&gt;) in Deutschland. Die Produktionskosten beliefen sich auf 115 Millionen US-Dollar (~ 87,4 Mio. Euro bzw. 105,0 Mio. Schweizer Franken &lt;!-- Wechselkurs und Stand gemäß vorangegangenem Hinweis --&gt;).&lt;ref&gt;[http://www.boxofficemojo.com/movies/?page=main&amp;id=starwars.htm Zu ursprünglichem Einspielergebnis und Produktionskosten] (englisch).&lt;/ref&gt;
+
+Damit ist er der erfolgreichste Film der sechsteiligen Star-Wars-Saga und war zu dieser Zeit der sechsterfolgreichste Film in den USA überhaupt und der elfterfolgreichste Film weltweit.
+
+=== 3D-Wiederveröffentlichung ===
+
+Zwischen dem 8. und 10. Februar 2012 kam der Film als erster der Star-Wars-Kino-Hexalogie in [[3D]] konvertiert wieder weltweit in die Kinos. Neben der 3D-Konvertierung wurde in alle Szenen mit der Figur Yoda, die ursprünglich durch eine Puppe verkörpert wurde, durch computergenerierte Grafiken ersetzt. Zudem enthält die Wiederveröffentlichung einige zusätzliche Szenen und ist daher ca. 3 Minuten länger als die ursprüngliche Kinofassung. Dies war auch bereits bei der Ende 2011 veröffentlichten Blu-Ray-Version der Fall. In einem Interview sagte Star-Wars-Schöpfer George Lucas, dass die 3D-Wiederveröffentlichung auf der Blu-Ray-Version basiere und abgesehen von der 3D-Konvertierung keinerlei weitere Änderungen gegenüber dieser umfasse.&lt;ref&gt;[http://www.hollywoodreporter.com/heat-vision/george-lucas-star-wars-interview-288523 Interview des ''Hollywood Reporter'' mit Star-Wars-Schöpfer Gergre Lucas zur 3D-Wiederveröffentlichung] (englisch); Abruf. 11. März 2012.&lt;/ref&gt; Danach wurde jedoch doch noch bestätigt, dass kleine Änderungen gegenüber der Blu-Ray-Version vorgenommen worden. Diese sollen jedoch nicht auf den Inhalt i. e. S. bezogen sein, sondern lediglich das bestehende Bildmaterial für den 3D-Einsatz optimiert haben.&lt;ref&gt;[http://au.news.yahoo.com/thewest/entertainment/a/-/entertainment/12792427/may-3-d-be-with-you/ Bestätigung, dass doch kleine Änderungen bei der 3D- gegenüber der Blu-Ray-Version vorgenommen wurden] (englisch); Abruf: 2. Mai 2012.&lt;/ref&gt;
+
+In den USA spielte die 3D-Wiederveröffentlichung in der ersten Woche über 25 Mio. US-Dollar (~ 19,0 Mio. Euro&lt;!-- Wechselkurs: 1€ = 1,3158 US-$--&gt;; 22,8 Mio. Schweizer Franken &lt;!-- 1€ = 1,2018 Schweizer Franken; Stand 02.05.2012 --&gt;)&lt;ref&gt;[http://boxofficemojo.com/movies/?page=weekly&amp;id=starwars3d.htm US-Einspielergebnis der ersten Woche] (englisch); Abruf: 29. März 2012.&lt;/ref&gt; ein sowie weltweit mehr als 20 Mio. weitere US-Dollar (~ 15,2 Mio. Euro bzw. 18,3 Mio. Schweizer Franken &lt;!-- Wechselkurs und Stand gemäß vorigem Hinweis --&gt;)&lt;ref&gt;[http://boxofficemojo.com/movies/?page=intl&amp;id=starwars3d.htm Einspielergebnis der ersten Woche außerhalb der USA] (englisch); Abruf: 23. Februar 2012.&lt;/ref&gt;.
+
+Aktuell (Stand: 2. Mai 2012) hat die 3D-Wiederveröffentlichung weltweit rund 102,7 Millionen US-Dollar eingespielt (78,1 Millionen Euro; 93,8 Millionen Schweizer Franken&lt;!-- Wechselkurs gemäß vorigem Hinweis --&gt;).&lt;ref&gt;[http://boxofficemojo.com/showdowns/chart/?id=3drereleases.htm Aktuelles weltweites Einspielergebis der 3D-Wiederveröffentlichung] (englisch); Abruf: 2. Mai 2012.&lt;/ref&gt; Damit ist das weltweite Gesamteinspielergebnis (2D- und 3D-Kinoveröffentlichung summiert) auf über 1 [[Milliarde]] US-Dollar (760,0 Millionen Euro; 913,4 Millionen Schweizer Franken&lt;!-- Wechselkurs gemäß vorigem Hinweis --&gt;) gestiegen, was zuvor erst zehn andere Filme erreichten.&lt;ref&gt;[http://boxofficemojo.com/alltime/world/ Die erfolgreichsten Filme an den welteitern Kinokassen] (englisch); Abruf: 2. Mai 2012.&lt;/ref&gt; Inzwischen übertraf das Einspielergebnis auch das von [[The Dark Knight]], wodurch ''Star Wars: Episode I – Die dunkle Bedrohung'' (wieder) in die Top 10 (aktuell Platz 9) der erfolgreichsten Filme der Geschichte aufstieg und mit dem anschließenden Überholen von Tim Burtons [[Alice im Wunderland (2010)|Alice im Wunderland]] schließlich weiter auf Platz 9 aufrückte.&lt;ref&gt;[http://www.comicbookmovie.com/scifi_movies/star_wars/news/?a=57068 ''Star Wars: Episode 1 – Die dunkle Bedrohung'' klettert durch die 3D-Wiederveröffentlichung wieder auf Paltz 9 der ewigen Bestenliste] (englisch); Abruf: 2. Mai 2012.&lt;/ref&gt;&lt;ref&gt;[http://boxofficemojo.com/alltime/world/ Die erfolgreichsten Filme an den welteitern Kinokassen] (englisch); Abruf: 2. Mai 2012.&lt;/ref&gt; Das Gesamteinspielergebnis von ''Star Wars: Episode 1 – Die dunkle Bedrohung'' liegt damit bei nunmehr 1026,3 Millionen US-Dollar (780,0 Millionen Euro; 937,4 Millionen Schweizer Franken&lt;!-- Wechselkurs gemäß vorigem Hinweis --&gt;).&lt;ref&gt;[http://boxofficemojo.com/alltime/world/ Die erfolgreichsten Filme an den welteitern Kinokassen] (englisch); Abruf: 2. Mai 2012.&lt;/ref&gt;
+
+== Auszeichnungen (Auswahl) ==
+[[Academy Awards|Oscar]] Nominierungen:
+* Bester [[Oscar/Bester Ton|Ton]]
+* Bester [[Oscar/Bester Tonschnitt|Tonschnitt]]
+* Beste [[Oscar/Beste visuelle Effekte|Spezialeffekte]]
+[[Grammy]] Nominierung:
+* Beste Musik (John Williams)
+[[British Academy Film Award]] Nominierungen:
+* Beste [[British Academy Film Award/Beste visuelle Effekte|visuelle Effekte]]
+* Bester [[British Academy Film Award/Bester Ton|Ton]]
+[[Saturn Award]]
+* Beste [[Saturn Award für das beste Kostüm|Kostüme]]
+* Beste [[Saturn Award für die besten Spezialeffekte|Spezialeffekte]]
+* Außerdem sieben Nominierungen, u.&amp;nbsp;a. für den [[Saturn Award für den besten Science-Fiction-Film|Science-Fiction Film]] oder die beste [[Saturn Award für die beste Regie|Regie]]
+[[Young Artist Awards]]
+* Auszeichnung als ''bester Nachwuchsdarsteller bis 10 Jahren'' für Jake Lloyd
+* Nominierung als ''bester Familienfilm (Drama)''
+[[YoungStar Awards]]
+* Nominierung als ''bester Nachwuchsdarsteller'' für Jake Lloyd
+* Nominierung als ''beste Nachwuchsdarstellerin'' für Natalie Portman
+[[Box Office Germany Award|Bogey]]
+* ''Platin'' für über 5 Mio. Kinobesucher
+[[Blockbuster Entertainment Awards]]
+* Nominierungen als ''beliebtester Darsteller/Nebendarsteller'' für Liam Neeson, Natalie Portman, Ewan McGregor, Jake Lloyd und Pernilla August
+* Nominierung als ''bester Bösewicht'' für Ray Park
+[[Golden Reel Awards]]
+* Nominierung für den ''besten Tonschnitt''
+[[Golden Satellite Awards]]
+* Nominierung für den ''besten Ton'' und die ''besten visuellen Effekte'' 
+[[Las Vegas Film Critics Society Awards]]
+* Auszeichnung für das ''beste Kostümdesign'' für Trisha Biggar
+* Nominierung für das ''beste Produktionsdesign'' für Gavin Bocquet 
+* Nominierung für die &quot;besten visuellen Effekte'' für Dennis Murren
+[[MTV Movie Awards]]
+* Auszeichnung als ''beste Action-Sequenz'' für das Podrennen
+* Nominierung als ''beste Kampfszene'' für Liam Neeson, Ewan McGregor und Ray Park
+Der Film war zudem für die [[Goldene Himbeere]] nominiert, was die unterschiedlichen Ansichten über die Güte des Films sehr gut widerspiegelt.
+
+Die [[Deutsche Film- und Medienbewertung (FBW)]] zeichnete den Film mit dem Prädikat „wertvoll“ aus.
+
+== Synchronisation ==
+{| class=&quot;wikitable&quot;
+!align=&quot;center&quot;|Rolle
+!align=&quot;center&quot;|Darsteller
+!align=&quot;center&quot;|Synchronsprecher
+|-
+|Qui-Gon Jinn
+|[[Liam Neeson]]
+|[[Bernd Rumpf]]
+|-
+|Obi-Wan Kenobi
+|[[Ewan McGregor]]
+|[[Philipp Moog]]
+|-
+|Königin Amidala / Padmé Naberrie
+|[[Natalie Portman]]
+|[[Manja Doering]]
+|-
+|Anakin Skywalker
+|[[Jake Lloyd]]
+|[[Constantin von Jascheroff]]
+|-
+|Shmi Skywalker
+|[[Pernilla August]]
+|[[Daniela Hoffmann]]
+|-
+|Yoda
+|[[Frank Oz]]
+|[[Gerry Wolff]]
+|-
+|Senator Palpatine
+|[[Ian McDiarmid]]
+|[[Friedhelm Ptok]]
+|-
+|Gouverneur Sio Bibble
+|[[Oliver Ford Davies]]
+|[[Horst Lampe]]
+|-
+|Darth Maul
+|[[Ray Park]]
+|[[Tobias Meister]]
+|-
+|Captain Panaka
+|[[Hugh Qarshie]]
+|[[Johannes Baasner]]
+|-
+|Jar Jar Binks
+|[[Ahmed Best]]
+|[[Stefan Fredrich]]
+|-
+|C-3PO
+|[[Anthony Daniels]]
+|[[Wolfgang Ziffer]]
+|-
+|Oberster Kanzler Valorum
+|[[Terence Stamp]]
+|[[Frank Ciazynski]]
+|-
+|Boss Nass
+|[[Brian Blessed]]
+|[[Wolfgang Kühne (Schauspieler, 1953)|Wolfgang Kühne]]
+|-
+|Watto
+|[[Andrew Secombe]]
+|[[Udo Schenk]]
+|-
+|Vizekönig Nute Gunray
+|[[Silas Carson]]
+|[[Joachim Siebenschuh]]
+|-
+|Ki-Adi-Mundi
+|Silas Carson
+|[[Norbert Gescher]]
+|-
+|Mace Windu
+|[[Samuel L. Jackson]]
+|[[Helmut Gauß]]
+|-
+|Darth Sidious
+|Ian McDiarmid
+|[[Wolfgang Dehler]]
+|-
+|Sabe
+|[[Keira Knightley]]
+|[[Marie Bierstedt]]
+|}
+
+== Anhang ==
+=== Quellen ===
+&lt;references /&gt;
+
+=== Literatur ===
+* Laurent Bouzereau, Jody Duncan: ''Star Wars. The Making of Episode I – Die dunkle Bedrohung.'' Burgschmiet Verlag, Nürnberg 1999, ISBN 3-933731-16-X.
+* Jonathan L. Bowen: ''Anticipation. The Real Life Story of Star Wars: Episode I - The Phantom Menace.'' iUniverse, New York 2005, ISBN 0-595-34732-0.
+Eine umfangreiche Literaturliste zu der Filmreihe ist unter [[Star Wars#Literatur]] zu finden.
+
+=== Weblinks ===
+* {{IMDb Titel|tt0120915}}
+* {{Rottentomatoes|star_wars_episode_i_the_phantom_menace|Star Wars}}
+* {{Film-zeit|14124}}
+* [http://www.starwars.com/explore/the-movies/episode-i/ www.starwars.com/explore/the-movies/episode-i/ Offizielle Seite] (englisch)
+* [http://www.starwars-union.de/index.php?id=episode1 Infos zum Film bei Star Wars-Union (FanPage)]
+* Artikel [http://www.jedipedia.net/wiki/Episode_I_–_Die_dunkle_Bedrohung ''Episode I – Die dunkle Bedrohung''] in der Jedipedia.net
+
+=== Siehe auch ===
+{{:Star Wars (Begriffsklärung)}} &lt;!-- Zentrale Verwaltung der filmübergreifenden Siehe-auchs --&gt;
+* [[Liste der erfolgreichsten Filme]]
+
+{{NaviBlock
+|Navigationsleiste Star-Wars-Filme
+|Navigationsleiste Filme von George Lucas
+}}
+
+{{Gesprochene Version
+|datei=de-Star_Wars_Episode_I_–_Die_dunkle_Bedrohung-article.ogg
+|länge=13:37 min
+|größe=23,3 MB
+|version=86914452
+|exzellent=nein
+}}
+
+{{SORTIERUNG:Star Wars Episode 1 Die Dunkle Bedrohung}}
+[[Kategorie:Science-Fiction-Film]]
+[[Kategorie:Fantasyfilm]]
+[[Kategorie:Abenteuerfilm]]
+[[Kategorie:Star Wars|Episode 1 Die Dunkle Bedrohung]]
+[[Kategorie:US-amerikanischer Film]]
+[[Kategorie:Filmtitel 1999]]
+
+{{Link GA|en}}
+{{Link GA|ru}}
+
+[[ar:حرب النجوم الجزء الأول: تهديد الشبح (فيلم)]]
+[[bg:Междузвездни войни: Епизод I - Невидима заплаха]]
+[[ca:Star Wars Episodi I: L'Amenaça Fantasma]]
+[[cs:Star Wars: Epizoda I - Skrytá hrozba]]
+[[cy:Star Wars Episode I: The Phantom Menace]]
+[[da:Star Wars Episode I: Den usynlige fjende]]
+[[en:Star Wars Episode I: The Phantom Menace]]
+[[eo:Star Wars Episode I: The Phantom Menace]]
+[[es:Star Wars: Episode I - The Phantom Menace]]
+[[fa:جنگ ستارگان اپیزود اول: تهدید شبح]]
+[[fi:Tähtien sota: Episodi I – Pimeä uhka]]
+[[fo:Star Wars Episode I: Hulduhóttanin]]
+[[fr:Star Wars, épisode I : La Menace fantôme]]
+[[gl:Star Wars Episode I: The Phantom Menace]]
+[[he:מלחמת הכוכבים - פרק 1: אימת הפנטום]]
+[[hi:स्टार वॉर्स एपिसोड I: द फैंटम मेनेस]]
+[[hr:Zvjezdani ratovi I: Fantomska prijetnja]]
+[[hu:Csillagok háborúja I: Baljós árnyak]]
+[[ia:Star Wars Episode I: Le Menacia Phantasma]]
+[[it:Star Wars: Episodio I - La minaccia fantasma]]
+[[ja:スター・ウォーズ エピソード1/ファントム・メナス]]
+[[ka:ვარსკვლავური ომები, ეპიზოდი I: ფარული საფრთხე]]
+[[ko:스타 워즈 에피소드 1: 보이지 않는 위험]]
+[[lt:Žvaigždžių Karai Epizodas I: Pavojaus Šešėlis]]
+[[lv:Zvaigžņu kari: Ļaunumu vēstošā ilūzija]]
+[[mk:Војна на ѕвездите Епизода 1: Фантомската закана]]
+[[ms:Star Wars Episode I: The Phantom Menace]]
+[[nl:Star Wars: Episode I: The Phantom Menace]]
+[[no:Star Wars Episode I: Den skjulte trussel]]
+[[pl:Gwiezdne wojny: część I - Mroczne widmo]]
+[[pt:Star Wars Episódio I: A Ameaça Fantasma]]
+[[ro:Războiul stelelor - Episodul I: Amenințarea fantomei]]
+[[ru:Звёздные войны. Эпизод I: Скрытая угроза]]
+[[sa:स्टार् वार्स्:दि फ़ांटम् मेनस्]]
+[[scn:Star Wars Episode I: La Minazza Fantàsima]]
+[[sh:Star Wars Episode I: The Phantom Menace]]
+[[simple:Star Wars Episode I: The Phantom Menace]]
+[[sk:Hviezdne vojny: Epizóda I – Skrytá hrozba]]
+[[sl:Vojna zvezd Epizoda I: Grozeča prikazen]]
+[[sr:Звездани ратови — епизода I: Фантомска претња]]
+[[sv:Star Wars: Episod I – Det mörka hotet]]
+[[th:สตาร์ วอร์ส เอพพิโซด 1 : ภัยซ่อนเร้น]]
+[[tl:Star Wars Episode I: The Phantom Menace]]
+[[tr:Yıldız Savaşları: Bölüm I - Gizli Tehlike]]
+[[uk:Зоряні війни. Епізод I. Прихована загроза]]
+[[vi:Bóng ma đe dọa]]
+[[zh:星際大戰首部曲：威脅潛伏]]

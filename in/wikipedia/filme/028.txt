@@ -1,0 +1,243 @@
+{{Infobox Film
+| Bild    = Inception-wordmark.svg
+| 2       = 300px
+| 3       = Inception Schriftzug
+| DT      = Inception
+| OT      = Inception
+| PL      = [[Vereinigte Staaten|USA]], [[Vereinigtes Königreich|Großbritannien]]
+| PJ      = 2010
+| FSK     = 12&lt;ref&gt;[http://www.spio.de/fskonline/PDF/1007/123564K.pdf Freigabebescheinigung] der FSK&lt;/ref&gt;
+| JMK     = 12&lt;ref&gt;[http://www.bmukk.gv.at/schulen/service/jmk/detail.xml?key=16370 Freigabe] der [[Jugendmedienkommission]]&lt;/ref&gt;
+| LEN     = 148
+| OS      = [[Englische Sprache|Englisch]]
+| REG     = [[Christopher Nolan]]
+| DRB     = Christopher Nolan
+| PRO     = Christopher Nolan,&lt;br /&gt;[[Emma Thomas]]
+| MUSIK   = [[Hans Zimmer (Komponist)|Hans Zimmer]]
+| KAMERA  = [[Wally Pfister]]
+| SCHNITT = [[Lee Smith]]
+| DS      = 
+* [[Leonardo DiCaprio]]: Dominick „Dom“ Cobb &lt;/br&gt;&lt;small&gt;(Deutsche Synchronstimme: [[Gerrit Schmidt-Foß]])&lt;/small&gt;
+* [[Joseph Gordon-Levitt]]: Arthur &lt;/br&gt;&lt;small&gt;([[Robin Kahnmeyer]])&lt;/small&gt;
+* [[Ken Watanabe]]: Saito &lt;/br&gt;&lt;small&gt;([[Toru Tanabe]])&lt;/small&gt;
+* [[Cillian Murphy]]: Robert Fischer &lt;/br&gt;&lt;small&gt;([[Norman Matt]])&lt;/small&gt;
+* [[Ellen Page]]: Ariadne &lt;/br&gt;&lt;small&gt;([[Anne Helm]])&lt;/small&gt;
+* [[Tom Hardy]]: Eames &lt;/br&gt;&lt;small&gt;([[Tobias Kluckert]])&lt;/small&gt;
+* [[Dileep Rao]]: Yusuf &lt;/br&gt;&lt;small&gt;([[Olaf Reichmann]])&lt;/small&gt;
+* [[Marion Cotillard]]: Mal &lt;/br&gt;&lt;small&gt;([[Natascha Geisler]])&lt;/small&gt;
+* [[Michael Caine]]: Miles &lt;/br&gt;&lt;small&gt;([[Jürgen Thormann]])&lt;/small&gt;
+* [[Tom Berenger]]: Peter Browning &lt;/br&gt;&lt;small&gt;([[Hans-Jürgen Wolf]])&lt;/small&gt;
+* [[Pete Postlethwaite]]: Maurice Fischer &lt;/br&gt;&lt;small&gt;([[Roland Hemmo]])&lt;/small&gt;
+* [[Lukas Haas]]: Nash &lt;/br&gt;&lt;small&gt;([[Björn Schalla]])&lt;/small&gt;
+* [[Tai-Li Lee]]: Tadashi
+}}
+
+[[Datei:InceptionCastPremiereJuly10.jpg|miniatur|280px|Cillian Murphy, Marion Cotillard, Joseph Gordon-Levitt, Ellen Page, Ken Watanabe, Michael Caine und Leonardo DiCaprio (v.l.n.r.) bei der Premiere im Juli 2010]]
+
+'''Inception''' ({{enS}} für ''Einpflanzen'' oder auch ''Beginn'') ist ein US-amerikanischer [[Science-Fiction-Film|Science-Fiction]]-[[Heist-Movie]]&lt;ref&gt;{{Internetquelle | url= http://film-dienst.kim-info.de/kritiken.php?nr=10820| titel= Inception| autor= Ulrich Kriest| hrsg= | werk= [[film-dienst]] 16/2010| seiten= | datum= | archiv-url= | archiv-datum= | zugriff=2010-08-05 | sprache= | format= | kommentar= | zitat= Im Grunde handelt es sich bei ''Inception'' um ein ''Heist-Movie''.}}
+&lt;/ref&gt; aus dem Jahr 2010 und der siebte Spielfilm des  amerikanisch-britischen Regisseurs [[Christopher Nolan]], der auch das Drehbuch verfasste und als Produzent fungierte. 
+Er entwirft darin ein komplexes Modell der Beeinflussung des Bewusstseins durch gemeinsames Träumen. Der [[Protagonist]] Dominick Cobb ([[Leonardo DiCaprio]]) hat sich darauf spezialisiert, unbemerkt die Träume seiner Opfer zu gestalten und so wertvolle Informationen aus deren Bewusstsein zu stehlen oder in ihr Bewusstsein zu pflanzen.
+Der Film war künstlerisch und kommerziell ein großer Erfolg. Kritiker heben die für [[Blockbuster]] ungewöhnlich komplexe und originelle Handlung hervor.
+
+== Handlung ==
+Dominick Cobb versucht als Agent einen Umschlag mit geheimen Informationen aus dem Safe des japanischen Geschäftsmannes Saito zu entwenden. Der Plan scheitert knapp: Saito stellt Cobb rechtzeitig. Saito weiß aber auch, dass er sich in Wirklichkeit nur in einem [[Traum]] befindet, der von Cobb und seinen Mitarbeitern gelenkt wurde: Durch Vernetzung mit den Träumen seiner Opfer steigt Cobb in deren [[Das Unbewusste|Unbewusstsein]] ein, um dort wertvolle Informationen zu „extrahieren“. Saito, Cobb und dessen Mitarbeiter Nash und Arthur erwachen unsanft in einem kleinen Apartment Saitos aus diesem Traum. Auch der Plan, durch Gewalt an die geheimen Informationen zu kommen, schlägt fehl. Stattdessen offenbart der von jeder Drohung unbeeindruckte Saito, dass er Cobb und sein Team nur einem Test unterziehen wollte. Als Saito durch einen Konstruktionsfehler bemerkt, sich abermals in einem Traum zu befinden, verlassen Cobb und seine Vertrauten fluchtartig den schlafenden Saito und das Bahnabteil, in dem dieser Traum und der [[Klartraum#Falsches_Erwachen|Traum im Traum]] in Wirklichkeit stattgefunden hatten.
+
+Die Demonstration des Traumes im Traum war für den reichen Geschäftsmann beeindruckend genug, um Cobb zu engagieren: Er soll dem [[Erbe]]n eines Konkurrenzunternehmens die Zerteilung des [[Konzern]]s ins Bewusstsein setzen, um diesen zu schwächen. Cobb sagt zu, weil Saito verspricht, ihm als Gegenleistung die Rückkehr zu seinen Kindern zu ermöglichen: Seit Cobb im Verdacht steht, seine Frau ermordet zu haben, befindet er sich im Exil fern der Heimat. Für den schwierigen [[Coup]] versammelt Cobb ein Team aus erfahrenen Experten um sich: Zu Arthur gesellen sich Eames und der Chemiker Yusuf. Als neue „Traumarchitektin“ wirbt er die talentierte Studentin Ariadne an. Durch gemeinsame Ausflüge in Traumwelten mit Cobb lernt sie erstmals die Möglichkeiten der Traum-Manipulation, doch auch den geheimen Schmerz von Cobb kennen: Dessen Frau Mal hatte Selbstmord begangen in der irrigen Annahme, sich in einem Traum zu befinden, um so endlich daraus zu erwachen. Jetzt taucht sie als unkontrollierbare Projektion aus Cobbs  Unbewussten immer wieder in dessen Träumen auf. Die Faszination des Projekts, einen Traum im Traum im Traum zu kreieren, überwiegt allerdings die Angst vor der Unberechenbarkeit von Cobbs Psyche. Auch von der Gefahr, aus der tiefen Traumebene nicht mehr aufzuwachen, lässt sich keiner im Team abschrecken.
+
+Der komplexe Plan wird auf einem mehrstündigen Flug von [[Sydney]] nach [[Los Angeles]] in die Tat umgesetzt: Das Team betäubt unerkannt Robert Fischer, das Ziel der Geistes-Manipulation. Cobb, Arthur, Eames, Ariadne, Yusuf sowie Saito verbinden sich mittels einer Apparatur mit Fischer und dessen Unbewussten. Der gemeinsame und durch das Team erzeugte Traum nimmt jedoch eine desaströse Wende: Fischer ist mental geschult; sein Unbewusstes verübt in Form brutaler Scharfschützen Angriffe auf die Eindringlinge. Im Traum gelingt die Flucht in ein Versteck. Dort täuschen sie dem entführten Fischer die Anwesenheit von dessen Paten vor, der ihm von einem zweiten, geheimen Testament des Vaters erzählt. Zusammen mit dem gekidnappten Fischer flüchtet Cobbs Team in einem [[Van (Automobil)|Van]] vor den Angreifern. Um in die nächste Traumebene hinabzusteigen, schließen sie sich während der turbulenten Fahrt abermals an einer Traum-Apparatur an, während Yusuf am Steuer versucht, den Verfolgern zu entkommen. Seine Flucht endet auf einer Brücke, wo er nach Plan den Van in den Fluss stürzen lässt: Durch diesen „Kick“ können die Träumenden aus der kreierten Traumebene erwachen. Da sich auf tieferen Bewusstseinsebenen die Geschwindigkeit der Denkprozesse potenziert, werden aus der minutenlangen Fahrt des Vans für die Träumenden Stunden innerhalb ihres Traums.
+
+Auf dieser zweiten Traumebene gibt sich Cobb gegenüber Fischer als dessen Verbündeter aus, der ihn vor einer heimtückischen Bewusstseins-Manipulation während eines Traumes beschützen will. Er kann ihn auf diese Weise überreden, selbst in das Unbewusste seiner Gegner einzusteigen, um die versuchte Manipulation auszuhebeln. Tatsächlich steigen so Cobb und seine Mitarbeiter in die nächst-tiefere Bewusstseinsebene von Fischer ab. Diesmal bleibt Arthur zurück, um durch einen „Kick“ die Träumenden wieder zurückzuholen. Auf der ersten Traumebene gibt indessen Yusuf auf der Brücke, auf der er sich gegen die Angreifer kaum noch verteidigen kann, das vereinbarte musikalische Zeichen an die Träumenden: Das Lied [[Édith Piaf|„Non, je ne regrette rien“]] dringt durch die Traumebenen und macht dem Team deutlich, dass der aufrüttelnde Kick kurz und früher als geplant bevorsteht. Während auf allen Traumebenen die Eindringlinge mit immer aggressiveren Angreifern zu kämpfen haben, gelingt es trotz der verknappten Zeit, nah an das Ziel zu kommen. Doch bevor Fischer den Tresor zum geheimen - und fingierten - Testament seines Vaters öffnen kann, wird er von Cobbs Frau erschossen. Statt aufzugeben überzeugt Ariadne Cobb, eine weitere Traumebene nach unten zu steigen: in den [[Limbus (Theologie)|„Limbus“]], wo sich jene sammeln, die im Traum sterben aber nicht aufwachen konnten. Eames bleibt genauso zurück wie der bereits im Sterben liegende Saito. Letzterer wurde schon in der ersten Traumebene gefährlich getroffen; jetzt hilft er Eames dabei, das umkämpfte Gebäude mit dem Tresor zur Sprengung vorzubereiten, um so für einen weiteren Kick zu sorgen.
+
+Im Limbus trifft Cobb seine wartende Frau, die ihn überreden will, für immer bei ihr und ihren Kindern zu bleiben. Cobb offenbart, seiner Frau damals den Gedanken, sich nur in einem Traum zu befinden, injiziert zu haben („Inception“). Weil dieser Gedanke auch in der realen Welt zu ihrem Selbstmord führte, lässt ihn das Schuldbewusstsein nicht mehr los. Ariadne sorgt für einen Kick bei Fischer im Limbus, während er auf der dritten Traumebene wiederbelebt wird. Kurz bevor mit einem Kick auf allen Ebenen die Träumenden erwachen, trifft Fischer auf seinen Vater und die „Inception“ gelingt. Cobb bleibt freiwillig im Limbus zurück. Er verabschiedet sich auch innerlich von seiner verstorbenen Frau und sucht Saito auf: Ohne ihn hat er keine Chance auf ein Wiedersehen mit seinen „realen“ Kindern. Er erinnert den nun [[Alter|vergreisten]] Saito an die Abmachung und daran, sich in einem Traum zu befinden, den er verlassen muss. Kurz darauf wachen Cobb und Saito im Flugzeug auf, wo die Träume ihren Anfang nahmen; der mächtige Saito macht den entscheidenden Anruf. Das Team trennt sich still und Cobb kann problemlos in die Vereinigten Staaten einreisen und endlich seine Kinder umarmen. Ob dies auch nur ein Traum ist, muss offen bleiben.
+
+== Rezeption ==
+Seine Premiere hatte ''Inception'' am 8. Juli 2010 in [[London]].&lt;ref name=&quot;STARTTERMINE&quot;&gt;[http://www.imdb.de/title/tt1375666/releaseinfo Starttermine für Inception] bei imdb.de, Abgerufen am 17. Juli 2010&lt;/ref&gt; In den Vereinigten Staaten und Großbritannien lief der Film ab dem 16. Juli 2010&lt;ref name=&quot;STARTTERMINE&quot;/&gt; in normalen und [[IMAX]]-Kinos. In Deutschland startete der Film am 29. Juli 2010.&lt;!-- Referenz? --&gt;
+=== Kritiken ===
+Der Film wurde überwiegend positiv aufgenommen. [[Roger Ebert]] lobte in der [[Chicago Sun-Times]], ''Inception'' sei „atemberaubend“ und „durch und durch originell“. Er wirke wie aus einem neuen Stoff geschneidert, basiere dabei aber dennoch auf den Grundlagen eines Actionfilms. Der Film sei ein „verwirrendes Labyrinth“, der Stoff für „endlose Analysen“ biete. [[Spoiler (Medien)|Spoiler]] könnten dem Werk nichts anhaben, denn das Wissen um das Ende offenbare dem Zuschauer nichts, solange er den Weg dorthin nicht kenne.&lt;ref&gt;[http://rogerebert.suntimes.com/apps/pbcs.dll/article?AID=/20100714/REVIEWS/100719997 Inception Review by Roger Ebert], abgerufen am 20. Juli 2010&lt;/ref&gt;
+
+Für Kino.de ist der Science-Fiction-Actionthriller nicht nur „virtuos verschachtelt“ und „visuell visionär“: „DiCaprio meistert seine Rolle als komplex angelegter Protagonist ohne Mühe und insbesondere seine Szenen mit Cotillard verfügen über beträchtliche emotionale Wucht. Geklotzt wird auch bei den Actionsequenzen, die mehrfach unübersehbare Bond-Parallelen aufweisen.“&lt;ref&gt;[http://www.kino.de/kinofilm/inception/118672.html#kritik Kritik bei kino.de]&lt;/ref&gt; [[Cinema]] meldete euphorisch: „Für diesen Film wurde das Kino erfunden: hochintelligenter und visuell einzigartiger Cyberthriller.“&lt;ref&gt;[http://www.cinema.de/kino/filmarchiv/film/inception,3899717,ApplicationMovie.html Inception auf Cinema.de]&lt;/ref&gt; Auch auf filmstarts.de wird die Originalität und ungewöhnliche Komplexität des Werks hervorgehoben: Wer sich auf dessen surreale Welt einlässt, „setzt mit dem Kauf einer Kinokarte ein deutliches Zeichen gegen die Blockbuster-Gleichmacherei Hollywoods.“&lt;ref&gt;[http://www.filmstarts.de/kritiken/101612-Inception/kritik.html Filmstarts-Kritik zu Inception]&lt;/ref&gt;
+
+Kritischer äußerte sich die [[die tageszeitung|taz]] über die Fantasielosigkeit der Traumwelten, die „vergleichsweise klar strukturiert, funktional“ seien: „Was möglich wäre, bleibt mit der aus dem Trailer bekannten Sequenz, in der Paris zum Sandwich geklappt wird, bloße Andeutung: verrückter wird's nicht. Höchstens, dass später mal unfahrplanmäßig die Bahn kommt.“&lt;ref&gt;[http://www.taz.de/1/leben/film/artikel/1/labyrinthische-uebersicht/ Rezension der TAZ vom 28. Juli 2010]&lt;/ref&gt; 
+Auch [[David Denby]] vom [[The New Yorker|New Yorker]] sieht die Traumsequenzen nur als überdrehtes Gimmick, um genre-übliche Action-Sequenzen zu verdoppeln und zu verdreifachen, alles begleitet vom „Posaunen-Gebläse von [[Hans Zimmer]]s Musik, die uns fast zur Taubheit und Unterwerfung prügelt“. Nur die wenigen Szenen zwischen Cotillard und DiCaprio zeugten von menschlicher Tiefe. Trotz der humanistischen Inhalte hätte man „das Gefühl, dass für Nolan menschliche Schrullen nichts weiter sind als austauschbare Teile innerhalb des umfassenden, visuellen Konzepts“.&lt;ref&gt;[http://www.newyorker.com/arts/critics/cinema/2010/07/26/100726crci_cinema_denby#ixzz1onyzIa50 Rezension ''Dream Factory'' in ''The New Yorker''], abgerufen am 11. März 2012.&lt;/ref&gt;
+
+Auf [[Rotten Tomatoes]] bewerteten 86 % aller Kritiker den Film positiv. Laut Kritikerkonsens sei ''Inception'' „klug, innovativ und spannend, […] der seltene Sommer[[blockbuster]] sowohl auf emotionaler als auch auf intellektueller Ebene.“&lt;ref name=&quot;Inception Movie Reviews, Pictures&quot;&gt;{{cite web| url = http://www.rottentomatoes.com/m/1217219-inception/| title = Inception Movie Reviews, Pictures| work = [[Rotten Tomatoes]]| publisher = Flixster| accessdate=11. März 2012}}&lt;/ref&gt; [[Metacritic]] gab dem Film eine Durchschnittswertung von 74 von 100 möglichen Punkten, auf Basis von 42 Kritiken.&lt;ref&gt;{{cite web|url=http://www.metacritic.com/film/titles/inception|title=Inception reviews at Metacritic.com|work=[[Metacritic]]|accessdate=17. Juli 2010}}&lt;/ref&gt;
+
+=== Einspielergebnisse ===
+''Inception'' spielte bei ungefähren Produktionskosten von 160 Millionen Dollar insgesamt ca. 825 Millionen US-Dollar ein, davon ca. 292 Millionen US-Dollar in den Vereinigten Staaten.&lt;ref&gt;{{Internetquelle|hrsg=Box Office Mojo|titel=Inception (2010)|url=http://boxofficemojo.com/movies/?id=inception.htm |zugriff=2010-12-22|sprache=en}}&lt;/ref&gt; Damit zählt die Produktion zu den [[Liste erfolgreicher Filme#Weltweit|30 kommerziell erfolgreichsten Filme aller Zeiten]].
+
+In Deutschland sahen ihn, nach seinem Kinostart am 29. Juli 2010, 3.426.456 Kinozuschauer, womit er auf Platz Vier der deutschen Kinojahrescharts landete.&lt;ref&gt;[http://www.insidekino.de/DJahr/D2010.htm TOP 100 DEUTSCHLAND 2010] auf ''insidekino.de'', abgerufen am 3. Dezember 2011&lt;/ref&gt;
+
+== Soundtrack ==
+Für den [[Soundtrack]] von ''Inception'' war der Komponist [[Hans Zimmer]] verantwortlich. In diesem sind diverse [[E-Gitarre]]nsoli von [[Johnny Marr]] zu hören. Das Album erschien unter dem Titel ''Inception: Music from the Motion Picture''. 
+
+Das im Film von den Protagonisten als Signal für einen bevorstehenden ''Kick'' an die Träumenden verwendete, von [[Édith Piaf]] gesungene Lied „''Non, je ne regrette rien''“ ([[Französische Sprache|französisch]] für ''nein, ich bereue nichts'') war für Hans Zimmer Inspiration und Grundlage für den gesamten Soundtrack:&lt;ref&gt;[http://magazine.magix.com/de/das-geheimnis-hinter-dem-inception-soundtrack-03078/ Magix Magazine – „Das Geheimnis hinter dem Inception-Soundtrack“], abgerufen am 21. August 2010&lt;/ref&gt;
+
+{{Zitat|All the music in the score is subdivisions and multiplications of the tempo of the Édith Piaf track [Non, je ne regrette rien, Anm.]. So I could slip into half-time; I could slip into a third of a time. Anything could go anywhere. At any moment I could drop into a different level of time|Hans Zimmer|im Interview der New York Times vom 27. Juli 2010&lt;ref&gt;http://artsbeat.blogs.nytimes.com/2010/07/28/hans-zimmer-extracts-the-secrets-of-the-inception-score/&lt;/ref&gt;}}
+
+'''Titelliste'''
+# ''Half Remembered Dream''
+# ''We Built Our Own World''
+# ''Dream Is Collapsing''
+# ''Radical Notion''
+# ''Old Souls''
+# ''528491''
+# ''Mombasa''
+# ''One Simple Idea''
+# ''Dream Within a Dream''
+# ''Waiting for a Train''
+# ''Paradox''
+# ''Time''
+
+Auf der offiziellen Website des Inception-Soundtracks&lt;ref&gt;http://www.inceptionscore.com&lt;/ref&gt; werden die Bonustracks ''Projections'' und ''Don't Think About Elephants'' zum kostenlosen [[Download]] angeboten. Diese Titel sind nicht auf dem Soundtrack-Album zu hören.
+
+Die Trailermusik namens ''Mind Heist'' stammt von [[Zack Hemsey]], gehört nicht zum Soundtrack und kann auf der Internetseite des Künstlers kostenlos angehört werden.&lt;ref&gt;[http://music.zackhemsey.com/track/mind-heist kostenlos ''Mind Heist'' anhören, die Trailermusik von Zack Hemsey]&lt;/ref&gt;
+
+== Auszeichnungen und Nominierungen ==
+'''[[Oscarverleihung 2011|Oscar 2011]]'''
+* [[Oscarverleihung 2011#Beste Kamera|Beste Kamera]] für Wally Pfister
+* [[Oscarverleihung 2011#Bester Ton|Bester Ton]] für [[Lora Hirschberg]], Gary Rizzo und Ed Novick
+* [[Oscarverleihung 2011#Bester Tonschnitt|Bester Tonschnitt]] für Richard King
+* [[Oscarverleihung 2011#Beste visuelle Effekte|Beste visuelle Effekte]] für Paul Franklin, Chris Corbould, Andrew Lockley und Peter Bebb
+* Nominierung in der Kategorie [[Oscarverleihung 2011#Bester Film|Bester Film]] für Christopher Nolan und Emma Thomas
+* Nominierung in der Kategorie [[Oscarverleihung 2011#Bestes Originaldrehbuch|Bestes Originaldrehbuch]] für Christopher Nolan
+* Nominierung in der Kategorie [[Oscarverleihung 2011#Beste Filmmusik|Beste Filmmusik]] für Hans Zimmer
+* Nominierung in der Kategorie [[Oscarverleihung 2011#Bestes Szenenbild|Bestes Szenenbild]] für Guy Hendrix Dyas, Larry Dias und Douglas A. Mowat
+
+'''[[Golden Globe Awards 2011]]'''
+* Nominierung in der Kategorie [[Golden Globe Awards 2011#Bester Film – Drama|Bestes Filmdrama]] für Christopher Nolan und Emma Thomas
+* Nominierung in der Kategorie [[Golden Globe Awards 2011#Beste Regie|Beste Regie]] für Christopher Nolan
+* Nominierung in der Kategorie [[Golden Globe Awards 2011#Bestes Drehbuch|Bestes Drehbuch]] für Christopher Nolan
+* Nominierung in der Kategorie [[Golden Globe Awards 2011#Beste Filmmusik|Beste Filmmusik]] für Hans Zimmer
+
+'''[[British Academy Film Awards 2011|BAFTA Award 2011]]'''
+* [[British Academy Film Award/Bester Ton|Bester Ton]] für Lora Hirschberg, Gary Rizzo und Ed Novick
+* [[British Academy Film Award/Bestes Szenenbild|Bestes Szenenbild]] für Guy Hendrix Dyas, Larry Dias und Douglas A. Mowat
+* [[British Academy Film Award/Beste visuelle Effekte|Beste visuelle Effekte]] für Paul Franklin, Chris Corbould, Andrew Lockley und Peter Bebb
+* Nominierung in der Kategorie [[British Academy Film Award/Bester Film|Bester Film]] für Christopher Nolan und Emma Thomas
+* Nominierung in der Kategorie [[British Academy Film Award/Beste Regie|Beste Regie]] für Christopher Nolan
+* Nominierung in der Kategorie [[British Academy Film Award/Bestes Originaldrehbuch|Bestes Originaldrehbuch]] für Christopher Nolan
+* Nominierung in der Kategorie [[British Academy Film Award/Beste Filmmusik|Beste Filmmusik]] für Hans Zimmer
+* Nominierung in der Kategorie [[British Academy Film Award/Beste Kamera|Beste Kamera]] für Wally Pfister
+* Nominierung in der Kategorie [[British Academy Film Award/Bester Schnitt|Bester Schnitt]] für Lee Smith
+
+'''[[Satellite Awards 2010]]'''
+* Beste Kamera für Wally Pfister
+* Bestes Szenenbild für Guy Hendrix Dyas, Larry Dias und Douglas A. Mowat
+* Beste Filmmusik für Hans Zimmer
+* Nominierung in der Kategorie bester Film für Christopher Nolan und Emma Thomas
+* Nominierung in der Kategorie beste Regie für Christopher Nolan
+* Nominierung in der Kategorie bestes Originaldrehbuch für Christopher Nolan
+* Nominierung in der Kategorie bester Hauptdarsteller (Drama) für Leonardo DiCaprio
+* Nominierung in der Kategorie beste Nebendarstellerin für Marion Cotillard
+* Nominierung in der Kategorie bester Schnitt für Lee Smith
+* Nominierung in der Kategorie bester Tonschnitt für Richard King
+* Nominierung in der Kategorie beste visuelle Effekte für Paul Franklin, Chris Corbould, Andrew Lockley und Peter Bebb
+
+'''[[Broadcast Film Critics Association|Broadcast Film Critics Association Awards]]'''
+* [[Broadcast Film Critics Association Awards/Bester Actionfilm|Bester Actionfilm]] für Christopher Nolan und Emma Thomas
+* [[Broadcast Film Critics Association Awards/Beste Kamera|Beste Kamera]] für Wally Pfister
+* [[Broadcast Film Critics Association Awards/Bestes Szenenbild|Bestes Szenenbild]] für Guy Hendrix Dyas, Larry Dias, Doug Mowat
+* [[Broadcast Film Critics Association Awards/Bester Schnitt|Bester Schnitt]] für Lee Smith
+* [[Broadcast Film Critics Association Awards/Beste Visual Effects|Beste Visual Effects]] für Paul Franklin, Chris Corbould, Andrew Lockley und Peter Bebb
+
+* Nominierung in der Kategorie [[Broadcast Film Critics Association Awards/Bester Film|Bester Film]] für Christopher Nolan und Emma Thomas
+* Nominierung in der Kategorie [[Broadcast Film Critics Association Awards/Beste Regie|Beste Regie]] für Christopher Nolan
+* Nominierung in der Kategorie [[Broadcast Film Critics Association Awards/Bestes Originaldrehbuch|Bestes Originaldrehbuch]] für Christopher Nolan
+* Nominierung in der Kategorie [[Broadcast Film Critics Association Awards/Bester Komponist|Bester Komponist]] für Hans Zimmer 
+
+'''[[Writers Guild of America]] Award 2011'''
+* Bestes Original-Drehbuch für Christopher Nolan
+
+'''[[MTV Movie Awards 2011]]'''
+* [[MTV Movie Awards 2011#Bester Angsthase|Bester Angsthase]] für Ellen Page
+* '''Nominierungen:'''
+* Nominierung in der Kategorie [[MTV Movie Awards 2011#Beste Kampfszene|Beste Kampfszene]] (Joseph Gordon-Levitt vs. Hallway Attacker)
+* Nominierung in der Kategorie [[MTV Movie Awards 2011#Bester Filmkuss|Bester Filmkuss]] (Ellen Page &amp; Joseph Gordon-Levitt)
+* Nominierung in der Kategorie [[MTV Movie Awards 2011#Bestes Filmzitat|Bestes Filmzitat]] (&quot;You mustn't be afraid to dream a little bigger darling&quot;) (Tom Hardy)
+
+'''[[Box Office Germany Award|Bogey Award]]'''
+* Bogey in Silber: 2 Millionen Besucher innerhalb von 20 Tagen
+
+
+Die [[Deutsche Film- und Medienbewertung (FBW)|Deutsche Film- und Medienbewertung]] verlieh der Produktion das ''Prädikat besonders wertvoll''. In der Bewertung der FBW heißt es u.&amp;nbsp;a.: „''In der Traumwelt dieses Films ist alles möglich - es muss nur realistisch dargestellt und in sich schlüssig sein. Und diese Aufgabe meistert Nolan souverän, [...]. So glaubwürdig und spielerisch wie hier wurde vorher noch nie im Kino die Illusion von Schwerelosigkeit erzeugt und auch sonst ist INCEPTION prall gefüllt mit Phantasmagorien, die von Nolan grandios konzipiert und in Szene gesetzt wurden. Durch die intensiven Leistungen der genau passend besetzten Darsteller gelingt es Nolan zu verhindern, dass seine Geschichte nach dem Motto „wenn alles möglich ist, ist auch alles egal“ zu einer reinen cineastischen Trickkiste wird. Vor allem Leonardo DiCaprio und Ellen Page erden so diesen Traum von einem Film.''“&lt;ref&gt;[http://www.fbw-filmbewertung.com/film/inception Deutsche Film- und Medienbewertung verleiht der Produktion das ''Prädikat besonders wertvoll'']&lt;/ref&gt;
+
+== Literatur ==
+* Hubert Carl: ''Inception. „The Dark Knight“ Regisseur Christopher Nolan schickt Leo DiCaprio und uns einmal um die ganze Erde – und in die unendliche Welt unserer intimsten Träume.'' In: Treffpunkt Kino, August 2010, S. 27.
+* Tobias Kniebe: ''Fremdgehen im eigenen Traum. Christopher Nolan versucht sich an einer totalen Videospiel-Verschachtelung in seinem gedankenvollen Superblockbuster „Inception“.'' In: [[Süddeutsche Zeitung]], 28. Juli 2010, S. 11.
+
+== Einzelnachweise ==
+&lt;references /&gt;
+
+== Weblinks ==
+{{Commonscat|Inception (film)|Inception}}
+* [http://wwws.warnerbros.de/inception/mainsite/ Offizielle Webpräsenz]
+* {{IMDb Titel|tt1375666}}
+* ''[http://www.synchronkartei.de/?action=show&amp;type=film&amp;id=17565 Inception] in der [[Deutsche Synchronkartei|Deutschen Synchronkartei]]
+* {{LdIF|535865}}
+* {{metacritic|inception}}
+* {{rottentomatoes|1217219-inception}}
+* [http://www.film-zeit.de/Film/21141/INCEPTION/Kritik/ Zusammenstellung von Pressekritiken] (deutsch)
+* [http://inceptionmovie.warnerbros.com/pdf/INCEPTION_PK_Notes__Bios_6-18.pdf Produktionsnotizen zu Inception von Warner Brothers]
+
+{{Navigationsleiste Filme von Christopher Nolan}}
+
+[[Kategorie:US-amerikanischer Film]]
+[[Kategorie:Actionfilm]]
+[[Kategorie:Heist-Movie]]
+[[Kategorie:Thriller]]
+[[Kategorie:Science-Fiction-Film]]
+[[Kategorie:Filmtitel 2010]]
+
+{{Link GA|en}}
+
+[[ar:ازدراع]]
+[[bg:Генезис]]
+[[ca:Inception]]
+[[cs:Počátek (film)]]
+[[cy:Inception (ffilm)]]
+[[da:Inception]]
+[[diq:Inception]]
+[[el:Inception]]
+[[en:Inception]]
+[[es:Inception]]
+[[fa:سرآغاز (فیلم)]]
+[[fi:Inception]]
+[[fr:Inception]]
+[[gl:Inception]]
+[[he:התחלה (סרט)]]
+[[hi:इन्सेप्शन]]
+[[hu:Eredet (film)]]
+[[hy:Սկիզբ (ֆիլմ, 2010)]]
+[[id:Inception]]
+[[is:Hugljómun]]
+[[it:Inception]]
+[[ja:インセプション]]
+[[jv:Inception]]
+[[ka:დასაწყისი (ფილმი)]]
+[[ko:인셉션]]
+[[la:Inception]]
+[[lv:Pirmsākums]]
+[[mdf:Ушедома (фильм)]]
+[[mk:Inception (филм)]]
+[[ml:ഇൻസെപ്ഷൻ]]
+[[mn:Оршил (2010 оны кино)]]
+[[mr:इन्सेप्शन (इंग्लिश चित्रपट)]]
+[[ms:Inception (filem)]]
+[[nl:Inception]]
+[[no:Inception]]
+[[pl:Incepcja]]
+[[pt:A Origem]]
+[[ro:Începutul]]
+[[ru:Начало (фильм, 2010)]]
+[[simple:Inception]]
+[[sk:Počiatok (film)]]
+[[sl:Izvor (film)]]
+[[sr:Početak]]
+[[sv:Inception]]
+[[ta:இன்செப்சன் (திரைப்படம்)]]
+[[th:จิตพิฆาตโลก]]
+[[tr:Başlangıç]]
+[[uk:Початок (фільм, 2010)]]
+[[vi:Inception]]
+[[zh:全面啟動]]
+[[zh-min-nan:Inception]]

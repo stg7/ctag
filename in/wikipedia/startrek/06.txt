@@ -1,0 +1,164 @@
+{{Infobox Film
+| Bild    = Star trek 6 de.svg
+| DT      = Star Trek VI: Das unentdeckte Land
+| OT      = Star Trek VI: The Undiscovered Country
+| PL      = [[Vereinigte Staaten|USA]]
+| PJ      = 1991
+| LEN     = 113
+| OS      = [[Englische Sprache|Englisch]]
+| FSK     = 12
+| REG     = [[Nicholas Meyer]]
+| DRB     = Nicholas Meyer, [[Denny Martin Flinn]], [[Leonard Nimoy]], [[Lawrence Konner]], [[Mark Rosenthal]]
+| PRO     = [[Steven-Charles Jaffe]], [[Ralph Winter]]
+| MUSIK   = [[Cliff Eidelman]]
+| KAMERA  = [[Hiro Narita]]
+| SCHNITT = [[William Hoy]], [[Ronald Roose]]
+| DS      = 
+* [[William Shatner]]: Captain James T. Kirk
+* [[Leonard Nimoy]]: Captain Spock
+* [[DeForest Kelley]]: Dr. Leonard „Pille“ McCoy
+* [[James Doohan]]: Captain Montgomery „Scotty“ Scott
+* [[George Takei]]: Captain Hikaru Sulu
+* [[Walter Koenig]]: Commander Pavel Chekov
+* [[Nichelle Nichols]]: Commander Nyota Uhura
+* [[Mark Lenard]]: Botschafter Sarek
+* [[Grace Lee Whitney]]: Kommunikationsoffizier Janice Rand
+* [[Brock Peters]]: Admiral Cartwright
+* [[Leon Russom]]: Kommandierender Offizier William „Bill“ Smillie
+* [[Kurtwood Smith]]: Präsident der Föderation
+* [[Christopher Plummer]]: General Chang
+* [[Rosanna DeSoto]]: Azetbur
+* [[David Warner]]: Kanzler Gorkon
+* [[Kim Cattrall]]: Lt. Valeris
+* [[Iman Abdulmajid]]: Martia
+* [[Michael Dorn]]: Klingonischer Verteidiger
+}}
+
+'''Star Trek VI: Das unentdeckte Land''' ist der sechste [[Star Trek|Star-Trek]]-Kinofilm und der letzte, in dem die Originalcrew mitspielt und der (ausschließlich) auf der Fernsehserie ''[[Raumschiff Enterprise]]'' basiert.
+
+Der Titel ist eine Anspielung auf [[William Shakespeare|Shakespeares]] [[Hamlet]], III. Akt, Szene 1; anders als im Theaterstück ist hier jedoch nicht der Tod, sondern die Zukunft gemeint.
+
+== Handlung ==
+
+Nach der Explosion des Mondes Praxis, der die Hauptenergiequelle der klingonischen Heimatwelt Qo'noS (gesprochen: Kronos) und damit auch des Reiches darstellte, sind die [[Völker im Star-Trek-Universum|Klingonen]] im Rahmen von Hilfsmaßnahmen plötzlich zu Friedensverhandlungen mit der Föderation gezwungen. Captain James T. Kirk muss zu einer letzten Mission aufbrechen: er soll dem klingonischen Kanzler Gorkon ein sicheres Geleit zu den Verhandlungen auf der [[Erde]] bieten.
+
+Das erste Treffen mit den Klingonen an Bord der [[Enterprise (Raumschiff)|Enterprise]] verläuft trotz des guten Willens des Kanzlers kühl. Und es kommt noch schlimmer: Auf die Klingonen wird ein Anschlag verübt. Zwei scheinbar von der ''Enterprise'' abgefeuerte Photonentorpedos schießen den Schlachtkreuzer manövrierunfähig. Zusätzlich beamen zwei maskierte Männer an Bord und eröffnen das Feuer auf die Klingonen. Dabei wird Gorkon schwer verletzt.
+
+Kirk und Schiffsarzt McCoy beamen auf den Kreuzer und McCoy versucht vergeblich, Gorkons Leben zu retten. Sie ergeben sich den Klingonen, um ihre Unschuld zu beweisen, werden jedoch verhaftet und des Mordes angeklagt. Da die Friedensverhandlungen nicht gefährdet werden sollen, stimmt die Föderation einer Gerichtsverhandlung zu. In einem Schauprozess auf Qo'noS werden Kirk und McCoy zu lebenslänglicher Haft in den Minen auf dem vereisten Strafasteroiden Rura Penthe verurteilt.
+
+Inzwischen wird auf der ''Enterprise'' verzweifelt nach einer Erklärung für die Ermordung des klingonischen Kanzlers gesucht. Es gibt nur eine Erklärung: Ein klingonisches [[Kriegsschiff]] mit neuester Tarn-Technologie hat unbemerkt die Torpedos abgefeuert. Außerdem muss es Komplizen auf der Enterprise geben. Eine fieberhafte Suche beginnt, die auch scheinbar von Erfolg gekrönt wird.
+
+Dank der Hilfe der Gestaltenwandlerin Martia – einer Mitgefangenen – gelingt Kirk und McCoy die Flucht aus den Minen. Wenngleich ihr Entkommen nur in einen Hinterhalt führt und ihrer unauffälligen Exekutierung dienen sollte, können beide in letzter Minute an Bord der ''Enterprise'' gebeamt werden.
+
+Hier können nicht nur die beiden (nun toten) Attentäter entlarvt werden, sondern auch deren Auftraggeber: Lieutenant Valeris, Spocks vulkanischer [[Protegé]] und eigentlich dessen Nachfolgerin an Bord. Mit Hilfe einer Gedankenverschmelzung kommt die Crew einer zwischen Menschen, Klingonen und [[Romulaner]]n bestehenden Verschwörung auf die Spur, deren Ziel es ist, den Frieden zu boykottieren und kriegerischen Status quo im Weltall aufrechtzuerhalten. Zu diesem Zweck wurde ein Spezial-Tarnkreuzer gebaut, der nun bei einem Attentat während der Friedenskonferenz auf dem klingonischen Außenposten Camp Khitomer Rückendeckung geben soll.
+
+Mit Schützenhilfe der von Captain Sulu befehligten ''USS Excelsior'' kann die Crew der Enterprise das getarnte Kriegsschiff schließlich besiegen, das Attentat im letzten Augenblick verhindern und sämtliche Verschwörer aus dem Verkehr ziehen.
+
+Kirk und seine Crew haben ihre Aufgabe erfolgreich erfüllt, und ihnen bleibt nur noch die Rückkehr zur Erde. Dort soll die Mannschaft abgemustert werden.
+
+== Produktionsgeschichte ==
+=== Drehbuchentwicklung ===
+Frank Mancuso, Präsident von [[Paramount Pictures|Paramount]], traf sich mit Leonard Nimoy, um die Möglichkeiten eines weiteren Star-Trek-Films zu besprechen. Das Franchise enttäuschte kommerziell mit dem letzten Film ''[[Star Trek V: Am Rande des Universums]]'', doch sollte zum bevorstehenden 25jährigen Jubiläum der Kultserie eine letzte Kinoproduktion mit der Originalbesatzung realisiert werden.
+
+Leonard Nimoy brachte unter Eindruck des Zusammenbruchs der [[Sowjetunion]] und dem Ende des [[Kalter Krieg|Kalten Krieges]] die Idee auf, auch die „Berliner Mauer im Weltraum“ fallen zu lassen: Die Story sollte sich um Friedensverhandlungen mit den Klingonen drehen, die als klassisches Feindbild in der Serie dienten. Selbst wollte er allerdings weder das Drehbuch schreiben noch die Mühen der Regie auf sich nehmen. Stattdessen kontaktierte er Nicholas Meyer, der als Regisseur und Autor hinter dem Erfolg von ''[[Star Trek II: Der Zorn des Khan]]'' stand und auch bei ''[[Star Trek IV: Zurück in die Gegenwart]]'' maßgeblich am Drehbuch beteiligt war. In einem langen Gespräch zwischen Nimoy und dem interessierten Meyer formten sich die Grundlagen des späteren Films, etwa den metaphorischen Einbau des [[Katastrophe von Tschernobyl|Super-GAUs von Tschernobyl]], Kirks Treffen mit dem Klingonischen Kanzler, das Attentat auf denselbigen, Kirks Verurteilung bei einem Schauprozess und die Jagd nach den wahren Attentätern.&lt;ref&gt;Vgl. Meyer, ''The View From The Bridge'', S. 200.&lt;/ref&gt;
+
+Das Studio akzeptierte die Storyidee, übergab den Auftrag für die Ausarbeitung allerdings zwei Autoren, die davon unabhängig bereits bei Paramount unter Vertrag für ein Drehbuch standen und auf einen passenden Film warteten. Der nur als Regisseur vorgesehene Meyer wurde dennoch kontaktiert, als das Autorenduo in kreative Schwierigkeiten geriet: In nach Meyers Angaben tagelangen Besprechungen gab dieser den Autoren seine und Nimoys Storyideen weiter. Deren fertiges Drehbuch wurde vom Studio dennoch verworfen und schließlich Meyer offiziell als Autor engagiert. Das Studio war Meyers Anfragen gegenüber nun sehr offen, akzeptierte Meyers Produzenten Steven-Charles Jaffe und Denny Martin Flinn als Co-Autor. Letzterer war Meyer ein besonderes Anliegen, da er seit Monaten mit einer Krebserkrankung kämpfte.&lt;ref&gt;Vgl. Meyer, ''The View From The Bridge'', S. 200–202.&lt;/ref&gt;
+
+Das Skript entstand unter Zeitdruck und per E-Mail-Verkehr zwischen Meyer und Flinn. Das fertige Drehbuch stieß sowohl beim Studio als bei Nimoy, der als Executive Producer fungierte, auf generelle Zustimmung. Nimoy drängte weiter auf Verbesserungen und schlug etwa eine Szene vor, in der Spocks Protegé Valeris, die sich als Verräterin entpuppt, vor der Entscheidung steht, Spock zu erschießen. Zwar lobten sich Meyer und Nimoy später oft gegenseitig für die Beiträge des jeweils anderen, doch überschatteten Meinungsverschiedenheiten zwischen beiden die ganze Produktion.&lt;ref&gt;Vgl. Meyer, ''The View From The Bridge'', S. 202f.&lt;/ref&gt;
+
+Entschieden größerer Widerstand gegen Meyers Ideen und Interpretation des Star-Trek-Universums kamen von Gene Roddenberry. Der gesundheitlich schwer angeschlagene Schöpfer der Serie hatte seit dem [[Star Trek: Der Film|ersten Star-Trek-Film]], bei dem er als Produzent tätig war, keine Entscheidungsmacht mehr. Er bemühte sich in seiner Beraterfunktion dennoch um Einfluss, bekämpfte etwa die Darstellung offener Rassismen bei einigen Föderationsoffizieren. Insbesondere wollte er verhindern, dass die als positive Figur in Star Trek II eingeführte Vulkanierin Saavik eine Verräterin sein sollte. Nur weil schließlich [[Kirstie Alley]] für eine Wiederaufnahme ihrer Rolle nicht zu Verfügung stand, wurde auf Saavik verzichtet und stattdessen die Vulkanierin Valeris etabliert.&lt;ref&gt;Vgl. Meyer, ''The View From The Bridge,'' S. 212f.&lt;/ref&gt;
+
+=== Budgetstreitigkeiten ===
+
+Ende 1990 kam es zwischen Meyer und den Verantwortlichen von Paramount zu Streitigkeiten über das Filmbudget: Statt den zuvor von Mancuso genannten 30 Millionen Dollar sollten nun 25 Millionen zur Verfügung stehen. Meyers Protest gegen ein Budget unter 30 Millionen (und damit unter den Kosten des Vorgängerfilms ''Star Trek V'') führte zu Mancusos Entscheidung, das Projekt abzusagen. Davon unabhängig musste Mancuso kurz danach seinen Posten räumen. Seine Nachfolger Stanley Jaffe (nicht verwandt mit Meyers Produzenten Steven-Charles Jaffe) und Sherry Lansing sicherten Meyer das gewünschte Mindestbudget ohne Umschweife zu.&lt;ref&gt;Vgl. Meyer, ''The View From The Bridge'', S. 206ff.&lt;/ref&gt;
+
+== Historischer Hintergrund ==
+
+''Star Trek VI'' entstand gut zwei Jahre nach dem [[Mauerfall]] und ein Jahr nach der [[Deutschland|deutschen]] [[Deutsche Wiedervereinigung|Wiedervereinigung]] sowie dem weltpolitischen Umbruch des [[Staatssozialismus]] im [[Ostblock]]. Der Film bemüht sich, das Ende des [[Kalter Krieg|Kalten Krieges]] in die fiktionale Welt Star Treks zu übertragen. 
+
+Auslöser der Friedensverhandlungen im Film ist die Explosion des klingonischen Mondes ''Praxis''. In der Realität kommt die im Jahr 1986 stattgefundene atomare Katastrophe im [[Ukraine|ukrainischen]] Kernkraftwerk ''[[Katastrophe von Tschernobyl|Tschernobyl]]'' dem sehr nahe, obwohl dieses Ereignis kaum solche politischen Wellen geschlagen hat, wie die Detonation des Mondes im Film.
+
+== Wissenswertes ==
+
+* Da die Serie [[Raumschiff Enterprise: Das nächste Jahrhundert]] zum Drehzeitpunkt noch in der Produktion war, wurden Teile der Requisiten für den Kinofilm mitverwendet. Während des Angriffs des Tarnkreuzers sieht man Besatzungsmitglieder durch aus der '''TNG'''-Serie bekannte Korridore und Teile des Maschinenraums rennen. Für die Kulisse des [[Paris]]er Büros des Föderationspräsidenten verwendete man das Interieur der Bar ''Zehn Vorne'' ''(Ten Forward)'' von der '''''Enterprise-D'''''.
+* 1997 wurde der Film noch einmal in einer überarbeiteten Fassung auf den Markt gebracht, wobei Bild und Ton komplett digital überarbeitet wurden und der Streifen in einer ''Widescreen''-Version veröffentlicht wurde. Zusätzlich wurden Szenen hinzugefügt, die aus der ursprünglichen Fassung herausgenommen worden waren. Dabei sieht man u.&amp;nbsp;a.:
+** wie dem Föderationspräsidenten nach Abgang des klingonischen Botschafters von Föderationsoffizieren und anderen Botschaftern der Plan einer Rettungsoperation offeriert wird, mit der man ''Kirk'' und ''McCoy'' befreien will.
+** wie ''Spock'', ''Scotty'' und ''Valeris'' persönlich den computertechnischen Fehlbestand an Photonentorpedos vor Ort am Arsenal überprüfen und über die Situation sinnieren. Für diese Szene wurden in der deutschen Fassung andere Synchronsprecher eingesetzt als im Rest des Films.
+** wie nach dem gescheiterten Anschlag ein menschlicher Föderationsoffizier als ein als Klingone maskierter Attentäter enttarnt wird.
+* Die Szene, in der der Gefängisdirektor den Gefangenen über die Regeln und Gesetze des Gefängnisses informiert, ist eine Anlehnung an eine ähnliche Szene in dem Film [[Die Brücke am Kwai]].
+*  Der Name der klingonischen Strafkolonie „Rura Penthe“ spielt an auf eine gleichnamige Strafkolonie im Film [[20.000 Meilen unter dem Meer (1954)|20.000 Meilen unter dem Meer]] aus dem Jahre 1954.
+* Schauspieler [[Christian Slater]] hat im Film eine Gastrolle. Er spielt einen Kommunikationsoffizier der '''''USS Excelsior''''', welcher Captain ''Sulu'' zu nachtschlafender Zeit davon in Kenntnis setzt, dass die '''''Enterprise''''' ihre Rückkehr zur Erde nicht bestätigt hat. Den Auftritt hatte Slater seiner Mutter [[Mary Jo Slater]] zu verdanken, die für die Besetzung des Films verantwortlich zeichnete.
+* ''Kirk'' und ''McCoy'' werden während des Schauprozesses vom klingonischen ''Colonel Worf'' verteidigt. Dieser wurde von [[Michael Dorn]] verkörpert, der bereits in der Serie [[Raumschiff Enterprise: Das nächste Jahrhundert]] eine feste Rolle als klingonischer Sicherheitschef ''Lieutenant Worf'' hatte. In einem Interview erklärte Dorn, dass ''Colonel Worf'' der Großvater von ''Lieutenant Worf'' sein soll.
+* Als Darsteller des Föderationsoffiziers ''Colonel West'', der dem Präsidenten den Rettungsplan erläutert und der am Ende als Attentäter demaskiert wird, agiert Schauspieler [[René Auberjonois (Schauspieler)|René Auberjonois]]. Dieser hatte eine feste Rolle als Sicherheitschef und Gestaltenwandler ''Odo'' in der ebenfalls im '''''Enterprise'''''-Universum angesiedelten Serie [[Star Trek: Deep Space Nine]].
+* Die Explosion des ''Bird of Prey'' am Ende des Films wurde erneut in [[Star Trek: Treffen der Generationen|Star Trek VII]] verwendet.
+* Der Schauspieler [[Brock Peters]], der den Verschwörer Admiral Cartwright verkörpert, tritt in der Star-Trek-Serie [[Star Trek: Deep Space Nine|Deep Space Nine]] als Vater von Captain Sisko auf.
+* Einige Kopien des Films in den [[USA]] hatten zu Testzwecken neben der [[Dolby Stereo]] Lichttonspur das damals neue Tonformat [[Dolby Digital]] kopiert.
+* Am 11. September 1996 erfolgte die Erstausstrahlung der Episode ''Tuvoks Flashback (Flashback)'' der Ablegerserie [[Star Trek: Raumschiff Voyager]]. In dieser Folge werden Erinnerungen des Sicherheitschefs der U.S.S.&amp;nbsp;Voyager verarbeitet, der während seiner ersten Dienstzeit bei der Sternenflotte als Fähnrich auf der U.S.S.&amp;nbsp;Excelsior diente. Die Handlung spielt teilweise zum Zeitpunkt der Rettungsmission für Captain Kirk und Doktor McCoy durch deren alten Kameraden Captain Sulu.
+* Kirks Kursbefehl am Ende des Films stammt aus Peter Pan: „Second star to the right and straight on to the morning!“ (deutsch: „Der zweite Stern von rechts und dann gerade aus bis zum Morgen.“) In der Kindererzählung führt dieser Weg direkt ins „Nimmerland“, wo Peter Pan seine ewige Kindheit verbringt.
+* Um den klingonenkritisch eingestellten Kirk von der Notwendigkeit ihrer Mission zu überzeugen, führt Spock das alte vulkanische Sprichwort „''[[Only Nixon could go to China]]''“ („''Nur Nixon konnte nach China gehen''“) an.
+* Spocks Feststellung: „An ancestor of mine maintained that if you eliminate the impossible, whatever remains must be the truth“ (deutsch: „Einer meiner Vorfahren hat immer gesagt, man muss erst einmal das Unmögliche abgrenzen. In dem, was dann noch da ist und sei es noch so unwahrscheinlich, muss die Wahrheit stecken.“) spielt auf die Romanfigur [[Sherlock Holmes]] des Schriftstellers Sir [[Arthur Conan Doyle]] an, welche die Meinung vertrat: „When you have excluded the impossible, whatever remains, however improbable, must be the truth.“ (deutsch: „Wenn Du das Unmögliche ausgeschlossen hast, dann ist das, was übrig bleibt, die Wahrheit, wie unwahrscheinlich sie auch ist.“)
+
+== Kritiken ==
+{{Zitat|Science-Fiction-Abenteuer mit Ansätzen zur Selbstironie und nostalgischem Touch; mit viel Tricktechnik zeitgemäß aufgebessert.|[[Lexikon des Internationalen Films]] &lt;ref&gt;[http://www.filmevona-z.de/filmsuche.cfm?wert=46207&amp;sucheNach=titel Kritik im Lexikon des internationalen Films]&lt;/ref&gt;}}
+
+{{Zitat|Ein akzeptables Star Trek-Abenteuer, das mit Worfs Auftritt schon den Übergang zur ‚Next Generation‘ andeutet und deutliche Parallelen zu realen Ereignissen (Zerfall des Ostblocks) aufweist.|[[Prisma (Fernsehzeitschrift)|Prisma Online]] &lt;ref&gt;[http://www.prisma-online.de/tv/film.html?mid=1991_star_trek_vi_das_unentdeckte_land Kritik bei Prisma Online]&lt;/ref&gt;}}
+
+{{Zitat|Die Mischung aus Action, Weltraum-Exotik und Ironie zumindest ist gelungen, die Story ist simpel, aber spannend, geradlinig und doch nicht allzu oberflächlich, auch wenn um der schönen Geschichte und des Humors willen einige phantastisch triviale Haken geschlagen werden. Die Anspielungen auf die Gegenwart werden, um nicht penetrant zu wirken, mit einem Augenzwinkern präsentiert, und fünf ''Star-Trek''-Filme bilden einen reichlichen Fundus für ironische Zitate.|Sasach Mamczak, Science Fiction Media}}
+
+{{Zitat|Nachdem selbst für amerikanische Rechtsausleger das ''Reich des Bösen'' von der Landkarte verschwunden ist, ergibt auch der Krieg im All keinen Sinn mehr. Selbst der verbohrte Capt. Kirk läutert sich unter dem Druck der Verhältnisse zum Friedensapostel. So bestätigt ''Star Trek VI'' einmal mehr die alte Binsenweisheit, dass das Science-Fiction-Genre nichts anderes ist als ein Reflex auf die Gegenwart.|Karl-Eugen Hagemann, [[Filmdienst]]}}
+
+== Auszeichnungen ==
+* Der Film wurde 1992 in den Kategorien ''Bestes Makeup'' und ''Best Effects, Sound Effects Editing'' für je einen [[Oscar]] nominiert.
+* 1993 erhielt ''Star Trek VI'' als ''Bester Science-Fiction-Film'' einen [[Saturn Award]].
+* In den Kategorien ''Best Costumes'', ''Best Make-Up'', ''Best Supporting Actress'' (Kim Cattrall) und ''Best Writing'' erhielt der Film Nominierungen für den Saturn Award.
+
+== Literatur ==
+* Meyer, Nicholas: ''The View From The Bridge''. Viking Penguin, New York 2009, ISBN 978-0-670-02130-7, S. 198–231.
+
+== Einzelnachweise ==
+&lt;references /&gt;
+
+== Weblinks ==
+* {{IMDb Titel|tt0102975}}
+* {{Memory Alpha|Star_Trek_VI:_Das_unentdeckte_Land|Star Trek VI: Das unentdeckte Land}}
+* [http://schnittberichte.com/schnittbericht.php?ID=2466 Vergleich der Kinofassung mit der Special Edition (DVD)] auf www.schnittberichte.com
+* [http://schnittberichte.com/schnittbericht.php?ID=2480 Vergleich der DVD Erstauflage mit der Special Edition (DVD)] auf www.schnittberichte.com
+
+{{NaviBlock
+|Navigationsleiste Star Trek
+|Navigationsleiste Filme von Nicholas Meyer
+}}
+
+{{SORTIERUNG:Star Trek 6 Das Unentdeckte Land}}
+[[Kategorie:Filmtitel 1991]]
+[[Kategorie:US-amerikanischer Film]]
+[[Kategorie:Star Trek|Unentdeckte Land #Das]]
+[[Kategorie:Science-Fiction-Film]]
+
+{{Link FA|en}}
+
+[[bg:Стар Трек VI: Неоткритата страна]]
+[[ca:Star Trek VI: Aquell país desconegut]]
+[[cs:Star Trek VI: Neobjevená země]]
+[[en:Star Trek VI: The Undiscovered Country]]
+[[es:Star Trek VI: aquel país desconocido]]
+[[et:Star Trek 6: Avastamata maa]]
+[[fi:Star Trek VI – Tuntematon maa]]
+[[fr:Star Trek 6 : Terre inconnue]]
+[[he:מסע בין כוכבים 6: הארץ הלא נודעת]]
+[[hu:Star Trek VI: A nem ismert tartomány]]
+[[id:Star Trek VI: The Undiscovered Country]]
+[[it:Rotta verso l'ignoto]]
+[[ja:スタートレックVI 未知の世界]]
+[[nl:Star Trek VI: The Undiscovered Country]]
+[[no:Star Trek VI: The Undiscovered Country]]
+[[pl:Star Trek VI: Wojna o pokój]]
+[[pt:Star Trek VI: The Undiscovered Country]]
+[[ro:Star Trek VI: Țara nedescoperită]]
+[[ru:Звёздный путь 6: Неоткрытая страна]]
+[[simple:Star Trek VI: The Undiscovered Country]]
+[[sk:Star Trek VI: The Undiscovered Country]]
+[[sl:Zvezdne steze 6: Nepoznana dežela]]
+[[sv:Star Trek VI - The Undiscovered Country]]
+[[uk:Зоряний шлях 6: Невідкрита країна]]
+[[zh:星际旅行VI：未来之城]]
