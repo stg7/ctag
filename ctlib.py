@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 # -*- coding: utf8 -*-
 """
-    Cloudtag 
-    
-    author: steve göring
+    Cloudtag
+
+    author: Steve Göring
     contact: stg7@gmx.de
-    2012
-    
+
 """
 """
     This file is part of cloudtag.
@@ -33,11 +32,11 @@ calledfromCt = False
 def getConfig(configfile):
     config = configparser.ConfigParser()
     config.readfp(open(configfile))
-    
+
     try:
         # try to get an element in new python3.2 api style
-        config['ignore']['base'] 
-                
+        config['ignore']['base']
+
     except:
         # :( ugly, python-version <3.2
         # quick - fix -hack
@@ -47,8 +46,8 @@ def getConfig(configfile):
             for (key,value) in config.items(s):
                 c[s][key]=value
         config = c
-    
-    
+
+
     return config
 
 def createDefaultConfig():
@@ -108,19 +107,19 @@ def getHex(a):
 
 
 class ctcolor:
-    
+
     def __init__(self, minColor, maxColor):
         self._minCol = (int(minColor[0:2],16), int(minColor[2:4],16), int(minColor[4:6],16) )
         self._maxCol = (int(maxColor[0:2],16), int(maxColor[2:4],16), int(maxColor[4:6],16) )
         self._colors = {}
-        
+
     def scale(self, minfreq, maxfreq):
         self._scalefactor= ( (self._maxCol[0] - self._minCol[0] +0.0)/(maxfreq-minfreq) ,\
             (self._maxCol[1] - self._minCol[1]+0.0)/(maxfreq-minfreq) ,\
-            (self._maxCol[2] - self._minCol[2]+0.0)/(maxfreq-minfreq)  ) 
+            (self._maxCol[2] - self._minCol[2]+0.0)/(maxfreq-minfreq)  )
         self._minfreq = minfreq
         self._maxfreq = maxfreq
-        
+
     def calcColor(self, key, freq):
         self._colors[key] = "#"+"".join([ getHex( self._minCol[j] +  int( round((freq-self._minfreq)*self._scalefactor[j]))) for j in range(0,3) ] )
         return self._colors[key]
@@ -141,7 +140,7 @@ class ctfont:
         return self._sizes[key]
     def getSize(self, key):
         return self._sizes[key]
-        
+
 class ctpattern:
     def __init__(self, patternFile, delim):
         # open pattern
@@ -152,7 +151,7 @@ class ctpattern:
         while(not(3*delim in l)):
             header +=l
             l = f.readline()
-            
+
         # read element, just one line
         element = f.readline().replace("\n","").split(delim)
         f.readline()
@@ -165,49 +164,49 @@ class ctpattern:
         self._header = header
         self._footer = footer
         self._element = element
-        
+
     def getHeader(self):
         return self._header
-    def getFooter(self):    
+    def getFooter(self):
         return self._footer
     def getElement(self, content):
         ret = ""
-        i = 0 
+        i = 0
         for pattern in self._element:
             ret += pattern + str(content[i])
             i += 1
         return ret
-        
+
 def bucketsToList(Buckets, maxWords):
     e = 0 # count elements
     tmp = []
-    
+
     for i in sorted(Buckets.keys()):
         for k in Buckets[i]:
-            tmp.append((i,k)) 
+            tmp.append((i,k))
             e += 1
     tmp.reverse()
-    
+
     if(e == 0 ):
         raise Exception("error:","text has no important words or is empty")
     # just work with maxwords words
     if(maxWords > 0):
         tmp = tmp[0:maxWords]
-        
+
     maxfreq = 0
-    minfreq = None    
+    minfreq = None
     for (i,k) in tmp:
         if(minfreq == None):
             minfreq = i
         maxfreq = max(maxfreq,i)
         minfreq = min(i,minfreq)
-    
+
     return (minfreq, maxfreq, tmp)
 
 def readPlain(infile, maxWords):
     infile = open(infile,"r")
     B ={}
-    j = 0 
+    j = 0
     for l in infile:
         # every line "freq:[words]"
         p = l.find(":")
@@ -223,4 +222,4 @@ def readPlain(infile, maxWords):
 def getScriptDir():
     return os.path.dirname(os.path.realpath(sys.argv[0]))
 
-    
+

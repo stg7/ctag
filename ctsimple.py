@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 # -*- coding: utf8 -*-
 """
-    Cloudtag 
-    
-    author: steve göring
+    Cloudtag
+
+    author: Steve Göring
     contact: stg7@gmx.de
-    2012
-    
+
 """
 """
     This file is part of cloudtag.
@@ -27,39 +26,39 @@
 import configparser, os,sys,codecs,re,heapq, random,operator, math, ctlib
 
 class htmlcloud:
-   
+
     def __init__(self, patternFile, delim, config):
         # set color & font settings
         self._color = ctlib.ctcolor(config['color']['min'], config['color']['max'])
         self._font = ctlib.ctfont(config['font']['min'], config['font']['max'])
-               
-        # read pattern 
+
+        # read pattern
         self._pattern = ctlib.ctpattern(patternFile, delim)
-        
-        
+
+
     def createCloud(self, Buckets, maxSize, minSize ,maxWords, outfile):
-        
+
         (minfreq, maxfreq, tmp) = ctlib.bucketsToList(Buckets, maxWords)
-        
+
         D ={}
         for (i,k) in tmp:
             D[k]=i
-        
+
         self._font.scale(minfreq, maxfreq)
         self._color.scale(minfreq, maxfreq)
-        
+
         # write output file
         outfile.write(self._pattern.getHeader()+"\n")
         for k in sorted(D.keys()):
             size = self._font.calcSize(k,D[k])
             color = self._color.calcColor(k,D[k])
             outfile.write(self._pattern.getElement([size, color, k,"\n" ]))
-                
+
             print(".",end="")
-            sys.stdout.flush()  
+            sys.stdout.flush()
         print("done")
         outfile.write(self._pattern.getFooter())
-        
+
     def getExt(self):
         return ".html"
 
@@ -69,44 +68,44 @@ def cloudTag(infile, outfileName):
     configfile = ctlib.getScriptDir()+"/cfg/config.cfg"
     if(not (os.path.isfile(configfile))):
         ctlib.createDefaultConfig()
-        
+
     config = ctlib.getConfig(configfile)
-    
-    
+
+
     # read config values
     maxWords = int(config['words']['max'])
     maxSize = int(config['font']['max'])
     minSize = int(config['font']['min'])
-    
+
     patternsplitter = config['pattern']['split']
     patternbase = ctlib.getScriptDir()+"/"+ config['pattern']['base']
-    
+
     # create outputter instances
     out = htmlcloud(patternbase + config['pattern']['html'] , patternsplitter, config)
-    
+
     # read histogram
     B = ctlib.readPlain(infile, maxWords)
-    
+
     # create output
     outfile = open(outfileName+ out.getExt(),"w")
     out.createCloud(B,maxSize,minSize,maxWords,outfile)
     outfile.close()
-    
+
 
 def helpScreen():
     print("""\
  simple html cloud tag generator :-)
   usage: """+ __file__ +""" infile [outfile]
-   
+
    params:
     infile   file to visualize
-    outfile  optional output file name without extension 
-   
-   config: see cfg/config.cfg 
-   
-   example: 
-    run 
-         $""" + __file__ + """ test.txt 
+    outfile  optional output file name without extension
+
+   config: see cfg/config.cfg
+
+   example:
+    run
+         $""" + __file__ + """ test.txt
     creates a html tag cloud based on test.txt and
     save it as test.txt_.html
 
@@ -117,9 +116,9 @@ def main(args):
     # parse command line params
     if(len(args)==0):
         if(not(ctlib.calledfromCt)):
-            helpScreen()       
+            helpScreen()
         return 1
-    
+
     # important: first param must be a valid file
     if(not(os.path.isfile(args[0]))):
         if(not(ctlib.calledfromCt)):
@@ -130,12 +129,12 @@ def main(args):
         if(len(args)==1):
             cloudTag(args[0], args[0]+"_")
             return 0
-                        
+
         if(len(args)==2):
             cloudTag(args[0],args[1])
             return 0
 
-            
+
     except Exception as e:
         _,errormsg = e
         print("Error: " + e)

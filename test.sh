@@ -1,15 +1,37 @@
 #!/bin/bash
+#
+#    Cloudtag
+#
+#    author: Steve Göring
+#    contact: stg7@gmx.de
+#
+#
+#
+#    This file is part of cloudtag.
+#
+#    cloudtag is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    cloudtag is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with cloudtag.  If not, see <http://www.gnu.org/licenses/>.
 
 rm -rf out
 mkdir out
 # single files
-./ct.py  in/gutenberg.org/goethe/faust.txt out/faust
+./ct.py  "in/gutenberg.org/goethe/faust.txt" "out/faust"
 
 
 # recursive
-./ct.py  in/freiesMag/ out/freiesmag
-./ct.py  in/wikipedia/startrek/ out/startrek -r -e *.txt
-./ct.py  in/wikipedia/filme/ out/filme -r -e *.txt
+./ct.py  "in/freiesMag/" "out/freiesmag"
+./ct.py  "in/wikipedia/startrek/" "out/startrek" -r -e *.txt
+./ct.py  "in/wikipedia/filme/" "out/filme" -r -e *.txt
 
 
 # do all , but set maxwords =300
@@ -56,11 +78,11 @@ svg= svg.pat
 format = html,svg
 EOT
 )
-echo "$config" > cfg/config.cfg
-./ct.py  in/ out/all -r -e *.txt
+echo "$config" > "cfg/config.cfg"
+./ct.py  "in/" "out/all" -r -e *.txt
 # restore old settings
-mv cfg/config.old cfg/config.cfg
+mv "cfg/config.old" "cfg/config.cfg"
 
-    
+
 
 

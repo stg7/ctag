@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 # -*- coding: utf8 -*-
 """
-    Cloudtag 
-    
-    author: steve göring
+    Cloudtag
+
+    author: Steve Göring
     contact: stg7@gmx.de
-    2012
-    
+
 """
 """
     This file is part of cloudtag.
@@ -27,13 +26,13 @@
 import configparser, os,sys,codecs,re,heapq, random,operator, math, ctlib
 
 """
-    simple text based output format     
+    simple text based output format
 """
 class plaincloud:
     def __init__(self, patternFile, delim):
         return
     def createCloud(self, Buckets, maxSize, minSize ,maxWords, outfile):
-        i = len(Buckets)-1 # last index 
+        i = len(Buckets)-1 # last index
         tmp = []
         print("writing plain data")
         while(i>=0):
@@ -58,14 +57,14 @@ def readIgnoreFile(ifile):
 def readWords(infile, splitter, ignorechars, ignorecase):
     H = { }
     f = open(ctlib.getScriptDir()+"/"+infile, "r")
-   
+
     for l in f :
         t =  l[0:-1] # remove line breaks
         # remove all ignorechars
         for c in ignorechars:
             t = t.replace(c,splitter)
             t = t.replace('\t',splitter) # remove tabs
-            
+
         if(t!="" and t!=splitter):
             for w in t.split(splitter):
                 if(w!=''):
@@ -74,7 +73,7 @@ def readWords(infile, splitter, ignorechars, ignorecase):
                     if( w in H):
                         H[w]+=1
                     else:
-                        H[w]=1                        
+                        H[w]=1
     f.close()
 
     return H
@@ -86,15 +85,15 @@ def filterWords(H,ingonrewords,minLen, minFreq, maxFreq):
             H[w] = 0
         if( w.title() in H):
             H[w.title()]=0 # remove capitalized words
-            
+
     for k in H.keys():
-        if (len(k) <= minLen):    
-            H[k] = 0   
+        if (len(k) <= minLen):
+            H[k] = 0
         if(minFreq > 0 and H[k] < minFreq):
             H[k] = 0
         if(maxFreq > 0  and H[k] > maxFreq):
             H[k] = 0
-    # tidy up histogram -> remove values with freq 0 
+    # tidy up histogram -> remove values with freq 0
     HH ={}
     for k in H.keys():
         if(H[k]!=0):
@@ -105,7 +104,7 @@ def textAnalysis(infile, splitter, ignorechars, ignorecase, ignorewords, minLenW
 
     # build histogram
     H = filterWords(readWords(infile, splitter, ignorechars, ignorecase), ignorewords, minLenWords, minFreq, maxFreq)
-    
+
     # get min/max values of H[i]
     min = None
     max = 0
@@ -115,10 +114,10 @@ def textAnalysis(infile, splitter, ignorechars, ignorecase, ignorewords, minLenW
             max = value
         if(min == None or value < min):
             min = value
-            
+
     # create sorted list[count]= [words], maybe better for graph visualisation
     B = []
-    
+
     for i in range(0,max+1): # create buckets
         B.append([])
 
@@ -139,9 +138,9 @@ def cloudTag(infile, splitter, outfileName):
     configfile = ctlib.getScriptDir()+"/cfg/config.cfg"
     if(not (os.path.isfile(configfile))):
         ctlib.createDefaultConfig()
-        
+
     config = ctlib.getConfig(configfile)
-        
+
     # read config values
     ignorechars = readIgnoreFile( config['ignore']['base'] + config['ignore']['chars'] )
     ignorewords = readIgnoreFile( config['ignore']['base'] + config['ignore']['words'])
@@ -152,18 +151,18 @@ def cloudTag(infile, splitter, outfileName):
     maxWords = int(config['words']['max'])
     maxSize = int(config['font']['max'])
     minSize = int(config['font']['min'])
-    
+
     outputformats = config['output']['format'].replace(" ","").lower().split(",")
     outputters =[]
     patternsplitter = config['pattern']['split']
     patternbase = ctlib.getScriptDir()+"/"+ config['pattern']['base']
-    
+
 
     out = plaincloud(patternbase + config['pattern']['svg'] , patternsplitter)
-    
+
     # create buckets: list[freq] = [words]
     Buckets = textAnalysis(infile, splitter, ignorechars, ignorecase, ignorewords, minLenWords, minFreq, maxFreq)
-    
+
     outfile = open(outfileName+ out.getExt(),"w")
     out.createCloud(Buckets,maxSize,minSize,maxWords,outfile)
     outfile.close()
@@ -173,17 +172,17 @@ def cloudTag(infile, splitter, outfileName):
 def helpScreen():
     print("""\
  text analyse :-)
-  usage: """ + __file__ +""" infile [splitter] [out] 
+  usage: """ + __file__ +""" infile [splitter] [out]
 
    params:
     infile: file to analyse")
-    splitter: splitter char in file, default ' ' 
+    splitter: splitter char in file, default ' '
     out:  optional output file name, defalut infile_
-    
-  config: see cfg/config.cfg 
-  example: 
-   run 
-      $""" + __file__ + """" test.txt 
+
+  config: see cfg/config.cfg
+  example:
+   run
+      $""" + __file__ + """" test.txt
    to create a cloud tag input file based on text.txt (histogram)
    infos: Steve Göring, stg7@gmx.de, 2012""")
 
@@ -191,9 +190,9 @@ def main(args):
     # parse command line params
     if(len(args)==0):
         if(not(ctlib.calledfromCt)):
-            helpScreen()       
+            helpScreen()
         return 1
-    
+
     # important: first param must be a valid file
     if(not(os.path.isfile(args[0]))):
         if(not(ctlib.calledfromCt)):
@@ -204,15 +203,15 @@ def main(args):
         if(len(args)==1):
             cloudTag(args[0], " " ,args[0]+"_")
             return 0
-                        
+
         if(len(args)==2):
             cloudTag(args[0],args[1],args[0]+"_")
             return 0
-            
+
         if(len(args)==3):
             cloudTag(args[0],args[1],args[2])
             return 0
-            
+
     except Exception as e:
         _,errormsg = e
         print("Error: " + e)
