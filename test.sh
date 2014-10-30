@@ -24,16 +24,20 @@
 
 rm -rf out
 mkdir out
-# single files
+
+echo "test single file"
+# single file
 ./ct.py  "in/gutenberg.org/goethe/faust.txt" "out/faust"
+echo "done."
 
-
+echo "test recursive."
 # recursive
 ./ct.py  "in/freiesMag/" "out/freiesmag"
 ./ct.py  "in/wikipedia/startrek/" "out/startrek" -r -e *.txt
 ./ct.py  "in/wikipedia/filme/" "out/filme" -r -e *.txt
+echo "done."
 
-
+echo "do all, but modify config first."
 # do all , but set maxwords =300
 cp cfg/config.cfg cfg/config.old
 config=$(cat <<EOT
@@ -82,7 +86,7 @@ echo "$config" > "cfg/config.cfg"
 ./ct.py  "in/" "out/all" -r -e *.txt
 # restore old settings
 mv "cfg/config.old" "cfg/config.cfg"
-
+echo "done."
 
 
 
