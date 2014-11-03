@@ -23,13 +23,23 @@
     You should have received a copy of the GNU General Public License
     along with cloudtag.  If not, see <http://www.gnu.org/licenses/>.
 """
-import os,sys,configparser
+
+import os
+import sys
+import configparser
 
 # global indicator, for handling, if modules are called from ct.py, :-( not the best solution FIXME
 global calledfromCt
 calledfromCt = False
 
+
 def getConfig(configfile):
+    """
+    read config file
+    @return config content
+    """
+    # FIXME: maybe better json format
+
     config = configparser.ConfigParser()
     config.readfp(open(configfile))
 
@@ -42,16 +52,19 @@ def getConfig(configfile):
         # quick - fix -hack
         c = {}
         for s in config.sections():
-            c[s] ={}
-            for (key,value) in config.items(s):
-                c[s][key]=value
+            c[s] = {}
+            for (key, value) in config.items(s):
+                c[s][key] = value
         config = c
-
 
     return config
 
+
 def createDefaultConfig():
-    default="""\
+    """
+    create default configuration and write it to file
+    """
+    default = """\
 #ignore settings
 [ignore]
 # base directory for ignore lists
@@ -93,71 +106,86 @@ svg= svg.pat
 [output]
 format = html,svg
 """
-
-    cfgfile = open(getScriptDir()+'/cfg/config.cfg', 'w')
+    cfgfile = open(getScriptDir() + '/cfg/config.cfg', 'w')
     cfgfile.write(default)
     cfgfile.close()
 
 
 def getHex(a):
+    """
+    convert value a to hex string, with leading zeros
+    """
     aa = hex(a)[2:]
-    if(len(aa) < 2):
-        aa = "0"+aa
+    if len(aa) < 2:
+        aa = "0" + aa
     return aa
 
 
 class ctcolor:
+    """
+    color class
+    """
 
     def __init__(self, minColor, maxColor):
-        self._minCol = (int(minColor[0:2],16), int(minColor[2:4],16), int(minColor[4:6],16) )
-        self._maxCol = (int(maxColor[0:2],16), int(maxColor[2:4],16), int(maxColor[4:6],16) )
+        self._minCol = (int(minColor[0:2], 16), int(minColor[2:4], 16), int(minColor[4:6], 16))
+        self._maxCol = (int(maxColor[0:2], 16), int(maxColor[2:4], 16), int(maxColor[4:6], 16))
         self._colors = {}
 
     def scale(self, minfreq, maxfreq):
-        self._scalefactor= ( (self._maxCol[0] - self._minCol[0] +0.0)/(maxfreq-minfreq) ,\
-            (self._maxCol[1] - self._minCol[1]+0.0)/(maxfreq-minfreq) ,\
-            (self._maxCol[2] - self._minCol[2]+0.0)/(maxfreq-minfreq)  )
+        self._scalefactor = ((self._maxCol[0] - self._minCol[0] + 0.0) / (maxfreq - minfreq),
+                             (self._maxCol[1] - self._minCol[1] + 0.0) / (maxfreq - minfreq),
+                             (self._maxCol[2] - self._minCol[2] + 0.0) / (maxfreq - minfreq))
         self._minfreq = minfreq
         self._maxfreq = maxfreq
 
     def calcColor(self, key, freq):
-        self._colors[key] = "#"+"".join([ getHex( self._minCol[j] +  int( round((freq-self._minfreq)*self._scalefactor[j]))) for j in range(0,3) ] )
+        self._colors[key] = "#" + "".join([getHex(self._minCol[j] + int(round((freq - self._minfreq) * self._scalefactor[j]))) for j in range(0, 3)])
         return self._colors[key]
+
     def getColor(self, key):
         return self._colors[key]
 
+
 class ctfont:
+    """
+    font class
+    """
+
     def __init__(self, minSize, maxSize):
         self._minSize = int(minSize)
         self._maxSize = int(maxSize)
         self._sizes = {}
+
     def scale(self, minfreq, maxfreq):
-        self._scalefactor = (self._maxSize -self._minSize + 0.0) / (maxfreq-minfreq)
+        self._scalefactor = (self._maxSize - self._minSize + 0.0) / (maxfreq - minfreq)
         self._minfreq = minfreq
         self._maxfreq = maxfreq
+
     def calcSize(self, key, freq):
-        self._sizes[key] = str(self._minSize + int( round((freq - self._minfreq)*self._scalefactor)))
+        self._sizes[key] = str(self._minSize + int(round((freq - self._minfreq) * self._scalefactor)))
         return self._sizes[key]
+
     def getSize(self, key):
         return self._sizes[key]
+
 
 class ctpattern:
     def __init__(self, patternFile, delim):
         # open pattern
-        f = open(patternFile,"r")
+        f = open(patternFile, "r")
         # read header
-        header =""
+        header = ""
         l = ""
-        while(not(3*delim in l)):
-            header +=l
+        while 3 * delim not in l:
+            header += l
             l = f.readline()
 
         # read element, just one line
-        element = f.readline().replace("\n","").split(delim)
+        element = f.readline().replace("\n", "").split(delim)
         f.readline()
         # read footer
         footer = ""
-        while(l!=""):
+        while l != "":
             l = f.readline()
             footer += l
         f.close()
@@ -167,8 +195,10 @@ class ctpattern:
 
     def getHeader(self):
         return self._header
+
     def getFooter(self):
         return self._footer
+
     def getElement(self, content):
         ret = ""
         i = 0
@@ -177,49 +207,60 @@ class ctpattern:
             i += 1
         return ret
 
+
 def bucketsToList(Buckets, maxWords):
-    e = 0 # count elements
+    """
+    converts buckets to list
+    """
+    e = 0  # count elements
     tmp = []
 
     for i in sorted(Buckets.keys()):
         for k in Buckets[i]:
-            tmp.append((i,k))
+            tmp.append((i, k))
             e += 1
     tmp.reverse()
 
-    if(e == 0 ):
-        raise Exception("error:","text has no important words or is empty")
+    if e == 0:
+        raise Exception("error:", "text has no important words or is empty")
     # just work with maxwords words
-    if(maxWords > 0):
+    if maxWords > 0:
         tmp = tmp[0:maxWords]
 
     maxfreq = 0
     minfreq = None
-    for (i,k) in tmp:
-        if(minfreq == None):
+    for (i, k) in tmp:
+        if minfreq is None:
             minfreq = i
-        maxfreq = max(maxfreq,i)
-        minfreq = min(i,minfreq)
+        maxfreq = max(maxfreq, i)
+        minfreq = min(i, minfreq)
 
     return (minfreq, maxfreq, tmp)
 
+
 def readPlain(infile, maxWords):
-    infile = open(infile,"r")
-    B ={}
+    """
+    read plain text
+    """
+
+    infile = open(infile, "r")
+    B = {}
     j = 0
     for l in infile:
         # every line "freq:[words]"
         p = l.find(":")
         freq = int(l[0:p])
-        words = eval( l[p+1:-1] ) # not the best solution
+        words = eval(l[p + 1:-1])  # not the best solution
         B[freq] = words
-        j+=len(words)
-        if(maxWords!=-1 and j>maxWords):  # just read needed words
+        j += len(words)
+        if maxWords != -1 and j > maxWords:  # just read needed words
             break
     infile.close()
     return B
 
+
 def getScriptDir():
     return os.path.dirname(os.path.realpath(sys.argv[0]))
 
-
+if __name__ == "__main__":
+    pass
