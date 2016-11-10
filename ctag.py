@@ -33,7 +33,7 @@ from multiprocessing import Pool
 import numpy as np
 
 from lib.log import *
-from lib.nlp import nlp_remove_stop_words
+from lib.nlp import nlp_remove_stop_words, nlp_tokenize
 
 
 def add_dict(d1, d2):
@@ -49,6 +49,7 @@ def build_word_histogram(infilename, remove_stop_words, language, min_len):
 
     with open(infilename, "r") as infile:
         text = "".join(infile.readlines()).lower()
+    print(nlp_tokenize(text))
     # remove non [0-9] signs
     # tokenize
     # map
