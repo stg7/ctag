@@ -94,7 +94,7 @@ def main(params):
     parser.add_argument('--cpu_count', type=int, default=multiprocessing.cpu_count(), help="cpus/threads that are used for processing")
     parser.add_argument('--output_file', type=str, default="cloud.svg", help="outputfile for storing tag cloud")
     parser.add_argument('--remove_stop_words', action='store_false', help="remove stopswords")
-    parser.add_argument('--min_freq', type=int, default=1, help="minimum freq of a word")
+    parser.add_argument('--min_freq', type=int, default=4, help="minimum freq of a word")
     parser.add_argument('--min_len', type=int, default=2, help="minimum length of a word")
     parser.add_argument('--language', type=str, default="german", help="language in which the text is") # TODO: remove it maybe later by analyzing language
 

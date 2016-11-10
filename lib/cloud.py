@@ -131,19 +131,24 @@ def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001
     # initialize positions (random)
     lInfo("initialize positions randomly")
     layout = []
+    i = 0
     for (token, freq) in sorted_hist:
 
         size = _font.calc_size(token, freq)
         color = _color.calc_color(token, freq)
 
         font_instance = font.Font(family="courier", size=-int(size), weight=NORMAL)
-        text_height = font_instance.metrics("ascent")# + font_instance.metrics("descent")
+        text_height = font_instance.metrics("ascent") + font_instance.metrics("descent")
         descent = font_instance.metrics("descent")
         text_width = font_instance.measure(token)
 
         # get random x,y positions within a circle: x^2+y^2<= initial_max_pos^2
         x = random.randint(-initial_max_pos, initial_max_pos)
         y = math.sqrt(random.randint(0, initial_max_pos * initial_max_pos - x * x))
+        if i == 0:
+            x = 0
+            y = 0
+
         if random.randint(0, 1) == 0:
             y = -y
 
@@ -153,11 +158,10 @@ def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001
             layout.append([x, y, direction, text_width, text_height, size, descent])
         else:
             layout.append([x, y, direction, text_height, text_width, size, descent])
-        #direction += 1
+        direction += 1
+        i += 1
 
     lInfo("align positions")
-
-    from .rtree import RTree, Rect
 
     def colission(aligned, rect):
         (x, y, xx, yy) = rect
@@ -174,13 +178,11 @@ def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001
                 return True
         return False
 
-    rt = RTree()
-    max_steps = 100000
+    max_steps = 10000000
     i = 0
     aligned = []
     for (token, freq) in sorted_hist:
         x, y, direction, h, w, size, descent = layout[i]
-
         # find new position with archimedis spiral
         # (1) spiralstep width = 1:
         a = 1
@@ -188,281 +190,59 @@ def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001
         dF = 0.1
         F = dF
         steps = 0
-        while list(rt.query_rect(Rect(x, y, x + w, y + h))) != [] and steps < max_steps:
-            x = x + math.sin(F) * a * F
-            y = y + math.cos(F) * a * F
-            F += dF
-            steps += 1
-        steps = 0
+        # Note: tried Rtree but it was bad
         while colission(aligned, (x, y, x + w, y + h)) and steps < max_steps:
-            print("col test")
-            x = x + math.sin(F) * a * F
-            y = y + math.cos(F) * a * F
+            x += math.sin(F) * a * F
+            y += math.cos(F) * a * F
             F += dF
             steps += 1
 
         aligned.append((x, y, x + w, y + h))
-        rt.insert(i, Rect(x, y, x + w, y + h))
         layout[i] = x, y, direction, h, w, size, descent
         i += 1
 
-    print(layout[0])
-    print(layout[1])
-
     text = ""
     i = 0
+    x, y, _, initial_text_height, initial_text_width, _, _ = layout[0]
+    maxx = x
+    maxy = y
+    minx = x
+    miny = y
+
     for (token, freq) in sorted_hist:
         x, y, direction, text_height, text_width, size, descent = layout[i]
 
+        x = x - initial_text_width / 2
+        y = y - initial_text_height / 2
         style = "fill:" + _color.get_color(token)
-
-        """xx = int(x - text_width / 2)
-        yy = int(y + text_height / 3 )
-        """
+        yt = y
+        xt = x
         transform = ""
 
         if direction == 0:  # text `token` is vertical
-            xx = int(x + text_height / 3)
-            yy = int(y + text_width / 2)
-            transform = "transform='rotate(-90,{},{})'".format(xx, yy)
+            transform = "transform='rotate(+90,{},{})'".format(x, y)
+            yt += -descent / 2
+            # after transformation your x and y axis are still the same
+
+        else:
+            yt += size - descent / 2
+
         rect_color = _color.get_color(token)
 
         if i == 0:
             rect_color = "green"
 
-        text += template_rectangle.format(x=x, y=y, h=text_height, w=text_width, color=rect_color)
-        text += template_text.format(x=x, y=y + size - descent, fsize=size, style=style, add=transform, text=token) + "\n"
+        #text += template_rectangle.format(x=x, y=y, h=text_height, w=text_width, color=rect_color)
+        text += template_text.format(x=xt, y=yt, fsize=size, style=style, add=transform, text=token) + "\n"
         i += 1
+        maxx = max(xt + size, maxx, xt + text_width + size)
+        minx = min(xt - size, minx, xt + text_width - size)
+        maxy = max(yt + size, maxy, yt + text_height + size)
+        miny = min(yt - size, miny, xt + text_height - size)
 
-    result = template_base.format(text=text, w=800, h=800, halfW=800/2, halfH=800/2)
+    width = int(1.2 * (maxx - minx))
+    height = int(1.2 * (maxy - miny))
+
+    result = template_base.format(text=text, w=width, h=height, halfW=width/2, halfH=height/2)
 
     return result
-
-
-def old():
-
-    class xy(tuple):
-        """
-        minmal 2d vector class: no check that lengths are compatable.
-        """
-
-        def __add__(self, a):
-            return xy(x + y for x, y in zip(self, a))
-
-        def __sub__(self, a):
-            return xy(x - y for x, y in zip(self, a))
-
-        def __mul__(self, c):
-            return xy(x * c for x in self)
-
-        def __rmul__(self, c):
-            return xy(c * x for x in self)
-
-        def nabs(self):
-            (x, y) = self
-            return x * x + y * y
-
-        def man(self, o):
-            (x, y) = self - o
-            return abs(x) + abs(y)
-
-        def min(self):
-            (x, y) = self
-            return min(x, y)
-
-        def x(self):
-            (x, y) = self
-            return x
-
-        def y(self):
-            (x, y) = self
-            return y
-
-        def swap(self):
-            (x, y) = self
-            return xy([y, x])
-
-
-    def checkAll(worked, pos, i, sizes):
-        """
-        check collision with i and all nodes in worked
-
-        !! learn, that python tuple unpacking is a performance killer
-        """
-        overlap = False
-        ix = pos[i][0]
-        iy = pos[i][1]
-
-        six = sizes[i][0] / 2
-        siy = sizes[i][1] / 2
-
-        for k in worked.difference([i]):
-            dx = ix - pos[k][0]
-            dy = iy - pos[k][1]
-
-            sx = six + sizes[k][0] / 2
-            sy = siy + sizes[k][1] / 2
-            # colision
-            if abs(dx) < sx and abs(dy) < sy:
-                return True
-        return overlap
-
-
-    class svgcloud:
-
-        def __init__(self, patternFile, delim, config):
-            # set color & font settings
-            self._color = ctlib.ctcolor(config['color']['min'], config['color']['max'])
-            self._font = ctlib.ctfont(config['font']['min'], config['font']['max'])
-
-            # read pattern
-            self._pattern = ctlib.ctpattern(patternFile, delim)
-
-        def createCloud(self, Buckets, maxSize, minSize, maxWords, outfile):
-            start = time.time()
-
-            (minfreq, maxfreq, tmp) = ctlib.bucketsToList(Buckets, maxWords)
-
-            self._font.scale(minfreq, maxfreq)
-            self._color.scale(minfreq, maxfreq)
-
-            pos = {}  # positions
-            parent = Buckets[maxfreq][0]  # parent word
-
-            sizes = {}  # width and hight
-            fontsizes = {}
-            info = {}  # freq values
-            dirs = set([])  # directions
-            colors = {}
-
-            maxx = 30
-            dir = 1
-            dirstep = 1  # get from config param TODO
-            random.seed(1)
-
-            # for font measuing: initialize Tk
-            Tk()
-
-            print("precalculation")
-            # initialize positions (random)
-            for (i, k) in tmp:
-
-                size = int(self._font.calcSize(k, i))
-                color = self._color.calcColor(k, i)
-
-                f = font.Font(family="courier", size=-int(size), weight=NORMAL)
-                h = size
-                w = f.measure(k)
-
-                # get random x,y positions within a circle: x^2+y^2<= maxx^2
-                x = random.randint(-maxx, maxx)
-                yy = random.randint(0, maxx * maxx - x * x)
-                y = math.sqrt(yy)
-                if random.randint(0, 1) == 0:
-                    y = -y
-
-                info[k] = i
-                sizes[k] = xy([w, h])
-
-                if dir % 2 == 0:
-                    # text is vertical: store direction and change size
-                    dirs.add(k)
-                    # find letter with max width
-                    w = max([f.measure(c) for c in k])
-                    # change dimension
-                    sizes[k] = sizes[k].swap()
-                    dir = 0
-
-                pos[k] = xy([x, y])
-                dir += dirstep
-                print(".", end="")
-                sys.stdout.flush()
-
-            print("done")
-            # center parent
-            pos[parent] = xy([0, 0])
-
-            # "pre"calculated spiral
-            spiral = {}
-
-            colisionSum = 0
-            worked = set([parent])  # elements that fits
-            print("calculate positions")
-
-            # calculate positions that doesn't overlapp
-            for (_, i) in tmp[1:]:
-                # check if node i overlaps any other node in worked set
-                overlap = checkAll(worked, pos, i, sizes)
-
-                # find new position with archimedis spiral
-                # (1) spiralstep width = 1:
-                a = 1
-                # (2) angle step delta phi
-                dF = 0.1
-                F = dF
-
-                colisionCount = 1  # count collision tests
-                while overlap:
-                    if F not in spiral:  # store spiral values
-                        spiral[F] = xy([math.sin(F) * a * F, math.cos(F) * a * F])
-                    # calc new pos
-                    pos[i] += spiral[F]
-                    colisionCount += 1
-                    F += dF
-                    # check overlapping
-                    overlap = checkAll(worked, pos, i, sizes)
-
-                colisionSum += colisionCount
-                worked.add(i)
-                print(".", end="")
-                sys.stdout.flush()
-
-            end = time.time()
-            rtime = str(end - start)
-
-            print("done")
-            print("with " + str(colisionSum) + " collision-tests in: " + rtime + " s")
-
-            # output
-            maxx = 0
-            minx = 0
-            maxy = 0
-            miny = 0
-            outfile.write(self._pattern.getHeader() + "\n")
-            for (_, o) in tmp:
-                freq = info[o]
-                (x, y) = pos[o]
-                (w, h) = sizes[o]
-
-                # calculate max / min x/y values
-                maxx = max(maxx, x, x + w)
-                maxy = max(maxy, y, y + h)
-
-                minx = min(minx, x, x + w)
-                miny = min(miny, y, y + h)
-
-                style = "fill:" + self._color.getColor(o)
-
-                if o in dirs:  # text o is vertical
-                    xx = int(x + w / 3)
-                    yy = int(y + h / 2)
-                    transform = "transform='rotate(-90," + str(xx) + "," + str(yy) + ")'"
-                else:
-                    xx = int(x - w / 2)
-                    yy = int(y + h / 3)
-                    transform = ""
-
-                # content for pattern
-                content = [xx, yy, self._font.getSize(o), style, transform, o, "\n"]
-
-                outfile.write(self._pattern.getElement(content))
-
-            outfile.write(self._pattern.getFooter())
-            outfile.write("<!-- size = " + str(int(max(maxx - minx, maxy - miny))) + " (should be <= 800, otherwise change viewbox and translate param in svg -->")
-
-            return
-
-        def getExt(self):
-            return ".svg"
-
-
