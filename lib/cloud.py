@@ -148,11 +148,9 @@ def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001
             y = -y
 
         if direction % 2 == 0:
-            # text is vertical: change size
-            # find letter with max width
-            #text_width = max([font_instance.measure(c) for c in token])
+            # text is vertical
             direction = 0
-            layout.append([x, y, direction, text_height, text_width, size, descent])
+            layout.append([x, y, direction, text_width, text_height, size, descent])
         else:
             layout.append([x, y, direction, text_height, text_width, size, descent])
         #direction += 1
