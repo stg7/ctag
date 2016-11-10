@@ -36,14 +36,7 @@ from .log import lInfo
 
 Tk()
 
-def getHex(a):
-    """
-    convert value a to hex string, with leading zeros
-    """
-    aa = hex(a)[2:]
-    if len(aa) < 2:
-        aa = "0" + aa
-    return aa
+
 
 
 class ctag_color:
@@ -56,6 +49,15 @@ class ctag_color:
         self._maxCol = (int(maxColor[0:2], 16), int(maxColor[2:4], 16), int(maxColor[4:6], 16))
         self._colors = {}
 
+    def __get_hex(a):
+        """
+        convert value a to hex string, with leading zeros
+        """
+        aa = hex(a)[2:]
+        if len(aa) < 2:
+            aa = "0" + aa
+        return aa
+
     def scale(self, minfreq, maxfreq):
         self._scalefactor = ((self._maxCol[0] - self._minCol[0] + 0.0) / (maxfreq - minfreq),
                              (self._maxCol[1] - self._minCol[1] + 0.0) / (maxfreq - minfreq),
@@ -64,7 +66,7 @@ class ctag_color:
         self._maxfreq = maxfreq
 
     def calc_color(self, key, freq):
-        self._colors[key] = "#" + "".join([getHex(self._minCol[j] + int(round((freq - self._minfreq) * self._scalefactor[j]))) for j in range(0, 3)])
+        self._colors[key] = "#" + "".join([self.__get_hex(self._minCol[j] + int(round((freq - self._minfreq) * self._scalefactor[j]))) for j in range(0, 3)])
         return self._colors[key]
 
     def get_color(self, key):
@@ -154,6 +156,35 @@ def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001
 
     lInfo("align positions")
 
+    colisionSum = 0
+    worked = set([sorted_hist[0]])  # elements that fits
+
+for (_, i) in tmp[1:]:
+                # check if node i overlaps any other node in worked set
+                overlap = checkAll(worked, pos, i, sizes)
+
+                # find new position with archimedis spiral
+                # (1) spiralstep width = 1:
+                a = 1
+                # (2) angle step delta phi
+                dF = 0.1
+                F = dF
+
+                colisionCount = 1  # count collision tests
+                while overlap:
+                    if F not in spiral:  # store spiral values
+                        spiral[F] = xy([math.sin(F) * a * F, math.cos(F) * a * F])
+                    # calc new pos
+                    pos[i] += spiral[F]
+                    colisionCount += 1
+                    F += dF
+                    # check overlapping
+                    overlap = checkAll(worked, pos, i, sizes)
+
+                colisionSum += colisionCount
+                worked.add(i)
+                print(".", end="")
+                sys.stdout.flush()
 
     text = ""
     i = 0
