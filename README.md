@@ -24,3 +24,9 @@ The "ct.py" script is the main script for creating a new tag cloud:
 more
 ----
 for more informations about ctag, read the minimalistic german manual
+
+PDF Support
+-----------
+For pdf as input format please use tools like `pdftotext` for extraction of plain ascii text.
+For pdf output, you can use the provided bash script `convert_svg_to_pdf.sh`, it requires inkscape.
+
