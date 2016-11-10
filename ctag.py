@@ -51,10 +51,12 @@ def build_word_histogram(infilename, remove_stop_words, language, min_len):
 
     # TODO: use pandas for different text formats as input
     with open(infilename, "r") as infile:
-        text = " ".join(infile.readlines()).lower()
-
-    text = re.sub(".w", " ", re.sub("[^a-zöäüß]", " ", text))
-    tokens = nlp_remove_stop_words(text, language)
+        text = "".join(infile.readlines()).lower()
+    text = re.sub("[^a-zöäüß]", " ", text)
+    if remove_stop_words:
+        tokens = nlp_remove_stop_words(text, language)
+    else:
+        tokens = nlp_tokenize(text)
     # TODO: maybe use external file for storing results
     hist = {}
     for t in tokens:

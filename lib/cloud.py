@@ -49,7 +49,7 @@ class ctag_color:
         self._maxCol = (int(maxColor[0:2], 16), int(maxColor[2:4], 16), int(maxColor[4:6], 16))
         self._colors = {}
 
-    def __get_hex(a):
+    def __get_hex(self, a):
         """
         convert value a to hex string, with leading zeros
         """
@@ -112,7 +112,7 @@ def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001
 </svg>
 """
     template_text = """<text x='{x}' y='{y}' font-size='{fsize}px'   style='{style}' font-family='Courier New' {add}>{text}</text>"""
-
+    template_rectangle = """<rect x="{x}" y="{y}" width="{w}" height="{h}" style="fill:{color};fill-opacity:0.1;" /> """
 
     _color = ctag_color(min_font_color, max_font_color)
     _font = ctag_font(min_font_size, max_font_size)
@@ -137,72 +137,103 @@ def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001
         color = _color.calc_color(token, freq)
 
         font_instance = font.Font(family="courier", size=-int(size), weight=NORMAL)
-        text_height = size
+        text_height = font_instance.metrics("ascent")# + font_instance.metrics("descent")
+        descent = font_instance.metrics("descent")
         text_width = font_instance.measure(token)
 
         # get random x,y positions within a circle: x^2+y^2<= initial_max_pos^2
         x = random.randint(-initial_max_pos, initial_max_pos)
         y = math.sqrt(random.randint(0, initial_max_pos * initial_max_pos - x * x))
+        if random.randint(0, 1) == 0:
+            y = -y
 
         if direction % 2 == 0:
             # text is vertical: change size
             # find letter with max width
-            text_width = max([font_instance.measure(c) for c in token])
+            #text_width = max([font_instance.measure(c) for c in token])
             direction = 0
-            layout.append([y, x, direction, text_height, text_width])
+            layout.append([x, y, direction, text_height, text_width, size, descent])
         else:
-            layout.append([x, y, direction, text_height, text_width])
-        direction += 1
+            layout.append([x, y, direction, text_height, text_width, size, descent])
+        #direction += 1
 
     lInfo("align positions")
 
-    colisionSum = 0
-    worked = set([sorted_hist[0]])  # elements that fits
+    from .rtree import RTree, Rect
 
-for (_, i) in tmp[1:]:
-                # check if node i overlaps any other node in worked set
-                overlap = checkAll(worked, pos, i, sizes)
+    def colission(aligned, rect):
+        (x, y, xx, yy) = rect
+        w = xx - x
+        h = yy - y
+        tx = x + w / 2
+        ty = y + h / 2
+        for (_x, _y, _xx, _yy) in aligned:
+            _w = _xx - _x
+            _h = _yy - _y
+            _tx = _x + _w / 2
+            _ty = _y + _h / 2
+            if abs(_tx - tx) < (w + _w) / 2 and abs(_ty - ty) < (h + _h) / 2:
+                return True
+        return False
 
-                # find new position with archimedis spiral
-                # (1) spiralstep width = 1:
-                a = 1
-                # (2) angle step delta phi
-                dF = 0.1
-                F = dF
+    rt = RTree()
+    max_steps = 100000
+    i = 0
+    aligned = []
+    for (token, freq) in sorted_hist:
+        x, y, direction, h, w, size, descent = layout[i]
 
-                colisionCount = 1  # count collision tests
-                while overlap:
-                    if F not in spiral:  # store spiral values
-                        spiral[F] = xy([math.sin(F) * a * F, math.cos(F) * a * F])
-                    # calc new pos
-                    pos[i] += spiral[F]
-                    colisionCount += 1
-                    F += dF
-                    # check overlapping
-                    overlap = checkAll(worked, pos, i, sizes)
+        # find new position with archimedis spiral
+        # (1) spiralstep width = 1:
+        a = 1
+        # (2) angle step delta phi
+        dF = 0.1
+        F = dF
+        steps = 0
+        while list(rt.query_rect(Rect(x, y, x + w, y + h))) != [] and steps < max_steps:
+            x = x + math.sin(F) * a * F
+            y = y + math.cos(F) * a * F
+            F += dF
+            steps += 1
+        steps = 0
+        while colission(aligned, (x, y, x + w, y + h)) and steps < max_steps:
+            print("col test")
+            x = x + math.sin(F) * a * F
+            y = y + math.cos(F) * a * F
+            F += dF
+            steps += 1
 
-                colisionSum += colisionCount
-                worked.add(i)
-                print(".", end="")
-                sys.stdout.flush()
+        aligned.append((x, y, x + w, y + h))
+        rt.insert(i, Rect(x, y, x + w, y + h))
+        layout[i] = x, y, direction, h, w, size, descent
+        i += 1
+
+    print(layout[0])
+    print(layout[1])
 
     text = ""
     i = 0
     for (token, freq) in sorted_hist:
-        x, y, direction, text_height, text_width = layout[i]
+        x, y, direction, text_height, text_width, size, descent = layout[i]
 
         style = "fill:" + _color.get_color(token)
 
-        xx = int(x - text_width / 2)
-        yy = int(y + text_height / 3)
+        """xx = int(x - text_width / 2)
+        yy = int(y + text_height / 3 )
+        """
         transform = ""
 
         if direction == 0:  # text `token` is vertical
             xx = int(x + text_height / 3)
             yy = int(y + text_width / 2)
             transform = "transform='rotate(-90,{},{})'".format(xx, yy)
+        rect_color = _color.get_color(token)
 
-        text += template_text.format(x=xx, y=yy, fsize=text_height, style=style, add=transform, text=token) + "\n"
+        if i == 0:
+            rect_color = "green"
+
+        text += template_rectangle.format(x=x, y=y, h=text_height, w=text_width, color=rect_color)
+        text += template_text.format(x=x, y=y + size - descent, fsize=size, style=style, add=transform, text=token) + "\n"
         i += 1
 
     result = template_base.format(text=text, w=800, h=800, halfW=800/2, halfH=800/2)
