@@ -27,13 +27,15 @@ import sys
 import os
 import argparse
 import time
+import re
 import multiprocessing
 from multiprocessing import Pool
 
 import numpy as np
 
 from lib.log import *
-from lib.nlp import nlp_remove_stop_words, nlp_tokenize
+from lib.nlp import *
+from lib.cloud import svg_cloud
 
 
 def add_dict(d1, d2):
@@ -47,19 +49,25 @@ def add_dict(d1, d2):
 
 def build_word_histogram(infilename, remove_stop_words, language, min_len):
 
+    # TODO: use pandas for different text formats as input
     with open(infilename, "r") as infile:
-        text = "".join(infile.readlines()).lower()
-    print(nlp_tokenize(text))
-    # remove non [0-9] signs
-    # tokenize
-    # map
-    lInfo(len(text))
-    return {}
+        text = " ".join(infile.readlines()).lower()
+
+    text = re.sub(".w", " ", re.sub("[^a-zöäüß]", " ", text))
+    tokens = nlp_remove_stop_words(text, language)
+    # TODO: maybe use external file for storing results
+    hist = {}
+    for t in tokens:
+        if len(t) > min_len:
+            hist[t] = hist.get(t, 0) + 1
+
+    return hist
 
 
-def ctag(inputfiles, output_dir, remove_stop_words, language, min_freq, min_len ,cpu_count):
+def ctag(inputfiles, output_file, remove_stop_words, language, min_freq, min_len ,cpu_count):
     startTime = time.time()
-    lInfo(inputfiles)
+    lInfo("process {} files".format(len(inputfiles)))
+
     pool = Pool(processes=cpu_count)
     params = [(inputfile, remove_stop_words, language, min_len) for inputfile in inputfiles]
     results = pool.starmap(build_word_histogram, params)
@@ -68,9 +76,12 @@ def ctag(inputfiles, output_dir, remove_stop_words, language, min_freq, min_len 
     for histogram in results:
         global_histogram = add_dict(global_histogram, histogram)
 
-    jPrint(global_histogram)
-
     # filter out words with a frequency that is not >= min_freq
+    global_histogram = {t: global_histogram[t] for t in global_histogram if global_histogram[t] >= min_freq}
+
+    with open(output_file, "w") as outfile:
+        outfile.write(svg_cloud(global_histogram))
+
     lInfo("done: {} s".format(time.time() - startTime))
 
 
@@ -79,21 +90,18 @@ def main(params):
     parser = argparse.ArgumentParser(description='ctag - tag cloud generator', epilog="stg7 2016", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('inputfile', nargs="+", type=str, help="input file")
     parser.add_argument('--cpu_count', type=int, default=multiprocessing.cpu_count(), help="cpus/threads that are used for processing")
-    parser.add_argument('--output_dir', type=str, default="./results", help="output_directory for storing tag cloud")
+    parser.add_argument('--output_file', type=str, default="cloud.svg", help="outputfile for storing tag cloud")
     parser.add_argument('--remove_stop_words', action='store_false', help="remove stopswords")
-    parser.add_argument('--min_freq', type=int, default=1, help="min freq of a word")
-    parser.add_argument('--min_len', type=int, default=1, help="min length of a word")
+    parser.add_argument('--min_freq', type=int, default=1, help="minimum freq of a word")
+    parser.add_argument('--min_len', type=int, default=2, help="minimum length of a word")
     parser.add_argument('--language', type=str, default="german", help="language in which the text is") # TODO: remove it maybe later by analyzing language
 
     argsdict = vars(parser.parse_args())
 
     lInfo("start ctag")
 
-    # create output dir if it does not exist already
-    os.makedirs(argsdict["output_dir"], exist_ok=True)
-
     ctag(argsdict["inputfile"],
-         argsdict["output_dir"],
+         argsdict["output_file"],
          argsdict["remove_stop_words"],
          argsdict["language"],
          argsdict["min_freq"],
