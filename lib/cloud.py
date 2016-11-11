@@ -34,16 +34,14 @@ from tkinter import font
 
 from .log import lInfo
 
+
 Tk()
-
-
 
 
 class ctag_color:
     """
     color class
     """
-
     def __init__(self, minColor, maxColor):
         self._minCol = (int(minColor[0:2], 16), int(minColor[2:4], 16), int(minColor[4:6], 16))
         self._maxCol = (int(maxColor[0:2], 16), int(maxColor[2:4], 16), int(maxColor[4:6], 16))
@@ -59,14 +57,14 @@ class ctag_color:
         return aa
 
     def scale(self, minfreq, maxfreq):
-        self._scalefactor = ((self._maxCol[0] - self._minCol[0] + 0.0) / (maxfreq - minfreq),
-                             (self._maxCol[1] - self._minCol[1] + 0.0) / (maxfreq - minfreq),
-                             (self._maxCol[2] - self._minCol[2] + 0.0) / (maxfreq - minfreq))
+        self._scalefactors = (float(self._maxCol[0] - self._minCol[0]) / (maxfreq - minfreq),
+                              float(self._maxCol[1] - self._minCol[1]) / (maxfreq - minfreq),
+                              float(self._maxCol[2] - self._minCol[2]) / (maxfreq - minfreq))
         self._minfreq = minfreq
         self._maxfreq = maxfreq
 
     def calc_color(self, key, freq):
-        self._colors[key] = "#" + "".join([self.__get_hex(self._minCol[j] + int(round((freq - self._minfreq) * self._scalefactor[j]))) for j in range(0, 3)])
+        self._colors[key] = "#" + "".join([self.__get_hex(self._minCol[j] + int(round((freq - self._minfreq) * self._scalefactors[j]))) for j in range(0, 3)])
         return self._colors[key]
 
     def get_color(self, key):
@@ -77,7 +75,6 @@ class ctag_font:
     """
     font class
     """
-
     def __init__(self, minSize, maxSize):
         self._minSize = int(minSize)
         self._maxSize = int(maxSize)
@@ -89,8 +86,8 @@ class ctag_font:
         self._maxfreq = maxfreq
 
     def calc_size(self, key, freq):
-        self._sizes[key] = str(self._minSize + int(round((freq - self._minfreq) * self._scalefactor)))
-        return int(self._sizes[key])
+        self._sizes[key] = int(self._minSize + int(round((freq - self._minfreq) * self._scalefactor)))
+        return self._sizes[key]
 
     def get_size(self, key):
         return int(self._sizes[key])
@@ -108,7 +105,6 @@ def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001
 <g transform="translate({halfW},{halfH})">
 {text}
 </g>
-
 </svg>
 """
     template_text = """<text x='{x}' y='{y}' font-size='{fsize}px'   style='{style}' font-family='Courier New' {add}>{text}</text>"""
@@ -204,10 +200,7 @@ def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001
     text = ""
     i = 0
     x, y, _, initial_text_height, initial_text_width, _, _ = layout[0]
-    maxx = x
-    maxy = y
-    minx = x
-    miny = y
+    maxx, minx, maxy, miny = x, x, y, y
 
     for (token, freq) in sorted_hist:
         x, y, direction, text_height, text_width, size, descent = layout[i]
@@ -223,14 +216,10 @@ def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001
             transform = "transform='rotate(+90,{},{})'".format(x, y)
             yt += -descent / 2
             # after transformation your x and y axis are still the same
-
         else:
             yt += size - descent / 2
 
         rect_color = _color.get_color(token)
-
-        if i == 0:
-            rect_color = "green"
 
         #text += template_rectangle.format(x=x, y=y, h=text_height, w=text_width, color=rect_color)
         text += template_text.format(x=xt, y=yt, fsize=size, style=style, add=transform, text=token) + "\n"
@@ -240,9 +229,7 @@ def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001
         maxy = max(yt + size, maxy, yt + text_height + size)
         miny = min(yt - size, miny, xt + text_height - size)
 
-    width = int(1.2 * (maxx - minx))
-    height = int(1.2 * (maxy - miny))
+    width = int(1.3 * (maxx - minx))
+    height = int(1.3 * (maxy - miny))
 
-    result = template_base.format(text=text, w=width, h=height, halfW=width/2, halfH=height/2)
-
-    return result
+    return template_base.format(text=text, w=width, h=height, halfW=width/2, halfH=height/2)
