@@ -35,7 +35,7 @@ from tkinter import font
 from .log import lInfo
 
 
-Tk()
+Tk()  # inititalize tkinter
 
 
 class ctag_color:
@@ -73,7 +73,7 @@ class ctag_color:
 
 class ctag_font:
     """
-    font class
+    font class for sizes
     """
     def __init__(self, minSize, maxSize):
         self._minSize = int(minSize)
@@ -97,7 +97,7 @@ def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001
     if len(histogram) == 0:
         return ""
 
-    template_base ="""<?xml version="1.0" encoding="UTF-8"?>
+    template_base = """<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         xmlns:ev="http://www.w3.org/2001/xml-events"
@@ -223,7 +223,7 @@ def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001
 
         rect_color = _color.get_color(token)
 
-        #text += template_rectangle.format(x=x, y=y, h=text_height, w=text_width, color=rect_color)
+        # text += template_rectangle.format(x=x, y=y, h=text_height, w=text_width, color=rect_color)
         text += template_text.format(x=xt, y=yt, fsize=size, style=style, add=transform, text=token) + "\n"
         i += 1
         maxx = max(xt + size, maxx, xt + text_width + size)
@@ -234,4 +234,4 @@ def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001
     width = int(1.3 * (maxx - minx))
     height = int(1.3 * (maxy - miny))
 
-    return template_base.format(text=text, w=width, h=height, halfW=width/2, halfH=height/2)
+    return template_base.format(text=text, w=width, h=height, halfW=width / 2, halfH=height / 2)

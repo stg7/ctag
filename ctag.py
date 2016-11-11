@@ -143,7 +143,7 @@ def main(params):
     parser.add_argument('--remove_stop_words', action='store_false', help="remove stopswords")
     parser.add_argument('--min_freq', type=int, default=4, help="minimum freq of a word")
     parser.add_argument('--min_len', type=int, default=2, help="minimum length of a word")
-    parser.add_argument('--language', type=str, default="german", help="language in which the text is") # TODO: remove it maybe later by analyzing language
+    parser.add_argument('--language', type=str, default="german", help="language in which the text is")  # TODO: remove it maybe later by analyzing language
     parser.add_argument('--pdf_output', action='store_true', help="build a pdf file")
     parser.add_argument('--debug', action='store_true', help="debug mode (e.g. store intermediate results)")
 
