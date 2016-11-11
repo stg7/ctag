@@ -30,11 +30,18 @@ import time
 import json
 import re
 import multiprocessing
+import tempfile
 from multiprocessing import Pool
 
-from lib.log import *
-from lib.nlp import *
-from lib.cloud import svg_cloud
+from libs.log import *
+from libs.nlp import *
+from libs.cloud import svg_cloud
+
+
+# set pypandoc path
+os.environ.setdefault('PYPANDOC_PANDOC', os.path.dirname(os.path.realpath(__file__)) + '/pandoc/pandoc')
+lInfo(os.path.dirname(os.path.realpath(__file__)) + '/pandoc/pandoc')
+import pypandoc
 
 
 def add_dict(d1, d2):
@@ -46,11 +53,38 @@ def add_dict(d1, d2):
     return d
 
 
+def extract_from_pdf(pdf_file_name):
+    """ extract text from a pdf file using pdttotext via os.system """
+    f = tempfile.NamedTemporaryFile(delete=False)
+    os.system("pdftotext {} {}".format(pdf_file_name, f.name))
+    f.close()
+    with open(f.name, "r") as fp:
+        text = "".join(fp.readlines())
+    os.unlink(f.name)
+    return text
+
+
+def read_input(infilename):
+    """ read text from a file
+
+        supported formats:
+            * plain text
+            * pdf
+            * all formats from pandoc
+    """
+    if ".pdf" in infilename:
+        return extract_from_pdf(infilename)
+    try:
+        return pypandoc.convert_file(infilename, 'md')
+    except Exception as e:
+        # if fileinput format is not available using pypandoc so try to read it as text
+        with open(infilename, "r") as infile:
+            return "".join(infile.readlines())
+
+
 def build_word_histogram(infilename, remove_stop_words, language, min_len):
-    # TODO: use pandoc for different text formats as input
-    with open(infilename, "r") as infile:
-        text = "".join(infile.readlines()).lower()
-    text = re.sub("[^a-zöäüß]", " ", text)
+    input_text = read_input(infilename).lower()
+    text = re.sub("[^a-zöäüß]", " ", input_text)
     if remove_stop_words:
         tokens = nlp_remove_stop_words(text, language)
     else:

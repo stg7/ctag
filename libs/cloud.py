@@ -94,6 +94,8 @@ class ctag_font:
 
 
 def svg_cloud(histogram, min_font_size=14, max_font_size=90, min_font_color="001122", max_font_color="0000FF"):
+    if len(histogram) == 0:
+        return ""
 
     template_base ="""<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg"

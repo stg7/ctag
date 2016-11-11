@@ -14,6 +14,8 @@ pyvenv_preparation() {
 from pypandoc.pandoc_download import download_pandoc
 download_pandoc(targetfolder='$(pwd)/pandoc')
 END
+    chmod +x "$(pwd)/pandoc/pandoc"
+    chmod +x "$(pwd)/pandoc/pandoc-citeproc"
 }
 
 pyvenv_preparation

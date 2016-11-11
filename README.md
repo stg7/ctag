@@ -1,5 +1,22 @@
 ctag
 ====
+
+Requirements
+------------
+
+In general you need:
+
+* python3,
+* python3-tk
+* python3-venv
+* pdftotext (for pdf support)
+
+
+old
+-----------------------
+
+ctag
+====
 ctag is a tag-cloud generator written in python 3.2 for the 5. coding contest of http://www.freiesmagazin.de/.
 
 parts
