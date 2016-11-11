@@ -12,12 +12,18 @@ In general you need:
 * python3-venv
 * pdftotext (for pdf support as input)
 * inkscape (for pdf support as output)
+* pandoc (for markdown, docx, ... support)
+
+All python requirements are listet in `requirements.list`
+
+You can easily install a local virtual python environment using `./prepare.sh`, after running this script
+you can use `./ctag.sh` for running all commands.
 
 Example:
 --------
 Run:
 ```
-./ctag.sh in/ascii --pdf_output
+./ctag.sh examples/ascii --pdf_output
 ```
 
 Usage

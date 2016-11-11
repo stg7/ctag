@@ -7,8 +7,7 @@ pyvenv_preparation() {
     pyvenv "$venvdir"
     . "$venvdir/bin/activate"
     pip3 install --upgrade pip
-    pip3 install numpy nltk
-    pip3 install pypandoc
+    pip3 install -r requirements.list
 
     python3 - <<END
 from pypandoc.pandoc_download import download_pandoc
