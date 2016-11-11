@@ -3,3 +3,5 @@ __pycache__/
 results
 cloud.svg
 cloud.debug.json
+pandoc
+pandoc-1.18-1-amd64.deb

@@ -8,11 +8,12 @@ pyvenv_preparation() {
     . "$venvdir/bin/activate"
     pip3 install --upgrade pip
     pip3 install numpy nltk
+    pip3 install pypandoc
 
-    # scipy scikit-learn pandas matplotlib gensim pillow  #plotly
-    # pip3 install exifread
-    # pip3 install -U textblob
-    # python3 -m textblob.download_corpora
+    python3 - <<END
+from pypandoc.pandoc_download import download_pandoc
+download_pandoc(targetfolder='$(pwd)/pandoc')
+END
 }
 
 pyvenv_preparation
