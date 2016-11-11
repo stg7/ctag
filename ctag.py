@@ -27,11 +27,10 @@ import sys
 import os
 import argparse
 import time
+import json
 import re
 import multiprocessing
 from multiprocessing import Pool
-
-import numpy as np
 
 from lib.log import *
 from lib.nlp import *
@@ -48,8 +47,7 @@ def add_dict(d1, d2):
 
 
 def build_word_histogram(infilename, remove_stop_words, language, min_len):
-
-    # TODO: use pandas for different text formats as input
+    # TODO: use pandoc for different text formats as input
     with open(infilename, "r") as infile:
         text = "".join(infile.readlines()).lower()
     text = re.sub("[^a-zöäüß]", " ", text)
@@ -66,7 +64,7 @@ def build_word_histogram(infilename, remove_stop_words, language, min_len):
     return hist
 
 
-def ctag(inputfiles, output_file, remove_stop_words, language, min_freq, min_len ,cpu_count):
+def ctag(inputfiles, output_file, remove_stop_words, language, min_freq, min_len, debug, cpu_count):
     startTime = time.time()
     lInfo("process {} files".format(len(inputfiles)))
 
@@ -80,6 +78,12 @@ def ctag(inputfiles, output_file, remove_stop_words, language, min_freq, min_len
 
     # filter out words with a frequency that is not >= min_freq
     global_histogram = {t: global_histogram[t] for t in global_histogram if global_histogram[t] >= min_freq}
+
+    if debug:
+        histogram_file = output_file.replace(os.path.splitext(output_file)[1], ".debug")
+        lInfo("for debugging write out intermediate histogram to: {}".format(histogram_file))
+        with open(histogram_file, "w") as hist:
+            hist.write(json.dumps(global_histogram, indent=4, sort_keys=True))
 
     with open(output_file, "w") as outfile:
         outfile.write(svg_cloud(global_histogram))
@@ -97,6 +101,7 @@ def main(params):
     parser.add_argument('--min_freq', type=int, default=4, help="minimum freq of a word")
     parser.add_argument('--min_len', type=int, default=2, help="minimum length of a word")
     parser.add_argument('--language', type=str, default="german", help="language in which the text is") # TODO: remove it maybe later by analyzing language
+    parser.add_argument('--debug', action='store_true', help="debug mode (e.g. store intermediate results)")
 
     argsdict = vars(parser.parse_args())
 
@@ -108,6 +113,7 @@ def main(params):
          argsdict["language"],
          argsdict["min_freq"],
          argsdict["min_len"],
+         argsdict["debug"],
          argsdict["cpu_count"])
 
 
