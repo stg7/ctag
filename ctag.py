@@ -80,7 +80,7 @@ def ctag(inputfiles, output_file, remove_stop_words, language, min_freq, min_len
     global_histogram = {t: global_histogram[t] for t in global_histogram if global_histogram[t] >= min_freq}
 
     if debug:
-        histogram_file = output_file.replace(os.path.splitext(output_file)[1], ".debug")
+        histogram_file = output_file.replace(os.path.splitext(output_file)[1], ".debug.json")
         lInfo("for debugging write out intermediate histogram to: {}".format(histogram_file))
         with open(histogram_file, "w") as hist:
             hist.write(json.dumps(global_histogram, indent=4, sort_keys=True))
