@@ -29,6 +29,7 @@ import argparse
 import time
 import json
 import re
+import shutil
 import multiprocessing
 import tempfile
 from multiprocessing import Pool
@@ -36,7 +37,6 @@ from multiprocessing import Pool
 from libs.log import *
 from libs.nlp import *
 from libs.cloud import svg_cloud
-
 
 # set pypandoc path
 os.environ.setdefault('PYPANDOC_PANDOC', os.path.dirname(os.path.realpath(__file__)) + '/pandoc/pandoc')
@@ -55,6 +55,9 @@ def add_dict(d1, d2):
 
 def extract_from_pdf(pdf_file_name):
     """ extract text from a pdf file using pdttotext via os.system """
+    if shutil.which("pdftotext") is None:
+        lError("pdftotext is not installed, therefore no pdf as input is possible")
+        return ""
     f = tempfile.NamedTemporaryFile(delete=False)
     os.system("pdftotext {} {}".format(pdf_file_name, f.name))
     f.close()
@@ -98,7 +101,7 @@ def build_word_histogram(infilename, remove_stop_words, language, min_len):
     return hist
 
 
-def ctag(inputfiles, output_file, remove_stop_words, language, min_freq, min_len, debug, cpu_count):
+def ctag(inputfiles, output_file, remove_stop_words, language, min_freq, min_len, pdf_output, debug, cpu_count):
     startTime = time.time()
     lInfo("process {} files".format(len(inputfiles)))
 
@@ -121,7 +124,13 @@ def ctag(inputfiles, output_file, remove_stop_words, language, min_freq, min_len
 
     with open(output_file, "w") as outfile:
         outfile.write(svg_cloud(global_histogram))
-
+    if pdf_output:
+        pdf_file_name = output_file.replace(os.path.splitext(output_file)[1], ".pdf")
+        lInfo("create pdf graphic: {}".format(pdf_file_name))
+        if shutil.which("inkscape") is None:
+            lError("inkscape is not installed, therefore no pdf export is available.")
+        else:
+            os.system("""inkscape --without-gui --export-pdf="{pdffile}" {svgfile}""".format(svgfile=output_file, pdffile=pdf_file_name))
     lInfo("done: {} s".format(time.time() - startTime))
 
 
@@ -135,6 +144,7 @@ def main(params):
     parser.add_argument('--min_freq', type=int, default=4, help="minimum freq of a word")
     parser.add_argument('--min_len', type=int, default=2, help="minimum length of a word")
     parser.add_argument('--language', type=str, default="german", help="language in which the text is") # TODO: remove it maybe later by analyzing language
+    parser.add_argument('--pdf_output', action='store_true', help="build a pdf file")
     parser.add_argument('--debug', action='store_true', help="debug mode (e.g. store intermediate results)")
 
     argsdict = vars(parser.parse_args())
@@ -147,6 +157,7 @@ def main(params):
          argsdict["language"],
          argsdict["min_freq"],
          argsdict["min_len"],
+         argsdict["pdf_output"],
          argsdict["debug"],
          argsdict["cpu_count"])
 

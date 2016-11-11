@@ -9,7 +9,8 @@ In general you need:
 * python3,
 * python3-tk
 * python3-venv
-* pdftotext (for pdf support)
+* pdftotext (for pdf support as input)
+* inkscape (for pdf support as output)
 
 
 old
