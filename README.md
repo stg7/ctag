@@ -1,5 +1,6 @@
 ctag
 ====
+ctag is a tag-cloud generator, a first version was written for the 5. coding contest of http://www.freiesmagazin.de/, but i rewrote most parts.
 
 Requirements
 ------------
@@ -12,39 +13,41 @@ In general you need:
 * pdftotext (for pdf support as input)
 * inkscape (for pdf support as output)
 
+Example:
+--------
+Run:
+```
+./ctag.sh in/ascii --pdf_output
+```
 
-old
------------------------
-
-ctag
-====
-ctag is a tag-cloud generator written in python 3.2 for the 5. coding contest of http://www.freiesmagazin.de/.
-
-parts
+Usage
 -----
-ctag consists of 6 main scripts:
+Just run `./ctag.sh -h`:
+```
+usage: ctag.py [-h] [--cpu_count CPU_COUNT] [--output_file OUTPUT_FILE]
+               [--remove_stop_words] [--min_freq MIN_FREQ] [--min_len MIN_LEN]
+               [--language LANGUAGE] [--pdf_output] [--debug]
+               inputfile [inputfile ...]
 
-* ct.py: all in one script
-* ctana.py: text analysis
-* ctlib.py: core functions
-* ctmerge.py: merging of multiple input files
-* ctsimple.py: simple html based output format, for debugging
-* ctspiral.py: spiral layout
+ctag - tag cloud generator
 
-working process
----------------
-The "ct.py" script is the main script for creating a new tag cloud:
+positional arguments:
+  inputfile             input file
 
-* first: analyse input text (maybe merge files)
-* second: build .plain histogram
-* third: build selected output format (svg, html or both)
+optional arguments:
+  -h, --help            show this help message and exit
+  --cpu_count CPU_COUNT
+                        cpus/threads that are used for processing (default: 2)
+  --output_file OUTPUT_FILE
+                        outputfile for storing tag cloud (default: cloud.svg)
+  --remove_stop_words   remove stopswords (default: True)
+  --min_freq MIN_FREQ   minimum freq of a word (default: 4)
+  --min_len MIN_LEN     minimum length of a word (default: 2)
+  --language LANGUAGE   language in which the text is (default: german)
+  --pdf_output          build a pdf file (default: False)
+  --debug               debug mode (e.g. store intermediate results) (default:
+                        False)
 
-more
-----
-for more informations about ctag, read the minimalistic german manual
 
-PDF Support
------------
-For pdf as input format please use tools like `pdftotext` for extraction of plain ascii text.
-For pdf output, you can use the provided bash script `convert_svg_to_pdf.sh`, it requires inkscape.
+```
 
