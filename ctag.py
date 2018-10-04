@@ -39,8 +39,8 @@ from libs.nlp import *
 from libs.cloud import svg_cloud
 
 # set pypandoc path
-os.environ.setdefault('PYPANDOC_PANDOC', os.path.dirname(os.path.realpath(__file__)) + '/pandoc/pandoc')
-lInfo(os.path.dirname(os.path.realpath(__file__)) + '/pandoc/pandoc')
+os.environ.setdefault('PYPANDOC_PANDOC', os.path.dirname(os.path.realpath(__file__)) + '/pandoc/bin/pandoc')
+lInfo(os.path.dirname(os.path.realpath(__file__)) + '/pandoc/bin/pandoc')
 import pypandoc
 
 
