@@ -9,12 +9,12 @@ pyvenv_preparation() {
     pip3 install --upgrade pip
     pip3 install -r requirements.list
 
-    python3 - <<END
-from pypandoc.pandoc_download import download_pandoc
-download_pandoc(targetfolder='$(pwd)/pandoc')
-END
-    chmod +x "$(pwd)/pandoc/pandoc"
-    chmod +x "$(pwd)/pandoc/pandoc-citeproc"
+    wget -c https://github.com/jgm/pandoc/releases/download/2.3.1/pandoc-2.3.1-linux.tar.gz
+    tar -xzf pandoc-2.3.1-linux.tar.gz
+    mv pandoc-2.3.1 pandoc
+
+    chmod +x "$(pwd)/pandoc/bin/pandoc"
+    chmod +x "$(pwd)/pandoc/bin/pandoc-citeproc"
 }
 
 pyvenv_preparation
