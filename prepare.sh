@@ -4,7 +4,7 @@ venvdir="$(pwd)/_venv_python"
 
 pyvenv_preparation() {
     echo "py venv setup"
-    pyvenv "$venvdir"
+    python3.6 -m venv "$venvdir"
     . "$venvdir/bin/activate"
     pip3 install --upgrade pip
     pip3 install -r requirements.list
