@@ -20,15 +20,15 @@ All python requirements are listet in `requirements.list`
 You can easily install a local virtual python environment using `./prepare.sh`, after running this script
 you can use `./ctag.sh` for running all commands.
 
-Example:
---------
+## Example:
+
 Run:
 ```
 ./ctag.sh examples/ascii --pdf_output
 ```
 
-Usage
------
+## Usage
+
 Just run `./ctag.sh -h`:
 ```
 usage: ctag.py [-h] [--cpu_count CPU_COUNT] [--output_file OUTPUT_FILE]
@@ -54,7 +54,6 @@ optional arguments:
   --pdf_output          build a pdf file (default: False)
   --debug               debug mode (e.g. store intermediate results) (default:
                         False)
-
 
 ```
 
