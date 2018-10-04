@@ -1,8 +1,8 @@
 _venv_python/
 __pycache__/
 results
-cloud.svg
 cloud.debug.json
 pandoc
 pandoc-1.18-1-amd64.deb
 cloud.pdf
+pandoc-2.3.1-linux.tar.gz

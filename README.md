@@ -1,9 +1,10 @@
-ctag
-====
+# ctag
+
+![example cloud](cloud.svg)
+
 ctag is a tag-cloud generator, a first version was written for the 5. coding contest of http://www.freiesmagazin.de/, but i rewrote most parts.
 
-Requirements
-------------
+## Requirements
 
 In general you need:
 
