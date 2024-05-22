@@ -130,7 +130,7 @@ def ctag(inputfiles, output_file, remove_stop_words, language, min_freq, min_len
         if shutil.which("inkscape") is None:
             lError("inkscape is not installed, therefore no pdf export is available.")
         else:
-            os.system("""inkscape --without-gui --export-pdf="{pdffile}" {svgfile}""".format(svgfile=output_file, pdffile=pdf_file_name))
+            os.system("""inkscape --export-filename="{pdffile}" {svgfile}""".format(svgfile=output_file, pdffile=pdf_file_name))
     lInfo("done: {} s".format(time.time() - startTime))
 
 
